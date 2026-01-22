@@ -3,11 +3,11 @@
 
 This repository contains the code and supplementary materials for the research study:
 
-**"Disparities in Medical Specialist Distribution in Thailand: An Analysis of National Health Workforce Database Between 2014 and 2023"**
+**"Disparities in Medical Specialist Distribution in Thailand: An Analysis of National Health Workforce Database Between 2015 and 2024"**
 
 ## Overview
 
-This study examines the distribution of medical specialists across Thailand over a ten-year period (2014–2023) using data from national health workforce records. It evaluates workforce policies, such as mandatory rural service and task-shifting, and their impacts on equity and healthcare access. The analysis provides critical insights for policymakers aiming to improve equitable access to specialist care.
+This study examines the distribution of medical specialists across Thailand over a ten-year period (2015–2024) using data from national health workforce records. It evaluates workforce policies, such as mandatory rural service and task-shifting, and their impacts on equity and healthcare access. The analysis provides critical insights for policymakers aiming to improve equitable access to specialist care.
 
 ## Key Features
 
@@ -29,13 +29,14 @@ This study examines the distribution of medical specialists across Thailand over
 
 ## Results Highlights
 
-- **Increased Availability**: Total specialists grew significantly from 2014 to 2023, with general practitioners seeing a 210% increase.
+- **Increased Availability**: Total specialists grew significantly from 2015 to 2024, with general practitioners seeing a 210% increase.
 - **Improved Equity**: Gini coefficients for general practitioners improved markedly, from 0.35 to 0.20 provincially.
 - **Persistent Gaps**: Low-density specialties, such as pathology and rehabilitation medicine, remain inequitable despite progress.
 
 ## Repository Structure
 
-- **`/data`**: Example datasets (anonymized) used in the analysis.
+- **`/data`**: Datasets used in the analysis and relevant dictionaries.
+- **`/output`**: Cleaned dataset and analytical output
 - **`/scripts`**: Python scripts for data processing, analysis, and visualization.
 - **`/results`**: Outputs including charts, metrics, and statistical summaries.
 
