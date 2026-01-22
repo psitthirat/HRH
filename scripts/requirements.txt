@@ -1,23 +1,27 @@
 # General utilities
-tqdm==4.66.1
+tqdm
 
 # Data manipulation and analysis
-pandas==1.5.3
-numpy==1.24.3
-openpyxl==3.1.2
+pandas
+numpy
+openpyxl
 datetime
-time
 
 # Output formatting
-tabulate==0.9.0
-IPython==8.17.0
-python-docx==0.8.11
+tabulate
+IPython
+python-docx
 
 # Web scraping
-requests==2.31.0
-beautifulsoup4==4.13.0
+requests
+beautifulsoup4
 
 # Analysis and machine learning
-scikit-learn==1.3.1
-statsmodels==0.14.0
-scipy==1.11.3
+scikit-learn
+statsmodels
+scipy
+
+# Visuliazation
+matplotlib
+plotly
+nbformat
