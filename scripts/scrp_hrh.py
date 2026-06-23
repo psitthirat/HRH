@@ -151,7 +151,7 @@ def scrap(hosp_id, spc_link, output_folder):
                             hrh.append(row_data_value)
                     
                         # Convert the scraped data into a DataFrame
-                        hrh_hos_df = pd.DataFrame(hrh)
+                        hrh_hos_df = pd.DataFrame(hrh, dtype=object)
 
                         # Assign the first row as the header
                         hrh_hos_df.columns = hrh_hos_df.iloc[0]
