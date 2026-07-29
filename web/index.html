@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thailand HRH Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="map"></div>
+
+<div class="left-stack">
+  <header class="panel panel-header">
+    <div class="header-row">
+      <div class="logo-row">
+        <img class="logo-img" src="logos/rama.png" alt="Faculty of Medicine Ramathibodi Hospital, Mahidol University" />
+        <img class="logo-img" src="logos/rama-hsr-web.png" alt="Health Policy and Systems Research Team" />
+        <img class="logo-img" src="logos/hsri.png" alt="Health Systems Research Institute" />
+      </div>
+      <button id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
+        <span class="theme-icon" id="theme-icon">&#9728;&#65039;</span>
+      </button>
+    </div>
+    <h1>Thailand Health Workforce Project</h1>
+    <p class="subtitle">Density &amp; distributional equity,<br>2015&ndash;2024</p>
+  </header>
+
+  <section class="panel panel-scatter" id="scatter-panel">
+    <div class="scatter-title" id="scatter-title">Density vs. equity, all cadres</div>
+    <svg id="scatter-svg" viewBox="0 0 252 190"></svg>
+    <div class="scatter-legend" id="scatter-legend"></div>
+  </section>
+
+  <section class="panel panel-legend" id="legend-panel">
+    <div class="legend-title" id="legend-title">Density per 100,000 population</div>
+    <div class="legend-bar" id="legend-bar"></div>
+    <div class="legend-labels">
+      <span id="legend-min">0</span>
+      <span id="legend-mid"></span>
+      <span id="legend-max">0</span>
+    </div>
+  </section>
+</div>
+
+<section class="panel panel-controls">
+  <div class="field">
+    <span class="field-label">Level</span>
+    <div class="segmented" id="level-toggle">
+      <button class="segmented-btn is-active" data-level="hregion">Health Region</button>
+      <button class="segmented-btn" data-level="prov">Province</button>
+    </div>
+  </div>
+
+  <label class="field">
+    <span class="field-label">Workforce type</span>
+    <select id="hrh-select"></select>
+  </label>
+
+  <div class="field">
+    <span class="field-label">View</span>
+    <div class="segmented" id="mode-toggle">
+      <button class="segmented-btn is-active" data-mode="snapshot">Year snapshot</button>
+      <button class="segmented-btn" data-mode="change">10-year change</button>
+    </div>
+  </div>
+
+  <label class="field" id="year-field">
+    <span class="field-label">Year <strong id="year-value">2024</strong></span>
+    <input type="range" id="year-slider" min="0" max="9" step="1" value="9" />
+  </label>
+</section>
+
+<aside class="panel panel-stats">
+  <div class="stat-tile" id="stat-density">
+    <div class="stat-label" id="stat-density-label">Doctor density</div>
+    <div class="stat-value-row">
+      <span class="stat-value" id="stat-density-value">&mdash;</span>
+      <span class="stat-delta" id="stat-density-delta"></span>
+    </div>
+    <svg class="sparkline" id="spark-density" viewBox="0 0 240 48" preserveAspectRatio="none"></svg>
+  </div>
+  <div class="stat-tile" id="stat-gini">
+    <div class="stat-label" id="stat-gini-label">Gini coefficient</div>
+    <div class="stat-value-row">
+      <span class="stat-value" id="stat-gini-value">&mdash;</span>
+      <span class="stat-delta" id="stat-gini-delta"></span>
+    </div>
+    <svg class="sparkline" id="spark-gini" viewBox="0 0 240 48" preserveAspectRatio="none"></svg>
+  </div>
+</aside>
+
+<footer class="panel panel-source">
+  Data: GIS Health Map (gishealth.moph.go.th) &middot; Bureau of Registration Administration, MOI, Thailand
+</footer>
+
+<div class="map-tooltip" id="map-tooltip"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
