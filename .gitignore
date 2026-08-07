@@ -1,3 +1,17 @@
-/.DS_Store
+.DS_Store
 /.venv
 /scripts/__pycache__
+
+# Generated pipeline outputs (regenerate by re-running the notebooks/scripts).
+# output/map/ is intentionally NOT ignored: map_*.csv are hand-curated
+# crosswalks (rebuilding them requires interactive input()) and the
+# geo_*.geojson boundary files aren't produced by any script in this repo.
+/output/scraped/
+/output/clean/
+/output/analyse/
+/output/README_serv.md
+
+# Large cached/raw files that aren't reproducible by a script in this repo
+# and are too big (or pointless) to version. Keep your own copy outside git.
+/data/map/rtsd_pat.geojson
+/data/hrh_aggregated.csv

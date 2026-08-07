@@ -15,6 +15,7 @@ python-docx
 # Web scraping
 requests
 beautifulsoup4
+playwright
 
 # Analysis and machine learning
 scikit-learn
@@ -25,3 +26,11 @@ scipy
 matplotlib
 plotly
 nbformat
+
+# Geospatial
+geopandas
+shapely
+
+# Dashboard
+streamlit
+ipywidgets

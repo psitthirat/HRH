@@ -157,6 +157,7 @@ def scrap(hosp_id, spc_link, output_folder):
                         hrh_hos_df.columns = hrh_hos_df.iloc[0]
                         hrh_hos_df = hrh_hos_df[1:]  
                         hrh_hos_df = hrh_hos_df.loc[~(hrh_hos_df.iloc[:, 0].eq('') | hrh_hos_df.iloc[:, 0].eq('ลำดับ'))]
+                        display(hrh_hos_df)
 
                         # Check if the hospital is 'public' or 'private' from number of column
                         if row_link['link'] == 'infopersonal':
