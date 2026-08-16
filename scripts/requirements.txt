@@ -34,3 +34,6 @@ shapely
 # Dashboard
 streamlit
 ipywidgets
+
+# Optimization
+ortools
