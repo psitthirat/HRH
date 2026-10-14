@@ -1,0 +1,9 @@
+﻿plan_id,cap_mode,criterion,ramp_limited,ramp_fraction,base_pool,reference_reachable_by_2040,total_appointments_required,pool_2040_required,max_attainment_2040,binding_province,note
+INV|gross_arrivals,gross_arrivals,province,True,0.1,2000.0,False,,,0.11454499336627913,บึงกาฬ,LP relaxation of the recruitment-only problem; conditional on the caps and the ramp; educational and funded-post capacity unknown
+INV|gross_arrivals,gross_arrivals,province,False,,2000.0,False,,,0.11454499336627913,บึงกาฬ,LP relaxation of the recruitment-only problem; conditional on the caps and the ramp; educational and funded-post capacity unknown
+INV|gross_arrivals,gross_arrivals,national,True,0.1,2000.0,False,,,0.7286598553014138,,LP relaxation of the recruitment-only problem; conditional on the caps and the ramp; educational and funded-post capacity unknown
+INV|gross_arrivals,gross_arrivals,national,False,,2000.0,False,,,0.7286598553014138,,LP relaxation of the recruitment-only problem; conditional on the caps and the ramp; educational and funded-post capacity unknown
+INV|net_growth,net_growth,province,True,0.1,2000.0,False,,,0.7989700685751489,นนทบุรี,LP relaxation of the recruitment-only problem; conditional on the caps and the ramp; educational and funded-post capacity unknown
+INV|net_growth,net_growth,province,False,,2000.0,False,,,0.7989700685751489,ปทุมธานี,LP relaxation of the recruitment-only problem; conditional on the caps and the ramp; educational and funded-post capacity unknown
+INV|net_growth,net_growth,national,True,0.1,2000.0,True,58063.0,6939.0,1.1591119938838463,,LP relaxation of the recruitment-only problem; conditional on the caps and the ramp; educational and funded-post capacity unknown
+INV|net_growth,net_growth,national,False,,2000.0,True,56556.0,7588.0,1.7102757432380689,,LP relaxation of the recruitment-only problem; conditional on the caps and the ramp; educational and funded-post capacity unknown

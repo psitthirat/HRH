@@ -1,0 +1,21 @@
+﻿asset_id,kind,file,caption_th,main_text,rows,note,section,status,data_file
+T43_NONPOSITIVE_DENOMINATORS,table,outputs/chapter4_3/tables/T43_NONPOSITIVE_DENOMINATORS.csv,ตัวหารที่ไม่เป็นบวก (ต้องว่าง),False,0.0,,4_3,generated,
+T43_DENOMINATOR_PAIRING,table,outputs/chapter4_3/tables/T43_DENOMINATOR_PAIRING.csv,คู่ของวิชาชีพ ขอบเขตบุคลากร และตัวหารที่วิเคราะห์,False,46.0,,4_3,generated,
+T43_INEQUALITY_ANNUAL,table,outputs/chapter4_3/tables/T43_INEQUALITY_ANNUAL.csv,"ความเหลื่อมล้ำรายปี: Gini (ถ่วงตัวหาร/เท่ากัน), Theil T และการแยกระหว่าง-ภายในเขตสุขภาพ, P90/P10, สัดส่วนในช่วง ±20%",True,515.0,,4_3,generated,
+F43_INEQUALITY_TRENDS,figure,outputs/chapter4_3/figures/F43_INEQUALITY_TRENDS.png,ความเหลื่อมล้ำของความหนาแน่นกำลังคนต่อประชากรระหว่างจังหวัด 2556–2568 และส่วนที่อยู่ระหว่างเขตสุขภาพ,True,,,4_3,generated,outputs/chapter4_3/figure_data/F43_INEQUALITY_TRENDS_data.csv
+T43_DENOMINATOR_INEQUALITY_CHANGE,table,outputs/chapter4_3/tables/T43_DENOMINATOR_INEQUALITY_CHANGE.csv,การเปลี่ยนแปลงความเหลื่อมล้ำภายใต้ตัวหารแต่ละชนิด และการแยก Shapley ของ Theil T,True,91.0,,4_3,generated,
+T43_BASELINE_QUARTILE_GAINS,table,outputs/chapter4_3/tables/T43_BASELINE_QUARTILE_GAINS.csv,"การเพิ่มขึ้นของความหนาแน่นแยกตามกลุ่มความหนาแน่นตั้งต้น ปี 2556 (ต่อประชากร 100,000)",True,16.0,,4_3,generated,
+F43_DENOMINATOR_INEQUALITY,figure,outputs/chapter4_3/figures/F43_DENOMINATOR_INEQUALITY.png,ความเหลื่อมล้ำระหว่างจังหวัดของแพทย์และพยาบาล สธ. เมื่อเปลี่ยนตัวหาร (หน้าต่างเวลาของแต่ละตัวหาร),True,,,4_3,generated,outputs/chapter4_3/figure_data/F43_DENOMINATOR_INEQUALITY_data.csv
+T43_CONVERGENCE,table,outputs/chapter4_3/tables/T43_CONVERGENCE.csv,beta- และ sigma-convergence ของความหนาแน่นต่อประชากร (log) ตามช่วงเวลาและการกำหนดฐาน,True,24.0,,4_3,generated,
+T43_SCENARIOS,table,outputs/chapter4_3/tables/T43_SCENARIOS.csv,ฉากทัศน์ 20 ปี: ความหนาแน่นรวม ความเหลื่อมล้ำ และการเข้าใกล้เกณฑ์ใกล้เท่าเทียม (เงื่อนไข ไม่ใช่การพยากรณ์),True,336.0,,4_3,generated,
+T43_SCENARIO_PROVINCES,table,outputs/chapter4_3/tables/T43_SCENARIO_PROVINCES.csv,จำนวนและความหนาแน่นรายจังหวัดปีสุดท้ายของแต่ละฉากทัศน์,False,1216.0,,4_3,generated,
+T43_SCENARIO_SUMMARY,table,outputs/chapter4_3/tables/T43_SCENARIO_SUMMARY.csv,สรุปฉากทัศน์: ถึงเกณฑ์ใกล้เท่าเทียมหรือไม่ และจำนวนจังหวัดที่ต้องลดคน,True,16.0,,4_3,generated,
+F43_CONVERGENCE_SCENARIOS,figure,outputs/chapter4_3/figures/F43_CONVERGENCE_SCENARIOS.png,การตามทันของจังหวัดที่ตั้งต้นต่ำ และความเหลื่อมล้ำภายใต้ฉากทัศน์ 20 ปี,True,,,4_3,generated,outputs/chapter4_3/figure_data/F43_CONVERGENCE_SCENARIOS_data.csv
+T43_PRIORITY_RANKS,table,outputs/chapter4_3/tables/T43_PRIORITY_RANKS.csv,อันดับจังหวัด อัตราส่วนเทียบค่ารวม R และช่องว่างตามกฎสัดส่วน ปี 2568 (หรือปีล่าสุดของตัวหาร),True,2584.0,,4_3,generated,
+T43_PRIORITY_OVERLAP,table,outputs/chapter4_3/tables/T43_PRIORITY_OVERLAP.csv,ความทับซ้อนของรายชื่อ 19 จังหวัดระหว่างตัวหาร (แพทย์ สธ. ปี 2568),True,36.0,,4_3,generated,
+T43_M5_PRIORITY_PROBABILITY,table,outputs/chapter4_3/tables/T43_M5_PRIORITY_PROBABILITY.csv,ความน่าจะเป็นที่จังหวัดอยู่ในกลุ่ม 19 จังหวัดต่ำสุดภายใต้ตัวหาร M5 (bootstrap 4.2),True,228.0,,4_3,generated,
+T43_BUENGKAN,table,outputs/chapter4_3/tables/T43_BUENGKAN.csv,บึงกาฬ: อันดับและสถานะภายใต้ทุกตัวหาร (แพทย์ สธ.),False,10.0,,4_3,generated,
+T43_PRIORITY_SWITCHERS,table,outputs/chapter4_3/tables/T43_PRIORITY_SWITCHERS.csv,จังหวัดที่อันดับเปลี่ยนมากที่สุดเมื่อเปลี่ยนตัวหาร (แพทย์ สธ. ปี 2568),False,6.0,,4_3,generated,
+F43_PRIORITY_SWITCHES,figure,outputs/chapter4_3/figures/F43_PRIORITY_SWITCHES.png,การเปลี่ยนกลุ่มจังหวัดที่ควรให้ความสำคัญเมื่อเปลี่ยนตัวหาร (แพทย์ สธ. ปี 2568; ขอบเขตบุคลากรเดียวกัน),True,,,4_3,generated,outputs/chapter4_3/figure_data/F43_PRIORITY_SWITCHES_data.csv
+T43_PROVINCE_VERIFICATION,table,outputs/chapter4_3/tables/T43_PROVINCE_VERIFICATION.csv,ข้อมูลตรวจสอบรายจังหวัด พ.ศ. 2568: บุคลากร สธ. ประชากร ครั้ง OP และอัตราส่วน,True,76.0,,4_3,generated,
+F43_PROVINCE_VERIFICATION,figure,outputs/chapter4_3/figures/F43_PROVINCE_VERIFICATION.png,ประชากรต่อบุคลากรและบริการต่อบุคลากร รายจังหวัด พ.ศ. 2568 (ปทุมธานี นราธิวาส บึงกาฬ),True,,,4_3,generated,outputs/chapter4_3/figure_data/F43_PROVINCE_VERIFICATION_data.csv

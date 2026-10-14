@@ -1,0 +1,15 @@
+﻿แผน,เพดาน,สถานะ,การโยกย้ายสะสม (ครั้ง),จังหวัด-ปีที่เพดานตึง (%),จังหวัด-ปีที่ได้เพียงขั้นต่ำ (%),จำนวนที่จัดสรรไม่ได้,J เทียบแผนไม่มีโยกย้าย (%),แพทย์ 2583,จำนวนที่จัดสรรไม่ได้ (ขั้นต่ำ)
+P-R,รับเข้ารวม 10%,exploratory_policy_scenario,0.0,63.3,1.1,0.0,,30011.0,
+P-RT,รับเข้ารวม 10%,exploratory_policy_scenario,0.0,63.3,1.1,0.0,0.0,30011.0,
+S-RT,รับเข้ารวม 10%,exploratory_policy_scenario,0.0,49.2,0.3,0.0,0.0,29976.0,
+N-RT,รับเข้ารวม 10%,exploratory_policy_scenario,0.0,68.9,7.0,0.0,-0.02,30051.0,
+P-R|net,เติบโตสุทธิ 10%,exploratory_policy_scenario,0.0,10.0,6.0,0.0,,29732.0,
+P-RT|net,เติบโตสุทธิ 10%,exploratory_policy_scenario,545.0,10.4,6.1,0.0,-0.01,29730.0,
+S-RT|net,เติบโตสุทธิ 10%,exploratory_policy_scenario,652.0,8.3,5.3,0.0,-0.01,29774.0,
+N-RT|net,เติบโตสุทธิ 10%,exploratory_policy_scenario,976.0,10.4,8.3,0.0,-0.06,29838.0,
+P-RT|tau0.05,รับเข้ารวม 10%,exploratory_policy_scenario,0.0,71.8,8.5,0.0,-0.01,30058.0,
+P-RT|net|tau0.05,เติบโตสุทธิ 10%,exploratory_policy_scenario,2602.0,10.7,8.4,0.0,-0.03,29732.0,
+P-RT|net|surplus,เติบโตสุทธิ 10%,exploratory_policy_scenario,0.0,10.0,6.0,0.0,0.0,29732.0,
+P-RT|net|region,เติบโตสุทธิ 10%,exploratory_policy_scenario,534.0,10.1,5.7,0.0,0.02,29699.0,
+P-R|pool2500,,infeasible_under_selected_constraints,,,,,,,1078.0
+P-R|pool1500,รับเข้ารวม 10%,exploratory_policy_scenario,0.0,42.9,5.2,0.0,,24624.0,

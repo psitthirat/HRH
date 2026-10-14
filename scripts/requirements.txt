@@ -21,9 +21,11 @@ playwright
 scikit-learn
 statsmodels
 scipy
+patsy          # spline bases for the age-utilisation curve (scripts/ch4x.py)
 
 # Visuliazation
 matplotlib
+pillow
 plotly
 nbformat
 

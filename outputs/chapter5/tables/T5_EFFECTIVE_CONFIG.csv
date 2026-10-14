@@ -1,0 +1,112 @@
+﻿key,value,provenance,unit,overridden
+project.title_th,"""บทที่ 5 ทางเลือกของอนาคต: แบบจำลองการผลิตและจัดสรรแพทย์รายจังหวัด""",convention,,False
+project.baseline_year_ce,2025,convention,,False
+project.allocation_first_ce,2026,convention,,False
+project.allocation_last_ce,2040,convention,,False
+project.province_scope,"""thailand_76_excluding_bangkok""",convention,,False
+project.cadre,"""แพทย์""",convention,,False
+project.cadre_en,"""physicians""",convention,,False
+project.random_seed,20260927,convention,,False
+scope.workforce_scope,"""moph_hrr_76_as_provisional_managed_stock""",setting,,False
+scope.baseline_stock_universe,"""moph""",setting,,False
+scope.flow_universe,"""hrops_ops_events""",setting,,False
+scope.unmanaged_moph_component,0.0,convention,,False
+scope.calendar_convention,"""report_year_stock_with_fiscal_year_flows""",setting,,False
+scope.headcount_or_fte,"""headcount""",setting,,False
+demography.method,"""hamilton_perry_cohort_change""",setting,,False
+demography.ccr_window_central,"[2013, 2024]",setting,,False
+demography.ccr_window_recent,"[2020, 2024]",setting,,False
+demography.ccr_window_precovid,"[2013, 2018]",setting,,False
+demography.cwr_window,"[2022, 2025]",setting,,False
+demography.national_control,true,setting,,False
+demography.migration_scenarios,"{""low"": 0.5, ""central"": 1.0, ""high"": 1.5}",illustrative,,False
+demography.backtest_base,2019,setting,,False
+demography.open_age,101,setting,,False
+demography.entitlement_ratio_mode,"""hold_2025""",setting,,False
+demography.entitlement_bounds,"""min_max_2019_2025""",setting,,False
+supply.input_mode,"""available_appointments""",setting,,False
+supply.annual_path,2000,illustrative,accepted starts per year (managed 76-province system),False
+supply.annual_path_sensitivity,"[1500, 2000, 2500]",setting,,False
+supply.national_graduates,3000,illustrative,graduates per year (national),False
+supply.licensing,0.95,illustrative,,False
+supply.participation,0.95,illustrative,,False
+supply.managed_share,0.74,illustrative,,False
+supply.education_lag_years,6,convention,,False
+supply.completion,0.93,illustrative,,False
+supply.intake_2026_onwards,3300,illustrative,,False
+supply.graduates_in_pipeline,"[3000, 3000, 3050, 3100, 3150, 3200]",illustrative,,False
+departures.estimation_fy,"[2021, 2025]",convention,,False
+departures.pooling,"""empirical_bayes_gamma_poisson_to_region""",setting,,False
+departures.causes,"[""resignation"", ""retirement"", ""transfer_out"", ""death"", ""disciplinary""]",setting,,False
+departures.reentry_causes,"[""reinstatement"", ""transfer_in""]",setting,,False
+departures.national_rate_sensitivity,true,setting,,False
+departures.workload_departure_elasticity,0.104326,estimated,"log-log, resignations on OP visits per physician",False
+departures.workload_departure_mode,"""sensitivity_only""",setting,,False
+services.op_minutes,10.0,illustrative,minutes per OP visit (allocation weight),False
+services.adjrw_minutes,90.0,illustrative,minutes per AdjRW (allocation weight),False
+services.weight_sensitivity,"[[5.0, 90.0], [15.0, 90.0], [10.0, 60.0], [10.0, 120.0]]",setting,,False
+services.inpatient_measure,"""adjrw""",setting,,False
+services.projection_candidates,"[""constant_last"", ""mean_last3"", ""trend_last5_damped""]",setting,,False
+services.backtest_cutoffs,"[2016, 2017, 2018, 2019, 2023]",setting,,False
+services.backtest_horizons,"[1, 2, 3]",setting,,False
+services.break_years,"[2020, 2021, 2022]",setting,,False
+services.min_cutoffs_for_trend,3,setting,,False
+services.trend_damping,0.8,setting,,False
+m5.reference_year,2023,convention,,False
+m5.response_year_effect,2025,setting,,False
+m5.morbidity_path,"""fixed_2025""",convention,,False
+m5.morbidity_trend_cap_rel,0.03,setting,,False
+m5.beds_path,"""fixed_2025_count""",setting,,False
+m5.nurses_path,"""fixed_2025_count""",setting,,False
+m5.gpp_path,"""fixed_2024_level""",setting,,False
+m5.coefficient_draws,500,setting,,False
+m5.response_model,"""positive""",setting,,False
+feedback.primary_need_target,"""fixed_reference_m5""",setting,,False
+feedback.extension,"""lagged_resource_responsive_target""",setting,,False
+feedback.response_strengths,"[0.0, 0.5, 1.0]",illustrative,,False
+feedback.lag_years,1,setting,,False
+feedback.timing_rule,"""decision_year_context_with_previous_year_resources""",setting,,False
+targets.reference_per_1000,1.0,illustrative,"physicians per 1,000 population or equivalent units",False
+targets.reference_sensitivity,"[0.5, 1.0]",setting,,False
+targets.experiments,"[""common_total"", ""fixed_base_conversion""]",setting,,False
+targets.primary_population,"""civil""",setting,,False
+targets.population_variant,"""entitlement""",setting,,False
+targets.service_composite,"""op_plus_adjrw""",setting,,False
+allocation.universal_new_appointment_floor,1,policy,,False
+allocation.require_full_placement,true,setting,,False
+allocation.cap_mode,"""gross_arrivals""",policy,,False
+allocation.cap_fraction_of_opening_stock,0.1,illustrative,fraction of opening headcount per year,False
+allocation.cap_alternative,"""net_growth""",setting,,False
+allocation.reentry_consumes_onboarding,true,setting,,False
+allocation.main_transfer_fraction,0.02,illustrative,fraction of eligible opening headcount per year,False
+allocation.transfer_sensitivity,"[0.0, 0.02, 0.05]",setting,,False
+allocation.national_transfer_budget_fraction,0.01,illustrative,fraction of national eligible opening headcount per year,False
+allocation.origin_protection_mode,"""limited_drawdown""",setting,,False
+allocation.protected_survivor_fraction,0.95,illustrative,fraction of expected surviving opening headcount,False
+allocation.new_appointments_replace_transfers,true,setting,,False
+allocation.origin_protection_sensitivity,"""surplus_only""",setting,,False
+allocation.eligibility_network,"""complete_76""",setting,,False
+allocation.transfer_cost,"""great_circle_km""",setting,,False
+allocation.fairness_objective,"""target_weighted_squared_relative_shortfall""",policy,,False
+allocation.objective_order,"[""placement"", ""shortfall"", ""distribution"", ""operational_disruption""]",setting,,False
+allocation.tangent_step,0.025,convention,,False
+allocation.tangent_step_check,0.01,setting,,False
+allocation.lexicographic_rel_tol,0.0005,setting,,False
+allocation.lexicographic_abs_tol,1e-07,setting,,False
+allocation.mip_rel_gap,0.0002,setting,,False
+allocation.time_limit_s,180,setting,,False
+allocation.secondary_time_limit_s,240,setting,,False
+allocation.discount,1.0,setting,,False
+evaluation.plan_modes,"[""fixed_schedule"", ""annual_replanning""]",convention,,False
+evaluation.paired_random_paths,true,convention,,False
+evaluation.main_simulation_runs,500,convention,,False
+evaluation.dev_simulation_runs,40,convention,,False
+evaluation.adaptive_simulation_runs,60,convention,,False
+evaluation.switch_threshold_pct,5.0,policy,,False
+evaluation.cumulative_shortfall_threshold_pct,2.0,policy,,False
+evaluation.worst_province_loss_threshold_pct,5.0,policy,,False
+evaluation.bottom_quartile,19,convention,,False
+inverse.ramp_fraction,0.1,illustrative,,False
+inverse.criterion,"""every_province_reaches_reference_by_2040""",setting,,False
+figures.dpi,300,convention,,False
+figures.formats,"[""png"", ""svg"", ""pdf""]",convention,,False

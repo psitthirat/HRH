@@ -1,0 +1,4 @@
+﻿outcome,positive,all_marginal_in_range,joint_support_below_p95,bootstrap_valid_share_ge_95,m5_r2_positive,decision
+op_moph,True,True,True,True,True,ใช้เป็นตัวหารมาตรฐานได้ (ช่วงสั้น 2565–2568)
+ip_moph,True,True,True,True,True,ใช้เป็นตัวหารมาตรฐานได้ (ช่วงสั้น 2565–2568)
+adjrw,True,True,True,True,True,ใช้เป็นตัวหารมาตรฐานได้ (ช่วงสั้น 2565–2568)

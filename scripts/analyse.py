@@ -519,6 +519,46 @@ def theil_T(df_raw, h_column, pop_column):
     
     return T
 
+def theil_decompose(
+    df: pd.DataFrame, h_column: str, pop_column: str, group_column: str
+) -> dict:
+    """Decompose Theil's T into between-group and within-group components.
+
+    ``T_total = T_between + T_within``. In a workforce context the between share
+    answers a policy question the headline Gini cannot: is maldistribution a
+    problem *between* health regions (which regional allocation formulas can fix)
+    or *inside* them (which they cannot)?
+    """
+    d = df[[h_column, pop_column, group_column]].dropna().copy()
+    d = d[(d[pop_column] > 0)]
+    H, P = d[h_column].sum(), d[pop_column].sum()
+    if H <= 0 or P <= 0:
+        return {"T_total": np.nan, "T_between": np.nan, "T_within": np.nan, "pct_between": np.nan}
+
+    def _theil(sub_h, sub_p):
+        s_h, s_p = sub_h / sub_h.sum(), sub_p / sub_p.sum()
+        mask = s_h > 0
+        return float(np.sum(s_h[mask] * np.log(s_h[mask] / s_p[mask])))
+
+    t_total = _theil(d[h_column].to_numpy(), d[pop_column].to_numpy())
+
+    g = d.groupby(group_column)[[h_column, pop_column]].sum()
+    t_between = _theil(g[h_column].to_numpy(), g[pop_column].to_numpy())
+
+    t_within = 0.0
+    for name, sub in d.groupby(group_column):
+        h_share = sub[h_column].sum() / H
+        if h_share <= 0 or sub[h_column].sum() <= 0:
+            continue
+        t_within += h_share * _theil(sub[h_column].to_numpy(), sub[pop_column].to_numpy())
+
+    return {
+        "T_total": t_total,
+        "T_between": t_between,
+        "T_within": t_within,
+        "pct_between": 100 * t_between / t_total if t_total > 0 else np.nan,
+    }
+
 def gini(df_raw, h_column, pop_column):
     """
     Calculate the Gini Coefficient for inequality measurement.
@@ -566,3 +606,25 @@ def gini(df_raw, h_column, pop_column):
 
     return G
 
+def concentration_ratios(df: pd.DataFrame, h_column: str, pop_column: str) -> dict:
+    """Density ratios that a policy reader can act on directly.
+
+    ``p90_p10`` is the ratio of the 90th to the 10th percentile of provincial
+    density; ``top5_share`` is the share of the national workforce held by the
+    five provinces with the largest headcount; ``hhi`` is the Herfindahl index of
+    the headcount distribution (1/n = perfectly even).
+    """
+    d = df[[h_column, pop_column]].dropna()
+    d = d[d[pop_column] > 0]
+    dens = (d[h_column] / d[pop_column] * 100_000).to_numpy()
+    share = (d[h_column] / d[h_column].sum()).to_numpy()
+    p10, p90 = np.percentile(dens, [10, 90])
+    return {
+        "median_density": float(np.median(dens)),
+        "p10_density": float(p10),
+        "p90_density": float(p90),
+        "p90_p10": float(p90 / p10) if p10 > 0 else np.nan,
+        "top5_share": float(np.sort(share)[-5:].sum()),
+        "hhi": float(np.sum(share**2)),
+        "n_zero": int((d[h_column] == 0).sum()),
+    }

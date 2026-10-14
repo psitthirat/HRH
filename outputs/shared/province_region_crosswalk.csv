@@ -1,0 +1,78 @@
+﻿prov_code,province,province_en,health_region,is_bangkok
+10,กรุงเทพมหานคร,Bangkok,13,True
+11,สมุทรปราการ,Samut Prakan,6,False
+12,นนทบุรี,Nonthaburi,4,False
+13,ปทุมธานี,Pathum Thani,4,False
+14,พระนครศรีอยุธยา,Ayutthaya,4,False
+15,อ่างทอง,Ang Thong,4,False
+16,ลพบุรี,Lop Buri,4,False
+17,สิงห์บุรี,Sing Buri,4,False
+18,ชัยนาท,Chai Nat,3,False
+19,สระบุรี,Saraburi,4,False
+20,ชลบุรี,Chon Buri,6,False
+21,ระยอง,Rayong,6,False
+22,จันทบุรี,Chanthaburi,6,False
+23,ตราด,Trat,6,False
+24,ฉะเชิงเทรา,Chachoengsao,6,False
+25,ปราจีนบุรี,Prachin Buri,6,False
+26,นครนายก,Nakhon Nayok,4,False
+27,สระแก้ว,Sa Kaeo,6,False
+30,นครราชสีมา,Nakhon Ratchasima,9,False
+31,บุรีรัมย์,Buri Ram,9,False
+32,สุรินทร์,Surin,9,False
+33,ศรีสะเกษ,Si Sa Ket,10,False
+34,อุบลราชธานี,Ubon Ratchathani,10,False
+35,ยโสธร,Yasothon,10,False
+36,ชัยภูมิ,Chaiyaphum,9,False
+37,อำนาจเจริญ,Amnuat Charoen,10,False
+38,บึงกาฬ,Bung Kran,8,False
+39,หนองบัวลำภู,Nong Bua Lamphu,8,False
+40,ขอนแก่น,Khon Kaen,7,False
+41,อุดรธานี,Udon Thani,8,False
+42,เลย,Loei,8,False
+43,หนองคาย,Nong Khai,8,False
+44,มหาสารคาม,Maha Sarakham,7,False
+45,ร้อยเอ็ด,Roi Et,7,False
+46,กาฬสินธุ์,Kalasin,7,False
+47,สกลนคร,Sakon Nakhon,8,False
+48,นครพนม,NaKhon Phanom,8,False
+49,มุกดาหาร,Mukdahan,10,False
+50,เชียงใหม่,Chiang Mai,1,False
+51,ลำพูน,Lamphun,1,False
+52,ลำปาง,Lampang,1,False
+53,อุตรดิตถ์,Uttaradit,2,False
+54,แพร่,Phrae,1,False
+55,น่าน,Nan,1,False
+56,พะเยา,Phayao,1,False
+57,เชียงราย,Chiang Rai,1,False
+58,แม่ฮ่องสอน,Mae Hong Son,1,False
+60,นครสวรรค์,Nakhon Sawan,3,False
+61,อุทัยธานี,Uthai Thani,3,False
+62,กำแพงเพชร,Kamphaeng Phet,3,False
+63,ตาก,Tak,2,False
+64,สุโขทัย,Sukhothai,2,False
+65,พิษณุโลก,Phitsanulok,2,False
+66,พิจิตร,Phichit,3,False
+67,เพชรบูรณ์,Phetchabun,2,False
+70,ราชบุรี,Ratchaburi,5,False
+71,กาญจนบุรี,Kanchanaburi,5,False
+72,สุพรรณบุรี,Suphan Buri,5,False
+73,นครปฐม,Nakhon Pathom,5,False
+74,สมุทรสาคร,Samut Sakhon,5,False
+75,สมุทรสงคราม,Samut Songkhram,5,False
+76,เพชรบุรี,Phetchaburi,5,False
+77,ประจวบคีรีขันธ์,Prachuap Khiri Khan,5,False
+80,นครศรีธรรมราช,Nakhon Si Thammarat,11,False
+81,กระบี่,Krabi,11,False
+82,พังงา,Phang Nga,11,False
+83,ภูเก็ต,Phuket,11,False
+84,สุราษฎร์ธานี,Surat Thani,11,False
+85,ระนอง,Ranong,11,False
+86,ชุมพร,Chumphon,11,False
+90,สงขลา,Song Khla,12,False
+91,สตูล,Satun,12,False
+92,ตรัง,Trang,12,False
+93,พัทลุง,Phatthalung,12,False
+94,ปัตตานี,Pattani,12,False
+95,ยะลา,Yala,12,False
+96,นราธิวาส,Narathiwat,12,False

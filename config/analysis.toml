@@ -1,0 +1,165 @@
+# Chapter 4 — the one authoritative analysis configuration.
+#
+# Every notebook and the build read this file through chapter4.config.  Exploratory
+# overrides are allowed inside a notebook only through chapter4.config.scenario(),
+# which writes to a separately named scenario folder and never to canonical outputs.
+# TOML instead of YAML because the project environment has no YAML parser and
+# Python's tomllib is in the standard library.
+
+[project]
+title_th = "บทที่ 4 ความก้าวหน้า ความขาดแคลน หรือความคลาดเคลื่อนในการวัด?"
+be_offset = 543
+random_seed = 20260925
+
+[years]
+long_first = 2013            # established long series (report / calendar year basis)
+long_last = 2025
+casemix_first = 2018         # fiscal-year case-mix returns
+casemix_last = 2025
+morbidity_first = 2022       # HDC diagnosed-prevalence indicators
+morbidity_last = 2025
+flow_first_fy = 2017         # HROPS entry/exit events, fiscal years 2560-2569 B.E.
+flow_last_complete_fy = 2025 # FY2026 was extracted on 5 Mar 2026 and is partial
+recent_window_years = 5      # recent-trend window for conditional scenarios (2021-2025)
+pre_transfer_last = 2022     # last year before the 2023 transfer of health-promoting hospitals
+covid_years = [2020, 2021, 2022]
+
+[geography]
+bangkok = "กรุงเทพมหานคร"
+# National series in 4.1 and 4.2.1 keep Bangkok.  Every provincial model, inequality
+# and provincial flow analysis drops it before the sample is formed.
+provincial_exclude = ["กรุงเทพมหานคร"]
+
+[cadres]
+main = ["แพทย์", "พยาบาลวิชาชีพ", "เภสัชกร", "ทันตแพทย์"]
+diagnostic = ["พยาบาลเทคนิค"]   # read for audit only, never added to professional nurses
+combined_reference = ["แพทย์", "พยาบาลวิชาชีพ"]
+# Author decision (26 Sep 2026): "พยาบาลวิชาชีพ" includes technical nurses throughout Chapter 4.
+# Technical nurses are published separately only 2013-2021 and are counted as zero afterwards.
+nurse_includes_technical = true
+
+[cadres.en]
+"แพทย์" = "physicians"
+"พยาบาลวิชาชีพ" = "professional_nurses"
+"เภสัชกร" = "pharmacists"
+"ทันตแพทย์" = "dentists"
+"พยาบาลเทคนิค" = "technical_nurses"
+
+[sectors]
+# source column suffix -> disjoint analytical sector.  'Total' is the published total and
+# is used only to reconcile the parts, never summed with them.
+MinistryofPublichealth = "moph"
+OtherMinistries = "other_public"
+StateEnterprises = "other_public"
+IndependentOrganizations = "other_public"
+LocalGovernment = "other_public"
+LocalAdministration = "other_public"
+Private = "private"
+Other = "unclassified"
+Total = "published_total"
+
+[universes.workforce]
+all_sectors = ["moph", "other_public", "private", "unclassified"]
+public_total = ["moph", "other_public"]
+moph = ["moph"]
+
+[services]
+# moph_service = regional + general + community hospitals of the MOPH (report tables 5-7)
+moph_service_tiers = ["rh", "gh", "ch"]
+
+[benchmark]
+value_per_1000 = 4.45
+horizon_year = 2030
+cadre_scope = "physicians + nursing and midwifery personnel"
+source = "WHO. Global strategy on human resources for health: Workforce 2030. Geneva: World Health Organization; 2016. Annex 1."
+
+[hdc_screen]
+# Reporting-coverage screens for HDC activity counts (carried over from the author's 4.2 notebook).
+coverage_break_yoy_pct = 50.0
+coverage_break_share = 0.60
+structural_noncoverage_frac = 0.10
+
+[time_scenario]
+# Illustrative arithmetic of 4.2.2.  Every value is an assumption with a declared status.
+op_minutes_per_visit = 10.0
+adjrw_minutes_author = 90.0          # value printed in the author's draft
+adjrw_minutes_case = 100.0           # 30 minutes / 0.3 AdjRW in the draft's own worked case
+hours_per_day = 8.0
+working_days_per_year = 240
+direct_care_share = 0.60
+dental_minutes_per_visit = 30.0
+pharmacy_minutes_per_prescription = 15.0
+op_minutes_grid = [5.0, 10.0, 15.0]
+adjrw_minutes_grid = [60.0, 90.0, 100.0, 120.0]
+
+[models]
+outcomes = ["op_moph", "ip_moph", "adjrw"]
+cv_folds = 5
+cv_repeats = 10
+cv_seed = 20260924                   # same seed as the previous M0-M5 package, for reconciliation
+paired_bootstrap_draws = 4000
+standardization_bootstrap_draws = 500
+reference_year = 2023
+positive_model_repeats = 5
+supply_long_first = 2013
+
+[age_weights]
+# Acceptance criteria fixed before estimation (task section 7.7).
+max_share_at_bound = 0.25
+max_bootstrap_ratio = 3.0            # 97.5th / 2.5th percentile of the 60+ weight
+max_ratio_across_specs = 3.0
+bootstrap_draws = 300
+
+[inequality]
+priority_quartile = 19               # lowest quartile of 76 provinces
+near_band = 0.20                     # "near-equality" = within +/-20% of the pooled density
+gini_threshold = 0.10                # illustrative policy criterion, not an optimum
+p90p10_threshold = 1.5
+horizon_years = 20
+lambda_share = 0.10                  # illustrative redistribution speed per year
+priority_bootstrap = 500
+
+[burden]
+# Thailand provincial burden of disease 2022 (BOD Thailand / IHPP), source S14_BOD.
+# Age-standardized rates (ASR) per 100,000, WHO standard population, both sexes, 174 Level-3 causes.
+# ASRs of causes add within a province (one standard population); provincial ASRs are never
+# added or averaged into a national ASR (source definitions sheet).
+year = 2022
+# Planning indices leave out COVID-19 (B5): 2022 is one of this project's COVID break years and the
+# 15-year plan needs the structural burden.  The all-cause index is kept as a sensitivity.
+exclude_causes = ["B5"]
+# GBD-style Level-1 groups by the letter of the source cause code
+groups = { CMNN = "ABCDEFG", NCD = "HIJKLMNOPQRS", INJ = "TUV" }
+# HDC diagnosed-prevalence indicator -> closest BOD cause.  Hypertension is a risk factor, not a GBD
+# cause; I4 hypertensive heart disease is its nearest cause-level match and is labelled as such.
+hdc_match = { prev_dm = "O1", prev_ht = "I4", prev_ckd_3_5 = "O2", prev_copd = "J1", prev_stroke = "I3", prev_chd = "I2" }
+# cadre -> causes whose care that cadre leads (illustrative pairing for the cadre-specific check)
+cadre_causes = { "ทันตแพทย์" = ["S6"] }
+# S15_BOD_AGE: the source's 8 age groups (inclusive single-year bounds; 80 = open group)
+age_groups = [[0, 4], [5, 14], [15, 29], [30, 44], [45, 59], [60, 69], [70, 79], [80, 200]]
+# WHO world standard population 2000-2025 (per 100, five-year groups 0-4 ... 100+), used only to
+# check that the age-specific rates reproduce the published age-standardized rates
+who_standard = [8.86, 8.69, 8.60, 8.47, 8.22, 7.93, 7.61, 7.15, 6.59, 6.04, 5.37, 4.55, 3.72, 2.96, 2.21, 1.52, 0.91, 0.44, 0.15, 0.04, 0.005]
+priority_quartile = 19
+
+[flows]
+exposure_note = "Events per 100 prior-year MOPH-wide staff; the stock is broader than the OPS event universe."
+ppml_min_events = 1
+
+[figures]
+dpi = 300
+formats = ["png", "svg", "pdf"]
+font_candidates = ["Prompt", "TH Sarabun New", "Sarabun", "Noto Sans Thai", "Tahoma", "DejaVu Sans"]
+csv_encoding = "utf-8-sig"
+
+[figures.cadre_color]
+"แพทย์" = "#1b5e9c"
+"พยาบาลวิชาชีพ" = "#b03a2e"
+"เภสัชกร" = "#1e7b57"
+"ทันตแพทย์" = "#8a6d1f"
+
+[figures.sector_color]
+moph = "#3d4f5c"
+other_public = "#8fa6b4"
+private = "#d9c27e"
+unclassified = "#c0c0c0"

@@ -1,0 +1,12 @@
+﻿check,value,expected
+provinces,77.0,77
+causes per province (min),174.0,174
+max |DALY - YLL - YLD|,2.8498349513572663e-10,< 1e-6
+duplicate province-cause keys,0.0,0
+non-finite or negative values,0.0,0
+zero-valued province-cause DALY cells,1712.0,kept (observed zeros)
+excluded causes (planning index),1.0,B5
+age file: province x cause x age rows,107184.0,107184
+"age file: max relative gap, re-standardized vs published ASR (WHO weights, 8 groups)",0.00029756424629651725,< 1e-3 (weights published to 0.01)
+"age file: mid-year population / civil register 2022, min",0.9999130783631988,close to 1
+"age file: mid-year population / civil register 2022, max",1.012254416440282,close to 1

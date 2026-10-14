@@ -1,0 +1,40 @@
+# Integrated hindcast of the provincial physician stock — design and acceptance criteria.
+#
+# DECLARED BEFORE ANY HINDCAST WAS RUN (14 October 2026, next-phase plan §5.2 A–C).  The run
+# records the SHA-256 of this file; editing it after seeing results must be reported as a
+# deviation, not silently re-run.  Kept outside config/chapter5.toml so it never touches plans.
+
+[design]
+universe = "MOPH physicians (Health Resource Report), 76 provinces excluding Bangkok"
+# Origins start after the 2020 definitional break of the HRR stock series (2019 -> 2020 drop).
+origins = [2020, 2021, 2022, 2023]
+last_target_year = 2025
+horizons_reported = [1, 2, 3, 4, 5]
+# Information available at origin y: HRR stock up to y; HROPS events of fiscal years <= y;
+# civil registers up to y.  Hazard window = fiscal years max(2017, y-4) .. y.
+hazard_window_years = 5
+recruitment_window_years = 3          # unconditional recruitment = recent share x recent national mean
+trend_min_points = 3                  # post-break points (>= 2020) needed for the trend baseline
+simulation_draws = 400                # predictive intervals: hazard posterior draws + event noise
+interval = [0.05, 0.95]
+seed = 20261014
+
+[models]
+persistence = "province stock held at the origin"
+trend = "linear trend of post-2020 province stock (falls back to persistence with < 3 points)"
+population_only = "origin density held: stock x projected population ratio (Hamilton-Perry from the origin)"
+stock_flow_unconditional = "pooled cutoff-safe hazards + recruitment persistence (canonical Chapter 5 mechanics)"
+stock_flow_conditional = "same hazards + ACTUAL recorded recruitment (labelled conditional; not a forecast)"
+
+[acceptance]
+# C1: the canonical stock-flow engine is described as a FORECASTER of provincial stock only if, at
+#     horizon 3 pooled over origins, its MAE is below both persistence and population-only.
+#     Otherwise it is described as a scenario engine and forecasting uses the better baseline.
+c1_horizon = 3
+c1_must_beat = ["persistence", "population_only"]
+# C2: 90% predictive intervals are called calibrated if pooled coverage lies in [0.80, 0.98].
+c2_coverage_range = [0.80, 0.98]
+# C3: the lowest-19 density group is called stable if its Jaccard overlap with the observed group
+#     at horizon 3 is at least 0.60 (pooled mean over origins).
+c3_horizon = 3
+c3_min_jaccard = 0.60

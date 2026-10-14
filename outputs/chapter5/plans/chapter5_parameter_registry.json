@@ -1,0 +1,521 @@
+{
+ "config": {
+  "project": {
+   "title_th": "บทที่ 5 ทางเลือกของอนาคต: แบบจำลองการผลิตและจัดสรรแพทย์รายจังหวัด",
+   "baseline_year_ce": 2025,
+   "allocation_first_ce": 2026,
+   "allocation_last_ce": 2040,
+   "province_scope": "thailand_76_excluding_bangkok",
+   "cadre": "แพทย์",
+   "cadre_en": "physicians",
+   "random_seed": 20260927
+  },
+  "scope": {
+   "workforce_scope": "moph_hrr_76_as_provisional_managed_stock",
+   "baseline_stock_universe": "moph",
+   "flow_universe": "hrops_ops_events",
+   "unmanaged_moph_component": 0.0,
+   "calendar_convention": "report_year_stock_with_fiscal_year_flows",
+   "headcount_or_fte": "headcount"
+  },
+  "demography": {
+   "method": "hamilton_perry_cohort_change",
+   "ccr_window_central": [
+    2013,
+    2024
+   ],
+   "ccr_window_recent": [
+    2020,
+    2024
+   ],
+   "ccr_window_precovid": [
+    2013,
+    2018
+   ],
+   "cwr_window": [
+    2022,
+    2025
+   ],
+   "national_control": true,
+   "migration_scenarios": {
+    "low": 0.5,
+    "central": 1.0,
+    "high": 1.5
+   },
+   "backtest_base": 2019,
+   "open_age": 101,
+   "entitlement_ratio_mode": "hold_2025",
+   "entitlement_bounds": "min_max_2019_2025"
+  },
+  "supply": {
+   "input_mode": "available_appointments",
+   "annual_path": 2000,
+   "annual_path_sensitivity": [
+    1500,
+    2000,
+    2500
+   ],
+   "national_graduates": 3000,
+   "licensing": 0.95,
+   "participation": 0.95,
+   "managed_share": 0.74,
+   "education_lag_years": 6,
+   "completion": 0.93,
+   "intake_2026_onwards": 3300,
+   "graduates_in_pipeline": [
+    3000,
+    3000,
+    3050,
+    3100,
+    3150,
+    3200
+   ]
+  },
+  "departures": {
+   "estimation_fy": [
+    2021,
+    2025
+   ],
+   "pooling": "empirical_bayes_gamma_poisson_to_region",
+   "causes": [
+    "resignation",
+    "retirement",
+    "transfer_out",
+    "death",
+    "disciplinary"
+   ],
+   "reentry_causes": [
+    "reinstatement",
+    "transfer_in"
+   ],
+   "national_rate_sensitivity": true,
+   "workload_departure_elasticity": 0.104326,
+   "workload_departure_mode": "sensitivity_only"
+  },
+  "services": {
+   "op_minutes": 10.0,
+   "adjrw_minutes": 90.0,
+   "weight_sensitivity": [
+    [
+     5.0,
+     90.0
+    ],
+    [
+     15.0,
+     90.0
+    ],
+    [
+     10.0,
+     60.0
+    ],
+    [
+     10.0,
+     120.0
+    ]
+   ],
+   "inpatient_measure": "adjrw",
+   "projection_candidates": [
+    "constant_last",
+    "mean_last3",
+    "trend_last5_damped"
+   ],
+   "backtest_cutoffs": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2023
+   ],
+   "backtest_horizons": [
+    1,
+    2,
+    3
+   ],
+   "break_years": [
+    2020,
+    2021,
+    2022
+   ],
+   "min_cutoffs_for_trend": 3,
+   "trend_damping": 0.8
+  },
+  "m5": {
+   "reference_year": 2023,
+   "response_year_effect": 2025,
+   "morbidity_path": "fixed_2025",
+   "morbidity_trend_cap_rel": 0.03,
+   "beds_path": "fixed_2025_count",
+   "nurses_path": "fixed_2025_count",
+   "gpp_path": "fixed_2024_level",
+   "coefficient_draws": 500,
+   "response_model": "positive"
+  },
+  "feedback": {
+   "primary_need_target": "fixed_reference_m5",
+   "extension": "lagged_resource_responsive_target",
+   "response_strengths": [
+    0.0,
+    0.5,
+    1.0
+   ],
+   "lag_years": 1,
+   "timing_rule": "decision_year_context_with_previous_year_resources"
+  },
+  "targets": {
+   "reference_per_1000": 1.0,
+   "reference_sensitivity": [
+    0.5,
+    1.0
+   ],
+   "experiments": [
+    "common_total",
+    "fixed_base_conversion"
+   ],
+   "primary_population": "civil",
+   "population_variant": "entitlement",
+   "service_composite": "op_plus_adjrw"
+  },
+  "allocation": {
+   "universal_new_appointment_floor": 1,
+   "require_full_placement": true,
+   "cap_mode": "gross_arrivals",
+   "cap_fraction_of_opening_stock": 0.1,
+   "cap_alternative": "net_growth",
+   "reentry_consumes_onboarding": true,
+   "main_transfer_fraction": 0.02,
+   "transfer_sensitivity": [
+    0.0,
+    0.02,
+    0.05
+   ],
+   "national_transfer_budget_fraction": 0.01,
+   "origin_protection_mode": "limited_drawdown",
+   "protected_survivor_fraction": 0.95,
+   "new_appointments_replace_transfers": true,
+   "origin_protection_sensitivity": "surplus_only",
+   "eligibility_network": "complete_76",
+   "transfer_cost": "great_circle_km",
+   "fairness_objective": "target_weighted_squared_relative_shortfall",
+   "objective_order": [
+    "placement",
+    "shortfall",
+    "distribution",
+    "operational_disruption"
+   ],
+   "tangent_step": 0.025,
+   "tangent_step_check": 0.01,
+   "lexicographic_rel_tol": 0.0005,
+   "lexicographic_abs_tol": 1e-07,
+   "mip_rel_gap": 0.0002,
+   "time_limit_s": 180,
+   "secondary_time_limit_s": 240,
+   "discount": 1.0
+  },
+  "evaluation": {
+   "plan_modes": [
+    "fixed_schedule",
+    "annual_replanning"
+   ],
+   "paired_random_paths": true,
+   "main_simulation_runs": 500,
+   "dev_simulation_runs": 40,
+   "adaptive_simulation_runs": 60,
+   "switch_threshold_pct": 5.0,
+   "cumulative_shortfall_threshold_pct": 2.0,
+   "worst_province_loss_threshold_pct": 5.0,
+   "bottom_quartile": 19
+  },
+  "inverse": {
+   "ramp_fraction": 0.1,
+   "criterion": "every_province_reaches_reference_by_2040"
+  },
+  "figures": {
+   "dpi": 300,
+   "formats": [
+    "png",
+    "svg",
+    "pdf"
+   ]
+  },
+  "provenance": {
+   "supply.annual_path": "illustrative",
+   "supply.national_graduates": "illustrative",
+   "supply.licensing": "illustrative",
+   "supply.participation": "illustrative",
+   "supply.managed_share": "illustrative",
+   "supply.graduates_in_pipeline": "illustrative",
+   "supply.intake_2026_onwards": "illustrative",
+   "supply.completion": "illustrative",
+   "supply.education_lag_years": "convention",
+   "departures.estimation_fy": "convention",
+   "departures.workload_departure_elasticity": "estimated",
+   "services.op_minutes": "illustrative",
+   "services.adjrw_minutes": "illustrative",
+   "targets.reference_per_1000": "illustrative",
+   "allocation.universal_new_appointment_floor": "policy",
+   "allocation.cap_fraction_of_opening_stock": "illustrative",
+   "allocation.cap_mode": "policy",
+   "allocation.main_transfer_fraction": "illustrative",
+   "allocation.national_transfer_budget_fraction": "illustrative",
+   "allocation.protected_survivor_fraction": "illustrative",
+   "allocation.fairness_objective": "policy",
+   "allocation.tangent_step": "convention",
+   "feedback.response_strengths": "illustrative",
+   "m5.reference_year": "convention",
+   "m5.morbidity_path": "convention",
+   "scope.unmanaged_moph_component": "convention",
+   "demography.migration_scenarios": "illustrative",
+   "evaluation.switch_threshold_pct": "policy",
+   "evaluation.cumulative_shortfall_threshold_pct": "policy",
+   "evaluation.worst_province_loss_threshold_pct": "policy",
+   "inverse.ramp_fraction": "illustrative"
+  }
+ },
+ "config_hash": "9634ed4e506743c4",
+ "inputs_fingerprint": "c21bd7c5601aabe3",
+ "chapter4_artifacts": [
+  {
+   "artifact": "data/processed/province_key.csv",
+   "exists": true,
+   "sha256": "a5d40fe056aae6d8da2692bb8e92e060a4c87ef7b6f7e8bb66a3b763d7db3ef5",
+   "bytes": 3565.0
+  },
+  {
+   "artifact": "data/processed/workforce_province.csv",
+   "exists": true,
+   "sha256": "125884d089a1a32564249a2f53074978e98918acb0a4c009629d4f64267610da",
+   "bytes": 1725244.0
+  },
+  {
+   "artifact": "data/processed/population_single_age.csv",
+   "exists": true,
+   "sha256": "0d759bbcda47aaacc10beb3bddb3150c80d10108211823abe2331be02cba7748",
+   "bytes": 3616237.0
+  },
+  {
+   "artifact": "data/processed/population_registers.csv",
+   "exists": true,
+   "sha256": "21d0589b0a882d23cf6ffd4757ebdc5e09d13fcc2d276ddf40c82752b364f3fc",
+   "bytes": 92695.0
+  },
+  {
+   "artifact": "data/processed/services_province.csv",
+   "exists": true,
+   "sha256": "2f982d97379674b7385193be1a5f0b970b4641f5b4cc7d4dbe10bf747f89e2af",
+   "bytes": 1001789.0
+  },
+  {
+   "artifact": "data/processed/casemix_province.csv",
+   "exists": true,
+   "sha256": "1d066f6acc8fc63498ed04f707dcd8dfdfdb3a1b3cf41c224d40f1bf2a4226ec",
+   "bytes": 37136.0
+  },
+  {
+   "artifact": "data/processed/hdc_indicators.csv",
+   "exists": true,
+   "sha256": "c802bde3fb64a7efe228cbe65224a62dcd374d8b921285f63c4045663a38e8ef",
+   "bytes": 365880.0
+  },
+  {
+   "artifact": "data/processed/gpp_province.csv",
+   "exists": true,
+   "sha256": "5300e74c620ade7f1063a5b670be2f73cabf4e7a2b5b81fefd94ffbe13b9b08f",
+   "bytes": 57091.0
+  },
+  {
+   "artifact": "data/processed/flow_events.csv",
+   "exists": true,
+   "sha256": "7f2b3b27d849f256f17d62e939c6134b04e1791e3fdc50b626d93e8d5988e9f4",
+   "bytes": 8505556.0
+  },
+  {
+   "artifact": "data/processed/bod_province.csv",
+   "exists": true,
+   "sha256": "952ec5541963f97af01cc3632cf4614981f757054d21c2da41f779b4b90a7450",
+   "bytes": 2752102.0
+  },
+  {
+   "artifact": "data/processed/bod_province_age.csv",
+   "exists": true,
+   "sha256": "abc1345898de7fafebefef7ecae9109376bc4d0aa9fff7c70fbb4074bdd306c4",
+   "bytes": 7085554.0
+  },
+  {
+   "artifact": "data/processed/_build_meta.json",
+   "exists": true,
+   "sha256": "cb82673bd79c65974de9170e83d45f4df3c3a742c55c3a760c9fe1be2ad0cd5f",
+   "bytes": 1736.0
+  },
+  {
+   "artifact": "outputs/chapter4_2/tables/T423_M5_COEFFICIENTS.csv",
+   "exists": true,
+   "sha256": "0b39d33bebc37004581029813c06a338cc1a405074aec2a623b63d596a87bf15",
+   "bytes": 1169.0
+  },
+  {
+   "artifact": "outputs/chapter4_2/tables/T423_REFERENCE_PROFILE.csv",
+   "exists": true,
+   "sha256": "5793ed70446f2bf46fc535e3393fc8203adb4a60d3e66d625ab7dcbda68dc397",
+   "bytes": 745.0
+  },
+  {
+   "artifact": "outputs/chapter4_2/tables/T423_M5_ACCEPTABILITY.csv",
+   "exists": true,
+   "sha256": "afeb1f74cc51c33b01695847a340553dafbacfc0fe2e8b0b921078a6dc6bf7ce",
+   "bytes": 542.0
+  },
+  {
+   "artifact": "outputs/chapter4_2/tables/T423_M5_SUPPORT.csv",
+   "exists": true,
+   "sha256": "fd7ee0f8e6ef377480ecefb92ff9662c31cebcfb54340da2e73b2b1f197cc6ad",
+   "bytes": 1711.0
+  },
+  {
+   "artifact": "outputs/chapter4_2/tables/T423_TEMPORAL_VALIDATION.csv",
+   "exists": true,
+   "sha256": "a6b4448841b29500f7ba6049fd58ec3a89a5062cd77aa64f1c46fc37be80fba1",
+   "bytes": 16646.0
+  },
+  {
+   "artifact": "outputs/chapter4_2/run_manifest.json",
+   "exists": true,
+   "sha256": "c11587835ce9c601127fbb01190c792f6e33d79098d38a6e282042d4dd948f06",
+   "bytes": 2390.0
+  },
+  {
+   "artifact": "outputs/chapter4_4/tables/T44_WORKLOAD_ASSOCIATIONS.csv",
+   "exists": true,
+   "sha256": "ed1f33e8d2352fa161d554c1a9df1a694ecd385db870d76cf750f56949cc2a3d",
+   "bytes": 22129.0
+  },
+  {
+   "artifact": "outputs/chapter4_4/tables/T44_STOCK_FLOW_NATIONAL.csv",
+   "exists": true,
+   "sha256": "0108fa319d15446f91b70e2915c3dd0fa9abc0f25f8e64afd547d4132bda36b6",
+   "bytes": 2913.0
+  },
+  {
+   "artifact": "outputs/chapter4_4/tables/T44_FUTURE_MODEL_PARAMETERS.csv",
+   "exists": true,
+   "sha256": "82021a679c74859b7d47570e387ddd8be1deba2efc42bbc5b5f1344804f67072",
+   "bytes": 24715.0
+  },
+  {
+   "artifact": "outputs/chapter4_4/run_manifest.json",
+   "exists": true,
+   "sha256": "f644ff53b46a6ca1dc8e85099e3d57d9c5eda0d81992bbdab294c84e3b07355d",
+   "bytes": 2290.0
+  },
+  {
+   "artifact": "config/analysis.toml",
+   "exists": true,
+   "sha256": "117d1f5166673d09b734255170798a72a5e80b545e6069c0a5ea1f456a51d4d5",
+   "bytes": 7489.0
+  },
+  {
+   "artifact": "config/source_registry.toml",
+   "exists": true,
+   "sha256": "7e369eae6de31b9291346b6a58a3afa6f75c7bb66548d7f8a767af4f837f817f",
+   "bytes": 8721.0
+  },
+  {
+   "artifact": "src/chapter4/*.py (code_hash)",
+   "exists": true,
+   "sha256": "a45b9fdda50dc329",
+   "bytes": NaN
+  }
+ ],
+ "flow_rates_file": "outputs/chapter5/tables/T5_FLOW_RATES.csv",
+ "denominators": [
+  {
+   "family": "P",
+   "index": "D_P",
+   "raw": "projected civil-register population (DOPA, Thai nationals with age)",
+   "raw_unit": "persons",
+   "normalization": "none (equals raw)",
+   "scale": 1.0,
+   "dynamic_through": "population projection only",
+   "fixed": "-",
+   "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",
+   "interpretation": "every resident counts equally"
+  },
+  {
+   "family": "P_ent",
+   "index": "D_Pent",
+   "raw": "projected entitlement population (NHSO ratio x civil projection)",
+   "raw_unit": "persons",
+   "normalization": "x P_total_2025 / Ent_total_2025",
+   "scale": 0.9732617485863412,
+   "dynamic_through": "civil projection; ratio held at 2025",
+   "fixed": "province ratio NHSO/civil",
+   "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",
+   "interpretation": "administrative entitlement, not extra residents"
+  },
+  {
+   "family": "S",
+   "index": "D_S",
+   "raw": "10 min x OP visits + 90 min x AdjRW (observed-service benchmark)",
+   "raw_unit": "minutes (illustrative weights)",
+   "normalization": "fixed 2025 scale",
+   "scale": 0.0253989010636924,
+   "dynamic_through": "population x benchmark service rate",
+   "fixed": "2025 provincial service rates",
+   "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",
+   "interpretation": "services entering the current system; carries access limits and referral location"
+  },
+  {
+   "family": "N-STD",
+   "index": "D_N",
+   "raw": "same weights applied to M5 standardized OP and inpatient predictions",
+   "raw_unit": "minutes (illustrative weights)",
+   "normalization": "fixed 2025 scale",
+   "scale": 0.027351915629546,
+   "dynamic_through": "population, age composition, recorded morbidity path",
+   "fixed": "economy, beds, physicians, nurses, year effect at the Chapter 4 reference (2023)",
+   "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",
+   "interpretation": "M5_standardized_need_proxy; not normative need"
+  },
+  {
+   "family": "B",
+   "index": "D_B",
+   "raw": "sum over 8 age groups of projected persons x the province's DALY rate of that age group (BOD Thailand 2022, COVID-19 excluded)",
+   "raw_unit": "expected DALYs per year",
+   "normalization": "fixed 2025 scale",
+   "scale": 3.066849168234332,
+   "dynamic_through": "population size and age structure",
+   "fixed": "provincial age-specific DALY rates held at 2022 (one observed year)",
+   "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",
+   "interpretation": "expected_burden: modeled health loss independent of service use, including ageing"
+  },
+  {
+   "family": "B-yld",
+   "index": "D_Byld",
+   "raw": "the same with age-specific YLD rates",
+   "raw_unit": "expected YLDs per year",
+   "normalization": "fixed 2025 scale",
+   "scale": 14.513326545066516,
+   "dynamic_through": "population size and age structure",
+   "fixed": "provincial age-specific YLD rates held at 2022",
+   "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",
+   "interpretation": "morbidity-only sensitivity of B"
+  },
+  {
+   "family": "B-asr",
+   "index": "D_Basr",
+   "raw": "projected civil population x age-standardized DALY rate (BOD 2022)",
+   "raw_unit": "age-standardized DALY-equivalents",
+   "normalization": "fixed 2025 scale",
+   "scale": 4.076185301274978,
+   "dynamic_through": "population size only",
+   "fixed": "provincial age-standardized rate held at 2022",
+   "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",
+   "interpretation": "excess burden only (age removed); sensitivity of B"
+  }
+ ],
+ "methods_sources": {
+  "S1": "WHO 2010 Models and tools for health workforce planning and projections",
+  "S2": "WHO 2021 Health labour market analysis guidebook",
+  "S3": "WHO 2023 WISN user's manual (not applied: no validated activity standards)",
+  "S4": "UN DESA 2024 WPP methodology (cohort-component reference only)"
+ }
+}

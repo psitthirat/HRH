@@ -1,6 +1,17 @@
 .DS_Store
 /.venv
 /scripts/__pycache__
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+
+# Publication and migration packages are assembled from explicit allowlists.
+# The nested Git workspaces have separate public/private remotes.
+/dist/
+/workspaces/
 
 # Generated pipeline outputs (regenerate by re-running the notebooks/scripts).
 # output/map/ is intentionally NOT ignored: map_*.csv are hand-curated
@@ -16,3 +27,21 @@
 /data/map/rtsd_pat.geojson
 /data/hrh_aggregated.csv
 /data/pop/nhso/pop.csv
+
+# Material moved out of the repository on 14 Oct 2026 (see ../HRH_offrepo/MANIFEST.csv):
+# the September archive, raw web scrapes and the superseded web stacks.
+/archive/
+/data/raw_scraped/
+
+# Regenerable caches and large derived files (rebuild with `make chapter4` / `make chapter5`).
+/data/processed/
+/outputs/chapter5/cache/
+/outputs/**/logs/
+/outputs/**/*.xlsx
+/outputs/chapter5/plans/*.csv
+/outputs/chapter4_2/tables/T423_OOF_PREDICTIONS.csv
+/reports/*_complete_th.docx
+
+# Chapter 4 unified pipeline: reproducible caches and large cold data
+/data/cold_data/rtsd_pat.geojson
+/data/processed/nhso_province_scheme_age.csv

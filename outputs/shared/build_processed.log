@@ -1,0 +1,70 @@
+23:37:50 province key ok
+23:37:51 health resource report: 19,943 workforce rows, 22,022 service rows
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:37:59 population age file 2013: 63,650,593 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:38:06 population age file 2014: 63,954,350 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:38:13 population age file 2015: 64,219,585 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:38:20 population age file 2016: 64,417,145 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:38:27 population age file 2017: 64,627,465 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:38:35 population age file 2018: 64,816,825 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:38:42 population age file 2019: 64,929,153 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:38:49 population age file 2020: 65,007,464 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:38:56 population age file 2021: 64,956,883 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:39:03 population age file 2022: 64,867,406 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:39:10 population age file 2023: 64,822,791 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:39:17 population age file 2024: 64,725,259 persons
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:158: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  d["prov_code"] = pd.to_numeric(d["รหัสจังหวัด"], errors="coerce").astype(int)
+/Users/rama-hpsr/Desktop/HPSR_QUANTI/HRH/src/chapter4/ingest.py:161: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  long = num.reset_index().melt(id_vars="prov_code", var_name="col", value_name="n")
+23:39:24 population age file 2025: 64,596,347 persons
+23:39:39 nhso register aggregated
+23:39:41 HROPS workbooks parsed
+23:39:42 processed tables written in 112.4 s

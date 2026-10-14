@@ -86,7 +86,16 @@
   function years() { return data.years; }
   function currentYear() { return years()[state.yearIndex]; }
   function levelData() { return data.levels[state.level]; }
-  function levelLabel() { return levelData().label; }
+  function levelLabel() { return i18n.t(`level.${state.level}`, levelData().label); }
+
+  // Thai readers expect the Buddhist Era; the underlying data stays in CE.
+  function fmtYear(y) { return i18n.lang === "th" ? String(y + 543) : String(y); }
+
+  // Region names: the data file carries the Thai name as the id and the English
+  // name as the label, so the language toggle simply picks the other one.
+  function regionLabel(region) {
+    return i18n.lang === "th" ? region.id : (region.label || region.id);
+  }
 
   function densityFor(hrh, year, regionId) {
     const byYear = levelData().density[hrh][String(year)];
@@ -222,19 +231,19 @@
 
     const regionId = feature.properties[levelData().key];
     const regionMeta = levelData().regions.find((r) => r.id === regionId);
-    const label = regionMeta ? regionMeta.label : regionId;
-    const hrhLabel = currentHrhLabel();
+    const label = regionMeta ? regionLabel(regionMeta) : regionId;
+    const hrhName = currentHrhLabel();
 
     let html;
     if (state.mode === "snapshot") {
       const v = densityFor(state.hrh, currentYear(), regionId);
-      html = `<div class="tt-title">${label}</div><div class="tt-value">${hrhLabel}: ${fmt(v)} / 100,000</div>`;
+      html = `<div class="tt-title">${label}</div><div class="tt-value">${hrhName}: ${fmt(v)} / 100,000</div>`;
     } else {
       const c = levelData().change[state.hrh][regionId];
       const signClass = c.abs >= 0 ? "tt-pos" : "tt-neg";
       const sign = c.abs >= 0 ? "+" : "";
       const pct = c.pct === null ? "" : ` (${sign}${fmt(c.pct, 0)}%)`;
-      html = `<div class="tt-title">${label}</div><div class="tt-value">${hrhLabel}: <span class="${signClass}">${sign}${fmt(c.abs)}${pct}</span></div><div class="tt-value">${fmt(c.from)} → ${fmt(c.to)}</div>`;
+      html = `<div class="tt-title">${label}</div><div class="tt-value">${hrhName}: <span class="${signClass}">${sign}${fmt(c.abs)}${pct}</span></div><div class="tt-value">${fmt(c.from)} → ${fmt(c.to)}</div>`;
     }
     tooltipEl.innerHTML = html;
     tooltipEl.classList.add("is-visible");
@@ -258,9 +267,11 @@
 
   // ---------- rendering ----------
 
-  function currentHrhLabel() {
-    const meta = data.hrh_types.find((h) => h.code === state.hrh);
-    return meta ? meta.label : state.hrh;
+  function currentHrhLabel() { return hrhLabel(state.hrh); }
+
+  function hrhLabel(code) {
+    const meta = data.hrh_types.find((h) => h.code === code);
+    return i18n.t(`hrh.${code}`, meta ? meta.label : code);
   }
 
   function render() {
@@ -268,7 +279,7 @@
     renderLegend();
     renderStats();
     renderScatter();
-    $("year-value").textContent = currentYear();
+    $("year-value").textContent = fmtYear(currentYear());
   }
 
   function renderLegend() {
@@ -280,13 +291,17 @@
     const { red, yellow, green } = statusHexes();
 
     if (state.mode === "snapshot") {
-      title.textContent = `${currentHrhLabel()} \n density per 100,000 population — \n ${levelLabel()}, ${currentYear()}`;
+      title.textContent = i18n.lang === "th"
+        ? `${currentHrhLabel()} \n ต่อประชากรแสนคน — \n ${levelLabel()}, พ.ศ. ${fmtYear(currentYear())}`
+        : `${currentHrhLabel()} \n density per 100,000 population — \n ${levelLabel()}, ${currentYear()}`;
       bar.style.background = `linear-gradient(to right, ${red}, ${yellow}, ${green})`;
       min.textContent = "0";
       mid.textContent = "";
       max.textContent = fmt(densityDomainMax(state.hrh), 0);
     } else {
-      title.textContent = `${currentHrhLabel()} \n change — \n ${levelLabel()}, ${years()[0]}–${years()[years().length - 1]}`;
+      title.textContent = i18n.lang === "th"
+        ? `${currentHrhLabel()} \n การเปลี่ยนแปลง — \n ${levelLabel()}, ${fmtYear(years()[0])}–${fmtYear(years()[years().length - 1])}`
+        : `${currentHrhLabel()} \n change — \n ${levelLabel()}, ${years()[0]}–${years()[years().length - 1]}`;
       bar.style.background = `linear-gradient(to right, ${red}, ${yellow}, ${green})`;
       const changes = levelData().change[state.hrh];
       const domain = Math.max(...Object.values(changes).map((c) => Math.abs(c.abs)), 1e-6);
@@ -299,13 +314,15 @@
   function renderStats() {
     const y = currentYear();
     const prevYear = years()[Math.max(0, state.yearIndex - 1)];
-    const levelWord = levelLabel().toLowerCase();
+    const levelWord = i18n.lang === "th" ? levelLabel() : levelLabel().toLowerCase();
 
     // Density stat: national average across regions at the selected level
     const densAvg = avgDensity(state.hrh, y);
     const prevDensAvg = avgDensity(state.hrh, prevYear);
 
-    $("stat-density-label").textContent = `${currentHrhLabel()} density (avg. ${levelWord})`;
+    $("stat-density-label").textContent = i18n.lang === "th"
+      ? `ความหนาแน่น${currentHrhLabel()} (เฉลี่ยราย${levelWord})`
+      : `${currentHrhLabel()} density (avg. ${levelWord})`;
     $("stat-density-value").textContent = fmt(densAvg);
     setDelta($("stat-density-delta"), densAvg - prevDensAvg, true);
     drawSparkline("spark-density", years().map((yr) => avgDensity(state.hrh, yr)), state.yearIndex);
@@ -314,7 +331,9 @@
     const giniSeries = levelData().gini[state.hrh];
     const giniVal = giniSeries[String(y)];
     const giniPrev = giniSeries[String(prevYear)];
-    $("stat-gini-label").textContent = `Gini coefficient (${levelWord})`;
+    $("stat-gini-label").textContent = i18n.lang === "th"
+      ? `สัมประสิทธิ์จีนี (ราย${levelWord})`
+      : `Gini coefficient (${levelWord})`;
     $("stat-gini-value").textContent = fmt(giniVal, 3);
     setDelta($("stat-gini-delta"), giniVal - giniPrev, false);
     drawSparkline("spark-gini", years().map((yr) => giniSeries[String(yr)]), state.yearIndex);
@@ -362,7 +381,7 @@
 
     const cadres = data.hrh_types.map((meta, idx) => ({
       code: meta.code,
-      label: meta.label,
+      label: hrhLabel(meta.code),
       color: seriesColor(idx),
       pts: yearsToPlot.map((yr) => ({
         year: yr,
@@ -381,10 +400,10 @@
     parts.push(`<line class="axis-line" x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" />`);
     parts.push(`<text class="axis-label" x="${padL}" y="${padT + plotH + 13}" text-anchor="start">${Math.round(densMin)}</text>`);
     parts.push(`<text class="axis-label" x="${padL + plotW}" y="${padT + plotH + 13}" text-anchor="end">${Math.round(densMax)}</text>`);
-    parts.push(`<text class="axis-title" x="${padL + plotW / 2}" y="${H - 1}" text-anchor="middle">Density →</text>`);
+    parts.push(`<text class="axis-title" x="${padL + plotW / 2}" y="${H - 1}" text-anchor="middle">${i18n.lang === "th" ? "ความหนาแน่น →" : "Density →"}</text>`);
     parts.push(`<text class="axis-label" x="${padL - 4}" y="${padT + plotH}" text-anchor="end">${giniMin.toFixed(2)}</text>`);
     parts.push(`<text class="axis-label" x="${padL - 4}" y="${padT + 8}" text-anchor="end">${giniMax.toFixed(2)}</text>`);
-    parts.push(`<text class="axis-title" x="${padL}" y="${padT - 4}" text-anchor="start">&#8593; Gini coefficient</text>`);
+    parts.push(`<text class="axis-title" x="${padL}" y="${padT - 4}" text-anchor="start">&#8593; ${i18n.lang === "th" ? "จีนี" : "Gini coefficient"}</text>`);
 
     cadres.forEach((cadre) => {
       const isSelected = cadre.code === state.hrh;
@@ -414,9 +433,14 @@
       c.addEventListener("mouseleave", () => tooltipEl.classList.remove("is-visible"));
     });
 
-    $("scatter-title").textContent = state.mode === "snapshot"
-      ? `Density vs. equity, all cadres — ${levelLabel()}, ${currentYear()}`
-      : `Density vs. equity, shift ${years()[0]}→${years()[years().length - 1]} — ${levelLabel()}`;
+    const y0 = fmtYear(years()[0]), y1 = fmtYear(years()[years().length - 1]);
+    $("scatter-title").textContent = i18n.lang === "th"
+      ? (state.mode === "snapshot"
+          ? `ความหนาแน่นเทียบความเป็นธรรม — ${levelLabel()}, พ.ศ. ${fmtYear(currentYear())}`
+          : `ความหนาแน่นเทียบความเป็นธรรม ${y0}→${y1} — ${levelLabel()}`)
+      : (state.mode === "snapshot"
+          ? `Density vs. equity, all cadres — ${levelLabel()}, ${currentYear()}`
+          : `Density vs. equity, shift ${y0}→${y1} — ${levelLabel()}`);
 
     const legend = $("scatter-legend");
     legend.innerHTML = cadres.map((c) => `
@@ -439,7 +463,8 @@
     const year = circleEl.dataset.year ? Number(circleEl.dataset.year) : currentYear();
     const gini = levelData().gini[code][String(year)];
     const density = avgDensity(code, year);
-    tooltipEl.innerHTML = `<div class="tt-title">${cadre.label} — ${year}</div><div class="tt-value">Gini: ${fmt(gini, 3)}</div><div class="tt-value">Density: ${fmt(density)} / 100,000</div>`;
+    const densWord = i18n.lang === "th" ? "ความหนาแน่น" : "Density";
+    tooltipEl.innerHTML = `<div class="tt-title">${cadre.label} — ${fmtYear(year)}</div><div class="tt-value">Gini: ${fmt(gini, 3)}</div><div class="tt-value">${densWord}: ${fmt(density)} / 100,000</div>`;
     tooltipEl.classList.add("is-visible");
     positionTooltip(e.clientX, e.clientY);
   }
@@ -448,7 +473,7 @@
 
   function buildControls() {
     const select = $("hrh-select");
-    select.innerHTML = data.hrh_types.map((h) => `<option value="${h.code}">${h.label}</option>`).join("");
+    rebuildHrhSelect();
     select.value = state.hrh;
     select.addEventListener("change", () => {
       state.hrh = select.value;
@@ -492,6 +517,15 @@
     updateThemeIcon();
   }
 
+  function rebuildHrhSelect() {
+    const select = $("hrh-select");
+    const chosen = select.value || state.hrh;
+    select.innerHTML = data.hrh_types
+      .map((h) => `<option value="${h.code}">${hrhLabel(h.code)}</option>`)
+      .join("");
+    select.value = chosen;
+  }
+
   function updateThemeIcon() {
     $("theme-icon").textContent = isDark() ? "\u{1F319}" : "\u{2600}\u{FE0F}";
   }
@@ -507,6 +541,7 @@
     data = dashData;
     state.yearIndex = years().length - 1;
 
+    i18n.apply();
     buildControls();
     initMap({ hregion: geoHregion, prov: geoProv });
     render();

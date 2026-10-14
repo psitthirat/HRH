@@ -1,0 +1,671 @@
+﻿claim_id,section,value,display,fmt,unit,table,row_keys,variable,scope,years,sample,status,note,report_location
+c41_nurse_2013,4_1,131349.0,"131,349",int,คน,T41_NURSE_CATEGORY_CHECK,,,,,,computed,,reports/chapter4_complete_th.md
+c41_tech_nurse_last_year_be,4_1,2564.0,2564,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_tech_nurse_last_value,4_1,4093.0,"4,093",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_nurse_2022_yoy_professional,4_1,5331.0,"5,331",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_nurse_2022_yoy_combined,4_1,1238.0,"1,238",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_only_cagr,4_1,3.7040423492201713,3.70,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_start,4_1,26767.0,"26,767",int,คน,T41_WORKFORCE_ENDPOINTS,"cadre=แพทย์,universe=all_sectors",value_start,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_end,4_1,45937.0,"45,937",int,คน,T41_WORKFORCE_ENDPOINTS,"cadre=แพทย์,universe=all_sectors",value_end,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_pct,4_1,71.61803713527853,71.62,{:.2f},%,T41_WORKFORCE_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_delta,4_1,19170.0,"19,170",int,คน,T41_WORKFORCE_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_cagr_all_sectors,4_1,4.603667334535899,4.60,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=แพทย์,universe=all_sectors",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_cagr_public_total,4_1,4.268663396385808,4.27,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=แพทย์,universe=public_total",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_cagr_moph,4_1,3.572564276064183,3.57,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=แพทย์,universe=moph",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_cagr_other_public,4_1,5.817020292538144,5.82,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=แพทย์,universe=other_public",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_cagr_private,4_1,5.990007734206948,5.99,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=แพทย์,universe=private",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_start,4_1,138205.0,"138,205",int,คน,T41_WORKFORCE_ENDPOINTS,"cadre=พยาบาลวิชาชีพ,universe=all_sectors",value_start,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_end,4_1,203224.0,"203,224",int,คน,T41_WORKFORCE_ENDPOINTS,"cadre=พยาบาลวิชาชีพ,universe=all_sectors",value_end,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_delta,4_1,65019.0,"65,019",int,คน,T41_WORKFORCE_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_cagr_all_sectors,4_1,3.2652664569047474,3.27,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=พยาบาลวิชาชีพ,universe=all_sectors",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_cagr_public_total,4_1,2.775038152691489,2.78,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=พยาบาลวิชาชีพ,universe=public_total",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_cagr_moph,4_1,2.0383932762596313,2.04,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=พยาบาลวิชาชีพ,universe=moph",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_cagr_other_public,4_1,5.131101765992407,5.13,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=พยาบาลวิชาชีพ,universe=other_public",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_cagr_private,4_1,6.629648158150836,6.63,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=พยาบาลวิชาชีพ,universe=private",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_start,4_1,11151.0,"11,151",int,คน,T41_WORKFORCE_ENDPOINTS,"cadre=เภสัชกร,universe=all_sectors",value_start,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_end,4_1,17068.0,"17,068",int,คน,T41_WORKFORCE_ENDPOINTS,"cadre=เภสัชกร,universe=all_sectors",value_end,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_delta,4_1,5917.0,"5,917",int,คน,T41_WORKFORCE_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_cagr_all_sectors,4_1,3.610968879216636,3.61,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=เภสัชกร,universe=all_sectors",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_cagr_public_total,4_1,4.027008440717217,4.03,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=เภสัชกร,universe=public_total",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_cagr_moph,4_1,3.5753763199384725,3.58,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=เภสัชกร,universe=moph",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_cagr_private,4_1,2.089337594477114,2.09,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=เภสัชกร,universe=private",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_start,4_1,7668.0,"7,668",int,คน,T41_WORKFORCE_ENDPOINTS,"cadre=ทันตแพทย์,universe=all_sectors",value_start,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_end,4_1,8940.0,"8,940",int,คน,T41_WORKFORCE_ENDPOINTS,"cadre=ทันตแพทย์,universe=all_sectors",value_end,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_delta,4_1,1272.0,"1,272",int,คน,T41_WORKFORCE_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_cagr_all_sectors,4_1,1.287212195497367,1.29,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=ทันตแพทย์,universe=all_sectors",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_cagr_public_total,4_1,3.0704695697856055,3.07,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=ทันตแพทย์,universe=public_total",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_cagr_moph,4_1,2.47076340143757,2.47,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=ทันตแพทย์,universe=moph",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_cagr_private,4_1,-10.577487273944952,-10.58,{:.2f},% ต่อปี,T41_WORKFORCE_ENDPOINTS,"cadre=ทันตแพทย์,universe=private",cagr_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_dentist_to_physician_cagr_ratio,4_1,0.27960582334890455,0.28,{:.2f},เท่า,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_delta_moph,4_1,8210.0,"8,210",int,คน,T41_SECTOR_CONTRIBUTIONS,"cadre=แพทย์,sector=moph",delta,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_share_moph,4_1,42.82733437663015,42.83,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=แพทย์,sector=moph",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_delta_other_public,4_1,6074.0,"6,074",int,คน,T41_SECTOR_CONTRIBUTIONS,"cadre=แพทย์,sector=other_public",delta,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_share_other_public,4_1,31.6849243609807,31.68,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=แพทย์,sector=other_public",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_delta_private,4_1,4886.0,"4,886",int,คน,T41_SECTOR_CONTRIBUTIONS,"cadre=แพทย์,sector=private",delta,,,,computed,,reports/chapter4_complete_th.md
+c41_physicians_share_private,4_1,25.48774126238915,25.49,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=แพทย์,sector=private",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_share_moph,4_1,41.18180839446931,41.18,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=พยาบาลวิชาชีพ,sector=moph",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_share_other_public,4_1,32.72735661883449,32.73,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=พยาบาลวิชาชีพ,sector=other_public",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_professional_nurses_share_private,4_1,26.090834986696198,26.09,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=พยาบาลวิชาชีพ,sector=private",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_share_moph,4_1,63.56261619063715,63.56,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=เภสัชกร,sector=moph",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_share_other_public,4_1,24.100050701368936,24.10,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=เภสัชกร,sector=other_public",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_pharmacists_share_private,4_1,12.337333107993915,12.34,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=เภสัชกร,sector=private",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_delta_moph,4_1,1581.0,"1,581",int,คน,T41_SECTOR_CONTRIBUTIONS,"cadre=ทันตแพทย์,sector=moph",delta,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_share_moph,4_1,124.29245283018868,124.29,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=ทันตแพทย์,sector=moph",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_delta_other_public,4_1,999.0,999,int,คน,T41_SECTOR_CONTRIBUTIONS,"cadre=ทันตแพทย์,sector=other_public",delta,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_share_other_public,4_1,78.5377358490566,78.54,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=ทันตแพทย์,sector=other_public",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_delta_private,4_1,-1308.0,"-1,308",int,คน,T41_SECTOR_CONTRIBUTIONS,"cadre=ทันตแพทย์,sector=private",delta,,,,computed,,reports/chapter4_complete_th.md
+c41_dentists_share_private,4_1,-102.83018867924528,-102.83,{:.2f},%,T41_SECTOR_CONTRIBUTIONS,"cadre=ทันตแพทย์,sector=private",share_of_net_change_pct,,,,computed,,reports/chapter4_complete_th.md
+c41_nurse_2023_moph_change,4_1,-3806.0,"-3,806",int,คน,T41_TRANSFER_2023_NURSES,,,,,,computed,,reports/chapter4_complete_th.md
+c41_nurse_2023_other_public_change,4_1,5473.0,"5,473",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_nurse_2023_total_change,4_1,4562.0,"4,562",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_dent_private_2013,4_1,1771.0,"1,771",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_dent_private_2025,4_1,463.0,463,int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_dent_private_2014,4_1,462.0,462,int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_dent_public_delta,4_1,2580.0,"2,580",int,คน,,,,,,,computed,การเพิ่มขึ้นสุทธิเฉพาะภาครัฐ (ไม่รวมชุดเอกชนที่ไม่ต่อเนื่อง),reports/chapter4_complete_th.md
+c41_all_reporting_ip_admissions_start,4_1,9744624.0,"9,744,624",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_ip_admissions_end,4_1,11384968.0,"11,384,968",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_ip_admissions_cagr,4_1,1.3049253026983898,1.30,{:.2f},% ต่อปี,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_ip_days_start,4_1,39484400.0,"39,484,400",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_ip_days_end,4_1,47066984.0,"47,066,984",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_ip_days_cagr,4_1,1.4746516077094318,1.47,{:.2f},% ต่อปี,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_op_persons_start,4_1,41741356.0,"41,741,356",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_op_persons_end,4_1,56435277.0,"56,435,277",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_op_persons_pct,4_1,35.20230871273085,35.20,{:.2f},%,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_op_visits_start,4_1,182128940.0,"182,128,940",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_op_visits_end,4_1,239428021.0,"239,428,021",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_op_visits_cagr,4_1,2.3056615379666523,2.31,{:.2f},% ต่อปี,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_all_reporting_op_visits_pct,4_1,31.460722826366847,31.46,{:.2f},%,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_ip_admissions_start,4_1,6448280.0,"6,448,280",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_ip_admissions_end,4_1,7866029.0,"7,866,029",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_ip_admissions_cagr,4_1,1.6699565580200915,1.67,{:.2f},% ต่อปี,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_ip_days_start,4_1,25713080.0,"25,713,080",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_ip_days_end,4_1,32388429.0,"32,388,429",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_ip_days_cagr,4_1,1.9419605837290632,1.94,{:.2f},% ต่อปี,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_op_visits_start,4_1,111400009.0,"111,400,009",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_op_visits_end,4_1,134722070.0,"134,722,070",int,,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_service_op_visits_cagr,4_1,1.5966668754914481,1.60,{:.2f},% ต่อปี,T41_SERVICES_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_netshare_op_visits,4_1,40.702329937892024,40.70,{:.2f},%,T41_MOPH_SERVICE_SHARE,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_share_start_op_visits,4_1,61.165462775987166,61.17,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_share_end_op_visits,4_1,56.268297017749646,56.27,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_netshare_ip_admissions,4_1,86.42998054066707,86.43,{:.2f},%,T41_MOPH_SERVICE_SHARE,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_share_start_ip_admissions,4_1,66.17269173238495,66.17,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_share_end_ip_admissions,4_1,69.09135800820872,69.09,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_netshare_ip_days,4_1,88.0352792662765,88.04,{:.2f},%,T41_MOPH_SERVICE_SHARE,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_share_start_ip_days,4_1,65.12212418068908,65.12,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_moph_share_end_ip_days,4_1,68.81347867966215,68.81,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_opdec_all_reporting_freq_start,4_1,4.363273200803539,4.36,{:.2f},,T41_OP_DECOMPOSITION,,,,,,computed,,reports/chapter4_complete_th.md
+c41_opdec_all_reporting_freq_end,4_1,4.2425240687664205,4.24,{:.2f},,T41_OP_DECOMPOSITION,,,,,,computed,,reports/chapter4_complete_th.md
+c41_opdec_all_reporting_cagr_freq_pct,4_1,-0.23359439657527625,-0.23,{:.2f},,T41_OP_DECOMPOSITION,,,,,,computed,,reports/chapter4_complete_th.md
+c41_opdec_moph_service_freq_start,4_1,3.7211714126407314,3.72,{:.2f},,T41_OP_DECOMPOSITION,,,,,,computed,,reports/chapter4_complete_th.md
+c41_opdec_moph_service_freq_end,4_1,4.23335688164763,4.23,{:.2f},,T41_OP_DECOMPOSITION,,,,,,computed,,reports/chapter4_complete_th.md
+c41_opdec_moph_service_visits_pct,4_1,20.935421109346585,20.94,{:.2f},,T41_OP_DECOMPOSITION,,,,,,computed,,reports/chapter4_complete_th.md
+c41_opdec_moph_service_persons_pct,4_1,6.303683905954993,6.30,{:.2f},,T41_OP_DECOMPOSITION,,,,,,computed,,reports/chapter4_complete_th.md
+c41_opdec_moph_service_share_from_frequency_pct,4_1,67.84108699941187,67.84,{:.2f},,T41_OP_DECOMPOSITION,,,,,,computed,,reports/chapter4_complete_th.md
+c41_op_persons_all_yoy_2023,4_1,26.063974826304737,26.06,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_op_persons_moph_yoy_2023,4_1,-3.98009990023952,-3.98,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_op_persons_nonmoph_yoy_2023,4_1,100.19163769684671,100.19,{:.2f},%,,,,,,,computed,ส่วนที่อยู่นอกโรงพยาบาล สธ. ในตารางที่ 4,reports/chapter4_complete_th.md
+c41_adjrw_start,4_1,7908236.1416,"7,908,236",int,AdjRW,T41_CASEMIX_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c41_adjrw_end,4_1,10979586.9019,"10,979,587",int,AdjRW,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_adjrw_pct,4_1,38.83736784418532,38.84,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_cmi_start,4_1,1.1130558398148227,1.1131,{:.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_cmi_end,4_1,1.3513605502705963,1.3514,{:.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_cmi_pct,4_1,21.409951049304055,21.41,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_cases_pct,4_1,14.354191435102459,14.35,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_casemix_share_from_cmi,4_1,59.123169816251284,59.1,{:.1f},%,,,,,,,computed,ส่วนของ log-change ของ SumAdjRW ที่มาจาก CMI (ส่วนที่เหลือมาจากจำนวนคำนวณ),reports/chapter4_complete_th.md
+c41_cmi_yoy_2023,4_1,12.422888496926943,12.42,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_cmi_max_other_yoy,4_1,7.67194894915434,7.67,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_casemix_hosp_first,4_1,866.0,866,int,แห่ง,,,,,,,computed,,reports/chapter4_complete_th.md
+c41_casemix_hosp_last,4_1,895.0,895,int,แห่ง,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_pop2025_age_attributed,4_2,64596347.0,"64,596,347",int,คน,T421_REGISTER_DECOMPOSITION,year=2025,age_attributed,,,,computed,,reports/chapter4_complete_th.md
+c421_pop2025_file_grand_total,4_2,65809011.0,"65,809,011",int,คน,T421_REGISTER_DECOMPOSITION,year=2025,file_grand_total,,,,computed,,reports/chapter4_complete_th.md
+c421_pop2025_non_thai_nationality,4_2,871531.0,"871,531",int,คน,T421_REGISTER_DECOMPOSITION,year=2025,non_thai_nationality,,,,computed,,reports/chapter4_complete_th.md
+c421_pop2025_central_household_registry,4_2,325988.0,"325,988",int,คน,T421_REGISTER_DECOMPOSITION,year=2025,central_household_registry,,,,computed,,reports/chapter4_complete_th.md
+c421_pop2025_in_transit,4_2,15122.0,"15,122",int,คน,T421_REGISTER_DECOMPOSITION,year=2025,in_transit,,,,computed,,reports/chapter4_complete_th.md
+c421_pop2025_lunar_birth_year,4_2,23.0,23,int,คน,T421_REGISTER_DECOMPOSITION,year=2025,lunar_birth_year,,,,computed,,reports/chapter4_complete_th.md
+c421_pop2025_nhso_national_total,4_2,67115196.0,"67,115,196",int,คน,T421_REGISTER_DECOMPOSITION,year=2025,nhso_national_total,,,,computed,,reports/chapter4_complete_th.md
+c421_pop2013_age_attributed,4_2,63650593.0,"63,650,593",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_pop_cagr,4_2,0.12298572938971297,0.12,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_pop_pct,4_2,1.4858526141303896,1.49,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_grand_vs_age_density_pct,4_2,-1.842702057929424,-1.84,{:.2f},%,,,,,,,computed,ผลต่อความหนาแน่นเมื่อเปลี่ยนจากแฟ้มรายอายุเป็นยอดรวม (บุคลากรคงเดิม),reports/chapter4_complete_th.md
+c421_nhso_vs_age_pop_pct,4_2,3.8993675602120303,3.90,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_nhso_vs_age_density_pct,4_2,-3.7530233838548255,-3.75,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_nhso_outside_codes,4_2,1307527.0,"1,307,527",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_physicians_all_sectors_start,4_2,42.053025334736475,42.05,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_physicians_all_sectors_end,4_2,71.11392847028951,71.11,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_physicians_all_sectors_pct,4_2,69.10538041967757,69.11,{:.2f},%,T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_physicians_public_total_start,4_2,34.452153493683866,34.45,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_physicians_public_total_end,4_2,56.06044564718187,56.06,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_physicians_moph_start,4_2,24.623494081194185,24.62,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_physicians_moph_end,4_2,36.972678965886416,36.97,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_professional_nurses_all_sectors_start,4_2,217.1307343515244,217.13,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_professional_nurses_all_sectors_end,4_2,314.606025631759,314.61,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_professional_nurses_all_sectors_pct,4_2,44.89244305802729,44.89,{:.2f},%,T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_professional_nurses_moph_start,4_2,153.53981069744316,153.54,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_professional_nurses_moph_end,4_2,192.74309737669842,192.74,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_pharmacists_all_sectors_start,4_2,17.51908265803588,17.52,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_pharmacists_all_sectors_end,4_2,26.422546773426678,26.42,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_pharmacists_all_sectors_pct,4_2,50.8215201057165,50.82,{:.2f},%,T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_pharmacists_moph_start,4_2,11.269337270746245,11.27,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_pharmacists_moph_end,4_2,16.926653762634597,16.93,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_dentists_all_sectors_start,4_2,12.04702052029586,12.05,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_dentists_all_sectors_end,4_2,13.839791900306684,13.84,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_dentists_all_sectors_pct,4_2,14.881450371820204,14.88,{:.2f},%,T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_dentists_moph_start,4_2,7.299225004863662,7.30,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_dens_dentists_moph_end,4_2,9.63986400035903,9.64,{:.2f},"ต่อ 100,000",T421_DENSITY_ENDPOINTS,,,,,,computed,,reports/chapter4_complete_th.md
+c421_moph_share_physicians_start,4_2,58.5534426719468,58.55,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_moph_share_physicians_end,4_2,51.990769967564276,51.99,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scope_gap_physicians_moph,4_2,-48.009230032435724,-48.0,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,,reports/chapter4_complete_th.md
+c421_register_gap_civil_grand,4_2,-1.842702057929435,-1.8,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,,reports/chapter4_complete_th.md
+c421_register_gap_nhso_rights,4_2,-3.5930154055134,-3.6,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scope_gap_min_abs,4_2,5.178970917225945,5.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scope_gap_max_abs,4_2,48.009230032435724,48.0,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_comb_all_start,4_2,2.591837596862609,2.59,{:.2f},"ต่อ 1,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c421_comb_all_end,4_2,3.8571995410204853,3.86,{:.2f},"ต่อ 1,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c421_comb_attainment_pct,4_2,86.67864137124685,86.68,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_comb_gap_closed_pct,4_2,68.09748932716494,68.10,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_comb_all_cagr,4_2,3.4957427075592795,3.50,{:.2f},% ต่อปี,,,,,,,computed,อัตราเติบโตของจำนวนแพทย์+พยาบาลรวม ทุกสังกัด,reports/chapter4_complete_th.md
+c421_comb_moph_end_n,4_2,148388.0,"148,388",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_comb_moph_end,4_2,2.297157763425848,2.30,{:.2f},"ต่อ 1,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c421_comb_moph_cagr,4_2,2.2660556171889334,2.27,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_all_sectors_full_pop_fixed_d2030,4_2,4.584966364552336,4.58,{:.2f},"ต่อ 1,000",T421_REFERENCE_SCENARIO_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_all_sectors_full_pop_fixed_cross_be,4_2,2573.0,2573,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_all_sectors_full_pop_trend_d2030,4_2,4.556875819931703,4.56,{:.2f},"ต่อ 1,000",T421_REFERENCE_SCENARIO_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_all_sectors_recent_pop_fixed_d2030,4_2,4.328523139121794,4.33,{:.2f},"ต่อ 1,000",T421_REFERENCE_SCENARIO_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_all_sectors_recent_pop_fixed_cross_be,4_2,2575.0,2575,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_all_sectors_recent_pop_trend_d2030,4_2,4.302003735768914,4.30,{:.2f},"ต่อ 1,000",T421_REFERENCE_SCENARIO_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_moph_full_pop_fixed_d2030,4_2,2.5727085210252563,2.57,{:.2f},"ต่อ 1,000",T421_REFERENCE_SCENARIO_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_moph_full_pop_fixed_gphys,4_2,3.572564276064183,3.57,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_moph_full_pop_trend_required,4_2,14.279315322511543,14.28,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_moph_recent_pop_fixed_d2030,4_2,2.3266489953753853,2.33,{:.2f},"ต่อ 1,000",T421_REFERENCE_SCENARIO_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_moph_recent_pop_fixed_gphys,4_2,3.325016847270712,3.33,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_moph_recent_pop_fixed_gnurse,4_2,-0.3785042377176029,-0.38,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_moph_pre_transfer_pop_fixed_d2030,4_2,2.6692741841465777,2.67,{:.2f},"ต่อ 1,000",T421_REFERENCE_SCENARIO_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c421_scn_moph_pre_transfer_pop_fixed_gnurse,4_2,2.9581822125670065,2.96,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_moph_cross_min_be,4_2,2590.0,2590,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_moph_cross_max_be,4_2,2636.0,2636,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_moph_cross_min_years,4_2,22.0,22,{:.0f},ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_moph_cross_max_years,4_2,68.0,68,{:.0f},ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_pop_growth_pct,4_2,0.12298572938971297,0.123,{:.3f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_all_required_min,4_2,2.900522718045506,2.90,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c421_all_required_max,4_2,3.0270756764561257,3.03,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_professional_nurses_ip_days_2013_2025_start,4_2,271.93206214241144,272,int,,T422_SERVICE_PER_STAFF_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_professional_nurses_ip_days_2013_2025_end,4_2,269.4656932484712,269,int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_professional_nurses_ip_days_2013_2025_pct,4_2,-0.9069798075699409,-0.91,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_professional_nurses_op_visits_2013_2025_start,4_2,1178.125458718022,"1,178",int,,T422_SERVICE_PER_STAFF_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_professional_nurses_op_visits_2013_2025_end,4_2,1120.8625150796622,"1,121",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_professional_nurses_op_visits_2013_2025_pct,4_2,-4.860513217384376,-4.86,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_physicians_ip_days_2013_2025_start,4_2,1716.264851154719,"1,716",int,,T422_SERVICE_PER_STAFF_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_physicians_ip_days_2013_2025_end,4_2,1427.7464844610977,"1,428",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_physicians_ip_days_2013_2025_pct,4_2,-16.810830012599954,-16.81,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_physicians_op_visits_2013_2025_start,4_2,7435.58997463623,"7,436",int,,T422_SERVICE_PER_STAFF_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_physicians_op_visits_2013_2025_end,4_2,5938.817280141062,"5,939",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_physicians_op_visits_2013_2025_pct,4_2,-20.12984443199337,-20.13,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_national_mixed_physicians_op_visits_2013_2025_start,4_2,7107.765520321572,"7,108",int,,T422_SERVICE_PER_STAFF_SUMMARY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_national_mixed_physicians_op_visits_2013_2025_end,4_2,5640.919063769208,"5,641",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_professional_nurses_ip_days_2018_2025_cagr,4_2,1.095968633357769,1.10,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_professional_nurses_op_visits_2018_2025_cagr,4_2,-0.7205819159608051,-0.72,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_physicians_ip_days_2018_2025_cagr,4_2,0.7056504101258687,0.71,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_matched_76_physicians_op_visits_2018_2025_cagr,4_2,-1.1038866767133837,-1.10,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_adjrw_per_physicians_2018,4_2,386.8432295455657,386.8,{:.1f},AdjRW/คน/ปี,T422_CASEMIX_PER_STAFF,,,,,,computed,,reports/chapter4_complete_th.md
+c422_adjrw_per_physicians_2025,4_2,484.00206752920434,484.0,{:.1f},AdjRW/คน/ปี,T422_CASEMIX_PER_STAFF,,,,,,computed,,reports/chapter4_complete_th.md
+c422_adjrw_per_physicians_2025_natden,4_2,459.72394179541936,459.7,{:.1f},AdjRW/คน/ปี,,,,,,,computed,ตัวหารรวมบุคลากร สธ. ในกรุงเทพฯ ซึ่งไม่มีตัวเศษ case-mix — ขอบเขตไม่ตรงกัน,reports/chapter4_complete_th.md
+c422_adjrw_per_physicians_cagr,4_2,3.2527780250286353,3.25,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_drgdays_per_physicians_cagr,4_2,-0.42069748930964046,-0.42,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_adjrw_per_professional_nurses_2018,4_2,71.06035764181546,71.1,{:.1f},AdjRW/คน/ปี,T422_CASEMIX_PER_STAFF,,,,,,computed,,reports/chapter4_complete_th.md
+c422_adjrw_per_professional_nurses_2025,4_2,91.3481168259911,91.3,{:.1f},AdjRW/คน/ปี,T422_CASEMIX_PER_STAFF,,,,,,computed,,reports/chapter4_complete_th.md
+c422_adjrw_per_professional_nurses_cagr,4_2,3.6529684880101776,3.65,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_drgdays_per_professional_nurses_cagr,4_2,-0.034744801765751454,-0.03,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_bkk_moph_physicians_2025,4_2,1198.0,"1,198",int,คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_dental_visits_first_year_be,4_2,2565.0,2565,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_dental_visits_last_year_be,4_2,2568.0,2568,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_dental_visits_first,4_2,3368.2860064769047,"3,368",int,,T422_CADRE_ACTIVITY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_dental_visits_last,4_2,4229.503088426528,"4,230",int,,T422_CADRE_ACTIVITY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_dental_visits_last_per_day,4_2,17.622929535110533,17.6,{:.1f},ต่อวัน,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_op_prescriptions_first_year_be,4_2,2565.0,2565,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_op_prescriptions_last_year_be,4_2,2567.0,2567,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_op_prescriptions_first,4_2,10978.29695311763,"10,978",int,,T422_CADRE_ACTIVITY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_op_prescriptions_last,4_2,9121.190586491244,"9,121",int,,T422_CADRE_ACTIVITY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_op_prescriptions_last_per_day,4_2,38.004960777046854,38.0,{:.1f},ต่อวัน,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m90_hours_total,4_2,1715.8059813173168,"1,716",int,ชม./ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m90_days,4_2,214.4757476646646,214,{:.0f},วัน,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m90_share_direct_budget,4_2,148.94149143379485,149,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m100_hours_op,4_2,989.8028800235103,990,int,ชม./ปี,T422_TIME_SENSITIVITY,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m100_hours_ip,4_2,806.670112548674,807,int,ชม./ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m100_hours_total,4_2,1796.4729925721842,"1,796",int,ชม./ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m100_days,4_2,224.55912407152303,225,{:.0f},วัน,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m100_share_direct_budget,4_2,155.94383616077988,156,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m100_days_needed_direct_share,4_2,374.2652067858717,374,{:.0f},วัน,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_budget_direct_hours,4_2,1152.0,"1,152",int,ชม./ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_U_op,4_2,5938.817280141062,"5,939",int,ครั้ง/แพทย์/ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_A,4_2,484.00206752920434,484.0,{:.1f},AdjRW/แพทย์/ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_grid_share_min,4_2,84.97426280737496,85,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_grid_share_max,4_2,212.9087200602148,213,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_dental_visits_hours_per_day,4_2,8.811464767555266,8.8,{:.1f},ชม./วัน,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_op_prescriptions_hours_per_day,4_2,9.501240194261714,9.5,{:.1f},ชม./วัน,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_grid_allhours_min,4_2,50.98455768442497,51,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_grid_allhours_max,4_2,127.74523203612887,128,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c422_time_m100_share_all_hours,4_2,93.56630169646792,94,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_n_rows,4_2,302.0,302,int,จังหวัด-ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_n_prov,4_2,76.0,76,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_n_excluded,4_2,2.0,2,int,จังหวัด-ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_excluded_list,4_2,สุรินทร์ 2565 (prev_ckd_3_5); ราชบุรี 2565 (prev_copd),สุรินทร์ 2565 (prev_ckd_3_5); ราชบุรี 2565 (prev_copd),text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_adjrw_M0_ols_3,4_2,0.0729402652966541,0.073,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_adjrw_M1_ols_3,4_2,0.012675311744435147,0.013,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_adjrw_M2_ols_3,4_2,0.1898957831043957,0.190,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_adjrw_M3_ols_3,4_2,0.17856879088103694,0.179,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_adjrw_M4_ols_3,4_2,0.3562703167466208,0.356,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_adjrw_M5_ols_3,4_2,0.5106544504893038,0.511,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_ip_moph_M0_ols_3,4_2,0.24492771271231617,0.245,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_ip_moph_M1_ols_3,4_2,0.28163767895381,0.282,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_ip_moph_M2_ols_3,4_2,0.3121078676513651,0.312,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_ip_moph_M3_ols_3,4_2,0.32605040875408653,0.326,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_ip_moph_M4_ols_3,4_2,0.5867414623385625,0.587,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_ip_moph_M5_ols_3,4_2,0.5923085327962115,0.592,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_op_moph_M0_ols_3,4_2,0.1816530375390566,0.182,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_op_moph_M1_ols_3,4_2,0.3005324752779508,0.301,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_op_moph_M2_ols_3,4_2,0.2626345470211314,0.263,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_op_moph_M3_ols_3,4_2,0.254175805923636,0.254,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_op_moph_M4_ols_3,4_2,0.44961417648904933,0.450,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_r2_op_moph_M5_ols_3,4_2,0.46193186864416746,0.462,{:.3f},,T423_MODEL_VALIDATION,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_adjrw_M1_M2_ols_3,4_2,17.949563448380832,17.95,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainlo_adjrw_M1_M2_ols_3,4_2,-11.793363625898072,-11.79,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainhi_adjrw_M1_M2_ols_3,4_2,38.745952803148725,38.75,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_adjrw_M3_M4_ols_3,4_2,21.633159769541745,21.63,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainlo_adjrw_M3_M4_ols_3,4_2,6.697932918239875,6.70,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainhi_adjrw_M3_M4_ols_3,4_2,35.49521821184068,35.50,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_adjrw_M4_M5_ols_3,4_2,23.98275825381129,23.98,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainlo_adjrw_M4_M5_ols_3,4_2,4.608661600432077,4.61,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainhi_adjrw_M4_M5_ols_3,4_2,40.92541632969682,40.93,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_adjrw_M5_no_physicians_M5_ols_3,4_2,25.283925943306983,25.28,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_adjrw_M5_no_nurses_M5_ols_3,4_2,-0.9933651549537913,-0.99,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_ip_moph_M3_M4_ols_3,4_2,38.68109083685962,38.68,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainlo_ip_moph_M3_M4_ols_3,4_2,27.55534360481322,27.56,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainhi_ip_moph_M3_M4_ols_3,4_2,49.007558077375215,49.01,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_ip_moph_M4_M5_ols_3,4_2,1.3471156552874055,1.35,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_op_moph_M0_M1_ols_3,4_2,14.526776928626767,14.53,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainlo_op_moph_M0_M1_ols_3,4_2,-2.0310252510518363,-2.03,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainhi_op_moph_M0_M1_ols_3,4_2,27.06311395895093,27.06,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_op_moph_M3_M4_ols_3,4_2,26.204348439976037,26.20,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainlo_op_moph_M3_M4_ols_3,4_2,10.396419188210192,10.40,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gainhi_op_moph_M3_M4_ols_3,4_2,38.485802648605535,38.49,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_op_moph_M4_M5_ols_3,4_2,2.238010433579582,2.24,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_gain_op_moph_M1_plus_supply_M5_ols_3,4_2,-10.170061850057815,-10.17,{:.2f},%,T423_PAIRED_GAINS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_fold_order_max_r2_shift,4_2,0.057521377872290946,0.058,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_temporal_op_moph_m5_forward_r2,4_2,0.38063599822176764,0.381,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_temporal_op_moph_persist_r2,4_2,0.6733635527453266,0.673,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_temporal_ip_moph_m5_forward_r2,4_2,0.359671309512268,0.360,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_temporal_ip_moph_persist_r2,4_2,0.8037826726134624,0.804,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_temporal_adjrw_m5_forward_r2,4_2,0.6699149908927031,0.670,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_temporal_adjrw_persist_r2,4_2,0.9455552830594548,0.946,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_ip_moph_long_pooled_year_fe_beds,4_2,0.7079063107197803,0.708,{:.3f},elasticity,T423_SUPPLY_ASSOCIATIONS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_ip_moph_long_pooled_year_fe_beds_lo,4_2,0.6161620992294723,0.616,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_ip_moph_long_pooled_year_fe_beds_hi,4_2,0.7996505222100883,0.800,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_ip_moph_long_pooled_year_fe_physicians,4_2,0.16191648536393688,0.162,{:.3f},elasticity,T423_SUPPLY_ASSOCIATIONS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_ip_moph_long_province_year_fe_beds,4_2,0.4608290141976577,0.461,{:.3f},elasticity,T423_SUPPLY_ASSOCIATIONS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_adjrw_long_pooled_year_fe_physicians,4_2,0.6683055843933429,0.668,{:.3f},elasticity,T423_SUPPLY_ASSOCIATIONS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_adjrw_long_pooled_year_fe_physicians_lo,4_2,0.512003972546203,0.512,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_adjrw_long_pooled_year_fe_physicians_hi,4_2,0.8246071962404827,0.825,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_adjrw_long_province_year_fe_physicians,4_2,0.2000575621164273,0.200,{:.3f},elasticity,T423_SUPPLY_ASSOCIATIONS,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_adjrw_long_province_year_fe_physicians_lo,4_2,0.08113449867967114,0.081,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_assoc_adjrw_long_province_year_fe_physicians_hi,4_2,0.31898062555318346,0.319,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_within_short_log_moph_physicians_per100k,4_2,3.7839574513437957,3.8,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_within_short_log_moph_professional_nurses_per100k,4_2,2.097298870570356,2.1,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_within_long_s3_60+,4_2,2.4620831494842204,2.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_corr_nurse_beds,4_2,0.7754106980188911,0.78,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_adjrw_pct,4_2,-0.33419967574117493,-0.33,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_adjrw_lo,4_2,-2.5350190776849075,-2.54,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_adjrw_hi,4_2,1.9853971614143973,1.99,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_ip_moph_pct,4_2,-1.6424260743564076,-1.64,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_ip_moph_lo,4_2,-3.0546056164396305,-3.05,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_ip_moph_hi,4_2,0.14481313293993026,0.14,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_op_moph_pct,4_2,1.7404566744614272,1.74,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_op_moph_lo,4_2,-0.9606956492957579,-0.96,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_op_moph_hi,4_2,4.3015477691542685,4.30,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_all76_op_moph_pop_pct,4_2,-0.302996244464822,-0.30,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_balanced74_adjrw_pct,4_2,-0.17825769864833774,-0.18,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_balanced74_ip_moph_pct,4_2,-2.3158965140354724,-2.32,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_balanced74_op_moph_pct,4_2,3.2724881587973016,3.27,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_std_boot_valid_op_moph,4_2,500.0,500,int,รอบ,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_balanced_n,4_2,74.0,74,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_age_verdict_op_moph,4_2,ใช้ไม่ได้เป็นตัวหาร,ใช้ไม่ได้เป็นตัวหาร,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_age_verdict_ip_moph,4_2,ใช้ไม่ได้เป็นตัวหาร,ใช้ไม่ได้เป็นตัวหาร,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_age_verdict_adjrw,4_2,ใช้ไม่ได้เป็นตัวหาร,ใช้ไม่ได้เป็นตัวหาร,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_awpop_scenario_flat_pct,4_2,1.4858526141303896,1.49,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_awpop_scenario_moderate_pct,4_2,9.730656648601821,9.73,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_awpop_scenario_steep_pct,4_2,15.442549384260218,15.44,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_share60_2013,4_2,13.721947570857667,13.72,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c423_share60_2025,4_2,21.8008504412796,21.80,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_civil_population_long,4_2,48.39460958089676,48.39,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_civil_population_common_2023_2025,4_2,6.9465293972511555,6.95,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_op_visits_moph_long,4_2,25.203211748916043,25.20,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_op_visits_moph_common_2023_2025,4_2,-2.7629507685081656,-2.76,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_ip_days_moph_long,4_2,20.207954971958664,20.21,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_adjrw_casemix_long,4_2,-20.074054327831192,-20.07,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_adjrw_casemix_common_2023_2025,4_2,-6.664015216911745,-6.66,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_m5_expected_op_moph_common_2023_2025,4_2,4.798512720216719,4.80,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_physicians_m5_expected_ip_moph_common_2023_2025,4_2,8.402923307356613,8.40,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_professional_nurses_civil_population_long,4_2,24.57814261455049,24.58,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_professional_nurses_op_visits_moph_long,4_2,5.108828501976448,5.11,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_professional_nurses_ip_days_moph_long,4_2,0.9152812234491048,0.92,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c424_moph_professional_nurses_adjrw_casemix_long,4_2,-22.209280157161615,-22.21,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c43_physicians_all_sectors_2013_gini,4_3,0.25305898890324485,0.253,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_physicians_all_sectors_2025_gini,4_3,0.23516247548880484,0.235,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_physicians_all_sectors_2025_between_pct,4_3,30.399363948408396,30.4,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_physicians_all_sectors_2025_p90p10,4_3,2.9696733388543786,2.97,{:.2f},เท่า,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_physicians_moph_2013_gini,4_3,0.1393437415263192,0.139,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_physicians_moph_2025_gini,4_3,0.12239217641792256,0.122,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_professional_nurses_all_sectors_2013_gini,4_3,0.1853354434604287,0.185,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_professional_nurses_all_sectors_2025_gini,4_3,0.138166032784133,0.138,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_professional_nurses_moph_2013_gini,4_3,0.14253265906079382,0.143,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_professional_nurses_moph_2013_between_pct,4_3,23.93043734110362,23.9,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_professional_nurses_moph_2025_gini,4_3,0.09937935644448888,0.099,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_professional_nurses_moph_2025_between_pct,4_3,15.030448653556624,15.0,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pharmacists_all_sectors_2013_gini,4_3,0.16629227751470854,0.166,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pharmacists_all_sectors_2025_gini,4_3,0.1380886871098901,0.138,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pharmacists_moph_2013_gini,4_3,0.10916038483628891,0.109,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pharmacists_moph_2013_between_pct,4_3,20.48079023886992,20.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pharmacists_moph_2025_gini,4_3,0.10755740179291935,0.108,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pharmacists_moph_2025_between_pct,4_3,38.47962904951189,38.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_dentists_all_sectors_2013_gini,4_3,0.21239562094673237,0.212,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_dentists_all_sectors_2025_gini,4_3,0.19682890031486672,0.197,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_dentists_moph_2013_gini,4_3,0.14722777133740597,0.147,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_dentists_moph_2025_gini,4_3,0.1282189663273719,0.128,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_professional_nurses_moph_ip_days_own_window_gini_start,4_3,0.13586140634718152,0.136,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_professional_nurses_moph_ip_days_own_window_gini_end,4_3,0.07939037484569983,0.079,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_moph_adjrw_own_window_gini_start,4_3,0.10069075202173282,0.101,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_moph_adjrw_own_window_gini_end,4_3,0.10121683625931185,0.101,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_moph_ip_days_own_window_gini_start,4_3,0.12755450137639032,0.128,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_moph_op_visits_own_window_gini_start,4_3,0.11678029368370635,0.117,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_moph_population_own_window_gini_start,4_3,0.1393437415263192,0.139,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q1_pct,4_3,64.6639888039809,64.7,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q1_abs,4_3,11.951337593814,12.0,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q1_start,4_3,18.482215240452717,18.5,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q1_end,4_3,30.433552834266717,30.4,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q1_netshare,4_3,26.457224458003374,26.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q1_popshare,4_3,28.323700912946595,28.3,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q4_pct,4_3,34.45210840917301,34.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q4_abs,4_3,12.047450180813982,12.0,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q4_start,4_3,34.968687656881706,35.0,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_physicians_moph_Q4_end,4_3,47.01613783769569,47.0,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_professional_nurses_moph_Q1_abs,4_3,50.666516292377615,50.7,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c43_q_professional_nurses_moph_Q4_abs,4_3,2.722595138115536,2.7,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2013_2025_single_unweighted,4_3,-0.019950262344762958,-0.0200,{:.4f},,T43_CONVERGENCE,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2013_2025_single_unweighted_lo,4_3,-0.032214365436901246,-0.0322,{:.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2013_2025_single_unweighted_hi,4_3,-0.007686159252624666,-0.0077,{:.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2013_2025_avg_unweighted,4_3,-0.01796716080637252,-0.0180,{:.4f},,T43_CONVERGENCE,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2013_2025_avg_unweighted_lo,4_3,-0.029011657306967843,-0.0290,{:.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2013_2025_avg_unweighted_hi,4_3,-0.006922664305777199,-0.0069,{:.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2018_2025_single_unweighted,4_3,-0.01469500142993949,-0.0147,{:.4f},,T43_CONVERGENCE,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2018_2025_single_unweighted_lo,4_3,-0.0323640752532265,-0.0324,{:.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2018_2025_single_unweighted_hi,4_3,0.002974072393347526,0.0030,{:.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2018_2025_single_unweighted_sigma_start,4_3,0.23664171932109512,0.237,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_physicians_moph_2018_2025_single_unweighted_sigma_end,4_3,0.24232267336730406,0.242,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_professional_nurses_moph_2013_2025_single_unweighted,4_3,-0.03663743078625775,-0.0366,{:.4f},,T43_CONVERGENCE,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_professional_nurses_moph_2018_2025_single_unweighted,4_3,-0.03286397326688235,-0.0329,{:.4f},,T43_CONVERGENCE,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_pharmacists_moph_2013_2025_single_unweighted,4_3,-0.017691254399818505,-0.0177,{:.4f},,T43_CONVERGENCE,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_pharmacists_moph_2013_2025_single_unweighted_sigma_start,4_3,0.21485096841397247,0.215,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_pharmacists_moph_2013_2025_single_unweighted_sigma_end,4_3,0.21064306725985374,0.211,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_dentists_moph_2013_2025_single_unweighted,4_3,-0.024971868894369448,-0.0250,{:.4f},,T43_CONVERGENCE,,,,,,computed,,reports/chapter4_complete_th.md
+c43_beta_dentists_moph_2018_2025_single_unweighted,4_3,-0.04325028603490369,-0.0433,{:.4f},,T43_CONVERGENCE,,,,,,computed,,reports/chapter4_complete_th.md
+c43_scn_physicians_moph_growth_additions_only_first_year,4_3,2569.0,2569,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_scn_physicians_moph_growth_only_gini_final,4_3,0.12239217641792263,0.122,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_scn_physicians_moph_growth_only_gini_2025,4_3,0.12239217641792256,0.122,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_scn_physicians_moph_growth_only_reaches,4_3,ไม่ถึงภายใน 20 ปี,ไม่ถึงภายใน 20 ปี,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_scn_physicians_moph_growth_plus_redistribution_first_year,4_3,2571.0,2571,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_scn_physicians_moph_growth_plus_redistribution_losing,4_3,0.0,0,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_scn_physicians_moph_redistribution_only_first_year,4_3,2571.0,2571,{:.0f},พ.ศ.,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_scn_physicians_moph_redistribution_only_losing,4_3,38.0,38,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pri_all6,4_3,"กำแพงเพชร, บึงกาฬ, อำนาจเจริญ, เลย","กำแพงเพชร, บึงกาฬ, อำนาจเจริญ, เลย",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pri_all6_n,4_3,4.0,4,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pri_any6_n,4_3,41.0,41,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pri_min_intersection,4_3,7.0,7,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pri_max_intersection,4_3,18.0,18,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pri_pop_op_intersection,4_3,8.0,8,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pri_pop_m5op_intersection,4_3,15.0,15,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_m5_uncertain_n,4_3,25.0,25,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_switchers,4_3,"นราธิวาส, ปทุมธานี, ปัตตานี, สมุทรสาคร, เพชรบูรณ์, หนองคาย","นราธิวาส, ปทุมธานี, ปัตตานี, สมุทรสาคร, เพชรบูรณ์, หนองคาย",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_ปทุมธานี_population,4_3,1229364.0,"1,229,364",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_ปทุมธานี_physicians,4_3,279.0,279,int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_ปทุมธานี_pop_per_physician,4_3,4406.322580645161,"4,406.32","{:,.2f}",,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_ปทุมธานี_op_per_physician,4_3,4441.716845878136,"4,441.72","{:,.2f}",,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_ปทุมธานี_op_per_person,4_3,1.0080326087310187,1.01,"{:,.2f}",,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_นราธิวาส_pop_per_physician,4_3,3563.969696969697,"3,563.97","{:,.2f}",,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_นราธิวาส_op_per_physician,4_3,4249.160173160173,"4,249.16","{:,.2f}",,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_นราธิวาส_op_per_person,4_3,1.1922548546843894,1.19,"{:,.2f}",,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_verify_median_op_per_person,4_3,2.410447900990793,2.41,{:.2f},ครั้ง/คน,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_condensed_cells,4_4,14014.0,"14,014",int,เซลล์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_published_total_defects,4_4,8.0,8,int,รายการ,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_defect_entry_2020_ทันตแพทย์,4_4,1.0,+1,{:+.0f},เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_defect_entry_2022_ALL (grand footer),4_4,9895.0,+9895,{:+.0f},เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_physicians_entries_total,4_4,19744.0,"19,744",int,เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_physicians_exits_total,4_4,11136.0,"11,136",int,เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_professional_nurses_entries_total,4_4,99365.0,"99,365",int,เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_professional_nurses_exits_total,4_4,83706.0,"83,706",int,เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_pharmacists_entries_total,4_4,5951.0,"5,951",int,เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_pharmacists_exits_total,4_4,3455.0,"3,455",int,เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_dentists_entries_total,4_4,4433.0,"4,433",int,เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_dentists_exits_total,4_4,2987.0,"2,987",int,เหตุการณ์,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_physicians_exit_share_resignation,4_4,86.09913793103449,86.1,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_professional_nurses_exit_share_resignation,4_4,76.02561345662198,76.0,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_professional_nurses_exit_share_retirement,4_4,13.730198552075121,13.7,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_professional_nurses_exit_share_transfer_out,4_4,9.26695816309464,9.3,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_pharmacists_exit_share_resignation,4_4,89.37771345875542,89.4,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_dentists_exit_share_resignation,4_4,88.55038500167393,88.6,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_nurse_2020_entries,4_4,19198.0,"19,198",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_nurse_2020_entries_civil,4_4,12254.0,"12,254",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_nurse_2020_exits_resign,4_4,15005.0,"15,005",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_nurse_2019_exits_resign,4_4,6946.0,"6,946",int,,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_fac_doctor_2016_yoy,4_4,37.097772277227726,37.1,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_fac_nurse_2023_yoy,4_4,39.44116212260826,39.4,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_fac_nurse_2024_yoy,4_4,-16.906376941167323,-16.9,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_physicians_dW,4_4,5886.0,"5,886",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_physicians_net_flow,4_4,8608.0,"8,608",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_physicians_residual,4_4,-2722.0,"-2,722",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_physicians_residual_exceeds_10pct_stock,4_4,153.0,153,int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_physicians_province_years,4_4,684.0,684,int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_physicians_residual_pct,4_4,-46.24532789670404,-46.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_professional_nurses_dW,4_4,13540.0,"13,540",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_professional_nurses_net_flow,4_4,15659.0,"15,659",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_professional_nurses_residual,4_4,-2119.0,"-2,119",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_professional_nurses_sign_disagreements,4_4,162.0,162,int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_professional_nurses_abs_residual_sum,4_4,30277.0,"30,277",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_professional_nurses_residual_pct,4_4,-15.649926144756277,-15.6,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_pharmacists_dW,4_4,2462.0,"2,462",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_sf_pharmacists_net_flow,4_4,2496.0,"2,496",int,,T44_STOCK_FLOW_FULL_PERIOD,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_physicians_cagr_moph76_2016_2025,4_4,3.393929076084845,3.39,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_physicians_cagr_moph76_2013_2025,4_4,3.5175733075675897,3.52,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_physicians_entries_per100,4_4,10.986650640758114,10.99,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_physicians_exits_per100,4_4,6.1966846401682725,6.20,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_physicians_exit_entry_ratio,4_4,0.5640194489465153,0.56,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_professional_nurses_cagr_moph76_2016_2025,4_4,1.336813146016702,1.34,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_professional_nurses_entries_per100,4_4,9.568947170243767,9.57,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_professional_nurses_exits_per100,4_4,8.06097007832159,8.06,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_professional_nurses_exit_entry_ratio,4_4,0.8424092990489609,0.84,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_pharmacists_cagr_moph76_2016_2025,4_4,2.972179408468989,2.97,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_int_dentists_cagr_moph76_2016_2025,4_4,2.663317547429478,2.66,{:.2f},,T44_INTENSITY_NATIONAL,,,,,,computed,,reports/chapter4_complete_th.md
+c44_q_professional_nurses_Q1_exits,4_4,8.854722712519768,8.9,{:.1f},ต่อ 100,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_q_professional_nurses_Q1_cagr,4_4,2.8631361058162996,2.86,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_q_professional_nurses_Q4_exits,4_4,6.445460687003066,6.4,{:.1f},ต่อ 100,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_q_professional_nurses_Q4_cagr,4_4,-0.9621346579011925,-0.96,{:.2f},% ต่อปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_q_physicians_Q1_entries,4_4,13.0332005312085,13.0,{:.1f},ต่อ 100,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_q_physicians_Q4_entries,4_4,10.30657328625726,10.3,{:.1f},ต่อ 100,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_pri_physicians_other_entries,4_4,10.722655056004239,10.7,{:.1f},ต่อ 100,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_pri_physicians_other_resign,4_4,5.198307306702169,5.2,{:.1f},ต่อ 100,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_pri_physicians_priority_entries,4_4,12.18295986210293,12.2,{:.1f},ต่อ 100,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_pri_physicians_priority_resign,4_4,5.956045309037183,6.0,{:.1f},ต่อ 100,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_physicians_entry__all_L_op_primary_p10,4_4,3.696520459021446,3.7,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_physicians_entry__all_L_op_primary_p10lo,4_4,1.5410512072992821,1.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_physicians_entry__all_L_op_primary_p10hi,4_4,5.897745074115157,5.9,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_physicians_entry__all_L_op_offset_plus_free_log_stock_p10,4_4,1.6629080898129756,1.7,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_physicians_entry__all_L_op_offset_plus_free_log_stock_p10lo,4_4,-0.16931433926187234,-0.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_physicians_entry__all_L_op_offset_plus_free_log_stock_p10hi,4_4,3.5287578450690305,3.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_professional_nurses_entry__all_L_ipd_primary_p10,4_4,4.708958639728755,4.7,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_professional_nurses_entry__all_L_ipd_primary_p10lo,4_4,2.1907197997274475,2.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_professional_nurses_entry__all_L_ipd_primary_p10hi,4_4,7.289253279588581,7.3,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_professional_nurses_exit__resignation_L_ipd_primary_p10,4_4,4.086481666043995,4.1,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_professional_nurses_exit__resignation_L_ipd_primary_p10lo,4_4,1.425837739374991,1.4,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_professional_nurses_exit__resignation_L_ipd_primary_p10hi,4_4,6.816920688936023,6.8,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_n_obs,4_4,684.0,684,int,จังหวัด-ปี,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_years,4_4,2017-2025,2017-2025,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_asr_repro_gap_pct,4_5,0.029756424629651727,0.030,{:.3f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_n_causes,4_5,174.0,174,int,กลุ่มโรค,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_covid_share_median,4_5,3.0963633048781176,3.1,{:.1f},%,,,,,,,computed,"share of all-cause ASR DALY from COVID-19 (B5), 2022, median of 76 provinces",reports/chapter4_complete_th.md
+c45_covid_share_max,4_5,5.754095174402226,5.8,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_median,4_5,25139.67086636664,"25,140",int,"DALY ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_min,4_5,17870.488913300764,"17,870",int,"DALY ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_max,4_5,28745.435078590795,"28,745",int,"DALY ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_min_prov,4_5,นนทบุรี,นนทบุรี,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_max_prov,4_5,ชัยภูมิ,ชัยภูมิ,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_p90p10,4_5,1.3073738432198183,1.31,{:.2f},เท่า,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_max_min,4_5,1.6085421735269905,1.61,{:.2f},เท่า,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_yll_share_median,4_5,77.80849752813157,77.8,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ncd_share_median,4_5,70.37139772043868,70.4,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_top5,4_5,"ชัยภูมิ, ชัยนาท, กำแพงเพชร, ยโสธร, สระแก้ว","ชัยภูมิ, ชัยนาท, กำแพงเพชร, ยโสธร, สระแก้ว",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_low5,4_5,"นนทบุรี, สมุทรปราการ, สุราษฎร์ธานี, พังงา, ปทุมธานี","นนทบุรี, สมุทรปราการ, สุราษฎร์ธานี, พังงา, ปทุมธานี",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_var_share_cmnn,4_5,8.377105430087086,8.4,{:.1f},%,,,,,,,computed,"cov(group, total)/var(total), shares add to 100",reports/chapter4_complete_th.md
+c45_var_share_ncd,4_5,67.51126662839178,67.5,{:.1f},%,,,,,,,computed,"cov(group, total)/var(total), shares add to 100",reports/chapter4_complete_th.md
+c45_var_share_inj,4_5,24.111627941521142,24.1,{:.1f},%,,,,,,,computed,"cov(group, total)/var(total), shares add to 100",reports/chapter4_complete_th.md
+c45_top1_cause,4_5,การบาดเจ็บทางถนน,การบาดเจ็บทางถนน,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_top2_cause,4_5,โรคหลอดเลือดสมอง,โรคหลอดเลือดสมอง,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_top3_cause,4_5,โรคเบาหวาน,โรคเบาหวาน,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_top4_cause,4_5,โรคหัวใจขาดเลือด,โรคหัวใจขาดเลือด,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_top5_cause,4_5,โรคไตเรื้อรัง,โรคไตเรื้อรัง,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_vdriver1,4_5,โรคตับแข็งและโรคตับเรื้อรังอื่น ๆ,โรคตับแข็งและโรคตับเรื้อรังอื่น ๆ,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_vdriver2,4_5,การบาดเจ็บทางถนน,การบาดเจ็บทางถนน,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_vdriver3,4_5,โรคมะเร็งตับ,โรคมะเร็งตับ,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_bod_daly_gpp_lag1,4_5,-0.5439234449760766,-0.54,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_bod_daly_log_all_sectors_physicians_per100k,4_5,-0.5050170881749829,-0.51,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_bod_daly_op_moph_pc,4_5,0.11133287764866713,+0.11,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_bod_daly_adjrw_pc,4_5,-0.1478058783321941,-0.15,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_daly_total_76,4_5,18479241.328731466,"18,479,241",int,DALY,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_crude_min,4_5,22404.34149223333,"22,404",int,"DALY ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_crude_max,4_5,40369.89180606437,"40,370",int,"DALY ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_crude_min_prov,4_5,ภูเก็ต,ภูเก็ต,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_crude_max_prov,4_5,ชัยนาท,ชัยนาท,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_crude_asr_ratio_median,4_5,1.2717577520892038,1.27,{:.2f},เท่า,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_age_factor_min,4_5,0.8222004439741041,0.82,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_age_factor_max,4_5,1.1576685525836616,1.16,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_excess_min,4_5,0.7265411227833657,0.73,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_excess_max,4_5,1.1506349173673023,1.15,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_var_share_age,4_5,36.721009457269965,37,{:.0f},%,,,,,,,computed,"(var(log age factor) + cov(log age, log excess)) / var(log crude relative)",reports/chapter4_complete_th.md
+c45_share60_daly,4_5,45.50217753124611,45.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_share60_pop,4_5,18.71365298145756,18.7,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rate_80_vs_30,4_5,6.775378306786574,6.8,{:.1f},เท่า,,,,,,,computed,"DALY per person aged 80+ / aged 30-44, 76 provinces",reports/chapter4_complete_th.md
+c45_expected_growth_1325,4_5,21.118138618513704,21.1,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pop_growth_1325,4_5,2.03539858935049,2.0,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_expected_2025,4_5,19341079.963886824,"19,341,080",int,DALY,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_expected_2013,4_5,15968772.46008998,"15,968,772",int,DALY,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_expected_growth_prov_min,4_5,9.352223884189016,9.4,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_expected_growth_prov_max,4_5,44.343911031411196,44.3,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_expected_growth_prov_max_name,4_5,ปทุมธานี,ปทุมธานี,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_rec_prev_dm,4_5,-0.03939849624060151,-0.04,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_ratio_phys_prev_dm,4_5,0.32349965823650034,+0.32,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_rec_prev_ht,4_5,-0.06365003417634997,-0.06,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_rec_prev_ckd_3_5,4_5,0.3856045519203414,+0.39,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_ratio_phys_prev_ckd_3_5,4_5,0.39752489331436697,+0.40,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_rec_prev_copd,4_5,0.3943954480796586,+0.39,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_rec_prev_stroke,4_5,0.2137799043062201,+0.21,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rho_rec_prev_chd,4_5,0.2393984962406015,+0.24,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_n_rec_weak,4_5,4.0,4,int,โรค,,,,,,,computed,|rho| < 0.3,reports/chapter4_complete_th.md
+c45_rec_gamma,4_5,0.35623206265067897,0.36,{:.2f},,,,,,,,computed,"elasticity of recorded prevalence wrt MOPH physician density, given modeled burden and age",reports/chapter4_complete_th.md
+c45_rec_gamma_lo,4_5,-0.04848045875408774,-0.05,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rec_gamma_hi,4_5,0.7609445840554456,0.76,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rec_gamma_10pct,4_5,3.45355085182546,3.5,{:.1f},%,,,,,,,computed,% change in recorded prevalence for +10% physician density,reports/chapter4_complete_th.md
+c45_rec_beta,4_5,0.20350670713440333,0.20,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rec_beta_lo,4_5,0.10846999163304412,0.11,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rec_beta_hi,4_5,0.29854342263576256,0.30,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gain_adjrw_M1_M2B,4_5,-6.6697811454505205,-6.67,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gainlo_adjrw_M1_M2B,4_5,-11.285976002065041,-11.29,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gainhi_adjrw_M1_M2B,4_5,-3.075458880932778,-3.08,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gain_ip_moph_M1_M2B,4_5,-5.176678192040007,-5.18,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gainlo_ip_moph_M1_M2B,4_5,-10.531523219461773,-10.53,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gainhi_ip_moph_M1_M2B,4_5,-1.1145278628728545,-1.11,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gain_op_moph_M1_M2B,4_5,-5.755770174536033,-5.76,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gainlo_op_moph_M1_M2B,4_5,-11.829641749804903,-11.83,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gainhi_op_moph_M1_M2B,4_5,-0.7017141256723851,-0.70,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_coef_pct10_op_moph,4_5,0.7700564106365355,+0.8,{:+.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_coef_pct10_op_moph_lo,4_5,-2.9219079406968196,-2.9,{:+.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_coef_pct10_op_moph_hi,4_5,4.4620207619698915,+4.5,{:+.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_coef_pct10_ip_moph,4_5,-1.6593405962293093,-1.7,{:+.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_coef_pct10_ip_moph_lo,4_5,-4.014960187892306,-4.0,{:+.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_coef_pct10_ip_moph_hi,4_5,0.6962789954336861,+0.7,{:+.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rb_min,4_5,0.7284342423499403,0.73,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rb_max,4_5,1.1717171994610593,1.17,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rb_n_above_110,4_5,9.0,9,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_rb_n_below_90,4_5,18.0,18,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gini_physicians_all_sectors_population_2025,4_5,0.23516247548880484,0.235,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gini_physicians_all_sectors_bod_pop_2025,4_5,0.2666952140095267,0.267,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gini_physicians_all_sectors_bod_count_2025,4_5,0.2642605174165405,0.264,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gini_physicians_moph_population_2025,4_5,0.12239217641792256,0.122,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gini_physicians_moph_bod_pop_2025,4_5,0.13844245930213592,0.138,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gini_physicians_moph_bod_count_2025,4_5,0.13347651177448447,0.133,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_all_sectors_daly_2013,4_5,-0.12177953823935135,-0.122,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_all_sectors_daly_2025,4_5,-0.11084253700004598,-0.111,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_all_sectors_yll_2025,4_5,-0.13629552374159065,-0.136,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_all_sectors_yld_2025,4_5,0.03380603849402924,+0.034,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_moph_daly_2013,4_5,-0.04818610547991666,-0.048,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_moph_daly_2025,4_5,-0.017966334687925713,-0.018,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_professional_nurses_moph_daly_2025,4_5,0.002931120414031546,+0.003,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_moph_2013_lo,4_5,-0.08366926005413854,-0.084,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_moph_2013_hi,4_5,-0.007654010775365708,-0.008,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_moph_2025_lo,4_5,-0.05202677388291541,-0.052,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_moph_2025_hi,4_5,0.01873155510191498,+0.019,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_all_sectors_2025_lo,4_5,-0.15876797515258265,-0.159,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_physicians_all_sectors_2025_hi,4_5,-0.05783317869274319,-0.058,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_q1_physicians_moph_start,4_5,25.562555438848822,25.6,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_q1_physicians_moph_end,4_5,35.9844369185819,36.0,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_q1_physicians_moph_growth,4_5,40.77010807727919,40.8,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_q5_physicians_moph_start,4_5,21.09859392660213,21.1,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_q5_physicians_moph_end,4_5,34.01431605756269,34.0,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
+c45_q5_physicians_moph_growth,4_5,61.21603257492807,61.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_q5_physicians_moph_added_share,4_5,16.603920550434896,16.6,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_q5_physicians_moph_pop_share,4_5,16.945883648094302,16.9,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_ci_dentists_oral_moph_2025,4_5,0.047239159569067865,+0.047,{:+.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_enter_bod,4_5,บุรีรัมย์,บุรีรัมย์,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_exit_bod,4_5,กาญจนบุรี,กาญจนบุรี,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_enter_boda,4_5,"บุรีรัมย์, ศรีสะเกษ, นครราชสีมา","บุรีรัมย์, ศรีสะเกษ, นครราชสีมา",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_exit_boda,4_5,"นราธิวาส, ปัตตานี, กาญจนบุรี","นราธิวาส, ปัตตานี, กาญจนบุรี",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_jaccard_pop_bod,4_5,0.9,0.90,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_jaccard_pop_bodc,4_5,0.7272727272727273,0.73,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_core_n,4_5,16.0,16,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_gap_total_population,4_5,1984.5213720372226,"1,985",int,คน,,,,,,,computed,"sum of positive proportional gaps, MOPH physicians 2025",reports/chapter4_complete_th.md
+c45_pri_gap_total_bod_pop,4_5,2271.7443709178506,"2,272",int,คน,,,,,,,computed,"sum of positive proportional gaps, MOPH physicians 2025",reports/chapter4_complete_th.md
+c45_pri_gap_total_bod_count,4_5,2177.210051458936,"2,177",int,คน,,,,,,,computed,"sum of positive proportional gaps, MOPH physicians 2025",reports/chapter4_complete_th.md
+c45_gap_shift_up,4_5,"ชัยภูมิ (+75), ขอนแก่น (+75), ลำปาง (+70), เพชรบูรณ์ (+58), กาฬสินธุ์ (+56)","ชัยภูมิ (+75), ขอนแก่น (+75), ลำปาง (+70), เพชรบูรณ์ (+58), กาฬสินธุ์ (+56)",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_gap_shift_down,4_5,"ชลบุรี (-136), นนทบุรี (-119), สมุทรปราการ (-115), ปทุมธานี (-102), สุราษฎร์ธานี (-86)","ชลบุรี (-136), นนทบุรี (-119), สมุทรปราการ (-115), ปทุมธานี (-102), สุราษฎร์ธานี (-86)",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_all6_in_bod_n,4_5,4.0,4,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_all6_n,4_5,4.0,4,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c45_pri_bod_op_intersection,4_5,8.0,8,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_cov_cells,4_6,15246.0,"15,246",int,จังหวัด-ปี-วิชาชีพ-สังกัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_cov_missing,4_6,9.0,9,int,ช่อง,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_cov_zero,4_6,3881.0,"3,881",int,ช่อง,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_cov_breaks,4_6,24.0,24,int,จุด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_cov_breaks_moph,4_6,5.0,5,int,จุด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_cov_breaks_private,4_6,10.0,10,int,จุด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_spc_match,4_6,100.0,100.0,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_spc_ratio_2017,4_6,0.8736604624929498,0.87,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_spc_ratio_2019,4_6,0.7662721893491125,0.77,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_spc_ratio_2021,4_6,0.9421296296296297,0.94,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_spc_ratio_2024,4_6,0.99,0.99,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_spc_window,4_6,2560–2567 ไม่รวม 2563,2560–2567 ไม่รวม 2563,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_top10_all0,4_6,63.625096162065134,63.6,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_gini_all1,4_6,0.7542698728351955,0.754,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_top10_all1,4_6,63.49916620344636,63.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_rg_moph0,4_6,76.4877692588536,76.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_ch_moph0,4_6,13.179992698064988,13.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_rg_moph1,4_6,72.21911682504192,72.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_ch_moph1,4_6,17.775293460033538,17.8,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_comove_rho,4_6,0.3082547404969126,+0.31,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_comove_n,4_6,75.0,75,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_n_all_four,4_6,8.0,8,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_list_all_four,4_6,"บึงกาฬ, หนองบัวลำภู, ชัยภูมิ, กำแพงเพชร, อำนาจเจริญ, ยโสธร, เลย, สกลนคร","บึงกาฬ, หนองบัวลำภู, ชัยภูมิ, กำแพงเพชร, อำนาจเจริญ, ยโสธร, เลย, สกลนคร",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_n_need_not_service,4_6,11.0,11,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_list_need_not_service,4_6,"เพชรบูรณ์, สระแก้ว, กาฬสินธุ์, นครนายก, สมุทรปราการ, ปทุมธานี, ลพบุรี, นครพนม, บุรีรัมย์, ศรีสะเกษ, นครราชสีมา","เพชรบูรณ์, สระแก้ว, กาฬสินธุ์, นครนายก, สมุทรปราการ, ปทุมธานี, ลพบุรี, นครพนม, บุรีรัมย์, ศรีสะเกษ, นครราชสีมา",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_n_service_not_need,4_6,11.0,11,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_list_service_not_need,4_6,"สุพรรณบุรี, อุทัยธานี, ลำพูน, เพชรบุรี, ประจวบคีรีขันธ์, พัทลุง, ระนอง, นครปฐม, กระบี่, ตรัง, แม่ฮ่องสอน","สุพรรณบุรี, อุทัยธานี, ลำพูน, เพชรบุรี, ประจวบคีรีขันธ์, พัทลุง, ระนอง, นครปฐม, กระบี่, ตรัง, แม่ฮ่องสอน",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_op_need_not_service,4_6,1.8226219194755868,1.82,{:.2f},ครั้งต่อคน,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_rh_need_not_service,4_6,36.36363636363637,36,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_rh_none,4_6,61.904761904761905,62,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_op_service_not_need,4_6,3.0383560352237446,3.04,{:.2f},ครั้งต่อคน,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_val_temporal_fail,4_6,6.0,6,int,รายการ,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_val_temporal_n,4_6,6.0,6,int,รายการ,,,,,,,computed,,reports/chapter4_complete_th.md

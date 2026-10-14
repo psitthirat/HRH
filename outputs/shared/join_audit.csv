@@ -1,0 +1,14 @@
+﻿join,left_rows,right_rows,result_rows,matched,left_only,right_only,validate
+population x moph_service,988,988,988,988,0,0,one_to_one
+x moph_service components,988,1001,988,988,0,0,one_to_one
+x all_reporting services,988,1001,988,988,0,0,one_to_one
+x casemix (FY),988,608,988,608,380,0,one_to_one
+x HDC prevalence,988,304,988,304,684,0,one_to_one
+x HDC activity,988,308,988,304,684,0,one_to_one
+x GPP(t-1),988,2310,988,988,0,0,one_to_one
+x workforce moph,988,1001,988,988,0,0,one_to_one
+x workforce all_sectors,988,1001,988,988,0,0,one_to_one
+x workforce public_total,988,1001,988,988,0,0,one_to_one
+x population registers,988,1232,988,988,0,0,one_to_one
+x BOD 2022 (time-invariant),988,77,988,988,0,0,many_to_one
+x expected burden at 2022 age-specific rates,988,1001,988,988,0,0,one_to_one

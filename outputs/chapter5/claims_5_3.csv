@@ -1,0 +1,119 @@
+﻿claim_id,section,value,display,fmt,unit,table,row_keys,note,status
+c53_capbreach_share_P-R,5_3,21.046315789473685,21.0,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_P-R,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_P-RT,5_3,21.046315789473685,21.0,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_P-RT,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_S-R,5_3,16.65859649122807,16.7,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_S-R,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_S-RT,5_3,16.65859649122807,16.7,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_S-RT,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_N-R,5_3,20.870877192982455,20.9,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_N-R,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_N-RT,5_3,23.54421052631579,23.5,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_N-RT,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_SQ-C,5_3,12.762105263157894,12.8,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_SQ-C,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_NFB1-R,5_3,20.75122807017544,20.8,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_NFB1-R,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_B-R,5_3,21.45105263157895,21.5,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_B-R,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_capbreach_share_B-RT,5_3,21.45105263157895,21.5,{:.1f},% ของจังหวัด-ปี,,,,computed
+c53_cancelled_mean_B-RT,5_3,0.0,0.0,{:.1f},ครั้งต่อเส้นทาง,,,,computed
+c53_n_paths,5_3,500.0,500,int,เส้นทาง,,,,computed
+c53_n_adapt,5_3,60.0,60,int,เส้นทาง,,,,computed
+c53_sigma_prov,5_3,0.5669801595319708,0.57,{:.2f},% ต่อปี,,,,computed
+c53_m5_invalid_share,5_3,2.8000000000000003,2.8,{:.1f},%,,,,computed
+c53_nat_p05_P-R,5_3,0.5268155380128656,0.527,{:.3f},,,,,computed
+c53_nat_p50_P-R,5_3,0.5438302589951194,0.544,{:.3f},,,,,computed
+c53_nat_p95_P-R,5_3,0.5609283799278452,0.561,{:.3f},,,,,computed
+c53_bq_p05_P-R,5_3,0.36208182585258614,0.362,{:.3f},,,,,computed
+c53_bq_p50_P-R,5_3,0.37903180362993666,0.379,{:.3f},,,,,computed
+c53_bq_p95_P-R,5_3,0.39636557495052466,0.396,{:.3f},,,,,computed
+c53_nat_p05_P-RT,5_3,0.5268155380128656,0.527,{:.3f},,,,,computed
+c53_nat_p50_P-RT,5_3,0.5438302589951194,0.544,{:.3f},,,,,computed
+c53_nat_p95_P-RT,5_3,0.5609283799278452,0.561,{:.3f},,,,,computed
+c53_bq_p05_P-RT,5_3,0.36208182585258614,0.362,{:.3f},,,,,computed
+c53_bq_p50_P-RT,5_3,0.37903180362993666,0.379,{:.3f},,,,,computed
+c53_bq_p95_P-RT,5_3,0.39636557495052466,0.396,{:.3f},,,,,computed
+c53_nat_p05_S-R,5_3,0.5258950224288752,0.526,{:.3f},,,,,computed
+c53_nat_p50_S-R,5_3,0.5433976233755404,0.543,{:.3f},,,,,computed
+c53_nat_p95_S-R,5_3,0.5601824658771257,0.560,{:.3f},,,,,computed
+c53_bq_p05_S-R,5_3,0.3932193985536322,0.393,{:.3f},,,,,computed
+c53_bq_p50_S-R,5_3,0.410903852948864,0.411,{:.3f},,,,,computed
+c53_bq_p95_S-R,5_3,0.4305774221350793,0.431,{:.3f},,,,,computed
+c53_nat_p05_S-RT,5_3,0.5258950224288752,0.526,{:.3f},,,,,computed
+c53_nat_p50_S-RT,5_3,0.5433976233755404,0.543,{:.3f},,,,,computed
+c53_nat_p95_S-RT,5_3,0.5601824658771257,0.560,{:.3f},,,,,computed
+c53_bq_p05_S-RT,5_3,0.3932193985536322,0.393,{:.3f},,,,,computed
+c53_bq_p50_S-RT,5_3,0.410903852948864,0.411,{:.3f},,,,,computed
+c53_bq_p95_S-RT,5_3,0.4305774221350793,0.431,{:.3f},,,,,computed
+c53_nat_p05_N-R,5_3,0.5274204235142584,0.527,{:.3f},,,,,computed
+c53_nat_p50_N-R,5_3,0.5440024261846257,0.544,{:.3f},,,,,computed
+c53_nat_p95_N-R,5_3,0.560909458094627,0.561,{:.3f},,,,,computed
+c53_bq_p05_N-R,5_3,0.36859552883659774,0.369,{:.3f},,,,,computed
+c53_bq_p50_N-R,5_3,0.3894576767252159,0.389,{:.3f},,,,,computed
+c53_bq_p95_N-R,5_3,0.41042011992469424,0.410,{:.3f},,,,,computed
+c53_nat_p05_N-RT,5_3,0.5280658618872447,0.528,{:.3f},,,,,computed
+c53_nat_p50_N-RT,5_3,0.5447348186381135,0.545,{:.3f},,,,,computed
+c53_nat_p95_N-RT,5_3,0.5615553204942445,0.562,{:.3f},,,,,computed
+c53_bq_p05_N-RT,5_3,0.36181684483318144,0.362,{:.3f},,,,,computed
+c53_bq_p50_N-RT,5_3,0.3829647618469423,0.383,{:.3f},,,,,computed
+c53_bq_p95_N-RT,5_3,0.4037833760606843,0.404,{:.3f},,,,,computed
+c53_nat_p05_SQ-C,5_3,0.5283801157676465,0.528,{:.3f},,,,,computed
+c53_nat_p50_SQ-C,5_3,0.5455510872874068,0.546,{:.3f},,,,,computed
+c53_nat_p95_SQ-C,5_3,0.5622489844484555,0.562,{:.3f},,,,,computed
+c53_bq_p05_SQ-C,5_3,0.29657746395459034,0.297,{:.3f},,,,,computed
+c53_bq_p50_SQ-C,5_3,0.3122636975209947,0.312,{:.3f},,,,,computed
+c53_bq_p95_SQ-C,5_3,0.32737075751326694,0.327,{:.3f},,,,,computed
+c53_nat_p05_NFB1-R,5_3,0.525875451684447,0.526,{:.3f},,,,,computed
+c53_nat_p50_NFB1-R,5_3,0.5424420363354656,0.542,{:.3f},,,,,computed
+c53_nat_p95_NFB1-R,5_3,0.5591856326138809,0.559,{:.3f},,,,,computed
+c53_bq_p05_NFB1-R,5_3,0.3464989405028299,0.346,{:.3f},,,,,computed
+c53_bq_p50_NFB1-R,5_3,0.3699060989314353,0.370,{:.3f},,,,,computed
+c53_bq_p95_NFB1-R,5_3,0.39108229284012014,0.391,{:.3f},,,,,computed
+c53_nat_p05_B-R,5_3,0.5265364728664376,0.527,{:.3f},,,,,computed
+c53_nat_p50_B-R,5_3,0.5437985059600855,0.544,{:.3f},,,,,computed
+c53_nat_p95_B-R,5_3,0.5607718684290546,0.561,{:.3f},,,,,computed
+c53_bq_p05_B-R,5_3,0.38159793823540417,0.382,{:.3f},,,,,computed
+c53_bq_p50_B-R,5_3,0.4008655079408199,0.401,{:.3f},,,,,computed
+c53_bq_p95_B-R,5_3,0.4196377412191111,0.420,{:.3f},,,,,computed
+c53_nat_p05_B-RT,5_3,0.5265364728664376,0.527,{:.3f},,,,,computed
+c53_nat_p50_B-RT,5_3,0.5437985059600855,0.544,{:.3f},,,,,computed
+c53_nat_p95_B-RT,5_3,0.5607718684290546,0.561,{:.3f},,,,,computed
+c53_bq_p05_B-RT,5_3,0.38159793823540417,0.382,{:.3f},,,,,computed
+c53_bq_p50_B-RT,5_3,0.4008655079408199,0.401,{:.3f},,,,,computed
+c53_bq_p95_B-RT,5_3,0.4196377412191111,0.420,{:.3f},,,,,computed
+c53_adaptive_replanning_j_P,5_3,4.326870482595155,4.327,{:.3f},,,,,computed
+c53_adaptive_replanning_bq_P,5_3,0.37782421311896935,0.378,{:.3f},,,,,computed
+c53_perfect_foresight_bound_j_P,5_3,4.3269154295963,4.327,{:.3f},,,,,computed
+c53_perfect_foresight_bound_bq_P,5_3,0.38059161749198117,0.381,{:.3f},,,,,computed
+c53_fixed_schedule_same_paths_j_P,5_3,4.330301219132591,4.330,{:.3f},,,,,computed
+c53_fixed_schedule_same_paths_bq_P,5_3,0.3800957420068192,0.380,{:.3f},,,,,computed
+c53_adaptive_replanning_j_S,5_3,4.271254334519865,4.271,{:.3f},,,,,computed
+c53_adaptive_replanning_bq_S,5_3,0.4056939113676179,0.406,{:.3f},,,,,computed
+c53_perfect_foresight_bound_j_S,5_3,4.2706836725732895,4.271,{:.3f},,,,,computed
+c53_perfect_foresight_bound_bq_S,5_3,0.4095946502218019,0.410,{:.3f},,,,,computed
+c53_fixed_schedule_same_paths_j_S,5_3,4.272690339956011,4.273,{:.3f},,,,,computed
+c53_fixed_schedule_same_paths_bq_S,5_3,0.41091065565479284,0.411,{:.3f},,,,,computed
+c53_adaptive_replanning_j_N,5_3,4.326675652288722,4.327,{:.3f},,,,,computed
+c53_adaptive_replanning_bq_N,5_3,0.38323185979851204,0.383,{:.3f},,,,,computed
+c53_perfect_foresight_bound_j_N,5_3,4.326714262751443,4.327,{:.3f},,,,,computed
+c53_perfect_foresight_bound_bq_N,5_3,0.38510569528581384,0.385,{:.3f},,,,,computed
+c53_fixed_schedule_same_paths_j_N,5_3,4.329916936413168,4.330,{:.3f},,,,,computed
+c53_fixed_schedule_same_paths_bq_N,5_3,0.3868927417272024,0.387,{:.3f},,,,,computed
+c53_adapt_failed,5_3,0.0,0,{:.0f},เส้นทาง,,,,computed
+c53_diff_NR_minus_PR_mean,5_3,4.072464206783011e-05,0.0000,{:.4f},,,,,computed
+c53_diff_NR_minus_PR_se,5_3,0.0001514907981502255,0.0002,{:.4f},,,,,computed
+c53_diff_NR_minus_PR_pos,5_3,47.4,47,{:.0f},%,,,,computed
+c53_diff_SR_minus_PR_mean,5_3,-0.029868754185157824,-0.0299,{:.4f},,,,,computed
+c53_diff_SR_minus_PR_se,5_3,0.00023827752575875208,0.0002,{:.4f},,,,,computed
+c53_diff_SR_minus_PR_pos,5_3,0.0,0,{:.0f},%,,,,computed
+c53_diff_PRT_minus_PR_mean,5_3,0.0,0.0000,{:.4f},,,,,computed
+c53_diff_PRT_minus_PR_se,5_3,0.0,0.0000,{:.4f},,,,,computed
+c53_diff_PRT_minus_PR_pos,5_3,0.0,0,{:.0f},%,,,,computed
+c53_diff_SQC_minus_PR_mean,5_3,-0.0672204189852546,-0.0672,{:.4f},,,,,computed
+c53_diff_SQC_minus_PR_se,5_3,0.0002892867879221218,0.0003,{:.4f},,,,,computed
+c53_diff_SQC_minus_PR_pos,5_3,0.0,0,{:.0f},%,,,,computed
+c53_diff_BR_minus_PR_mean,5_3,-0.00946731329586913,-0.0095,{:.4f},,,,,computed
+c53_diff_BR_minus_PR_se,5_3,0.00023595363341431442,0.0002,{:.4f},,,,,computed
+c53_diff_BR_minus_PR_pos,5_3,9.0,9,{:.0f},%,,,,computed

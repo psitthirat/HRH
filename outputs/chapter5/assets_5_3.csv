@@ -1,0 +1,4 @@
+﻿asset_id,kind,file,caption_th,main_text,rows,note,section,status
+T5_UNCERTAINTY_SUMMARY,table,outputs/chapter5/tables/T5_UNCERTAINTY_SUMMARY.csv,ผลภายใต้ความไม่แน่นอน (เส้นทางจับคู่): แผนตายตัว การปรับแผนรายปี และขอบเขตรู้อนาคต,True,294,,5_3,generated
+T5_UNCERTAINTY_OPERATIONS,table,outputs/chapter5/tables/T5_UNCERTAINTY_OPERATIONS.csv,การยกเลิกการโยกย้ายและการเกินเพดานที่เกิดขึ้นจริงในแผนตายตัว (ไม่มีการแก้ไขด้วยการสรรหาฉุกเฉิน),False,10,,5_3,generated
+T5_PAIRED_DIFFERENCES,table,outputs/chapter5/validation/T5_PAIRED_DIFFERENCES.csv,ความต่างแบบจับคู่ระหว่างแผน และเสถียรภาพของ Monte Carlo,False,5,,5_3,generated

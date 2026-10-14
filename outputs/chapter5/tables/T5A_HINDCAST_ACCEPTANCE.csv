@@ -1,0 +1,4 @@
+﻿criterion,horizon,value,benchmark,passed,consequence,criteria_file_sha256
+C1 forecaster status,3,28.090440940588202,persistence 33.29; population_only 32.82,True,describe the engine as a forecaster,16d303bdfe78aafaf1be0761e26e161ee40993879125c9ed37673ed9aed471ed
+C2 interval calibration (unconditional),all,0.4407894736842105,"[0.8, 0.98]",False,intervals mis-calibrated; present as scenario ranges only,16d303bdfe78aafaf1be0761e26e161ee40993879125c9ed37673ed9aed471ed
+C3 lowest-19 group stability,3,0.5851690821256039,>= 0.6,False,priority group not stable; re-identify it every year,16d303bdfe78aafaf1be0761e26e161ee40993879125c9ed37673ed9aed471ed

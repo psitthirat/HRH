@@ -1,0 +1,22 @@
+﻿outcome,estimator,age_groups,baseline,model,sse_reduction_pct,lo95,hi95,share_draws_positive,interval,draws
+adjrw,ols,3,M1,M2,17.949563448380832,-13.51199488595549,38.37158009011756,0.8945,"province-cluster bootstrap, conditional on CV fits",4000
+adjrw,ols,3,M1,M2B,-6.6697811454505205,-11.285976002065041,-3.075458880932778,0.0,"province-cluster bootstrap, conditional on CV fits",4000
+adjrw,ols,3,M1,M2B3,-14.585490453554534,-23.91052333835723,-5.901497749846251,0.00025,"province-cluster bootstrap, conditional on CV fits",4000
+adjrw,ols,3,M2,M2HB,-0.6386163399934713,-8.101501520795791,4.538829059629816,0.423,"province-cluster bootstrap, conditional on CV fits",4000
+adjrw,ols,3,M2,M2B,-30.005135412464202,-75.86211768189123,7.304479804998166,0.06,"province-cluster bootstrap, conditional on CV fits",4000
+adjrw,ols,3,M5,M5B,-4.899334543789949,-26.191780152474585,18.135101151354686,0.34525,"province-cluster bootstrap, conditional on CV fits",4000
+adjrw,ols,3,M5,M5HB,-4.550885335860294,-8.017495470401636,-1.3423941005487263,0.0,"province-cluster bootstrap, conditional on CV fits",4000
+ip_moph,ols,3,M1,M2,4.241618443069168,-9.348931809066759,15.121953519220456,0.74825,"province-cluster bootstrap, conditional on CV fits",4000
+ip_moph,ols,3,M1,M2B,-5.176678192040007,-10.531523219461773,-1.1145278628728545,0.00025,"province-cluster bootstrap, conditional on CV fits",4000
+ip_moph,ols,3,M1,M2B3,-3.469885636882322,-9.790602539573662,2.7679269767705534,0.1455,"province-cluster bootstrap, conditional on CV fits",4000
+ip_moph,ols,3,M2,M2HB,0.3514901217584617,-5.424562881804706,5.4272067630959775,0.5705,"province-cluster bootstrap, conditional on CV fits",4000
+ip_moph,ols,3,M2,M2B,-9.835480176228494,-27.49714212782846,5.959068442016398,0.11875,"province-cluster bootstrap, conditional on CV fits",4000
+ip_moph,ols,3,M5,M5B,0.001608763844165557,-4.711945850931924,5.0103889364009,0.51375,"province-cluster bootstrap, conditional on CV fits",4000
+ip_moph,ols,3,M5,M5HB,-0.6332193799461769,-3.860318856693511,1.9196224244569253,0.36275,"province-cluster bootstrap, conditional on CV fits",4000
+op_moph,ols,3,M1,M2,-5.418111194208613,-16.19762316748156,4.222129448454983,0.1425,"province-cluster bootstrap, conditional on CV fits",4000
+op_moph,ols,3,M1,M2B,-5.755770174536033,-11.829641749804903,-0.7017141256723851,0.0035,"province-cluster bootstrap, conditional on CV fits",4000
+op_moph,ols,3,M1,M2B3,-6.852558963209004,-14.622539087566894,1.030114879037393,0.0445,"province-cluster bootstrap, conditional on CV fits",4000
+op_moph,ols,3,M2,M2HB,-3.389057087036996,-6.625674720966048,-0.4942563948738041,0.0075,"province-cluster bootstrap, conditional on CV fits",4000
+op_moph,ols,3,M2,M2B,-0.3203045250026907,-10.930605488609352,9.46234973199943,0.47225,"province-cluster bootstrap, conditional on CV fits",4000
+op_moph,ols,3,M5,M5B,5.508725499425137,-3.675790607982227,13.855325955509777,0.8795,"province-cluster bootstrap, conditional on CV fits",4000
+op_moph,ols,3,M5,M5HB,-2.1837633089929187,-3.5131658990157435,-0.9433515476144051,0.00025,"province-cluster bootstrap, conditional on CV fits",4000

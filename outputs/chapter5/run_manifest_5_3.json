@@ -1,0 +1,31 @@
+{
+ "stage": "5_3",
+ "run_utc": "2026-10-14T14:25:01Z",
+ "scenario": "canonical",
+ "overrides": {},
+ "config_hash": "9634ed4e506743c4",
+ "inputs_fingerprint": "c21bd7c5601aabe3",
+ "chapter4_code_hash": "a45b9fdda50dc329",
+ "chapter5_code_hash": "7fd1badee6c33301",
+ "git_revision": "396fcad",
+ "working_tree_has_uncommitted_pipeline_changes": true,
+ "python": "3.14.6",
+ "packages": {
+  "pandas": "3.0.3",
+  "numpy": "2.5.0",
+  "scipy": "1.18.0",
+  "statsmodels": "0.14.6",
+  "matplotlib": "3.11.0",
+  "openpyxl": "3.1.5",
+  "python-docx": "1.2.0",
+  "pyarrow": "24.0.0"
+ },
+ "solver": "HiGHS via scipy.optimize.milp (scipy 1.18.0)",
+ "seed": 20260927,
+ "seconds": 1044.0,
+ "n_assets": 3,
+ "n_claims": 118,
+ "n_paths": 500,
+ "n_adapt": 60,
+ "seconds_total": 1043.8647768497467
+}

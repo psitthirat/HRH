@@ -1,0 +1,194 @@
+# Chapter 5 — a 15-year provincial physician allocation plan.
+#
+# The one configuration read by src/chapter5.  TOML rather than YAML for the same reason as
+# config/analysis.toml: the project environment has no YAML parser and tomllib is in the
+# standard library.  Every value carries a provenance class in [provenance] so the effective
+# configuration export can separate observed inputs, illustrative defaults and policy choices.
+#
+# Override any value from the command line without editing this file, e.g.
+#   PYTHONPATH=src .venv/bin/python -m chapter5.build --plans --set supply.annual_path=2500
+# Overrides write to outputs/chapter5_scenarios/<name>/ and never to the canonical folder.
+
+[project]
+title_th = "บทที่ 5 ทางเลือกของอนาคต: แบบจำลองการผลิตและจัดสรรแพทย์รายจังหวัด"
+baseline_year_ce = 2025
+allocation_first_ce = 2026
+allocation_last_ce = 2040          # inclusive: exactly 15 annual decisions
+province_scope = "thailand_76_excluding_bangkok"
+cadre = "แพทย์"
+cadre_en = "physicians"
+random_seed = 20260927
+
+[scope]
+# The allocator is meant to control OPS (สป.สธ.) appointments.  No OPS-matched provincial stock
+# exists in the repository (Chapter 4.4.2); the MOPH stock of the Health Resource Report is
+# broader (it includes MOPH departments).  The mapping below is therefore PROVISIONAL and every
+# plan built on it is at most an exploratory_policy_scenario.
+workforce_scope = "moph_hrr_76_as_provisional_managed_stock"
+baseline_stock_universe = "moph"       # chapter4 universe name (HRR sector MinistryofPublichealth)
+flow_universe = "hrops_ops_events"     # FY events of the OPS; narrower than the stock
+unmanaged_moph_component = 0.0         # fraction of the MOPH stock NOT controlled by the allocator
+                                       # (M5 scope bridge: H_M5 = H_managed + U, U held fixed)
+calendar_convention = "report_year_stock_with_fiscal_year_flows"
+headcount_or_fte = "headcount"
+
+[demography]
+method = "hamilton_perry_cohort_change"
+# CCR estimation windows (inclusive year pairs t -> t+1 starting in these years)
+ccr_window_central = [2013, 2024]
+ccr_window_recent = [2020, 2024]
+ccr_window_precovid = [2013, 2018]
+cwr_window = [2022, 2025]            # child-woman ratio window for births
+national_control = true              # rake 77-province age-sex projections to the national projection
+migration_scenarios = { low = 0.5, central = 1.0, high = 1.5 }   # multiplier on log(provincial CCR / national CCR)
+backtest_base = 2019                 # project 2019 -> 2025 with 2013-2019 ratios, compare with observed 2025
+open_age = 101                       # the register's ">100" group is coded 101 and treated as open-ended
+entitlement_ratio_mode = "hold_2025" # alternatives: mean_2021_2025
+entitlement_bounds = "min_max_2019_2025"
+
+[supply]
+input_mode = "available_appointments"  # available_appointments | national_graduates | student_intake
+annual_path = 2000                    # accepted starts in the managed 76-province system per year (illustrative)
+annual_path_sensitivity = [1500, 2000, 2500]
+# national_graduates mode: G_t national graduates -> A_t = G_t * licensing * participation * managed_share
+national_graduates = 3000             # illustrative only; not an observed production estimate
+licensing = 0.95
+participation = 0.95
+managed_share = 0.74                  # share of licensed participants who start in the managed system
+# student_intake mode: intake in year t graduates in t + lag with completion probability
+education_lag_years = 6
+completion = 0.93
+intake_2026_onwards = 3300
+graduates_in_pipeline = [3000, 3000, 3050, 3100, 3150, 3200]   # 2026-2031 graduates already enrolled (illustrative)
+
+[departures]
+# rates are recorded events per 100 prior-year MOPH staff (Chapter 4.4) converted to hazards
+estimation_fy = [2021, 2025]          # post-2020-break window; FY2026 is partial and excluded
+pooling = "empirical_bayes_gamma_poisson_to_region"
+causes = ["resignation", "retirement", "transfer_out", "death", "disciplinary"]
+reentry_causes = ["reinstatement", "transfer_in"]
+national_rate_sensitivity = true
+workload_departure_elasticity = 0.104326   # T44 primary PPML, resignation ~ log OP visits per physician (FY t-1); CI crosses zero
+workload_departure_mode = "sensitivity_only"
+
+[services]
+op_minutes = 10.0                      # illustrative allocation weight, not a staffing standard
+adjrw_minutes = 90.0                   # illustrative allocation weight, not a staffing standard
+weight_sensitivity = [[5.0, 90.0], [15.0, 90.0], [10.0, 60.0], [10.0, 120.0]]
+inpatient_measure = "adjrw"            # alternative: ip_days (converted to equal national baseline minutes)
+projection_candidates = ["constant_last", "mean_last3", "trend_last5_damped"]
+backtest_cutoffs = [2016, 2017, 2018, 2019, 2023]
+backtest_horizons = [1, 2, 3]
+break_years = [2020, 2021, 2022]       # COVID-affected service years kept out of rate windows
+min_cutoffs_for_trend = 3              # a non-persistence benchmark is chosen only with >= 3 evaluated cutoffs
+trend_damping = 0.8
+
+[m5]
+reference_year = 2023                  # Chapter 4 reference profile (T423_REFERENCE_PROFILE)
+response_year_effect = 2025            # last observed year effect used for resource-responsive levels
+morbidity_path = "fixed_2025"          # alternatives: trend_bounded, age_held_2025
+morbidity_trend_cap_rel = 0.03         # max change per year as a fraction of the 2025 level (trend_bounded)
+beds_path = "fixed_2025_count"         # alternative: grow_recent_cagr
+nurses_path = "fixed_2025_count"       # alternative: grow_recent_cagr
+gpp_path = "fixed_2024_level"
+coefficient_draws = 500                # province-cluster bootstrap refits, one per simulation path
+response_model = "positive"            # relative resource response: positive-mean (log-link) M5 anchored to OLS levels;
+                                       # "ols" is attempted and reported (its level turns non-positive under 2040 ageing)
+
+[feedback]
+primary_need_target = "fixed_reference_m5"
+extension = "lagged_resource_responsive_target"
+response_strengths = [0.0, 0.5, 1.0]
+lag_years = 1
+timing_rule = "decision_year_context_with_previous_year_resources"
+
+[targets]
+reference_per_1000 = 1.0               # illustrative physician reference (not WHO 4.45, which is physicians+nurses+midwives)
+reference_sensitivity = [0.5, 1.0]
+experiments = ["common_total", "fixed_base_conversion"]
+primary_population = "civil"
+population_variant = "entitlement"
+service_composite = "op_plus_adjrw"
+
+[allocation]
+universal_new_appointment_floor = 1
+require_full_placement = true
+cap_mode = "gross_arrivals"            # gross_arrivals | net_growth
+cap_fraction_of_opening_stock = 0.10
+cap_alternative = "net_growth"
+reentry_consumes_onboarding = true
+main_transfer_fraction = 0.02
+transfer_sensitivity = [0.00, 0.02, 0.05]
+national_transfer_budget_fraction = 0.01   # of national eligible opening stock per year (illustrative)
+origin_protection_mode = "limited_drawdown"
+protected_survivor_fraction = 0.95
+new_appointments_replace_transfers = true
+origin_protection_sensitivity = "surplus_only"
+eligibility_network = "complete_76"    # alternative: within_health_region
+transfer_cost = "great_circle_km"
+fairness_objective = "target_weighted_squared_relative_shortfall"
+objective_order = ["placement", "shortfall", "distribution", "operational_disruption"]
+tangent_step = 0.025                   # piecewise-linear approximation of s^2 (max error step^2/4)
+tangent_step_check = 0.01
+lexicographic_rel_tol = 0.0005
+lexicographic_abs_tol = 1e-7
+mip_rel_gap = 0.0002
+time_limit_s = 180
+secondary_time_limit_s = 240           # distribution and transfer-minimisation stages
+discount = 1.0
+
+[evaluation]
+plan_modes = ["fixed_schedule", "annual_replanning"]
+paired_random_paths = true
+main_simulation_runs = 500
+dev_simulation_runs = 40
+adaptive_simulation_runs = 60          # optimised adaptive paths (costlier; fixed-schedule paths are cheaper)
+switch_threshold_pct = 5.0             # practical-difference criteria, chosen before reading results
+cumulative_shortfall_threshold_pct = 2.0
+worst_province_loss_threshold_pct = 5.0
+bottom_quartile = 19
+
+[inverse]
+ramp_fraction = 0.10                   # annual increase limit of the appointment pool
+criterion = "every_province_reaches_reference_by_2040"
+
+[figures]
+dpi = 300
+formats = ["png", "svg", "pdf"]
+
+# ------------------------------------------------------------------ provenance of each value
+# observed = measured in the repository's data; estimated = fitted from data;
+# illustrative = an adjustable example with no evidential status; policy = a choice the
+# decision-maker must make; convention = a modelling convention.
+[provenance]
+"supply.annual_path" = "illustrative"
+"supply.national_graduates" = "illustrative"
+"supply.licensing" = "illustrative"
+"supply.participation" = "illustrative"
+"supply.managed_share" = "illustrative"
+"supply.graduates_in_pipeline" = "illustrative"
+"supply.intake_2026_onwards" = "illustrative"
+"supply.completion" = "illustrative"
+"supply.education_lag_years" = "convention"
+"departures.estimation_fy" = "convention"
+"departures.workload_departure_elasticity" = "estimated"
+"services.op_minutes" = "illustrative"
+"services.adjrw_minutes" = "illustrative"
+"targets.reference_per_1000" = "illustrative"
+"allocation.universal_new_appointment_floor" = "policy"
+"allocation.cap_fraction_of_opening_stock" = "illustrative"
+"allocation.cap_mode" = "policy"
+"allocation.main_transfer_fraction" = "illustrative"
+"allocation.national_transfer_budget_fraction" = "illustrative"
+"allocation.protected_survivor_fraction" = "illustrative"
+"allocation.fairness_objective" = "policy"
+"allocation.tangent_step" = "convention"
+"feedback.response_strengths" = "illustrative"
+"m5.reference_year" = "convention"
+"m5.morbidity_path" = "convention"
+"scope.unmanaged_moph_component" = "convention"
+"demography.migration_scenarios" = "illustrative"
+"evaluation.switch_threshold_pct" = "policy"
+"evaluation.cumulative_shortfall_threshold_pct" = "policy"
+"evaluation.worst_province_loss_threshold_pct" = "policy"
+"inverse.ramp_fraction" = "illustrative"

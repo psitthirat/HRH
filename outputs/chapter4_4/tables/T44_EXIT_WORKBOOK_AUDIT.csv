@@ -1,0 +1,4 @@
+﻿check,cells,mismatches,max_abs_diff
+components = fiscal-year total column (every row),5400,0,0.0
+sum of rows = footer (fiscal year x cadre),70,0,0.0
+cadre sheets pooled FY2017-2026 = summary sheet (region x cadre x reason),455,4,1.0

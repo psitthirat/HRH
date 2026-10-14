@@ -1,0 +1,112 @@
+﻿claim_id,section,value,display,fmt,unit,table,row_keys,note,status
+c51_H0_total,5_1,22685.0,"22,685",int,คน,T5_BASELINE_PROVINCES,,,computed
+c51_pop_2025,5_1,59316175.0,"59,316,175",int,คน,,,,computed
+c51_pop_2040_central,5_1,55406781.682925105,"55,406,782",int,คน,,,,computed
+c51_pop_change_pct_central,5_1,-6.590771095868697,-6.6,{:.1f},%,,,,computed
+c51_pop_2040_low,5_1,55334652.07243661,"55,334,652",int,คน,,,,computed
+c51_pop_change_pct_low,5_1,-6.7123730206194,-6.7,{:.1f},%,,,,computed
+c51_pop_2040_high,5_1,55481189.22197079,"55,481,189",int,คน,,,,computed
+c51_pop_change_pct_high,5_1,-6.4653288551212444,-6.5,{:.1f},%,,,,computed
+c51_share60_2025,5_1,21.540937189560857,21.5,{:.1f},%,,,,computed
+c51_share60_2040,5_1,31.95059700103955,32.0,{:.1f},%,,,,computed
+c51_share60_train_max,5_1,30.55753022689094,30.6,{:.1f},%,,,,computed
+c51_extrap_share_2030,5_1,27.631578947368425,28,{:.0f},%,,,,computed
+c51_extrap_share_2035,5_1,82.89473684210526,83,{:.0f},%,,,,computed
+c51_extrap_share_2040,5_1,93.42105263157895,93,{:.0f},%,,,,computed
+c51_popbt_hp_mape,5_1,1.1081117205857567,1.11,{:.2f},%,,,,computed
+c51_popbt_nochange_mape,5_1,2.2275002467114624,2.23,{:.2f},%,,,,computed
+c51_popbt_linear_mape,5_1,2.6184412743925356,2.62,{:.2f},%,,,,computed
+c51_popbt_hp_nat,5_1,1.103780716747882,1.10,{:.2f},%,,,,computed
+c51_popbt_hp_s60,5_1,0.27568463482341476,0.28,{:.2f},จุดร้อยละ,,,,computed
+c51_popbt_nochange_s60,5_1,4.718477334917145,4.72,{:.2f},จุดร้อยละ,,,,computed
+c51_births_2026,5_1,395892.5276245066,"395,893",int,คน,,,,computed
+c51_births_2040,5_1,329844.6319407452,"329,845",int,คน,,,,computed
+c51_rate_resignation,5_1,5.521870939800779,5.52,{:.2f},ต่อ 100 คน-ปี,,,,computed
+c51_rate_retirement,5_1,0.7519981101618174,0.75,{:.2f},ต่อ 100 คน-ปี,,,,computed
+c51_rate_transfer_out,5_1,0.205716760502382,0.21,{:.2f},ต่อ 100 คน-ปี,,,,computed
+c51_rate_death,5_1,0.044293082404819085,0.04,{:.2f},ต่อ 100 คน-ปี,,,,computed
+c51_rate_disciplinary,5_1,0.022638686562463088,0.02,{:.2f},ต่อ 100 คน-ปี,,,,computed
+c51_rate_reinstatement,5_1,0.4498208590889405,0.45,{:.2f},ต่อ 100 คน-ปี,,,,computed
+c51_rate_transfer_in,5_1,0.021654395842355997,0.02,{:.2f},ต่อ 100 คน-ปี,,,,computed
+c51_rate_recruitment_hiring,5_1,10.297649513760383,10.30,{:.2f},ต่อ 100 คน-ปี,,,,computed
+c51_exit_prob_nat,5_1,6.2524998108056975,6.25,{:.2f},%,,,,computed
+c51_reentry_nat,5_1,0.4739344684824195,0.47,{:.2f},%,,,,computed
+c51_exp_departures_2026,5_1,1418.3795820812727,"1,418",int,คน,,,,computed
+c51_exp_reentries_2026,5_1,107.51203417523686,108,int,คน,,,,computed
+c51_resig_raw_p10,5_1,3.5916569159528873,3.6,{:.1f},ต่อ 100,,,,computed
+c51_resig_raw_p90,5_1,9.650989572249417,9.7,{:.1f},ต่อ 100,,,,computed
+c51_resig_pooled_p10,5_1,3.8263293997753483,3.8,{:.1f},ต่อ 100,,,,computed
+c51_resig_pooled_p90,5_1,8.035030067632706,8.0,{:.1f},ต่อ 100,,,,computed
+c51_resig_shrink_median,5_1,18.850637638274133,19,{:.0f},%,,,,computed
+c51_sf_dstock_2125,5_1,4358.0,"4,358",int,คน,,,,computed
+c51_sf_net_2125,5_1,4290.0,"4,290",int,ครั้ง,,,,computed
+c51_sf_resid_2125,5_1,68.0,68,int,คน,,,,computed
+c51_sf_resid_2020,5_1,-4364.0,"-4,364",int,คน,,,,computed
+c51_recruit_mean_2125,5_1,2092.4,"2,092",int,ครั้งต่อปี,,,,computed
+c51_exits_mean_2125,5_1,1330.2,"1,330",int,ครั้งต่อปี,,,,computed
+c51_sfb_2025_resid,5_1,-223.24993298424306,-223,int,คน,,,,computed
+c51_sfb_2025_mape,5_1,11.267252421880173,11.3,{:.1f},%,,,,computed
+c51_svc_method_op_moph,5_1,อัตราปีล่าสุดคงที่,อัตราปีล่าสุดคงที่,text,,,,,computed
+c51_svc_mape_op_moph,5_1,11.495102937554114,11.5,{:.1f},%,,,,computed
+c51_svc_best_mape_op_moph,5_1,11.495102937554114,11.5,{:.1f},%,,,,computed
+c51_svc_cutoffs_op_moph,5_1,4.0,4,{:.0f},จุดตัด,,,,computed
+c51_svc_method_ip_moph,5_1,อัตราปีล่าสุดคงที่,อัตราปีล่าสุดคงที่,text,,,,,computed
+c51_svc_mape_ip_moph,5_1,10.769994000025477,10.8,{:.1f},%,,,,computed
+c51_svc_best_mape_ip_moph,5_1,10.769994000025477,10.8,{:.1f},%,,,,computed
+c51_svc_cutoffs_ip_moph,5_1,4.0,4,{:.0f},จุดตัด,,,,computed
+c51_svc_method_adjrw,5_1,อัตราปีล่าสุดคงที่,อัตราปีล่าสุดคงที่,text,,,,,computed
+c51_svc_mape_adjrw,5_1,8.686271340772377,8.7,{:.1f},%,,,,computed
+c51_svc_best_mape_adjrw,5_1,6.666772011263198,6.7,{:.1f},%,,,,computed
+c51_svc_cutoffs_adjrw,5_1,2.0,2,{:.0f},จุดตัด,,,,computed
+c51_D_P_growth_pct,5_1,-6.590771095868697,-6.6,{:.1f},%,,,,computed
+c51_D_Pent_growth_pct,5_1,-6.529850058698338,-6.5,{:.1f},%,,,,computed
+c51_D_S_growth_pct,5_1,-7.248294375248221,-7.2,{:.1f},%,,,,computed
+c51_D_N_growth_pct,5_1,-5.523160010351525,-5.5,{:.1f},%,,,,computed
+c51_D_B_growth_pct,5_1,16.359822412846036,16.4,{:.1f},%,,,,computed
+c51_D_Basr_growth_pct,5_1,-7.091435489358366,-7.1,{:.1f},%,,,,computed
+c51_minrate_std_op_moph,5_1,1.83758974993025,1.838,{:.3f},ต่อคน,,,,computed
+c51_minrate_std_ip_moph,5_1,0.36561269396110685,0.366,{:.3f},ต่อคน,,,,computed
+c51_minrate_std_adjrw,5_1,0.07907302129375687,0.079,{:.3f},ต่อคน,,,,computed
+c51_nstd_positive,5_1,1.0,1,{:.0f},,,,,computed
+c51_B_dalys_2025,5_1,19341079.963886824,"19,341,080",int,DALY,,,,computed
+c51_B_dalys_2040,5_1,22505246.298705254,"22,505,246",int,DALY,,,,computed
+c51_B_dalys_growth_pct,5_1,16.359822412846036,16.4,{:.1f},%,,,,computed
+c51_B_dalys_per_person_2025,5_1,0.32606755179151087,0.326,{:.3f},DALY ต่อคน,,,,computed
+c51_B_dalys_per_person_2040,5_1,0.40618216065129753,0.406,{:.3f},DALY ต่อคน,,,,computed
+c51_B_ratio_min,5_1,0.7232522273129557,0.72,{:.2f},,,,,computed
+c51_B_ratio_max,5_1,1.2943048625650346,1.29,{:.2f},,,,,computed
+c51_B_ratio_min_prov,5_1,ภูเก็ต,ภูเก็ต,text,,,,,computed
+c51_B_ratio_max_prov,5_1,ชัยนาท,ชัยนาท,text,,,,,computed
+c51_B_top_gain,5_1,"ชัยภูมิ (+196,714), ขอนแก่น (+194,930), ลำปาง (+184,278)","ชัยภูมิ (+196,714), ขอนแก่น (+194,930), ลำปาง (+184,278)",text,,,,,computed
+c51_B_top_loss,5_1,"ชลบุรี (-356,038), นนทบุรี (-312,444), สมุทรปราการ (-301,331)","ชลบุรี (-356,038), นนทบุรี (-312,444), สมุทรปราการ (-301,331)",text,,,,,computed
+c51_eta_lam1_mean,5_1,0.32512532997021354,0.33,{:.2f},,,,,computed
+c51_eta_lam1_min,5_1,0.2804877210473124,0.28,{:.2f},,,,,computed
+c51_eta_lam1_max,5_1,0.3644934532681013,0.36,{:.2f},,,,,computed
+c51_gainB_lam1_mean,5_1,0.8799437349813841,0.88,{:.2f},,,,,computed
+c51_gainB_lam1_n_ge1,5_1,12.0,12,{:.0f},จังหวัด,,,,computed
+c51_beta_phys_op_moph,5_1,0.3065255990788843,0.307,{:.3f},,,,,computed
+c51_beta_nurse_op_moph,5_1,0.516310697581102,0.516,{:.3f},,,,,computed
+c51_beta_s60_op_moph,5_1,3.7152358091887416,3.715,{:.3f},,,,,computed
+c51_beta_phys_ip_moph,5_1,0.107564550031231,0.108,{:.3f},,,,,computed
+c51_beta_nurse_ip_moph,5_1,-0.04595052898502607,-0.046,{:.3f},,,,,computed
+c51_beta_s60_ip_moph,5_1,-0.35010253992889,-0.350,{:.3f},,,,,computed
+c51_beta_phys_adjrw,5_1,0.10278685065317196,0.103,{:.3f},,,,,computed
+c51_beta_nurse_adjrw,5_1,-0.03482327211253174,-0.035,{:.3f},,,,,computed
+c51_beta_s60_adjrw,5_1,-0.6313787606714815,-0.631,{:.3f},,,,,computed
+c51_bpos_phys_op_moph,5_1,0.1366288231944562,0.14,{:.2f},,,,,computed
+c51_bpos_phys_ip_moph,5_1,0.186813422948219,0.19,{:.2f},,,,,computed
+c51_bpos_phys_adjrw,5_1,0.6048034203437215,0.60,{:.2f},,,,,computed
+c51_m5_repro_max,5_1,2.220446049250313e-16,2.2e-16,{:.1e},,,,,computed
+c51_pool,5_1,2000.0,"2,000",int,คนต่อปี,,,,computed
+c51_base_be,5_1,2568.0,2568,{:.0f},พ.ศ.,,,,computed
+c51_first_be,5_1,2569.0,2569,{:.0f},พ.ศ.,,,,computed
+c51_last_be,5_1,2583.0,2583,{:.0f},พ.ศ.,,,,computed
+c51_n_years,5_1,15.0,15,{:.0f},ปี,,,,computed
+c51_ref_per1000,5_1,1.0,1,{:g},"คนต่อประชากร 1,000",,,,computed
+c51_cap_pct,5_1,10.0,10,{:.0f},%,,,,computed
+c51_transfer_pct,5_1,2.0,2,{:.0f},%,,,,computed
+c51_floor,5_1,1.0,1,{:.0f},คน,,,,computed
+c51_cap_2026_total,5_1,2127.0,"2,127",int,คน,,,,computed
+c51_target_2025,5_1,59316.175,"59,316",int,คน,,,,computed
+c51_attain_2025,5_1,0.3824420573309051,0.38,{:.2f},,,,,computed
+c51_steady_state,5_1,34610.66686140298,"34,611",int,คน,,,"stock at which expected net departures equal the pool, national hazard mix of 2025",computed

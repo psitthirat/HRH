@@ -1,0 +1,394 @@
+{
+ "schema": "workforce-lab.validation/1",
+ "criteria_file_sha256": "16d303bdfe78aafaf1be0761e26e161ee40993879125c9ed37673ed9aed471ed",
+ "held_out_th": "จำนวนแพทย์ สธ. รายจังหวัดหลังจุดตั้งต้นปี 2563–2566 (ใช้เฉพาะข้อมูลที่มี ณ จุดตั้งต้น) ทำนายถึงปี 2568",
+ "criteria": [
+  {
+   "criterion": "C1 forecaster status",
+   "question_th": "ทำนายจำนวนแพทย์รายจังหวัด 3 ปีข้างหน้าได้แม่นกว่าวิธีง่ายหรือไม่",
+   "comparator_th": "คงจำนวนเดิม (persistence) และปรับตามประชากรอย่างเดียว",
+   "horizon": "3",
+   "value": 28.090440940588202,
+   "benchmark": "persistence 33.29; population_only 32.82",
+   "passed": true,
+   "consequence": "describe the engine as a forecaster"
+  },
+  {
+   "criterion": "C2 interval calibration (unconditional)",
+   "question_th": "ช่วงคาดการณ์ 90% ครอบค่าจริงได้ตามที่ระบุหรือไม่",
+   "comparator_th": "ควรครอบค่าจริงร้อยละ 80–98",
+   "horizon": "all",
+   "value": 0.4407894736842105,
+   "benchmark": "[0.8, 0.98]",
+   "passed": false,
+   "consequence": "intervals mis-calibrated; present as scenario ranges only"
+  },
+  {
+   "criterion": "C3 lowest-19 group stability",
+   "question_th": "19 จังหวัดที่ขาดมากที่สุดที่ทำนายไว้ ตรงกับที่เกิดจริงหรือไม่",
+   "comparator_th": "Jaccard อย่างน้อย 0.60",
+   "horizon": "3",
+   "value": 0.5851690821256039,
+   "benchmark": ">= 0.6",
+   "passed": false,
+   "consequence": "priority group not stable; re-identify it every year"
+  }
+ ],
+ "hindcast_h3": [
+  {
+   "model": "persistence",
+   "mae": 33.29385964912281,
+   "national_error_pct": -10.315934065934062,
+   "jaccard_lowest19": 0.7157575757575758,
+   "interval_coverage": null
+  },
+  {
+   "model": "population_only",
+   "mae": 32.818290105647606,
+   "national_error_pct": -10.219549688626117,
+   "jaccard_lowest19": 0.6962703962703962,
+   "interval_coverage": null
+  },
+  {
+   "model": "stock_flow_conditional",
+   "mae": 26.603163011389384,
+   "national_error_pct": 3.799229291964701,
+   "jaccard_lowest19": 0.5427350427350427,
+   "interval_coverage": 0.2850877192982456
+  },
+  {
+   "model": "stock_flow_unconditional",
+   "mae": 28.090440940588202,
+   "national_error_pct": 4.130453593269379,
+   "jaccard_lowest19": 0.5851690821256039,
+   "interval_coverage": 0.41228070175438597
+  },
+  {
+   "model": "trend",
+   "mae": 33.80263157894777,
+   "national_error_pct": -5.265567765567614,
+   "jaccard_lowest19": 0.6102020202020202,
+   "interval_coverage": null
+  }
+ ],
+ "verdict_th": {
+  "beats_comparator": "ดีกว่าตัวเทียบ",
+  "does_not_beat_comparator": "ไม่ดีกว่าตัวเทียบ",
+  "diagnostic_only": "การตรวจวินิจฉัย",
+  "implementation_check": "การตรวจการคำนวณ",
+  "scenario_only": "ฉากทัศน์เท่านั้น"
+ },
+ "inventory": [
+  {
+   "check_id": "C4-CV-op_moph",
+   "component": "service model M5 (op_moph)",
+   "evidence_type": "spatial: repeated 5-fold province-grouped CV",
+   "comparator": "M0 (year effects only)",
+   "metric": "R² vs training-fold mean",
+   "value_model": 0.4619318686441674,
+   "value_comparator": 0.1816530375390566,
+   "verdict": "beats_comparator",
+   "limitation": "prediction across provinces, not through time; supply terms make fit partly endogenous"
+  },
+  {
+   "check_id": "C4-CV-ip_moph",
+   "component": "service model M5 (ip_moph)",
+   "evidence_type": "spatial: repeated 5-fold province-grouped CV",
+   "comparator": "M0 (year effects only)",
+   "metric": "R² vs training-fold mean",
+   "value_model": 0.5923085327962115,
+   "value_comparator": 0.2449277127123161,
+   "verdict": "beats_comparator",
+   "limitation": "prediction across provinces, not through time; supply terms make fit partly endogenous"
+  },
+  {
+   "check_id": "C4-CV-adjrw",
+   "component": "service model M5 (adjrw)",
+   "evidence_type": "spatial: repeated 5-fold province-grouped CV",
+   "comparator": "M0 (year effects only)",
+   "metric": "R² vs training-fold mean",
+   "value_model": 0.5106544504893038,
+   "value_comparator": 0.0729402652966541,
+   "verdict": "beats_comparator",
+   "limitation": "prediction across provinces, not through time; supply terms make fit partly endogenous"
+  },
+  {
+   "check_id": "C4-TEMP-op_moph-2024",
+   "component": "service model M5 (op_moph)",
+   "evidence_type": "temporal holdout (one year ahead)",
+   "comparator": "persistence (last observed rate)",
+   "metric": "R² vs training mean",
+   "value_model": 0.5994844454514163,
+   "value_comparator": 0.8292618460384014,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "short series (2022 onwards); explanatory fit is not forecasting skill"
+  },
+  {
+   "check_id": "C4-TEMP-op_moph-2025",
+   "component": "service model M5 (op_moph)",
+   "evidence_type": "temporal holdout (one year ahead)",
+   "comparator": "persistence (last observed rate)",
+   "metric": "R² vs training mean",
+   "value_model": 0.3806359982217676,
+   "value_comparator": 0.6733635527453266,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "short series (2022 onwards); explanatory fit is not forecasting skill"
+  },
+  {
+   "check_id": "C4-TEMP-ip_moph-2024",
+   "component": "service model M5 (ip_moph)",
+   "evidence_type": "temporal holdout (one year ahead)",
+   "comparator": "persistence (last observed rate)",
+   "metric": "R² vs training mean",
+   "value_model": 0.44108223960137,
+   "value_comparator": 0.8889332027748373,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "short series (2022 onwards); explanatory fit is not forecasting skill"
+  },
+  {
+   "check_id": "C4-TEMP-ip_moph-2025",
+   "component": "service model M5 (ip_moph)",
+   "evidence_type": "temporal holdout (one year ahead)",
+   "comparator": "persistence (last observed rate)",
+   "metric": "R² vs training mean",
+   "value_model": 0.359671309512268,
+   "value_comparator": 0.8037826726134624,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "short series (2022 onwards); explanatory fit is not forecasting skill"
+  },
+  {
+   "check_id": "C4-TEMP-adjrw-2024",
+   "component": "service model M5 (adjrw)",
+   "evidence_type": "temporal holdout (one year ahead)",
+   "comparator": "persistence (last observed rate)",
+   "metric": "R² vs training mean",
+   "value_model": 0.6295217013929275,
+   "value_comparator": 0.8831687854749084,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "short series (2022 onwards); explanatory fit is not forecasting skill"
+  },
+  {
+   "check_id": "C4-TEMP-adjrw-2025",
+   "component": "service model M5 (adjrw)",
+   "evidence_type": "temporal holdout (one year ahead)",
+   "comparator": "persistence (last observed rate)",
+   "metric": "R² vs training mean",
+   "value_model": 0.6948201484151642,
+   "value_comparator": 0.9455552830594548,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "short series (2022 onwards); explanatory fit is not forecasting skill"
+  },
+  {
+   "check_id": "C45-CV-op_moph",
+   "component": "BOD burden as service predictor (op_moph)",
+   "evidence_type": "spatial: paired province-grouped CV",
+   "comparator": "M1 (age only)",
+   "metric": "% SSE reduction (95% cluster bootstrap)",
+   "value_model": -5.755770174536033,
+   "value_comparator": 0.0,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "tests prediction of recorded hospital activity, not suitability as an equity criterion"
+  },
+  {
+   "check_id": "C45-CV-ip_moph",
+   "component": "BOD burden as service predictor (ip_moph)",
+   "evidence_type": "spatial: paired province-grouped CV",
+   "comparator": "M1 (age only)",
+   "metric": "% SSE reduction (95% cluster bootstrap)",
+   "value_model": -5.176678192040007,
+   "value_comparator": 0.0,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "tests prediction of recorded hospital activity, not suitability as an equity criterion"
+  },
+  {
+   "check_id": "C45-CV-adjrw",
+   "component": "BOD burden as service predictor (adjrw)",
+   "evidence_type": "spatial: paired province-grouped CV",
+   "comparator": "M1 (age only)",
+   "metric": "% SSE reduction (95% cluster bootstrap)",
+   "value_model": -6.6697811454505205,
+   "value_comparator": 0.0,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "tests prediction of recorded hospital activity, not suitability as an equity criterion"
+  },
+  {
+   "check_id": "C5-POP-no_change_2019",
+   "component": "Hamilton–Perry population projection (national control)",
+   "evidence_type": "hindcast (latest revised register)",
+   "comparator": "no change 2019",
+   "metric": "province-total MAPE (%)",
+   "value_model": 1.108111720585757,
+   "value_comparator": 2.2275002467114624,
+   "verdict": "beats_comparator",
+   "limitation": "one origin; not a test of each age group or of a 15-year horizon"
+  },
+  {
+   "check_id": "C5-POP-linear_trend_totals_2013_2019",
+   "component": "Hamilton–Perry population projection (national control)",
+   "evidence_type": "hindcast (latest revised register)",
+   "comparator": "linear trend totals 2013 2019",
+   "metric": "province-total MAPE (%)",
+   "value_model": 1.108111720585757,
+   "value_comparator": 2.6184412743925356,
+   "verdict": "beats_comparator",
+   "limitation": "one origin; not a test of each age group or of a 15-year horizon"
+  },
+  {
+   "check_id": "C5-SVC-adjrw",
+   "component": "service-rate benchmark (adjrw)",
+   "evidence_type": "rolling-origin backtest, conditional on realised population",
+   "comparator": "persistence (constant last rate)",
+   "metric": "province MAPE (%)",
+   "value_model": 6.666772011263198,
+   "value_comparator": 8.686271340772377,
+   "verdict": "beats_comparator",
+   "limitation": "uses the target year's actual population, so not a joint population-service forecast"
+  },
+  {
+   "check_id": "C5-SVC-ip_moph",
+   "component": "service-rate benchmark (ip_moph)",
+   "evidence_type": "rolling-origin backtest, conditional on realised population",
+   "comparator": "persistence (constant last rate)",
+   "metric": "province MAPE (%)",
+   "value_model": 11.233818224076645,
+   "value_comparator": 10.769994000025475,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "uses the target year's actual population, so not a joint population-service forecast"
+  },
+  {
+   "check_id": "C5-SVC-op_moph",
+   "component": "service-rate benchmark (op_moph)",
+   "evidence_type": "rolling-origin backtest, conditional on realised population",
+   "comparator": "persistence (constant last rate)",
+   "metric": "province MAPE (%)",
+   "value_model": 12.064978703698715,
+   "value_comparator": 11.495102937554114,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "uses the target year's actual population, so not a joint population-service forecast"
+  },
+  {
+   "check_id": "C5-HINDCAST-h1-vs-persistence",
+   "component": "provincial physician stock (stock-flow engine)",
+   "evidence_type": "integrated cutoff-safe hindcast, origins 2020-2023",
+   "comparator": "persistence",
+   "metric": "province MAE (physicians)",
+   "value_model": 14.213529907837064,
+   "value_comparator": 15.94078947368421,
+   "verdict": "beats_comparator",
+   "limitation": "post-2020-break origins only; stock and event universes differ"
+  },
+  {
+   "check_id": "C5-HINDCAST-h3-vs-persistence",
+   "component": "provincial physician stock (stock-flow engine)",
+   "evidence_type": "integrated cutoff-safe hindcast, origins 2020-2023",
+   "comparator": "persistence",
+   "metric": "province MAE (physicians)",
+   "value_model": 28.090440940588202,
+   "value_comparator": 33.29385964912281,
+   "verdict": "beats_comparator",
+   "limitation": "post-2020-break origins only; stock and event universes differ"
+  },
+  {
+   "check_id": "C5-HINDCAST-h1-vs-population_only",
+   "component": "provincial physician stock (stock-flow engine)",
+   "evidence_type": "integrated cutoff-safe hindcast, origins 2020-2023",
+   "comparator": "population only",
+   "metric": "province MAE (physicians)",
+   "value_model": 14.213529907837064,
+   "value_comparator": 15.875371226551614,
+   "verdict": "beats_comparator",
+   "limitation": "post-2020-break origins only; stock and event universes differ"
+  },
+  {
+   "check_id": "C5-HINDCAST-h3-vs-population_only",
+   "component": "provincial physician stock (stock-flow engine)",
+   "evidence_type": "integrated cutoff-safe hindcast, origins 2020-2023",
+   "comparator": "population only",
+   "metric": "province MAE (physicians)",
+   "value_model": 28.090440940588202,
+   "value_comparator": 32.818290105647606,
+   "verdict": "beats_comparator",
+   "limitation": "post-2020-break origins only; stock and event universes differ"
+  },
+  {
+   "check_id": "C5-HINDCAST-intervals",
+   "component": "90% predictive intervals (hazard + event noise)",
+   "evidence_type": "interval coverage in hindcast",
+   "comparator": "nominal 90%",
+   "metric": "pooled coverage",
+   "value_model": 0.4407894736842105,
+   "value_comparator": 0.9,
+   "verdict": "does_not_beat_comparator",
+   "limitation": "intervals mis-calibrated; present as scenario ranges only"
+  },
+  {
+   "check_id": "C5-STOCK-replay",
+   "component": "physician stock-flow (hazards + actual recruitment)",
+   "evidence_type": "retrospective reconciliation (in-sample hazards, actual recruitment)",
+   "comparator": "none",
+   "metric": "province MAPE 2025 (%)",
+   "value_model": 11.267252421880173,
+   "value_comparator": null,
+   "verdict": "diagnostic_only",
+   "limitation": "not out-of-sample; stock (HRR MOPH) and events (HROPS OPS) differ in scope"
+  },
+  {
+   "check_id": "C5-M5-support",
+   "component": "M5 standardized need (N-STD) under projected ageing",
+   "evidence_type": "support / extrapolation diagnostic",
+   "comparator": "training range and Mahalanobis bound",
+   "metric": "share of provinces outside support",
+   "value_model": 0.9342105263157896,
+   "value_comparator": null,
+   "verdict": "diagnostic_only",
+   "limitation": "long-horizon N-STD extrapolates; evaluate alternatives before using M5 as the sole response"
+  },
+  {
+   "check_id": "C5-OPT-constraints",
+   "component": "allocation MILP (constrained plan jobs)",
+   "evidence_type": "implementation check",
+   "comparator": "hard constraints recomputed on the solution",
+   "metric": "solved constrained plans passing every constraint check",
+   "value_model": 80,
+   "value_comparator": 80,
+   "verdict": "implementation_check",
+   "limitation": "establishes feasibility and balance for tested cases; near-optimal schedules are not unique"
+  },
+  {
+   "check_id": "C5-B-burden",
+   "component": "expected burden (family B)",
+   "evidence_type": "scenario_only",
+   "comparator": "none possible",
+   "metric": "—",
+   "value_model": "",
+   "value_comparator": "",
+   "verdict": "scenario_only",
+   "limitation": "no longitudinal subnational burden to test against; demographic projection under fixed rates"
+  },
+  {
+   "check_id": "C5-HG-health-gain",
+   "component": "amenable burden averted",
+   "evidence_type": "scenario_only",
+   "comparator": "none possible",
+   "metric": "—",
+   "value_model": "",
+   "value_comparator": "",
+   "verdict": "scenario_only",
+   "limitation": "no identified physician-to-health effect; ranking of plans is the usable output"
+  }
+ ],
+ "weak": [
+  "C4-TEMP-op_moph-2024",
+  "C4-TEMP-op_moph-2025",
+  "C4-TEMP-ip_moph-2024",
+  "C4-TEMP-ip_moph-2025",
+  "C4-TEMP-adjrw-2024",
+  "C4-TEMP-adjrw-2025",
+  "C45-CV-op_moph",
+  "C45-CV-ip_moph",
+  "C45-CV-adjrw",
+  "C5-SVC-ip_moph",
+  "C5-SVC-op_moph",
+  "C5-HINDCAST-intervals"
+ ]
+}

@@ -1,0 +1,9 @@
+﻿source,year,kind,value,detail
+data/processed/services_province.csv[tier=pc],2016,national total change > 40%,87.6,"op_visits 109,984,251 -> 206,317,289"
+data/processed/services_province.csv[tier=pc],2017,national total change > 40%,-42.1,"op_visits 206,317,289 -> 119,417,831"
+data/processed/services_province.csv[tier=pc],2023,fewer reporting units,-6.0,76 -> 70
+data/processed/services_province.csv[tier=pc],2024,fewer reporting units,-6.0,70 -> 64
+data/processed/services_province.csv[tier=pc],2025,fewer reporting units,-4.0,64 -> 60
+data/epi/s_ca_cervix_pop_age.csv,2024,national total change > 40%,119.0,"result 13,423 -> 29,399"
+data/spc_aggregated.csv,2016,reporting facilities change > 25%,34.1,941 -> 1262
+data/hrh_aggregated.csv,2016,reporting facilities change > 25%,33.0,8498 -> 11299

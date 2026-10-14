@@ -1,0 +1,14 @@
+﻿year,prov_code,metric,value_moph,components_reported,tier_moph,value_all,tier_all
+2013,70,op_visits,2139972.0,3,moph_service,2072965.0,all_reporting
+2015,25,ip_days,250499.0,3,moph_service,249788.0,all_reporting
+2015,25,op_visits,1030066.0,3,moph_service,937835.0,all_reporting
+2015,26,ip_days,114405.0,2,moph_service,46081.0,all_reporting
+2015,62,ip_days,278789.0,2,moph_service,124629.0,all_reporting
+2016,91,ip_days,269415.0,2,moph_service,162823.0,all_reporting
+2016,91,op_visits,958343.0,2,moph_service,680296.0,all_reporting
+2016,95,ip_days,435030.0,3,moph_service,327010.0,all_reporting
+2016,95,op_visits,1548278.0,3,moph_service,1306972.0,all_reporting
+2016,96,op_visits,1545940.0,2,moph_service,1444727.0,all_reporting
+2020,63,ip_days,365181.0,2,moph_service,325928.0,all_reporting
+2020,76,ip_days,347939.0,2,moph_service,197431.0,all_reporting
+2020,76,op_visits,1805690.0,2,moph_service,1328363.0,all_reporting

@@ -1,0 +1,6 @@
+﻿check,cells,mismatches,max_abs_diff
+"components = category subtotal (every row, cadre, category)",14014,0,0.0
+components = cadre total column (every row),5390,0,0.0
+sum of rows = cadre footer,70,1,1.0
+row components = row grand-total column,770,76,598.0
+grand footer = all components,10,2,9895.0

@@ -1,0 +1,8 @@
+﻿indicator,year,share_down,share_up,coverage_break
+dental_visits,2023,0.0,0.14473684210526316,False
+dental_visits,2024,0.0,0.0,False
+dental_visits,2025,0.012987012987012988,0.0,False
+op_prescriptions,2023,0.0,0.0,False
+op_prescriptions,2024,0.0,0.0,False
+op_prescriptions,2025,1.0,0.0,True
+pharm_ip_days,2023,0.9863013698630136,0.0136986301369863,True

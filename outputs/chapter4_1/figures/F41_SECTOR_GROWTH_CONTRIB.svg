@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="889.394611pt" height="319.586407pt" viewBox="0 0 889.394611 319.586407" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-14T20:16:41.001775</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 319.586407 
+L 889.394611 319.586407 
+L 889.394611 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 47.639297 259.145702 
+L 427.142375 259.145702 
+L 427.142375 23.935312 
+L 47.639297 23.935312 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 64.889437 117.011234 
+L 79.41587 117.011234 
+L 79.41587 59.802916 
+L 64.889437 59.802916 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #222222"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 155.679647 117.011234 
+L 170.206081 117.011234 
+L 170.206081 76.434801 
+L 155.679647 76.434801 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #222222"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 246.469857 117.011234 
+L 260.996291 117.011234 
+L 260.996291 72.138866 
+L 246.469857 72.138866 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #222222"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 337.260067 117.011234 
+L 351.786501 117.011234 
+L 351.786501 101.015455 
+L 337.260067 101.015455 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #222222"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 79.41587 117.011234 
+L 93.942304 117.011234 
+L 93.942304 63.965904 
+L 79.41587 63.965904 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #7d9bb4"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 170.206081 117.011234 
+L 184.732514 117.011234 
+L 184.732514 82.526713 
+L 170.206081 82.526713 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #7d9bb4"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 260.996291 117.011234 
+L 275.522724 117.011234 
+L 275.522724 66.968874 
+L 260.996291 66.968874 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #7d9bb4"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 351.786501 117.011234 
+L 366.312935 117.011234 
+L 366.312935 78.85548 
+L 351.786501 78.85548 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #7d9bb4"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 93.942304 117.011234 
+L 108.468738 117.011234 
+L 108.468738 72.616108 
+L 93.942304 72.616108 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #3d4f5c"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 184.732514 117.011234 
+L 199.258948 117.011234 
+L 199.258948 91.680765 
+L 184.732514 91.680765 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #3d4f5c"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 275.522724 117.011234 
+L 290.049158 117.011234 
+L 290.049158 72.581164 
+L 275.522724 72.581164 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #3d4f5c"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 366.312935 117.011234 
+L 380.839368 117.011234 
+L 380.839368 86.307839 
+L 366.312935 86.307839 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #3d4f5c"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 108.468738 117.011234 
+L 122.995171 117.011234 
+L 122.995171 44.724963 
+L 108.468738 44.724963 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #8fa6b4"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 199.258948 117.011234 
+L 213.785381 117.011234 
+L 213.785381 53.248656 
+L 199.258948 53.248656 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #8fa6b4"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 290.049158 117.011234 
+L 304.575592 117.011234 
+L 304.575592 41.545537 
+L 290.049158 41.545537 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #8fa6b4"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 380.839368 117.011234 
+L 395.365802 117.011234 
+L 395.365802 54.71416 
+L 380.839368 54.71416 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #8fa6b4"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 122.995171 117.011234 
+L 137.521605 117.011234 
+L 137.521605 42.575303 
+L 122.995171 42.575303 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #d9c27e"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 213.785381 117.011234 
+L 228.311815 117.011234 
+L 228.311815 34.626694 
+L 213.785381 34.626694 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #d9c27e"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 304.575592 117.011234 
+L 319.102025 117.011234 
+L 319.102025 91.047697 
+L 304.575592 91.047697 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #d9c27e"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 395.365802 117.011234 
+L 409.892235 117.011234 
+L 409.892235 248.454321 
+L 395.365802 248.454321 
+z
+" clip-path="url(#pd375beda9a)" style="fill: #d9c27e"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mcd37f9a307" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mcd37f9a307" x="101.205521" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="101.205521" y="272.520702" transform="rotate(-0 101.205521 272.520702)">แพทย์</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mcd37f9a307" x="191.995731" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="191.995731" y="272.860702" transform="rotate(-0 191.995731 272.860702)">พยาบาลวิชาชีพ</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#mcd37f9a307" x="282.785941" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="282.785941" y="272.537968" transform="rotate(-0 282.785941 272.537968)">เภสัชกร</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mcd37f9a307" x="373.576151" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="373.576151" y="272.537968" transform="rotate(-0 373.576151 272.537968)">ทันตแพทย์</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <path d="M 47.639297 241.27807 
+L 427.142375 241.27807 
+" clip-path="url(#pd375beda9a)" style="fill: none; stroke: #dcdcdc; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <defs>
+       <path id="m67e34724ed" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m67e34724ed" x="47.639297" y="241.27807" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="40.639297" y="244.46557" transform="rotate(-0 40.639297 244.46557)">-10.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <path d="M 47.639297 210.211361 
+L 427.142375 210.211361 
+" clip-path="url(#pd375beda9a)" style="fill: none; stroke: #dcdcdc; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m67e34724ed" x="47.639297" y="210.211361" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="40.639297" y="213.398861" transform="rotate(-0 40.639297 213.398861)">-7.5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <path d="M 47.639297 179.144652 
+L 427.142375 179.144652 
+" clip-path="url(#pd375beda9a)" style="fill: none; stroke: #dcdcdc; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m67e34724ed" x="47.639297" y="179.144652" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="40.639297" y="182.332152" transform="rotate(-0 40.639297 182.332152)">-5.0</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 47.639297 148.077943 
+L 427.142375 148.077943 
+" clip-path="url(#pd375beda9a)" style="fill: none; stroke: #dcdcdc; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m67e34724ed" x="47.639297" y="148.077943" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="40.639297" y="151.265443" transform="rotate(-0 40.639297 151.265443)">-2.5</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13">
+      <path d="M 47.639297 117.011234 
+L 427.142375 117.011234 
+" clip-path="url(#pd375beda9a)" style="fill: none; stroke: #dcdcdc; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m67e34724ed" x="47.639297" y="117.011234" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="40.639297" y="120.198734" transform="rotate(-0 40.639297 120.198734)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_15">
+      <path d="M 47.639297 85.944525 
+L 427.142375 85.944525 
+" clip-path="url(#pd375beda9a)" style="fill: none; stroke: #dcdcdc; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m67e34724ed" x="47.639297" y="85.944525" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="40.639297" y="89.132025" transform="rotate(-0 40.639297 89.132025)">2.5</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_17">
+      <path d="M 47.639297 54.877816 
+L 427.142375 54.877816 
+" clip-path="url(#pd375beda9a)" style="fill: none; stroke: #dcdcdc; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m67e34724ed" x="47.639297" y="54.877816" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="40.639297" y="58.065316" transform="rotate(-0 40.639297 58.065316)">5.0</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 9.5px; font-family: 'Prompt'; text-anchor: middle" x="14.705" y="141.540507" transform="rotate(-90 14.705 141.540507)">CAGR (% ต่อปี)</text>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 47.639297 117.011234 
+L 427.142375 117.011234 
+" clip-path="url(#pd375beda9a)" style="fill: none; stroke: #444444; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 47.639297 259.145702 
+L 47.639297 23.935312 
+" style="fill: none; stroke: #444444; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 47.639297 259.145702 
+L 427.142375 259.145702 
+" style="fill: none; stroke: #444444; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: 'Prompt'; text-anchor: middle" x="237.390836" y="17.935312" transform="rotate(-0 237.390836 17.935312)">ก. อัตราการเติบโตเฉลี่ยแบบทบต้น 2556–2568</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_25">
+     <path d="M 54.839297 225.721952 
+L 70.839297 225.721952 
+L 70.839297 220.121952 
+L 54.839297 220.121952 
+z
+" style="fill: #222222"/>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 8px; font-family: 'Prompt'; text-anchor: start" x="77.239297" y="225.721952" transform="rotate(-0 77.239297 225.721952)">ทุกสังกัด</text>
+    </g>
+    <g id="patch_26">
+     <path d="M 54.839297 237.841952 
+L 70.839297 237.841952 
+L 70.839297 232.241952 
+L 54.839297 232.241952 
+z
+" style="fill: #7d9bb4"/>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 8px; font-family: 'Prompt'; text-anchor: start" x="77.239297" y="237.841952" transform="rotate(-0 77.239297 237.841952)">ภาครัฐรวม</text>
+    </g>
+    <g id="patch_27">
+     <path d="M 54.839297 249.841952 
+L 70.839297 249.841952 
+L 70.839297 244.241952 
+L 54.839297 244.241952 
+z
+" style="fill: #3d4f5c"/>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 8px; font-family: 'Prompt'; text-anchor: start" x="77.239297" y="249.841952" transform="rotate(-0 77.239297 249.841952)">กระทรวงสาธารณสุข</text>
+    </g>
+    <g id="patch_28">
+     <path d="M 161.613047 225.721952 
+L 177.613047 225.721952 
+L 177.613047 220.121952 
+L 161.613047 220.121952 
+z
+" style="fill: #8fa6b4"/>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 8px; font-family: 'Prompt'; text-anchor: start" x="184.013047" y="225.721952" transform="rotate(-0 184.013047 225.721952)">ภาครัฐอื่น ๆ</text>
+    </g>
+    <g id="patch_29">
+     <path d="M 161.613047 237.721952 
+L 177.613047 237.721952 
+L 177.613047 232.121952 
+L 161.613047 232.121952 
+z
+" style="fill: #d9c27e"/>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 8px; font-family: 'Prompt'; text-anchor: start" x="184.013047" y="237.721952" transform="rotate(-0 184.013047 237.721952)">เอกชน</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_30">
+    <path d="M 499.662375 259.145702 
+L 879.165454 259.145702 
+L 879.165454 23.935312 
+L 499.662375 23.935312 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 673.113159 34.626694 
+L 738.168541 34.626694 
+L 738.168541 48.881869 
+L 673.113159 48.881869 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #3d4f5c"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 673.113159 91.647394 
+L 735.668962 91.647394 
+L 735.668962 105.90257 
+L 673.113159 105.90257 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #3d4f5c"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 673.113159 148.668095 
+L 769.665755 148.668095 
+L 769.665755 162.92327 
+L 673.113159 162.92327 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #3d4f5c"/>
+   </g>
+   <g id="patch_34">
+    <path d="M 673.113159 205.688796 
+L 861.915314 205.688796 
+L 861.915314 219.943971 
+L 673.113159 219.943971 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #3d4f5c"/>
+   </g>
+   <g id="patch_35">
+    <path d="M 673.113159 48.881869 
+L 721.243049 48.881869 
+L 721.243049 63.137044 
+L 673.113159 63.137044 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #8fa6b4"/>
+   </g>
+   <g id="patch_36">
+    <path d="M 673.113159 105.90257 
+L 722.826519 105.90257 
+L 722.826519 120.157745 
+L 673.113159 120.157745 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #8fa6b4"/>
+   </g>
+   <g id="patch_37">
+    <path d="M 673.113159 162.92327 
+L 709.721508 162.92327 
+L 709.721508 177.178445 
+L 673.113159 177.178445 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #8fa6b4"/>
+   </g>
+   <g id="patch_38">
+    <path d="M 673.113159 219.943971 
+L 792.413193 219.943971 
+L 792.413193 234.199146 
+L 673.113159 234.199146 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #8fa6b4"/>
+   </g>
+   <g id="patch_39">
+    <path d="M 673.113159 63.137044 
+L 711.829432 63.137044 
+L 711.829432 77.392219 
+L 673.113159 77.392219 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #d9c27e"/>
+   </g>
+   <g id="patch_40">
+    <path d="M 673.113159 120.157745 
+L 712.74554 120.157745 
+L 712.74554 134.41292 
+L 673.113159 134.41292 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #d9c27e"/>
+   </g>
+   <g id="patch_41">
+    <path d="M 673.113159 177.178445 
+L 691.853759 177.178445 
+L 691.853759 191.433621 
+L 673.113159 191.433621 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #d9c27e"/>
+   </g>
+   <g id="patch_42">
+    <path d="M 673.113159 234.199146 
+L 516.912515 234.199146 
+L 516.912515 248.454321 
+L 673.113159 248.454321 
+z
+" clip-path="url(#p4e7f20a01c)" style="fill: #d9c27e"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 825.014703 259.145702 
+L 825.014703 23.935312 
+" clip-path="url(#p4e7f20a01c)" style="fill: none; stroke-dasharray: 3.6,2.7; stroke-dashoffset: 0; stroke: #8a8a8a; stroke-width: 0.9"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_5">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#mcd37f9a307" x="521.211616" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="521.211616" y="272.520702" transform="rotate(-0 521.211616 272.520702)">-100</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#mcd37f9a307" x="597.162387" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="597.162387" y="272.520702" transform="rotate(-0 597.162387 272.520702)">-50</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#mcd37f9a307" x="673.113159" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="673.113159" y="272.520702" transform="rotate(-0 673.113159 272.520702)">0</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#mcd37f9a307" x="749.063931" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="749.063931" y="272.520702" transform="rotate(-0 749.063931 272.520702)">50</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#mcd37f9a307" x="825.014703" y="259.145702" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: middle" x="825.014703" y="272.520702" transform="rotate(-0 825.014703 272.520702)">100</text>
+     </g>
+    </g>
+    <g id="text_24">
+     <text style="font-size: 9.5px; font-family: 'Prompt'; text-anchor: middle" x="689.413915" y="287.917109" transform="rotate(-0 689.413915 287.917109)">ร้อยละของการเปลี่ยนแปลงสุทธิทุกสังกัด</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_8">
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#m67e34724ed" x="499.662375" y="56.009457" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_25">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="492.662375" y="59.196957" transform="rotate(-0 492.662375 59.196957)">แพทย์</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#m67e34724ed" x="499.662375" y="113.030157" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_26">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="492.662375" y="116.387657" transform="rotate(-0 492.662375 116.387657)">พยาบาลวิชาชีพ</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="#m67e34724ed" x="499.662375" y="170.050858" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_27">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="492.662375" y="173.246991" transform="rotate(-0 492.662375 173.246991)">เภสัชกร</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_29">
+      <g>
+       <use xlink:href="#m67e34724ed" x="499.662375" y="227.071558" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_28">
+      <text style="font-size: 8.5px; font-family: 'Prompt'; text-anchor: end" x="492.662375" y="230.267691" transform="rotate(-0 492.662375 230.267691)">ทันตแพทย์</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_30">
+    <path d="M 673.113159 259.145702 
+L 673.113159 23.935312 
+" clip-path="url(#p4e7f20a01c)" style="fill: none; stroke: #444444; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="patch_43">
+    <path d="M 499.662375 259.145702 
+L 499.662375 23.935312 
+" style="fill: none; stroke: #444444; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_44">
+    <path d="M 499.662375 259.145702 
+L 879.165454 259.145702 
+" style="fill: none; stroke: #444444; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="741.168541" y="43.629281" transform="rotate(-0 741.168541 43.629281)">42.8</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="738.668962" y="100.649982" transform="rotate(-0 738.668962 100.649982)">41.2</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="772.665755" y="157.670683" transform="rotate(-0 772.665755 157.670683)">63.6</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="864.915314" y="214.691383" transform="rotate(-0 864.915314 214.691383)">124.3</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="724.243049" y="57.884457" transform="rotate(-0 724.243049 57.884457)">31.7</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="725.826519" y="114.905157" transform="rotate(-0 725.826519 114.905157)">32.7</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="712.721508" y="171.925858" transform="rotate(-0 712.721508 171.925858)">24.1</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="795.413193" y="228.946558" transform="rotate(-0 795.413193 228.946558)">78.5</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="714.829432" y="72.139632" transform="rotate(-0 714.829432 72.139632)">25.5</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="715.74554" y="129.160332" transform="rotate(-0 715.74554 129.160332)">26.1</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: start" x="694.853759" y="186.181033" transform="rotate(-0 694.853759 186.181033)">12.3</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 7.5px; font-family: 'Prompt'; text-anchor: end" x="513.912515" y="243.201734" transform="rotate(-0 513.912515 243.201734)">-102.8</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 11px; font-family: 'Prompt'; text-anchor: middle" x="689.413915" y="17.935312" transform="rotate(-0 689.413915 17.935312)">ข. ส่วนต่อการเปลี่ยนแปลงสุทธิ (ค่าติดลบและเกิน 100 แสดงตามจริง)</text>
+   </g>
+   <g id="legend_2">
+    <g id="patch_45">
+     <path d="M 574.43829 307.082657 
+L 590.43829 307.082657 
+L 590.43829 301.482657 
+L 574.43829 301.482657 
+z
+" style="fill: #3d4f5c"/>
+    </g>
+    <g id="text_42">
+     <text style="font-size: 8px; font-family: 'Prompt'; text-anchor: start" x="596.83829" y="307.082657" transform="rotate(-0 596.83829 307.082657)">กระทรวงสาธารณสุข</text>
+    </g>
+    <g id="patch_46">
+     <path d="M 681.21204 307.082657 
+L 697.21204 307.082657 
+L 697.21204 301.482657 
+L 681.21204 301.482657 
+z
+" style="fill: #8fa6b4"/>
+    </g>
+    <g id="text_43">
+     <text style="font-size: 8px; font-family: 'Prompt'; text-anchor: start" x="703.61204" y="307.082657" transform="rotate(-0 703.61204 307.082657)">ภาครัฐอื่น ๆ</text>
+    </g>
+    <g id="patch_47">
+     <path d="M 759.92454 307.082657 
+L 775.92454 307.082657 
+L 775.92454 301.482657 
+L 759.92454 301.482657 
+z
+" style="fill: #d9c27e"/>
+    </g>
+    <g id="text_44">
+     <text style="font-size: 8px; font-family: 'Prompt'; text-anchor: start" x="782.32454" y="307.082657" transform="rotate(-0 782.32454 307.082657)">เอกชน</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd375beda9a">
+   <rect x="47.639297" y="23.935312" width="379.503079" height="235.21039"/>
+  </clipPath>
+  <clipPath id="p4e7f20a01c">
+   <rect x="499.662375" y="23.935312" width="379.503079" height="235.21039"/>
+  </clipPath>
+ </defs>
+</svg>

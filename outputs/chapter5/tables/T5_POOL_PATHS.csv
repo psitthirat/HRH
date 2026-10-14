@@ -1,0 +1,46 @@
+﻿year,mode,graduates,conversion,available,note,source
+2026,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2027,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2028,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2029,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2030,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2031,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2032,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2033,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2034,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2035,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2036,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2037,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2038,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2039,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2040,available_appointments,,,2000,illustrative managed-system pool (accepted starts),
+2026,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2027,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2028,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2029,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2030,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2031,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2032,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2033,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2034,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2035,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2036,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2037,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2038,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2039,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2040,national_graduates,3000.0,0.6678499999999999,2003,illustrative graduate conversion; factors do not overlap,
+2026,student_intake,3000.0,0.6678499999999999,2003,education lag honoured: intake changes reach the pool only after the lag,already enrolled
+2027,student_intake,3000.0,0.6678499999999999,2003,education lag honoured: intake changes reach the pool only after the lag,already enrolled
+2028,student_intake,3050.0,0.6678499999999999,2036,education lag honoured: intake changes reach the pool only after the lag,already enrolled
+2029,student_intake,3100.0,0.6678499999999999,2070,education lag honoured: intake changes reach the pool only after the lag,already enrolled
+2030,student_intake,3150.0,0.6678499999999999,2103,education lag honoured: intake changes reach the pool only after the lag,already enrolled
+2031,student_intake,3200.0,0.6678499999999999,2137,education lag honoured: intake changes reach the pool only after the lag,already enrolled
+2032,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2026
+2033,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2027
+2034,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2028
+2035,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2029
+2036,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2030
+2037,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2031
+2038,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2032
+2039,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2033
+2040,student_intake,3069.0,0.6678499999999999,2049,education lag honoured: intake changes reach the pool only after the lag,intake 2034

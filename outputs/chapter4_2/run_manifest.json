@@ -1,0 +1,69 @@
+{
+ "section": "4_2",
+ "run_utc": "2026-10-14T13:17:29Z",
+ "git_revision": "396fcad",
+ "working_tree_has_uncommitted_pipeline_changes": true,
+ "code_hash": "a45b9fdda50dc329",
+ "python": "3.14.6",
+ "packages": {
+  "pandas": "3.0.3",
+  "numpy": "2.5.0",
+  "scipy": "1.18.0",
+  "statsmodels": "0.14.6",
+  "scikit-learn": "1.9.0",
+  "matplotlib": "3.11.0",
+  "openpyxl": "3.1.5",
+  "python-docx": "1.2.0"
+ },
+ "processed_data": {
+  "built_utc": "2026-10-14T08:34:39Z",
+  "code_hash": "b02e2904f8403d57",
+  "inputs": {
+   "S01_HRR": "4b073d7c0516813b67cd042b1aa2f2e66f270420810fbf19e9e22cd7fa198382",
+   "S02_POP_AGE": "34e7c8cd4fc2e6018996f908146f912b9bf85a8cb9eb326ab8e8e3aa47c1ba99",
+   "S03_POP_GRAND": "894431d08f7faa305f665f1f6fbb3603acf8de127a49b99de8c696cf74838fb6",
+   "S04_NHSO": "67a262bc7a42b4b7ba396bdcff51081b687016fb60eec64f94aaab0924883e00",
+   "S05_CASEMIX": "4077f858485f2bb5c91576e584e753ef748d5a4a489a9d77cea7a588b0591520",
+   "S06_HDC_PREV": "60427501e3024e733f1749d934348d427d665dd5be67a6ba1a5ca8ad3b338e12",
+   "S07_HDC_ACTIVITY": "6c738d0f699bdddbcf4c14a866ed961551d0dee0980217107daf9cb0ba55c097",
+   "S08_GPP": "df7f7b10488f7217ef12064b7c7d69b90b76137d77d21c270803ff90cf433c3b",
+   "S09_ENTRY": "0c868409f1544ee5d1a46f5b8ef3874c65ec73d1ab29997290eabf8a04beeccb",
+   "S10_EXIT": "ddc6483d0a5901ab8515e6b809eaed84ae8d64a374f96265c110912dfd7c9e4c",
+   "S11_ENTRY_CONDENSED": "37ab06305aa63cbcc31653eab07851d85ea7f1e300da073fed124642416c8d4c",
+   "S14_BOD": "9692cbea72a41569270b682fe8cd5440d81418535cb8aae0962b414483c5bf04",
+   "S15_BOD_AGE": "4071d1a45e13e63d6bc6d96c1e666058015afe493e8ac26e4a427d4d3ec4495e"
+  },
+  "rows": {
+   "province_key": 77,
+   "workforce_province": 19943,
+   "services_province": 22022,
+   "casemix_hospital": 7046,
+   "casemix_province": 608,
+   "population_single_age": 204204,
+   "population_registers": 3234,
+   "population_register_parts": 13,
+   "nhso_province_scheme_age": 154550,
+   "nhso_audit": 16,
+   "hdc_indicators": 2585,
+   "gpp_province": 2310,
+   "flow_events": 51432,
+   "flow_published": 27722,
+   "flow_sheet_meta": 17,
+   "flow_entry_condensed": 19404,
+   "bod_province": 13398,
+   "bod_province_age": 107184
+  },
+  "seconds": 113.5
+ },
+ "seed": 20260925,
+ "seconds": 43.1,
+ "n_tables": 54,
+ "n_figures": 10,
+ "n_claims": 1276,
+ "folds_seed": 20260924,
+ "bootstrap_invalid": {
+  "op_moph": 0,
+  "ip_moph": 0,
+  "adjrw": 0
+ }
+}

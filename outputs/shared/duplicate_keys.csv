@@ -1,0 +1,9 @@
+﻿table,key,rows,duplicate_keys
+workforce_province,"year,prov_code,cadre,sector",19943,0
+services_province,"year,prov_code,tier,metric",22022,0
+casemix_province,"fiscal_year,prov_code",608,0
+population_registers,"year,prov_code,register",3234,0
+hdc_indicators,"year,prov_code,indicator",2585,0
+gpp_province,"year,prov_code",2310,0
+bod_province,"year,prov_code,cause_code",13398,0
+bod_province_age,"year,prov_code,cause_code,age_group",107184,0

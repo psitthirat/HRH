@@ -1,0 +1,11 @@
+﻿denominator,rank,R,priority
+population,1,0.45308002765775846,True
+entitlement,1,0.542185189421562,True
+age_scenario_moderate,1,0.46821445010836926,True
+age_scenario_steep,1,0.47862282477238755,True
+op_visits,1,0.5103251920248869,True
+ip_days,1,0.5252474126971588,True
+adjrw,1,0.6241730072030653,True
+m5_op_moph,1,0.47328066740412034,True
+m5_ip_moph,1,0.42750562751010557,True
+m5_adjrw,1,0.4047188463047224,True

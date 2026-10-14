@@ -1,0 +1,91 @@
+{
+ "schema": "hrh-workspace-run/1",
+ "name": "demo-bod-minus10",
+ "created_utc": "2026-10-14T09:41:13Z",
+ "dataset": {
+  "manifest": {
+   "dataset_id": "demo-minus10-chaiyaphum-kalasin",
+   "schema": "bod_province_age/1",
+   "title": "DEMONSTRATION ONLY: S15 with DALY/YLL/YLD of Chaiyaphum (P36) and Kalasin (P46) lowered 10%",
+   "source": "synthetic edit of S15_BOD_AGE for testing the replacement workflow",
+   "permitted_use": "testing only; not an estimate",
+   "period": "2022 (calendar year)",
+   "geography": "77 provinces, area_name P<DOPA two-digit code>",
+   "units": "DALY, YLL, YLD (years) and deaths: counts; rates per 100,000 of mid_pop",
+   "definitions": "174 Level-3 causes; age groups 0-4, 5-14, 15-29, 30-44, 45-59, 60-69, 70-79, 80+; both sexes",
+   "coverage": "all residents in the source's mid-year population",
+   "missingness": "none permitted: an incomplete province x cause x age grid is rejected",
+   "replaces": "S15_BOD_AGE (data/epi/BOD_2022_Province_Disease_Age.csv)",
+   "sha256": "7b84787e3cf1c9a44ab18d687bd9cd1b7cbc3a01d06966e84b2cc77eb14fd058"
+  },
+  "file": "/private/tmp/claude-501/-Users-rama-hpsr-Desktop-HPSR-QUANTI-HRH/d826f5ae-3ae8-48c0-9088-c757bf50af7a/scratchpad/replacement_demo/bod_age_demo_minus10_P36_P46.csv",
+  "sha256": "7b84787e3cf1c9a44ab18d687bd9cd1b7cbc3a01d06966e84b2cc77eb14fd058"
+ },
+ "validation": {
+  "ok": true,
+  "errors": [],
+  "warnings": [
+   "1909 of 107184 province-cause-age cells differ from the canonical file (2 provinces)"
+  ]
+ },
+ "affected_components": [
+  {
+   "component": "chapter4.panels.burden_age_rates / expected burden panel",
+   "action": "recompute",
+   "reason": "age-specific rates change"
+  },
+  {
+   "component": "chapter4 section 4.5 burden analyses (A6, D, E)",
+   "action": "recompute",
+   "reason": "crude burden, decomposition, burden denominators"
+  },
+  {
+   "component": "chapter5 family B indices (D_B, D_Byld; D_Basr via re-standardization)",
+   "action": "recompute",
+   "reason": "targets of B plans"
+  },
+  {
+   "component": "chapter5 plans B-R, B-RT, B-R|B, B-R|yld, B-R|asr, B-R|net, B-RT|net",
+   "action": "recompute",
+   "reason": "targets change; solver re-run"
+  },
+  {
+   "component": "chapter5 health-gain evaluation",
+   "action": "evaluation_only",
+   "reason": "amenable burden changes; plans unchanged"
+  },
+  {
+   "component": "chapter4 M0-M5 fits and N-STD",
+   "action": "unaffected",
+   "reason": "the models do not use the age-specific BOD file"
+  },
+  {
+   "component": "chapter5 P, S, N, N-FB plans",
+   "action": "unaffected",
+   "reason": "their targets do not depend on BOD"
+  }
+ ],
+ "config_hash": "9634ed4e506743c4",
+ "chapter4_code_hash": "49d09a46221d5ad9",
+ "chapter5_code_hash": "ac2223666e63d764",
+ "canonical_inputs_fingerprint": "baaabfc5f6dafa15",
+ "recomputed": [
+  "family B indices",
+  "health gain (evaluation)",
+  "B-R plan"
+ ],
+ "summary": {
+  "max_abs_B_share_change_pct": 9.65526397318669,
+  "provinces_B_share_changed": 76,
+  "B_R_status": "exploratory_policy_scenario",
+  "B_R_mean_annual_switch_pct": 2.4466666666666668,
+  "B_R_objective_replacement": 4.345606258867214,
+  "B_R_objective_canonical": 4.350224999110482
+ },
+ "outputs": [
+  "B-R_ledger_replacement.csv",
+  "denominator_registry.csv",
+  "family_B_target_comparison.csv",
+  "health_gain_comparison.csv"
+ ]
+}

@@ -1,0 +1,5 @@
+﻿step,rows
+"provinces x morbidity years, all 77 provinces",308
+drop Bangkok before sampling,304
+rows present in the joined panel,304
+complete cases for all M5 covariates and the three outcomes,302

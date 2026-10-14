@@ -1,0 +1,10 @@
+﻿outcome,method,n,mape_pct,medape_pct,cutoffs,best_mape,chosen,selection_rule
+adjrw,constant_last,228,8.686271340772377,7.802491145928775,2,False,True,min MAPE; non-persistence needs >= 3 cutoffs
+adjrw,mean_last3,228,14.651482263772467,15.49124463654386,2,False,False,min MAPE; non-persistence needs >= 3 cutoffs
+adjrw,trend_last5_damped,228,6.666772011263198,5.4883821889130395,2,True,False,min MAPE; non-persistence needs >= 3 cutoffs
+ip_moph,constant_last,608,10.769994000025477,5.519134855227326,4,True,True,min MAPE; non-persistence needs >= 3 cutoffs
+ip_moph,mean_last3,608,11.233818224076643,7.0586575647177145,4,False,False,min MAPE; non-persistence needs >= 3 cutoffs
+ip_moph,trend_last5_damped,608,11.844001061363556,5.77443776183318,4,False,False,min MAPE; non-persistence needs >= 3 cutoffs
+op_moph,constant_last,608,11.495102937554114,6.754031950315504,4,True,True,min MAPE; non-persistence needs >= 3 cutoffs
+op_moph,mean_last3,608,12.929477718377774,9.45290046981409,4,False,False,min MAPE; non-persistence needs >= 3 cutoffs
+op_moph,trend_last5_damped,608,12.064978703698717,6.723534024702356,4,False,False,min MAPE; non-persistence needs >= 3 cutoffs

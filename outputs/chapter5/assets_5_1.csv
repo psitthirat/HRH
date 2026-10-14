@@ -1,0 +1,21 @@
+﻿asset_id,kind,file,caption_th,main_text,rows,note,section,status
+T5_INPUT_CONTRACT,table,outputs/chapter5/validation/T5_INPUT_CONTRACT.csv,สัญญาข้อมูลนำเข้า: ไฟล์จากบทที่ 4 และ SHA-256 ที่ใช้,False,25,,5_1,generated
+T5_EFFECTIVE_CONFIG,table,outputs/chapter5/tables/T5_EFFECTIVE_CONFIG.csv,ค่าตั้งที่ใช้จริง พร้อมสถานะที่มา (สังเกต/ประมาณ/ตัวอย่าง/ทางเลือกนโยบาย),False,111,,5_1,generated
+T5_DATA_READINESS,table,outputs/chapter5/tables/T5_DATA_READINESS.csv,ความพร้อมของข้อมูลนำเข้า และทางเลือกเมื่อขาดข้อมูล,True,14,,5_1,generated
+T5_BASELINE_PROVINCES,table,outputs/chapter5/tables/T5_BASELINE_PROVINCES.csv,ค่าเริ่มต้นรายจังหวัด พ.ศ. 2568,False,76,,5_1,generated
+T5_FLOW_RATES,table,outputs/chapter5/tables/T5_FLOW_RATES.csv,อัตราเหตุการณ์ต่อบุคลากรตั้งต้น (ปีงบ 2564–2568) ก่อนและหลังการรวมกำลังแบบ empirical Bayes,False,608,,5_1,generated
+T5_NATIONAL_STOCK_FLOW,table,outputs/chapter5/validation/T5_NATIONAL_STOCK_FLOW.csv,การกระทบยอดจำนวนคงอยู่กับเหตุการณ์ที่บันทึก ระดับประเทศ (76 จังหวัด),False,9,,5_1,generated
+T5_STOCK_FLOW_BACKTEST,table,outputs/chapter5/validation/T5_STOCK_FLOW_BACKTEST.csv,ตรวจย้อนหลังแบบมีเงื่อนไข: จำนวนคงอยู่จำลองเทียบจริง 2564–2568 (ใช้การรับเข้าจริง),False,5,,5_1,generated
+T5_POP_BACKTEST,table,outputs/chapter5/validation/T5_POP_BACKTEST.csv,ตรวจย้อนหลังการฉายประชากร 2562→2568,True,4,,5_1,generated
+T5_POP_BACKTEST_PROVINCES,table,outputs/chapter5/validation/T5_POP_BACKTEST_PROVINCES.csv,ผลตรวจย้อนหลังการฉายประชากรรายจังหวัด,False,304,,5_1,generated
+T5_POP_PROJECTION,table,outputs/chapter5/tables/T5_POP_PROJECTION.csv,ประชากรฉายรายจังหวัด-ปี ตามฉากทัศน์การย้ายถิ่น (รวมกรุงเทพฯ เป็นขอบเขตภายนอก),False,3696,,5_1,generated
+T5_POP_COMPONENTS,table,outputs/chapter5/tables/T5_POP_COMPONENTS.csv,องค์ประกอบการเปลี่ยนแปลงประชากร: การเกิด และการเปลี่ยนแปลงของรุ่นที่มีอยู่ (ตาย+ย้ายถิ่นสุทธิรวมกัน),False,3465,,5_1,generated
+T5_ENTITLEMENT_RATIOS,table,outputs/chapter5/tables/T5_ENTITLEMENT_RATIOS.csv,อัตราส่วนทะเบียนสิทธิ/ทะเบียนราษฎร รายจังหวัด และขอบเขตที่ใช้,False,77,,5_1,generated
+T5_SERVICE_BACKTEST,table,outputs/chapter5/validation/T5_SERVICE_BACKTEST.csv,ตรวจย้อนหลังวิธีฉายอัตราบริการ (MAPE รายจังหวัด),True,9,,5_1,generated
+T5_SERVICE_PROJECTION,table,outputs/chapter5/tables/T5_SERVICE_PROJECTION.csv,บริการฉายรายจังหวัด-ปี (อัตราตามวิธีที่เลือก × ประชากรฉาย),False,1216,,5_1,generated
+T5_M5_COEFFICIENTS,table,outputs/chapter5/validation/T5_M5_COEFFICIENTS.csv,สัมประสิทธิ์ M5 ที่ประมาณซ้ำ ตรงกับบทที่ 4 พร้อม CR1 SE และช่วง bootstrap,False,48,,5_1,generated
+T5_M5_SUPPORT_BY_YEAR,table,outputs/chapter5/validation/T5_M5_SUPPORT_BY_YEAR.csv,สัดส่วนจังหวัดที่ตัวแปรสุขภาพอยู่นอกช่วงข้อมูลที่ใช้ประมาณ M5,True,16,,5_1,generated
+T5_INDICES,table,outputs/chapter5/tables/T5_INDICES.csv,ดัชนีความรับผิดชอบรายจังหวัด-ปีของทุกตระกูล (หน่วยเทียบเท่าประชากร ด้วยสเกลคงที่ปี 2568),False,1216,,5_1,generated
+T5_DENOMINATOR_REGISTRY,table,outputs/chapter5/tables/T5_DENOMINATOR_REGISTRY.csv,ทะเบียนตัวหาร: ที่มา หน่วย การปรับสเกล และการตีความ,True,7,,5_1,generated
+T5_POOL_PATHS,table,outputs/chapter5/tables/T5_POOL_PATHS.csv,เส้นทางแพทย์ที่พร้อมจัดสรร ตามสามรูปแบบการป้อนข้อมูล (ค่าพารามิเตอร์เป็นตัวอย่าง),False,45,,5_1,generated
+T5_FEEDBACK_ELASTICITY_2026,table,outputs/chapter5/tables/T5_FEEDBACK_ELASTICITY_2026.csv,ความยืดหยุ่นเฉพาะที่ของตัวหาร N-FB ต่อจำนวนแพทย์ และกำไรป้อนกลับต่อเป้าหมาย (การตัดสินใจปี 2569),False,228,,5_1,generated

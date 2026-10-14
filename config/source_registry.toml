@@ -1,0 +1,180 @@
+# Chapter 4 source registry: every raw input the pipeline may read.
+#
+# Raw files stay at their existing paths under data/ because other projects in this
+# repository (hrh.ipynb, scripts/, the web tools) read the same files; moving them
+# into data/raw/ would break unrelated work.  This registry is therefore the single
+# list of authoritative raw paths.  data/cold_data/ and archive/ are never scanned.
+
+[S01_HRR]
+path = "data/hrh_moph.xlsx"
+role = "active"
+title = "รายงานทรัพยากรสาธารณสุข (Health Resource Report) ตารางรายจังหวัด, one sheet per report year"
+agency = "กองยุทธศาสตร์และแผนงาน สำนักงานปลัดกระทรวงสาธารณสุข"
+years = "2013-2025"
+year_basis = "report_year"
+geography = "province (77 rows, incl. Bangkok)"
+units = "persons (workforce headcount); visits, persons, admissions, days, beds (services)"
+blocks = "WF_<cadre>_<sector> = report tables 11-14 (all employers); SVC_* = table 4 (all reporting facilities); SVC_RH/GH/CH = tables 5-7 (MOPH regional/general/community hospitals); SVC_PC = table 8 (health-promoting hospitals)"
+used_by = ["4.1", "4.2", "4.3", "4.4"]
+
+[S02_POP_AGE]
+path = "data/pop/age"
+pattern = "pop_{year}.xlsx"
+role = "active"
+title = "Civil registration by single year of age and sex (DOPA), December of each year"
+agency = "กรมการปกครอง กระทรวงมหาดไทย"
+years = "2013-2025"
+year_basis = "reference_month_december"
+geography = "village rows aggregated to province"
+units = "persons"
+scope = "Thai nationals in regular house registration with a known age; lunar-birth, central-registry, non-Thai and in-transit groups are separate columns"
+used_by = ["4.2", "4.3", "4.4"]
+
+[S03_POP_GRAND]
+path = "data/pop/grand"
+pattern = "pop_{year}.xlsx"
+role = "active"
+title = "Civil registration published totals (DOPA)"
+agency = "กรมการปกครอง กระทรวงมหาดไทย"
+years = "2013-2025"
+year_basis = "reference_month_december"
+geography = "national row (code 0), province rows (registry code 0)"
+units = "persons"
+used_by = ["4.2", "4.3"]
+
+[S04_NHSO]
+path = "data/pop/nhso/pop.csv"
+role = "active"
+title = "Health-entitlement register (NHSO), person rows by right code, province, age, sex"
+agency = "สำนักงานหลักประกันสุขภาพแห่งชาติ"
+years = "see file (month_no)"
+year_basis = "reference_month"
+geography = "province_code (4 digits; non-geographic codes kept and reported)"
+units = "persons"
+used_by = ["4.2", "4.3"]
+
+[S05_CASEMIX]
+path = "data/cmi"
+pattern = "CMI_{year}.xlsx"
+role = "active"
+title = "Case-mix returns per MOPH hospital (SumAdjRW, calculated cases, bed-days, CMI)"
+agency = "กองบริหารการสาธารณสุข สำนักงานปลัดกระทรวงสาธารณสุข"
+years = "FY2018-FY2025"
+year_basis = "fiscal_year"
+geography = "hospital -> province (no Bangkok)"
+units = "AdjRW; cases; days; beds"
+used_by = ["4.1", "4.2", "4.3", "4.4"]
+
+[S06_HDC_PREV]
+path = "data/epi"
+files = ["s_dm_pop_age.csv", "s_ht_pop_age.csv", "s_copd_pop_age.csv", "s_stroke_pop_age.csv", "s_coronary_pop_age.csv", "s_ckd_stage_typearea.csv"]
+role = "active"
+title = "HDC diagnosed prevalence indicators by province"
+agency = "Health Data Center, กระทรวงสาธารณสุข"
+years = "2022-2025"
+year_basis = "hdc_year"
+geography = "province (no Bangkok)"
+units = "percent of the indicator's own population base"
+used_by = ["4.2", "4.3"]
+
+[S07_HDC_ACTIVITY]
+path = "data/epi"
+files = ["s_dental_2.csv", "s_pharm1.csv", "s_pharm2.csv"]
+role = "active"
+title = "HDC profession-specific activity: dental visits (all rights), outpatient prescriptions, inpatient days of pharmacy indicator"
+agency = "Health Data Center, กระทรวงสาธารณสุข"
+years = "2022-2025 (s_pharm2: 2022-2023)"
+year_basis = "hdc_year"
+geography = "province"
+units = "visits; prescriptions; days"
+used_by = ["4.2", "4.4"]
+
+[S08_GPP]
+path = "data/gpp.xlsx"
+role = "active"
+title = "Gross provincial product per capita (NESDC), baht, current prices; r = revised, p = preliminary"
+agency = "สำนักงานสภาพัฒนาการเศรษฐกิจและสังคมแห่งชาติ"
+years = "1995-2024"
+year_basis = "calendar_year"
+geography = "province (English names)"
+units = "baht per person per year"
+used_by = ["4.2", "4.4"]
+
+[S09_ENTRY]
+path = "data/enter_moph.xlsx"
+role = "active"
+title = "HROPS recorded entries to the Office of the Permanent Secretary, 7 professions, by province, event category and employment type"
+agency = "กองบริหารทรัพยากรบุคคล สำนักงานปลัดกระทรวงสาธารณสุข (HROPS)"
+years = "FY2017-FY2026 (FY2026 partial: extracted 5 March 2026)"
+year_basis = "fiscal_year"
+geography = "province + central office row"
+units = "employment events"
+used_by = ["4.4"]
+
+[S10_EXIT]
+path = "data/loss_moph.xlsx"
+role = "active"
+title = "HROPS recorded exits from the Office of the Permanent Secretary, 7 professions, by province and reason"
+agency = "กองบริหารทรัพยากรบุคคล สำนักงานปลัดกระทรวงสาธารณสุข (HROPS)"
+years = "FY2017-FY2026 (FY2026 partial; its retirements are projected from staff in post on 1 June 2026)"
+year_basis = "fiscal_year"
+geography = "province + central office row"
+units = "employment events"
+used_by = ["4.4"]
+
+[S11_ENTRY_CONDENSED]
+path = "data/enter_moph_condensed.xlsx"
+role = "audit"
+title = "The same HROPS entry extract in the condensed layout supplied on 25 Sep 2026 (category totals only, no employment-type split)"
+agency = "HROPS"
+years = "FY2017-FY2026"
+year_basis = "fiscal_year"
+geography = "province"
+units = "employment events"
+used_by = ["4.4 audit: independent check of category totals"]
+
+[S12_FACILITY_STAFF]
+path = "data/hrh_aggregated.csv"
+role = "diagnostic"
+title = "Facility-level staff returns (GIS Health) joined to the facility registry data/hosp.csv"
+agency = "กระทรวงสาธารณสุข"
+years = "2015-2024"
+year_basis = "report_year"
+geography = "facility"
+units = "persons"
+used_by = ["4.4 audit: tested as an OPS-matched stock; rejected because of coverage breaks"]
+
+[S13_FACILITY_REGISTRY]
+path = "data/hosp.csv"
+role = "diagnostic"
+title = "Health facility registry (current snapshot)"
+agency = "กองยุทธศาสตร์และแผนงาน สำนักงานปลัดกระทรวงสาธารณสุข"
+years = "snapshot"
+year_basis = "snapshot"
+geography = "facility"
+units = "facilities"
+used_by = ["4.4 audit"]
+
+[S14_BOD]
+path = "data/epi/BOD_2022_Provincial_ASR.xlsx"
+role = "active"
+title = "Thailand provincial burden of disease 2022: age-standardized DALY, YLL, YLD and death rates, 174 Level-3 causes, both sexes (sheet Provincial_ASR; definitions in sheet Definitions)"
+agency = "Burden of Disease Thailand, International Health Policy Program (IHPP); https://bodthai.net/results_subnationalbod2022/ (extracted 14 Oct 2026; model refresh 3 Nov 2025)"
+years = "2022"
+year_basis = "calendar_year"
+geography = "province (77 rows, incl. Bangkok; area_name P<prov_code>)"
+units = "age-standardized years (DALY, YLL, YLD) or deaths per 100,000 population, WHO standard population"
+scope = "This file holds ASR only (counts and age-specific rates are in S15_BOD_AGE); no separate sexes.  Modeled estimates, not observed counts.  ASRs of Level-3 causes add within a province (same standard); provincial ASRs never add or average to a national ASR."
+used_by = ["4.5", "5"]
+
+[S15_BOD_AGE]
+path = "data/epi/BOD_2022_Province_Disease_Age.csv"
+role = "active"
+title = "Thailand provincial burden of disease 2022 by 8 age groups: DALY, YLL, YLD and death counts and rates per 100,000, with mid-year population, 174 Level-3 causes, both sexes"
+agency = "Burden of Disease Thailand, International Health Policy Program (IHPP); supplied by the author 14 Oct 2026"
+years = "2022"
+year_basis = "calendar_year"
+geography = "province (77 rows, incl. Bangkok; area_name P<prov_code>)"
+units = "DALY, YLL, YLD (years) and deaths: counts and rates per 100,000 of mid_pop; age groups 0-4, 5-14, 15-29, 30-44, 45-59, 60-69, 70-79, 80+"
+scope = "Collapsing the WHO world standard to the 8 groups reproduces the S14_BOD age-standardized rates exactly.  No other subnational years exist (national totals only)."
+used_by = ["4.5", "5"]

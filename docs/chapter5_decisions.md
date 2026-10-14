@@ -1,0 +1,29 @@
+# Chapter 5 — analytical decisions log
+
+| # | Decision | Reason | Where |
+|---|---|---|---|
+| D1 | TOML configuration (`config/chapter5.toml`), not YAML | No YAML parser in the project environment; same choice as Chapter 4 | config |
+| D2 | MOPH-wide 2025 stock used as a provisional managed stock | No OPS-matched provincial stock (Chapter 4.4.2); all plans labelled `exploratory_policy_scenario` | inputs.readiness_inventory |
+| D3 | M5 refitted through `chapter4.models`, asserted equal to `T423_M5_COEFFICIENTS`; nurse series includes technical nurses as fitted | No forked definitions; no copied coefficients | inputs.m5_package |
+| D4 | Hamilton–Perry with national raking; migration scenarios scale the provincial deviation from the national CCR | No official provincial projection or vital statistics; backtest MAPE 1.1% vs 2.2% no-change | demography |
+| D5 | Departures = EB-pooled event hazards FY2021–2025, competing risks via 1−exp(−Σh) | Avoids raw event/stock ratios as probabilities; FY2020 break excluded; FY2026 partial | supply |
+| D6 | Recruitment events never added on top of optimised appointments | The allocator replaces the historical hiring mechanism | pipeline |
+| D7 | Service benchmark: persistence unless another method wins on ≥3 cutoffs | AdjRW trend evidence spans only 2 cutoffs across the FY2023 grouper step | responsibilities.backtest_summary |
+| D8 | Service composite 10 min/OP + 90 min/AdjRW as illustrative allocation weights; IP days a sensitivity at equal baseline minutes | Units not additive; one inpatient representation at a time | responsibilities |
+| D9 | N-STD central: projected age + fixed 2025 recorded prevalence, reference year 2023 | Four years of aggregate prevalence cannot support 15-year trends; bounded-trend and age-held variants run | responsibilities.morbidity_path |
+| D10 | Relative resource response from the positive-mean M5, anchored to OLS/benchmark levels | OLS levels become non-positive for AdjRW under 2040 ageing (documented blocked run) | responsibilities.Feedback |
+| D11 | N-FB lagged one year; decision-year context with previous-year physicians; λ=0 ≡ N-STD | Prevents an allocation from manufacturing its own target in the same optimisation | pipeline.run_job |
+| D12 | Primary objective: target-weighted squared proportional shortfall, no discounting, tangent approximation (step 0.025) | Distinguishes allocations when all provinces are below target; convex MILP | allocation |
+| D13 | Lexicographic stages with 0.05% tolerance; stage 2–3 time limits with "incumbent retained" reporting; exact churn netting | Secondary objectives are flat and slow; transparency over unexplained weights | allocation.solve |
+| D14 | Gross-arrival cap counts appointments, transfers in and expected re-entries | Task §9.3; the net-growth alternative is run for every family | allocation.build |
+| D15 | Transfers solved in aggregate, then routed by an integer transportation problem on great-circle distance; complete network by default | Routing is always feasible on a complete network; regional network sensitivity imposes regional balance in stage 1 | allocation.route |
+| D16 | Experiment A is the principal comparison; B reported alongside | A isolates geography; B mixes growth and geography | pipeline.catalogue |
+| D17 | Uncertainty: population errors calibrated on the single 2019→2025 backtest | Only available empirical error evidence; stated as such | analysis.stage_uncertainty |
+| D18 | Adaptive replanning optimises stage 1 only on 60 paths × 3 R families | Cost (15 MILPs per path); fixed-schedule evaluation uses all 500 paths | analysis |
+| D19 | Workload-dependent resignations evaluated only as a sensitivity of fixed schedules with the Chapter 4 coefficient (CI crosses zero) | Association, not a causal retention effect | analysis.stage_compare |
+| D20 | The finished recruitment-only plan is the incumbent of each transfer plan; R jobs run before RT jobs | Without it, time-limited transfer MILPs returned objectives worse than a feasible zero-transfer plan (first run) | pipeline.stage_plans, allocation.solve |
+| D21 | `surplus_only` protects existing staff after transfers (no backfilling by new appointments) | The task's definition: no net outward movement from below-target provinces | allocation.build |
+| D22 | Secondary lexicographic stages: 240 s limit each, "incumbent retained" reported | Flat secondary objectives; transparency over hidden weights | config allocation.secondary_time_limit_s |
+| D23 | *(Superseded by D24 on 14 Oct 2026; kept for the record.)* Family B (burden-weighted population = projected population × BOD 2022 age-standardized DALY rate, COVID-19 excluded) as a variant (B-R, B-RT) with sensitivities B-R\|yld, B-R\|net, B-RT\|net; B added to every cross-evaluation | Service-independent need denominator requested by the author; rate fixed at 2022 and no ageing term because the source has no age-specific rates | responsibilities.build_indices, pipeline.catalogue |
+| D24 | Family B redefined (14 Oct 2026) as expected DALYs = projected 8 age groups × 2022 province age-specific DALY rates; the age-standardized definition kept as B-R\|asr; Experiment B variant B-R\|B added because expected DALYs grow with ageing; no feedback from physicians to burden | Age-specific BOD file supplied; ageing is the main driver of future burden | responsibilities.build_indices, demography.aggregate |
+| D25 | Illustrative health-gain evaluation: amenable YLL (32 HAQ causes mapped to BOD codes, with upper ages) scaled by (H/H_cf)^e for e in {-0.05, -0.10, -0.25}; evaluation only, parameters in config/chapter5_health_gain.toml (outside the plan-cache hash) | Answers 'which plan buys more health' without feeding burden back into targets; the elasticity is not identified by the data, so the grid is declared illustrative | health_gain.evaluate, analysis._health_gain |

@@ -1,0 +1,77 @@
+# Chapter 5 — illustrative health-gain evaluation of finished plans ("which plan buys more health?").
+#
+# Evaluation only: nothing here enters a target, a constraint or an objective, so this file is kept
+# out of config/chapter5.toml (whose hash keys the plan cache).  Editing it re-runs only the
+# comparison stage:  PYTHONPATH=src .venv/bin/python -m chapter5.build --compare --report
+#
+# Mechanism (scenario, not an estimate):
+#   A_pt(H) = A_cf_pt * (H_pt / H_cf_pt) ** elasticity
+#   A_cf_pt  amenable burden at the province's 2022 age-specific rates x projected age groups
+#   H_cf_pt  counterfactual physicians: 2025 provincial density held (the same reference path as
+#            the resource-responsive service evaluation)
+#   averted  = A_cf - A(H), summed over 2026-2040
+# A single cross-section of BOD cannot identify the elasticity; every value below is an assumption.
+
+[amenable]
+# Causes amenable to personal health care: the 32-cause list of the GBD 2015 HAQ Index
+# (GBD 2015 Healthcare Access and Quality Collaborators, Lancet 2017;390:231-66, Table 1, from Nolte and McKee),
+# mapped to BOD Thailand Level-3 codes with each cause's upper amenable age.  Approximations:
+# K2 upper digestive diseases stands in for peptic ulcer; S1 all congenital birth defects for
+# congenital heart anomalies; J1-J5 for chronic respiratory diseases (ages 1-14 -> 0-14);
+# measles 1-14 -> 0-14.  An age limit inside one of the 8 source groups takes the covered share
+# of that group's single years (uniform within the group).
+primary_measure = "yll"          # mortality amenable to care, as in the HAQ Index; "daly" is the sensitivity
+
+[amenable.max_age]               # upper amenable age (inclusive) per BOD Thailand cause code
+B1 = 74
+C1 = 14
+B2 = 74
+B3 = 74
+E3 = 74
+E4 = 14
+E5 = 74
+E6 = 14
+F1 = 74
+F2 = 74
+H6 = 74
+H13 = 74
+H14 = 74
+H15 = 74
+H16 = 44
+H19 = 74
+H25 = 74
+H28 = 44
+I1 = 74
+I2 = 74
+I3 = 74
+I4 = 74
+J1 = 14
+J2 = 14
+J3 = 14
+J4 = 14
+J5 = 14
+K2 = 74
+K3 = 74
+K5 = 74
+K8 = 74
+L3 = 74
+O1 = 49
+O2 = 74
+S1 = 74
+U6 = 74
+
+[elasticity]
+# Elasticity of amenable burden with respect to physicians per population.  Illustrative grid:
+#   low      -0.05  about the size implied by Basu et al. (JAMA Intern Med 2019;179:506-14): +10 primary
+#                   care physicians per 100,000 (~+23% at ~45/100,000) with 0.9-1.4% lower cardiovascular,
+#                   cancer and respiratory mortality in US counties (observational)
+#   central  -0.10
+#   high     -0.25  the lower end of the cross-country elasticities of mortality with respect to the
+#                   density of all health workers (-0.21 to -0.47) in Anand and Barnighausen
+#                   (Lancet 2004;364:1603-9); cross-country and all cadres, so an upper bound here
+values = { low = -0.05, central = -0.10, high = -0.25 }
+central = "central"
+
+[provenance]
+"amenable.max_age" = "convention"
+"elasticity.values" = "illustrative"

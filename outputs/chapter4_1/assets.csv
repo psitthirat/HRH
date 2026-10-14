@@ -1,0 +1,28 @@
+﻿asset_id,kind,file,caption_th,main_text,rows,note,section,status,data_file
+T41_NURSE_CATEGORY_CHECK,table,outputs/chapter4_1/tables/T41_NURSE_CATEGORY_CHECK.csv,ตรวจนิยามพยาบาลวิชาชีพ ปี 2556: ไม่รวมพยาบาลเทคนิค,False,3.0,,4_1,generated,
+T41_NURSE_COMBINATION,table,outputs/chapter4_1/tables/T41_NURSE_COMBINATION.csv,พยาบาลวิชาชีพรวมพยาบาลเทคนิค (นิยามของหัวข้อ 4.1) และการเปลี่ยนแปลงรายปีเทียบพยาบาลวิชาชีพอย่างเดียว,True,13.0,,4_1,generated,
+T41_WORKFORCE_ANNUAL,table,outputs/chapter4_1/tables/T41_WORKFORCE_ANNUAL.csv,จำนวนบุคลากรรายปี แยกวิชาชีพและสังกัด (คน),False,20.0,,4_1,generated,
+T41_WORKFORCE_ENDPOINTS,table,outputs/chapter4_1/tables/T41_WORKFORCE_ENDPOINTS.csv,จำนวนต้นช่วง ปลายช่วง การเปลี่ยนแปลง และ CAGR 2556–2568,True,20.0,,4_1,generated,
+T41_NATIONAL_DECLINE_YEARS,table,outputs/chapter4_1/tables/T41_NATIONAL_DECLINE_YEARS.csv,ปีที่จำนวนรวมทุกสังกัดลดลงจากปีก่อน,False,7.0,,4_1,generated,
+F41_WORKFORCE_COUNTS,figure,outputs/chapter4_1/figures/F41_WORKFORCE_COUNTS.png,จำนวนบุคลากร 4 วิชาชีพ ทุกสังกัด พ.ศ. 2556–2568,True,,,4_1,generated,outputs/chapter4_1/figure_data/F41_WORKFORCE_COUNTS_data.csv
+T41_WORKFORCE_INDEX_BY_SECTOR,table,outputs/chapter4_1/tables/T41_WORKFORCE_INDEX_BY_SECTOR.csv,ดัชนีจำนวนบุคลากรแยกวิชาชีพและสังกัด (พ.ศ. 2556 = 100),True,20.0,,4_1,generated,
+F41_WORKFORCE_INDEX_BY_SECTOR,figure,outputs/chapter4_1/figures/F41_WORKFORCE_INDEX_BY_SECTOR.png,ดัชนีการเติบโตของบุคลากร 4 วิชาชีพ แยกสังกัด พ.ศ. 2556–2568 (2556 = 100),True,,,4_1,generated,outputs/chapter4_1/figure_data/F41_WORKFORCE_INDEX_BY_SECTOR_data.csv
+T41_SECTOR_CONTRIBUTIONS,table,outputs/chapter4_1/tables/T41_SECTOR_CONTRIBUTIONS.csv,ส่วนของแต่ละสังกัดต่อการเปลี่ยนแปลงสุทธิ 2556–2568,True,12.0,,4_1,generated,
+F41_SECTOR_GROWTH_CONTRIB,figure,outputs/chapter4_1/figures/F41_SECTOR_GROWTH_CONTRIB.png,อัตราการเติบโตแยกสังกัด และส่วนต่อการเปลี่ยนแปลงสุทธิ 2556–2568,True,,,4_1,generated,outputs/chapter4_1/figure_data/F41_SECTOR_GROWTH_CONTRIB_data.csv
+T41_TRANSFER_2023_NURSES,table,outputs/chapter4_1/tables/T41_TRANSFER_2023_NURSES.csv,การเปลี่ยนแปลงรายปีของพยาบาลวิชาชีพรอบการถ่ายโอน รพ.สต.,False,3.0,,4_1,generated,
+T41_PHYSICIAN_2020_DIP,table,outputs/chapter4_1/tables/T41_PHYSICIAN_2020_DIP.csv,แพทย์ สธ. ปี 2563 เทียบปีข้างเคียง,False,5.0,,4_1,generated,
+T41_SERVICE_NESTING,table,outputs/chapter4_1/tables/T41_SERVICE_NESTING.csv,สัดส่วนบริการของโรงพยาบาล สธ. ในบริการทั้งหมดที่รายงาน,False,65.0,,4_1,generated,
+T41_SERVICE_NESTING_PROVINCE_ANOMALIES,table,outputs/chapter4_1/tables/T41_SERVICE_NESTING_PROVINCE_ANOMALIES.csv,จังหวัด-ปีที่ชุด สธ. สูงกว่าชุดทั้งหมด (ความไม่สอดคล้องของแหล่ง ไม่ได้แก้ค่า),False,13.0,,4_1,generated,
+T41_SERVICES_ANNUAL,table,outputs/chapter4_1/tables/T41_SERVICES_ANNUAL.csv,ปริมาณบริการรายปี แยกขอบเขต,False,10.0,,4_1,generated,
+T41_SERVICES_ENDPOINTS,table,outputs/chapter4_1/tables/T41_SERVICES_ENDPOINTS.csv,บริการต้นช่วง ปลายช่วง และ CAGR ช่วงยาวและช่วงร่วมกับ case-mix,True,20.0,,4_1,generated,
+T41_MOPH_SERVICE_SHARE,table,outputs/chapter4_1/tables/T41_MOPH_SERVICE_SHARE.csv,ส่วนของโรงพยาบาล สธ. ต่อการเพิ่มขึ้นสุทธิของบริการ และสัดส่วนปริมาณบริการ,True,4.0,,4_1,generated,
+T41_IPDAYS_ANNUAL,table,outputs/chapter4_1/tables/T41_IPDAYS_ANNUAL.csv,วันนอนรวมรายปี (สังเกตช่วงโควิด-19),False,13.0,,4_1,generated,
+T41_OP_DECOMPOSITION,table,outputs/chapter4_1/tables/T41_OP_DECOMPOSITION.csv,แยกการเปลี่ยนแปลงของครั้งผู้ป่วยนอกเป็นจำนวนคนที่รายงาน และครั้งต่อคน 2556–2568,True,2.0,,4_1,generated,
+T41_OP_PERSONS_YOY,table,outputs/chapter4_1/tables/T41_OP_PERSONS_YOY.csv,การเปลี่ยนแปลงรายปี (%) ของจำนวนผู้ป่วยนอก (คน) และครั้ง แยกขอบเขต,False,13.0,,4_1,generated,
+F41_OP_PERSONS_FREQUENCY,figure,outputs/chapter4_1/figures/F41_OP_PERSONS_FREQUENCY.png,ครั้งผู้ป่วยนอก จำนวนคนที่รายงาน และครั้งต่อคน แยกขอบเขต,True,,,4_1,generated,outputs/chapter4_1/figure_data/F41_OP_PERSONS_FREQUENCY_data.csv
+T41_CASEMIX_NATIONAL,table,outputs/chapter4_1/tables/T41_CASEMIX_NATIONAL.csv,ผลรวม AdjRW จำนวนคำนวณ CMI และวันนอนเฉลี่ย โรงพยาบาล สธ. ที่ส่งข้อมูล (ปีงบประมาณ),True,8.0,,4_1,generated,
+F41_CASEMIX,figure,outputs/chapter4_1/figures/F41_CASEMIX.png,ผลรวม AdjRW จำนวนคำนวณ และ CMI ปีงบประมาณ 2561–2568,True,,,4_1,generated,outputs/chapter4_1/figure_data/F41_CASEMIX_data.csv
+F41_SERVICE_GROWTH,figure,outputs/chapter4_1/figures/F41_SERVICE_GROWTH.png,อัตราการเติบโตของบริการ และส่วนของโรงพยาบาล สธ. ต่อการเพิ่มขึ้นสุทธิ 2556–2568,True,,,4_1,generated,outputs/chapter4_1/figure_data/F41_SERVICE_GROWTH_data.csv
+T41_SERVICE_INDEX,table,outputs/chapter4_1/tables/T41_SERVICE_INDEX.csv,ดัชนีบริการแยกขอบเขต (พ.ศ. 2556 = 100; case-mix ปีงบ 2561 = 100),True,17.0,,4_1,generated,
+F41_SERVICE_INDEX,figure,outputs/chapter4_1/figures/F41_SERVICE_INDEX.png,ดัชนีบริการ พ.ศ. 2556–2568 แยกขอบเขต และ case-mix ปีงบประมาณ 2561–2568,True,,,4_1,generated,outputs/chapter4_1/figure_data/F41_SERVICE_INDEX_data.csv
+T41_AUDIT_CASEMIX_IDENTITY,table,outputs/chapter4_1/tables/T41_AUDIT_CASEMIX_IDENTITY.csv,ตรวจเอกลักษณ์ CMI ระดับโรงพยาบาลและจำนวนโรงพยาบาลที่ส่งไม่ครบปี,False,8.0,,4_1,generated,

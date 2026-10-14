@@ -1,0 +1,101 @@
+# Older-person home and community care — first package of the activity/FTE ledger (next-phase plan §4.1).
+#
+# EVERY NUMBER IN THIS FILE IS AN ILLUSTRATIVE PLACEHOLDER chosen to make the worked example easy
+# to check by hand.  None is a Thai estimate.  Replace each with a measured or elicited value
+# (older-person/dependency survey, LTC care-manager records, an activity-time study, practitioner
+# review) and change its provenance class when you do.  The ledger reports every remaining
+# placeholder as a warning.
+#
+# Spec and worked example: docs/activity_fte_ledger.md   Engine: src/services/ledger.py
+
+[package]
+id = "older_home_care"
+label = "ดูแลผู้สูงอายุที่มีภาวะพึ่งพิงที่บ้านและในชุมชน (ตัวอย่าง)"
+version = "0.1-illustrative"
+age_groups = ["60-69", "70-79", "80+"]        # the BOD/projection age groups at 60+
+coverage = 0.80                               # target share of eligible people receiving the package
+
+[prevalence]                                  # share of each age group in the eligible care state (dependency)
+"60-69" = 0.02
+"70-79" = 0.06
+"80+" = 0.20
+
+# Activities: per_recipient = activities per recipient per year.  settings are alternatives (sum to 1).
+# task_minutes may name several cadres for one contact (multidisciplinary).  travel_minutes apply
+# only to the 'home' setting and are counted in the numerator.
+[activities.assessment]
+label = "ประเมินและวางแผนการดูแล"
+per_recipient = 1
+settings = { primary_care = 1.0 }
+task_minutes = { nurse = 45 }
+
+[activities.nurse_home_visit]
+label = "เยี่ยมบ้านโดยพยาบาล"
+per_recipient = 12
+settings = { home = 1.0 }
+task_minutes = { nurse = 30 }
+travel_minutes = { nurse = 30 }
+
+[activities.home_rehabilitation]
+label = "ฟื้นฟูสมรรถภาพที่บ้าน"
+per_recipient = 4
+settings = { home = 1.0 }
+task_minutes = { physiotherapist = 45 }
+travel_minutes = { physiotherapist = 30 }
+# Overlap rule: each home session replaces half a hospital outpatient rehabilitation visit, which
+# took 20 physiotherapist-minutes in hospital.  The hospital ledger records the avoided visits.
+replaces_hospital = { activity = "hospital_opd_rehabilitation", per_activity = 0.5, hospital_minutes = { physiotherapist = 20 } }
+
+[activities.physician_review]
+label = "ทบทวนโดยแพทย์ (ที่ รพ.สต. หรือทางไกล)"
+per_recipient = 2
+settings = { primary_care = 0.5, remote = 0.5 }
+task_minutes = { physician = 15 }
+
+[activities.care_assistant_visit]
+label = "ผู้ช่วยเหลือดูแลเยี่ยมบ้าน"
+per_recipient = 52
+settings = { home = 1.0 }
+task_minutes = { care_assistant = 60 }
+travel_minutes = { care_assistant = 15 }
+
+[support_hours]                               # care coordination per recipient per year, counted once
+nurse = 2
+
+# Working time.  available = contract x (1 - leave - other non-clinical).  Allowances counted in
+# the numerator (travel, support) must be listed in nonclinical_excludes, so they are not also
+# deducted here.
+[cadres.nurse]
+contract_hours = 1920
+leave_share = 0.10
+nonclinical_share = 0.10
+nonclinical_excludes = ["travel", "support"]
+
+[cadres.physician]
+contract_hours = 1920
+leave_share = 0.10
+nonclinical_share = 0.10
+nonclinical_excludes = []
+
+[cadres.physiotherapist]
+contract_hours = 1920
+leave_share = 0.10
+nonclinical_share = 0.10
+nonclinical_excludes = ["travel"]
+
+[cadres.care_assistant]
+contract_hours = 1920
+leave_share = 0.10
+nonclinical_share = 0.10
+nonclinical_excludes = ["travel"]
+
+[provenance]
+"package.coverage" = "illustrative_placeholder"
+"prevalence" = "illustrative_placeholder"
+"activities.per_recipient" = "illustrative_placeholder"
+"activities.settings" = "illustrative_placeholder"
+"activities.task_minutes" = "illustrative_placeholder"
+"activities.travel_minutes" = "illustrative_placeholder"
+"activities.home_rehabilitation.replaces_hospital" = "illustrative_placeholder"
+"support_hours" = "illustrative_placeholder"
+"cadres.working_time" = "illustrative_placeholder"

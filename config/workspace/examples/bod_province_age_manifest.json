@@ -1,0 +1,15 @@
+{
+ "dataset_id": "example-bod-age-replacement",
+ "schema": "bod_province_age/1",
+ "title": "Example replacement of the BOD 2022 age-specific file (same layout as S15_BOD_AGE)",
+ "source": "describe the supplier and extraction, e.g. IHPP BOD Thailand subnational results",
+ "permitted_use": "describe the licence or data-sharing terms",
+ "period": "2022 (calendar year)",
+ "geography": "77 provinces, area_name P<DOPA two-digit code>",
+ "units": "DALY, YLL, YLD (years) and deaths: counts; rates per 100,000 of mid_pop",
+ "definitions": "174 Level-3 causes; age groups 0-4, 5-14, 15-29, 30-44, 45-59, 60-69, 70-79, 80+; both sexes",
+ "coverage": "all residents in the source's mid-year population",
+ "missingness": "none permitted: an incomplete province x cause x age grid is rejected",
+ "replaces": "S15_BOD_AGE (data/epi/BOD_2022_Province_Disease_Age.csv)",
+ "sha256": ""
+}
