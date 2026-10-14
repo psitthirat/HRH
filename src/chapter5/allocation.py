@@ -545,6 +545,20 @@ def solve(pb: Problem, objective: str = "lexicographic", incumbent=None) -> Solu
             else:
                 stages.append(dict(stage="distribution", status=int(r2.status), objective=np.nan, seconds=s2,
                                    outcome="no improved incumbent within the time limit: shortfall-stage solution retained"))
+            if incumbent is not None:
+                # The recruitment-only incumbent is feasible in every stage of a transfer plan. When it meets the
+                # shortfall tolerance and distributes better than a time-limited distribution stage, it is the better
+                # lexicographic answer: keep it (a transfer plan is then never worse than its recruitment-only plan).
+                vi = full_vector(pb, M, *incumbent)
+                if float(cS @ vi) <= J1 * (1 + pb.rel_tol) + pb.abs_tol:
+                    xc, zic, zoc, _ = _extract(pb, M, xv)
+                    Ii, Ic = imbalance(pb, trajectory(pb, *incumbent)), imbalance(pb, trajectory(pb, xc, zic, zoc))
+                    if Ii < Ic - 1e-9:
+                        xv = vi
+                        diag["incumbent_adopted_distribution"] = True
+                        stages.append(dict(stage="distribution", status=0, objective=Ii, seconds=0.0,
+                                           outcome="recruitment-only incumbent distributes better within the shortfall "
+                                                   "tolerance and is adopted"))
         if "operational" in pb.stages and pb.transfers:
             x_, zi_, zo_, _ = _extract(pb, M, xv)
             inc_ok = False

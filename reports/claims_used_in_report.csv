@@ -156,7 +156,7 @@ c421_moph_share_physicians_start,4_2,58.5534426719468,58.55,{:.2f},%,,,,,,,compu
 c421_moph_share_physicians_end,4_2,51.990769967564276,51.99,{:.2f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c421_scope_gap_physicians_moph,4_2,-48.009230032435724,-48.0,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,,reports/chapter4_complete_th.md
 c421_register_gap_civil_grand,4_2,-1.842702057929435,-1.8,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,,reports/chapter4_complete_th.md
-c421_register_gap_nhso_rights,4_2,-3.5930154055134,-3.6,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,,reports/chapter4_complete_th.md
+c421_register_gap_nhso_rights,4_2,-3.7530233838548366,-3.8,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,,reports/chapter4_complete_th.md
 c421_scope_gap_min_abs,4_2,5.178970917225945,5.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c421_scope_gap_max_abs,4_2,48.009230032435724,48.0,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c421_comb_all_start,4_2,2.591837596862609,2.59,{:.2f},"ต่อ 1,000",,,,,,,computed,,reports/chapter4_complete_th.md
@@ -348,6 +348,12 @@ c424_moph_professional_nurses_civil_population_long,4_2,24.57814261455049,24.58,
 c424_moph_professional_nurses_op_visits_moph_long,4_2,5.108828501976448,5.11,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
 c424_moph_professional_nurses_ip_days_moph_long,4_2,0.9152812234491048,0.92,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
 c424_moph_professional_nurses_adjrw_casemix_long,4_2,-22.209280157161615,-22.21,{:.2f},%,T424_DENOMINATOR_MATRIX,,,,,,computed,,reports/chapter4_complete_th.md
+c43_dentists_all_sectors_gini_min,4_3,0.16151906206724548,0.162,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_dentists_all_sectors_gini_min_year_be,4_3,2561,2561,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pharmacists_all_sectors_gini_min,4_3,0.12455208886450067,0.125,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_pharmacists_all_sectors_gini_min_year_be,4_3,2561,2561,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_physicians_all_sectors_gini_min,4_3,0.22111565313519632,0.221,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_physicians_all_sectors_gini_min_year_be,4_3,2562,2562,text,,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_physicians_all_sectors_2013_gini,4_3,0.25305898890324485,0.253,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
 c43_physicians_all_sectors_2025_gini,4_3,0.23516247548880484,0.235,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
 c43_physicians_all_sectors_2025_between_pct,4_3,30.399363948408396,30.4,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
@@ -370,13 +376,20 @@ c43_dentists_all_sectors_2013_gini,4_3,0.21239562094673237,0.212,{:.3f},,T43_INE
 c43_dentists_all_sectors_2025_gini,4_3,0.19682890031486672,0.197,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
 c43_dentists_moph_2013_gini,4_3,0.14722777133740597,0.147,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
 c43_dentists_moph_2025_gini,4_3,0.1282189663273719,0.128,{:.3f},,T43_INEQUALITY_ANNUAL,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_dentists_all_sectors_population_own_window_theil_wf,4_3,0.003098966762755853,+0.0031,{:+.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_win_professional_nurses_moph_ip_days_own_window_gini_start,4_3,0.13586140634718152,0.136,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_win_professional_nurses_moph_ip_days_own_window_gini_end,4_3,0.07939037484569983,0.079,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_pharmacists_all_sectors_population_own_window_theil_wf,4_3,-0.005367898258093971,-0.0054,{:+.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_pharmacists_all_sectors_population_own_window_theil_den,4_3,-0.006590290139814955,-0.0066,{:+.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_all_sectors_population_own_window_theil_wf,4_3,-0.004951782812091798,-0.0050,{:+.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_all_sectors_population_own_window_theil_den,4_3,-0.0118312384476741,-0.0118,{:+.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_win_physicians_moph_adjrw_own_window_gini_start,4_3,0.10069075202173282,0.101,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_win_physicians_moph_adjrw_own_window_gini_end,4_3,0.10121683625931185,0.101,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_win_physicians_moph_ip_days_own_window_gini_start,4_3,0.12755450137639032,0.128,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_win_physicians_moph_op_visits_own_window_gini_start,4_3,0.11678029368370635,0.117,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_win_physicians_moph_population_own_window_gini_start,4_3,0.1393437415263192,0.139,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_moph_population_own_window_theil_wf,4_3,-0.007038110236399756,-0.0070,{:+.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c43_win_physicians_moph_population_own_window_theil_den,4_3,0.0007096848818172376,+0.0007,{:+.4f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_q_physicians_moph_Q1_pct,4_3,64.6639888039809,64.7,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c43_q_physicians_moph_Q1_abs,4_3,11.951337593814,12.0,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
 c43_q_physicians_moph_Q1_start,4_3,18.482215240452717,18.5,{:.1f},"ต่อ 100,000",,,,,,,computed,,reports/chapter4_complete_th.md
@@ -506,7 +519,7 @@ c44_wl_professional_nurses_exit__resignation_L_ipd_primary_p10,4_4,4.08648166604
 c44_wl_professional_nurses_exit__resignation_L_ipd_primary_p10lo,4_4,1.425837739374991,1.4,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c44_wl_professional_nurses_exit__resignation_L_ipd_primary_p10hi,4_4,6.816920688936023,6.8,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c44_wl_n_obs,4_4,684.0,684,int,จังหวัด-ปี,,,,,,,computed,,reports/chapter4_complete_th.md
-c44_wl_years,4_4,2017-2025,2017-2025,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c44_wl_years,4_4,2560–2568,2560–2568,text,,,,,,,,computed,,reports/chapter4_complete_th.md
 c45_asr_repro_gap_pct,4_5,0.029756424629651727,0.030,{:.3f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c45_n_causes,4_5,174.0,174,int,กลุ่มโรค,,,,,,,computed,,reports/chapter4_complete_th.md
 c45_covid_share_median,4_5,3.0963633048781176,3.1,{:.1f},%,,,,,,,computed,"share of all-cause ASR DALY from COVID-19 (B5), 2022, median of 76 provinces",reports/chapter4_complete_th.md
@@ -648,6 +661,8 @@ c46_spc_ratio_2019,4_6,0.7662721893491125,0.77,{:.2f},,,,,,,,computed,,reports/c
 c46_spc_ratio_2021,4_6,0.9421296296296297,0.94,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_spc_ratio_2024,4_6,0.99,0.99,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_spc_window,4_6,2560–2567 ไม่รวม 2563,2560–2567 ไม่รวม 2563,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_trend_window,4_6,2564–2567,2564–2567,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_gini_all0,4_6,0.7567888881626104,0.757,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_conc_top10_all0,4_6,63.625096162065134,63.6,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_conc_gini_all1,4_6,0.7542698728351955,0.754,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_conc_top10_all1,4_6,63.49916620344636,63.5,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
@@ -655,17 +670,23 @@ c46_conc_rg_moph0,4_6,76.4877692588536,76.5,{:.1f},%,,,,,,,computed,,reports/cha
 c46_conc_ch_moph0,4_6,13.179992698064988,13.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_conc_rg_moph1,4_6,72.21911682504192,72.2,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_conc_ch_moph1,4_6,17.775293460033538,17.8,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
-c46_comove_rho,4_6,0.3082547404969126,+0.31,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_gini_allT,4_6,0.742306048305722,0.742,{:.3f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_top10_allT,4_6,61.55490962547192,61.6,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_rg_mophT,4_6,73.27793570959983,73.3,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_conc_ch_mophT,4_6,15.620672060645822,15.6,{:.1f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_comove_window,4_6,2564–2567,2564–2567,text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_comove_rho,4_6,0.12798463680343428,+0.13,{:+.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_comove_p,4_6,0.2738362729595921,0.27,{:.2f},,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_comove_n,4_6,75.0,75,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_dis_n_all_four,4_6,8.0,8,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_dis_list_all_four,4_6,"บึงกาฬ, หนองบัวลำภู, ชัยภูมิ, กำแพงเพชร, อำนาจเจริญ, ยโสธร, เลย, สกลนคร","บึงกาฬ, หนองบัวลำภู, ชัยภูมิ, กำแพงเพชร, อำนาจเจริญ, ยโสธร, เลย, สกลนคร",text,,,,,,,,computed,,reports/chapter4_complete_th.md
-c46_dis_n_need_not_service,4_6,11.0,11,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
-c46_dis_list_need_not_service,4_6,"เพชรบูรณ์, สระแก้ว, กาฬสินธุ์, นครนายก, สมุทรปราการ, ปทุมธานี, ลพบุรี, นครพนม, บุรีรัมย์, ศรีสะเกษ, นครราชสีมา","เพชรบูรณ์, สระแก้ว, กาฬสินธุ์, นครนายก, สมุทรปราการ, ปทุมธานี, ลพบุรี, นครพนม, บุรีรัมย์, ศรีสะเกษ, นครราชสีมา",text,,,,,,,,computed,,reports/chapter4_complete_th.md
-c46_dis_n_service_not_need,4_6,11.0,11,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
-c46_dis_list_service_not_need,4_6,"สุพรรณบุรี, อุทัยธานี, ลำพูน, เพชรบุรี, ประจวบคีรีขันธ์, พัทลุง, ระนอง, นครปฐม, กระบี่, ตรัง, แม่ฮ่องสอน","สุพรรณบุรี, อุทัยธานี, ลำพูน, เพชรบุรี, ประจวบคีรีขันธ์, พัทลุง, ระนอง, นครปฐม, กระบี่, ตรัง, แม่ฮ่องสอน",text,,,,,,,,computed,,reports/chapter4_complete_th.md
-c46_dis_op_need_not_service,4_6,1.8226219194755868,1.82,{:.2f},ครั้งต่อคน,,,,,,,computed,,reports/chapter4_complete_th.md
-c46_dis_rh_need_not_service,4_6,36.36363636363637,36,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_n_burden_not_service,4_6,11.0,11,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_list_burden_not_service,4_6,"เพชรบูรณ์, สระแก้ว, กาฬสินธุ์, นครนายก, สมุทรปราการ, ปทุมธานี, ลพบุรี, นครพนม, บุรีรัมย์, ศรีสะเกษ, นครราชสีมา","เพชรบูรณ์, สระแก้ว, กาฬสินธุ์, นครนายก, สมุทรปราการ, ปทุมธานี, ลพบุรี, นครพนม, บุรีรัมย์, ศรีสะเกษ, นครราชสีมา",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_n_service_not_burden,4_6,11.0,11,int,จังหวัด,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_list_service_not_burden,4_6,"สุพรรณบุรี, อุทัยธานี, ลำพูน, เพชรบุรี, ประจวบคีรีขันธ์, พัทลุง, ระนอง, นครปฐม, กระบี่, ตรัง, แม่ฮ่องสอน","สุพรรณบุรี, อุทัยธานี, ลำพูน, เพชรบุรี, ประจวบคีรีขันธ์, พัทลุง, ระนอง, นครปฐม, กระบี่, ตรัง, แม่ฮ่องสอน",text,,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_op_burden_not_service,4_6,1.8226219194755868,1.82,{:.2f},ครั้งต่อคน,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_rh_burden_not_service,4_6,36.36363636363637,36,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_dis_rh_none,4_6,61.904761904761905,62,{:.0f},%,,,,,,,computed,,reports/chapter4_complete_th.md
-c46_dis_op_service_not_need,4_6,3.0383560352237446,3.04,{:.2f},ครั้งต่อคน,,,,,,,computed,,reports/chapter4_complete_th.md
+c46_dis_op_service_not_burden,4_6,3.0383560352237446,3.04,{:.2f},ครั้งต่อคน,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_val_temporal_fail,4_6,6.0,6,int,รายการ,,,,,,,computed,,reports/chapter4_complete_th.md
 c46_val_temporal_n,4_6,6.0,6,int,รายการ,,,,,,,computed,,reports/chapter4_complete_th.md

@@ -43,8 +43,8 @@ departures.national_rate_sensitivity,true,setting,,False
 departures.workload_departure_elasticity,0.104326,estimated,"log-log, resignations on OP visits per physician",False
 departures.workload_departure_mode,"""sensitivity_only""",setting,,False
 services.op_minutes,10.0,illustrative,minutes per OP visit (allocation weight),False
-services.adjrw_minutes,90.0,illustrative,minutes per AdjRW (allocation weight),False
-services.weight_sensitivity,"[[5.0, 90.0], [15.0, 90.0], [10.0, 60.0], [10.0, 120.0]]",setting,,False
+services.adjrw_minutes,100.0,illustrative,minutes per AdjRW (allocation weight),False
+services.weight_sensitivity,"[[5.0, 100.0], [15.0, 100.0], [10.0, 60.0], [10.0, 90.0], [10.0, 120.0]]",setting,,False
 services.inpatient_measure,"""adjrw""",setting,,False
 services.projection_candidates,"[""constant_last"", ""mean_last3"", ""trend_last5_damped""]",setting,,False
 services.backtest_cutoffs,"[2016, 2017, 2018, 2019, 2023]",setting,,False

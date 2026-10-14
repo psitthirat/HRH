@@ -1,56 +1,159 @@
-# Chapter 4 — methods and limitations
+# วิธีการและข้อจำกัด (ฉบับรวมบทที่ 4–5, สถานะ 15 ต.ค. 2569)
 
-## Formulas
-* **CAGR** $g=(W_{t_1}/W_{t_0})^{1/(t_1-t_0)}-1$, elapsed intervals; undefined (NaN) for non-positive endpoints.
-* **Ratio growth** $1+g_{W/P}=(1+g_W)/(1+g_P)$ (exact; verified to 1e−12).
-* **Contribution to net change** $\Delta W_s/\sum_s\Delta W_s$ (negative and >100% values kept).
-* **OP decomposition** $\ln V=\ln N+\ln(V/N)$ on one scope.
-* **CMI** $\sum\text{SumAdjRW}/\sum\text{calculated cases}$; $\text{SumAdjRW}=\text{cases}\times\text{CMI}$ on the same records.
-* **Time illustration** $H=(U_{OP}m_{OP}+A\,m_A)/60$; direct-care budget $=\text{days}\times\text{h/day}\times a$ applied once.
-* **Predictive R²** $1-\sum(y-\hat y)^2/\sum(y-\bar y_{train})^2$ pooled over repeats and folds. Increment $100(SSE_a-SSE_b)/SSE_a$.
-* **PPML** $\log E[V]=\log P+\alpha(+\alpha_p)+\delta_t+\theta'\log(\text{supply}/P)+\dots$; 10% effect $100(1.1^\beta-1)$.
-* **Standardization** $\hat r^*=f_{M5}(s,d,GPP^*,b^*,m^*,n^*,t^*)$, $V^*=P\hat r^*$, $E=V^*/\bar r_{2023}$ with $\bar r_{2023}$ fixed.
-* **Age mixture** $r_{pt}=q_t\sum_a s_{pta}\rho_a$, $\rho\ge0$, $q_{t_0}=1$; $w_a=\rho_a/\bar\rho_{2013}$.
-* **Weighted Gini**, **Theil T** $\sum q\log(q/d)$ with $T=T_B+T_W$, $T_W=\sum_g Q_gT_g$.
-* **Beta convergence** $\frac1T\ln(r_{t_1}/r_{t_0})=a+\beta\ln r_{t_0}$, HC3 intervals.
-* **Priority** $R_p=(W_p/D_p)/(\sum W/\sum D)$; gap $\sum W\,D_p/\sum D-W_p$ (relative to the proportional rule only).
-* **Stock–flow** $W_t-W_{t-1}=I_t-O_t+A_t$.
+เอกสารนี้สรุปวิธีการที่ใช้อยู่จริงในโค้ดปัจจุบัน
+- รายงานฉบับภาษาไทย (`reports/chapter*_complete_th.md`) อธิบายวิธีการซ้ำในเนื้อหา
+- การตัดสินใจและเหตุผลอยู่ที่ [decisions.md](decisions.md)
+- แหล่งข้อมูลอยู่ที่ [data.md](data.md)
 
-## Uncertainty
-* Descriptive indices on complete recorded totals carry no sampling interval.
-* CV increments: province-cluster bootstrap conditional on fitted CV predictions (no refitting).
-* M5 standardized indices and province E: province bootstrap with refitting (500/500 valid), reference held fixed — conditional model uncertainty only.
-* Regression coefficients: province-clustered (CR1) intervals with t(G−1).
+## 1. โครงสร้างการคำนวณ
 
-## Limitations that change interpretation
-1. Headcount, not FTE; stock, not individual flows (4.1–4.3).
-2. MOPH-wide workforce is broader than the MOPH hospitals whose services form the numerator; service/staff ratios are team output divided by headcount.
-3. HDC prevalence is diagnosed prevalence in service records; it reflects diagnosis access and reporting. Against modeled BOD 2022 burden its provincial rank correlation is near zero for diabetes and hypertension (4.5).
-11. BOD 2022 burden is a modeled, single-year estimate (possibly informed by service data); it measures the size of the health problem, not staff required. The age-specific file (S15) lets expected burden follow ageing, but only under province age-specific rates fixed at 2022; it is a demographic projection, not an observed disease trend.
-4. Case-mix weights changed with a grouping/coding step in FY2023 (+12.4% CMI in one year); no DRG version metadata.
-5. The data identify supply–service **associations**, not supplier-induced demand; no instrument, allocation discontinuity, payment change or referral data exist in the project.
-6. Age-specific relative rates cannot be estimated stably from provincial aggregates; age denominators in 4.3 are declared scenarios.
-7. Province-level data cannot identify within-province inequality.
-8. No OPS-matched stock exists; the stock–flow residual mixes scope, timing, reporting and reclassification. Events are not unique persons; employment-status conversion appears as entry + exit.
-9. Workload–flow associations are not robust to relaxing the unit-exposure (offset) assumption; they are not causal responses.
-10. Scenarios (4.2.1, 4.3) are conditional arithmetic, not forecasts; redistribution scenarios ignore transfer, attrition, minimum-service and capacity constraints.
+| ส่วน | โค้ด | config | คำสั่ง |
+|---|---|---|---|
+| บทที่ 4: ingest → ตารางกลาง → panel → metrics/models → notebook 4.1–4.6 → claims → รายงาน | `src/chapter4/` | `config/analysis.toml`, `config/source_registry.toml` | `make chapter4` |
+| บทที่ 5: inputs → plans (MILP) → uncertainty → compare (รวม hindcast, validation, health gain) → report | `src/chapter5/` | `config/chapter5.toml`, `config/validation.toml`, `config/chapter5_health_gain.toml` | `make chapter5` |
+| โมดูลบริการ | `src/services/` | `config/services/` | ผ่าน Lab หรือ `services.lab_modules` |
 
-## Quality gates (status)
-| Area | Status |
+**ทะเบียน claims และการ render รายงาน**
+- ทุกตัวเลขในรายงานมาจากทะเบียน claims (`outputs/chapter4_*/claims.csv`, `outputs/chapter5/claims_5_*.csv`)
+- แม่แบบใช้ `{{claim_id}}` และ `{{abs:claim_id}}` (ตัดเครื่องหมาย) สำหรับตัวเลข และ `[[ASSET:ID]]` สำหรับรูปและตาราง
+- เลขรูปและตารางของบทที่ 4 คือ 4.x ส่วนบทที่ 5 คือ 5.x
+
+**cache**
+- ข้อมูลกลาง (`data/processed/`) ใช้ key เป็น hash ของแหล่งข้อมูลกับโค้ด ingest
+- แผนบทที่ 5 ใช้ key เป็น hash ของ `chapter5.toml` กับ input fingerprint ซึ่งรวม code hash ของ `src/chapter4/*.py` กับ config ของบทที่ 4
+
+## 2. บทที่ 4: สูตรหลัก
+
+- **CAGR** $g=(W_{t_1}/W_{t_0})^{1/(t_1-t_0)}-1$; อัตราส่วน $1+g_{W/P}=(1+g_W)/(1+g_P)$ (ตรวจถึง 1e−12)
+- **ส่วนร่วมต่อการเปลี่ยนแปลง** $\Delta W_s/\sum_s\Delta W_s$; **การแยกผู้ป่วยนอก** $\ln V=\ln N+\ln(V/N)$
+- **CMI** $\sum\text{SumAdjRW}/\sum\text{cases}$
+- **ภาพเวลาทำงาน** $H=(U_{OP}m_{OP}+A\,m_A)/60$ ที่ $m_{OP}=10$, $m_A=100$ นาที (90 นาทีเป็นค่าเทียบ)
+- **R² นอกตัวอย่าง** $1-\sum(y-\hat y)^2/\sum(y-\bar y_{train})^2$; ส่วนลด SSE $100(SSE_a-SSE_b)/SSE_a$ พร้อม bootstrap แบบ cluster จังหวัด
+- **PPML** $\log E[V]=\log P+\alpha_{(p)}+\delta_t+\theta'\log(\text{supply}/P)$
+- **บริการคาดหมายมาตรฐาน M5** $\hat r^*=f_{M5}(s,d,GPP^*,b^*,m^*,n^*,t^*)$, $E=P\hat r^*/\bar r_{2023}$ (ตรึงทรัพยากรที่ค่ารวม 76 จังหวัดปี 2566)
+- **Gini ถ่วงน้ำหนัก**, **Theil T** $\sum q\log(q/d)=T_B+T_W$, **concentration index** $2\,\mathrm{cov}(x,R)/\mu$
+- **การแยก Shapley** ของการเปลี่ยน Theil เป็นส่วนของบุคลากรกับส่วนของตัวหาร
+- **beta convergence** $\frac1T\ln(r_{t_1}/r_{t_0})=a+\beta\ln r_{t_0}$ (HC3)
+- **ลำดับความสำคัญ** $R_p=(W_p/D_p)/(\sum W/\sum D)$, 19 จังหวัดต่ำสุด
+- **stock–flow** $W_t-W_{t-1}=I_t-O_t+A_t$ (ใช้เป็นการกระทบยอด)
+- **DALY คาดหมาย** $\sum_a N_{pat}\,\text{rate}_{pa,2022}$ และการแยกอัตราหยาบเป็นโครงสร้างอายุ × ตัวคูณภาระส่วนเกิน (indirect standardization)
+- **การกระจุกตัวของแพทย์เฉพาะทาง (4.6)** Gini ระหว่างสถานพยาบาล, ส่วนแบ่งของ 10% สถานพยาบาลบนสุด, ส่วนแบ่งตามระดับสถานพยาบาล, สหสัมพันธ์อันดับของการเปลี่ยนแปลงระหว่างศูนย์กับ รพ.ชุมชน (เชิงพรรณนา)
+
+**ความไม่แน่นอน**
+- ดัชนีเชิงพรรณนาจากยอดรวมที่บันทึกครบไม่มีช่วงจากการสุ่ม
+- ส่วนลดจาก CV ใช้ bootstrap แบบมีเงื่อนไข
+- M5 มาตรฐานใช้ bootstrap จังหวัดพร้อม refit 500 รอบ
+- ค่าสัมประสิทธิ์ใช้ CR1 แบบ cluster จังหวัด
+
+## 3. บทที่ 5: แบบจำลองจัดสรรแพทย์ 15 ปี
+
+**ขอบเขต**
+- ฐานคือแพทย์ สธ. ปลายปี 2568 ของ 76 จังหวัด ซึ่งใช้แทน OPS ชั่วคราว
+- ตัดสินใจรายปี 2569–2583 รวม 15 ครั้ง
+- นับเป็นจำนวนคน ไม่แยกสาขา
+
+**ประชากร**
+- Hamilton–Perry รายอายุเดี่ยวและเพศ บนทะเบียนราษฎร 77 จังหวัด ปรับให้รวมเท่ายอดประเทศ (raking)
+- ฉากทัศน์การย้ายถิ่น 0.5/1/1.5
+- ทดสอบย้อนหลัง 2562→2568: MAPE รายจังหวัด 1.1% เทียบ 2.2% ของวิธีไม่เปลี่ยน แต่ยอดรวม 76 จังหวัดคลาดมากกว่าวิธีไม่เปลี่ยน
+- ประชากรทะเบียนสิทธิ = ประชากรฉาย × อัตราส่วน NHSO/ราษฎรปี 2568
+
+**อุปทาน**
+- แพทย์พร้อมจัดสรร 2,000 คนต่อปี (ค่าตัวอย่าง) มีอีกสองโหมดคือจากบัณฑิตและจากนักศึกษาที่รับเข้า
+- การออกใช้ hazard จากเหตุการณ์ปีงบ 2564–2568 แบบ EB pooling และ competing risks $d_p=1-\exp(-\sum_k h_{pk})$
+- มีการกลับเข้าแยกจาก pool
+- สมการคงอยู่ (เหมือนกันใน optimiser, ledger และ simulator): $H_{pt}=(1-d_p+r_p)H_{p,t-1}+x_{pt}+z^{in}_{pt}-z^{out}_{pt}$
+
+**ดัชนีความรับผิดชอบ (family)**
+
+| family | ตัวหาร | เปลี่ยนตาม |
+|---|---|---|
+| P | ประชากรทะเบียนราษฎร | การฉาย |
+| P_ent | ประชากรทะเบียนสิทธิ | การฉาย × อัตราส่วนคงที่ |
+| S | 10 นาที × OP + 100 นาที × AdjRW (น้ำหนักตัวอย่าง) | ประชากร × อัตราบริการ benchmark |
+| N-STD | น้ำหนักเดียวกัน × OP และ AdjRW คาดหมายมาตรฐาน M5 | ประชากร อายุ ความชุกที่บันทึก (ตรึงทรัพยากรที่ปี 2566) |
+| B | DALY คาดหมาย (8 กลุ่มอายุ × อัตรารายอายุปี 2565) | ประชากรรายอายุ |
+| N-FB | N-STD × การตอบสนองต่อทรัพยากร (หน่วงหนึ่งปี, λ = 0, 0.5, 1) | จำนวนแพทย์ของแผน |
+
+**เป้าหมาย**
+- 1:1,000 เป็นค่าตัวอย่าง ไม่ใช่ 4.45 ของ WHO
+- Experiment A (หลัก): เป้าหมายรวมเท่ากันทุก family แล้วเปลี่ยนเฉพาะส่วนแบ่ง
+- Experiment B: ตรึงอัตราแปลงที่ปี 2568
+
+**การจัดสรร** (HiGHS ผ่าน `scipy.optimize.milp`)
+- **ตัวแปร:**
+  - ค่าตัดสินใจ: รับใหม่ $x\ge$ floor และโยกย้าย $z^{in}, z^{out}$ เป็นจำนวนเต็ม
+  - ตัวแปรช่วย: จำนวนคงอยู่ $H$, shortfall $s\ge1-H/T$, epigraph เส้นสัมผัสทุก 0.025 (คลาดไม่เกิน 0.00016 ต่อพจน์)
+- **ข้อจำกัด:**
+  - เพดานผู้มาใหม่รวม $x+z^{in}+rH_{t-1}\le gH_{t-1}$ ($g$ = 10%, ข้อสมมติ) หรือเพดานเติบโตสุทธิเป็นทางเลือก
+  - เพดานการโยกย้าย $\tau$ = 2% (และ 5%)
+  - การคุ้มครองต้นทาง 95% หรือ `surplus_only`
+  - เครือข่ายทั้งประเทศหรือรายเขต
+- **ลำดับ lexicographic** (ขั้นถัดไปยอมให้ขั้นก่อนแย่ลงได้ไม่เกิน 0.05%; ขั้น 2–3 จำกัดเวลา 240 วินาที):
+  - (0) วางให้ครบ pool
+  - (1) $J=\sum_t\sum_p (T/\sum T)s^2$
+  - (2) ความไม่สมดุลของการกระจาย
+  - (3) จำนวนการโยกย้าย
+- **Incumbent ของแผน RT:**
+  - แผน RT ได้แผน R เป็น incumbent ในขั้น (1) และขั้น (2) ถ้าแผน R ผ่านเกณฑ์และกระจายดีกว่าก็ใช้แผน R แผน RT จึงไม่แย่กว่าแผน R
+  - J ของแผน RT อาจสูงกว่าแผน R ได้ไม่เกิน 0.05% ตามการออกแบบ
+- **เส้นทางโยกย้าย:** transportation problem บนระยะทางเส้นตรงระหว่างจังหวัด (ไม่ใช่เวลาเดินทางจริง)
+- **วิธีเทียบ:** greedy รายปี, เส้นสัมผัสถี่ขึ้น, rolling horizon, maximin, แผนที่ไม่มี floor
+
+**การประเมิน**
+- **ตัวชี้วัดภายใต้ทุกเกณฑ์:**
+  - ความเพียงพอระดับประเทศ, ความเพียงพอของ 19 จังหวัดล่างสุด, ความเพียงพอต่ำสุด
+  - ช่องว่างระดับประเทศกับเชิงพื้นที่, shortfall สะสม และ J
+  - Gini, Theil, P90/P10
+  - regret เทียบแผนที่ดีที่สุดของเกณฑ์นั้น (รวม B-R/B-RT)
+  - การสลับปลายทาง $\tfrac12\sum_p|x^m-x^n|$
+- **เกณฑ์ความต่างเชิงปฏิบัติ (ประกาศก่อน):** สลับน้อยกว่า 5%/ปี, shortfall สะสมต่างน้อยกว่า 2%, จังหวัดกลุ่มล่างเสียไม่เกิน 5%
+- **benchmark ความไม่เป็นเอกลักษณ์ของคำตอบ:** วัดจากคู่แผนที่ J ต่างกันไม่เกิน 0.05% แล้วตัดสินจากจำนวนรับสะสม
+
+**ความไม่แน่นอน**
+- 500 เส้นทางแบบจับคู่ แต่ละเส้นสุ่ม hazard (gamma posterior), ความคลาดเคลื่อนของประชากร (σ ≈ 0.57%/ปี) และ bootstrap M5
+- รายงานจำนวนเส้นทางที่ใช้ได้รายเกณฑ์
+- แผนตายตัวใช้กฎยกเลิกการโยกย้ายที่ไกลที่สุดเมื่อละเมิดการคุ้มครอง
+- adaptive replanning ใช้ 60 เส้นทาง × 3 family และใช้เฉพาะข้อมูลที่รู้ ณ วันตัดสินใจ
+- perfect foresight เป็นขอบเขตของ J เท่านั้น
+
+**การทดสอบย้อนหลังทั้งระบบ** (`src/chapter5/hindcast.py`)
+- จุดตั้งต้น 2563–2566 ฉายถึง 2568 โดยใช้เฉพาะข้อมูลถึงจุดตั้งต้น (hazard, การรับเข้าเฉลี่ย, ประชากร Hamilton–Perry จากจุดตั้งต้น)
+- เทียบกับ persistence, trend, population-only, stock-flow แบบไม่มีเงื่อนไข และแบบมีเงื่อนไข (ใช้การรับเข้าจริง; ไม่ใช่การพยากรณ์)
+- ตัวชี้วัด: MAE, RMSE, MAPE, bias, ความคลาดเคลื่อนระดับประเทศ, Spearman, Jaccard 19 จังหวัด, ความครอบคลุมของช่วง 90%
+- ความหนาแน่นใช้ประชากรจริงของปีเป้าหมายกับทุกแบบจำลอง
+- เกณฑ์ C1–C3 อยู่ใน `config/validation.toml` และประกาศก่อนรัน
+
+**ผลสุขภาพเชิงตัวอย่าง:** amenable YLL (32 สาเหตุ) × $(H/H_{cf})^e$ ที่ $e\in\{-0.05,-0.10,-0.25\}$ ใช้ประเมินเท่านั้น
+
+## 4. ข้อจำกัดที่เปลี่ยนการตีความ
+
+1. นับเป็นจำนวนคน ไม่ใช่ FTE และเป็นจำนวนคงอยู่ ไม่ใช่การไหลรายบุคคล ไม่มีอายุบุคลากร
+2. บุคลากร สธ. ทั้งหมดกว้างกว่าโรงพยาบาลที่เป็นตัวตั้งของบริการ อัตราบริการต่อบุคลากรจึงเป็นผลงานทีมหารด้วยจำนวนคน
+3. ความชุก HDC เป็นความชุกที่วินิจฉัยและบันทึก ไม่ตรงกับภาระโรคที่ประมาณ (เบาหวานและความดันแทบไม่สัมพันธ์)
+4. BOD 2565 เป็นค่าประมาณจากแบบจำลอง ปีเดียว ส่วน DALY คาดหมายใช้อัตรารายอายุคงที่ จึงเป็นการฉายทางประชากร ไม่ใช่แนวโน้มโรค
+5. น้ำหนัก case mix เปลี่ยนในปีงบ 2566 (CMI +12.4% ในปีเดียว) และไม่มีรุ่น DRG กำกับ
+6. ข้อมูลระบุได้เพียงความสัมพันธ์อุปทาน–บริการ ไม่ใช่อุปสงค์ที่ถูกชักนำ
+7. น้ำหนักอายุประมาณไม่ได้อย่างเสถียร จึงใช้ฉากทัศน์ และข้อมูลระดับจังหวัดระบุความเหลื่อมล้ำภายในจังหวัดไม่ได้
+8. ไม่มีจำนวนคงอยู่ OPS ส่วนต่าง stock–flow จึงปนขอบเขต เวลา การรายงาน และการเปลี่ยนประเภทการจ้าง และเหตุการณ์ไม่ใช่คนที่ไม่ซ้ำ
+9. ความสัมพันธ์ภาระงาน–การไหลไม่ทนต่อการผ่อนข้อสมมติ offset
+10. ฉากทัศน์ในบทที่ 4 เป็นเลขคณิตแบบมีเงื่อนไข ไม่ใช่การพยากรณ์
+11. ข้อมูล spc รายสถานพยาบาลเป็นจำนวนตำแหน่ง ไม่ใช่คน และเชื่อถือได้ช่วง 2564–2567
+12. แผนบทที่ 5 เป็นฉากทัศน์เชิงสำรวจ เพราะ:
+    - ค่า pool เพดาน และเป้าหมายเป็นค่าตัวอย่าง
+    - คำตอบใกล้ optimal ไม่ unique (ปลายทางต่างได้ราว 10% ต่อปีที่ J เท่ากัน)
+    - ช่วงความไม่แน่นอนแคบกว่าจริง (การทดสอบย้อนหลังครอบค่าจริงราว 44%)
+    - กลุ่ม 19 จังหวัดไม่คงที่ (Jaccard 0.59)
+13. ไม่มีต้นทุนและกรอบตำแหน่ง จึงไม่อ้างความเป็นไปได้ด้านงบประมาณ
+
+## 5. การตรวจคุณภาพ (สถานะล่าสุด)
+
+| ด้าน | ผล |
 |---|---|
-| Sources unchanged; provenance registered | pass (hashes in `outputs/shared/source_inventory.csv`) |
-| Join cardinality | pass (all panel joins one-to-one; `outputs/shared/join_audit.csv`) |
-| Sector/total reconciliation | pass (max gap 0) |
-| Service nesting | pass nationally; 13 province-year anomalies exported |
-| CAGR elapsed intervals; exact-year lags | pass |
-| Professional vs technical nurses | pass |
-| CMI ratio-of-sums | pass |
-| M0–M5 common sample/folds; M4 beds, M5 + physicians + nurses | pass |
-| R² definition stated; no province leakage | pass |
-| Standardization positivity, support, bootstrap | pass (all three outcomes) |
-| Age weights gate | fail for all outcomes → scenarios used (documented result) |
-| Theil identity | pass (1e−12) |
-| Scenario validation (growth-only keeps Gini) | pass |
-| Workbook totals | defects found and documented; component sums used |
-| Clean re-execution of four notebooks | pass (`python -m chapter4.build --section …`) |
-| DOCX visual inspection | structural check only (headings, 21 figures, captions); rendering in Word not completed in this session |
+| แหล่งข้อมูลและ provenance | ผ่าน (`outputs/shared/source_inventory.csv`) |
+| การ join | one-to-one ทั้งหมด (`outputs/shared/join_audit.csv`) |
+| กระทบยอดสังกัด/ยอดรวม | ส่วนต่างสูงสุด 0 |
+| ความต่อเนื่องของ claims 4.1–4.4 เทียบรอบ ก.ย. | ตรงกันทั้ง 3,148 ค่า (ก่อนการแก้ final check) |
+| Notebook 4.1–4.6 และ 5.1–5.3 | รันใหม่ทั้งหมดในรอบ 15 ต.ค. |
+| Final check อิสระ | [final_check.md](final_check.md) |
+| Tests | `make test` |

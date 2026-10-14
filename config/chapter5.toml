@@ -73,8 +73,8 @@ workload_departure_mode = "sensitivity_only"
 
 [services]
 op_minutes = 10.0                      # illustrative allocation weight, not a staffing standard
-adjrw_minutes = 90.0                   # illustrative allocation weight, not a staffing standard
-weight_sensitivity = [[5.0, 90.0], [15.0, 90.0], [10.0, 60.0], [10.0, 120.0]]
+adjrw_minutes = 100.0                  # illustrative allocation weight, not a staffing standard; = Chapter 4 main value (owner decision 14 Oct 2026)
+weight_sensitivity = [[5.0, 100.0], [15.0, 100.0], [10.0, 60.0], [10.0, 90.0], [10.0, 120.0]]
 inpatient_measure = "adjrw"            # alternative: ip_days (converted to equal national baseline minutes)
 projection_candidates = ["constant_last", "mean_last3", "trend_last5_damped"]
 backtest_cutoffs = [2016, 2017, 2018, 2019, 2023]

@@ -10,7 +10,9 @@ Models scored on the same province-years:
     mechanics with recruitment persistence) and stock_flow_conditional (actual recruitment;
     labelled conditional, never presented as a forecast).
 Metrics: MAE, RMSE, MAPE, bias (mean signed error) and national error, population-weighted MAPE,
-Spearman rank correlation of densities, Jaccard overlap of the lowest-19 density group, and 90%
+Spearman rank correlation of densities, Jaccard overlap of the lowest-19 density group (convention:
+predicted and observed densities both use the OBSERVED target-year population, so the rank metrics
+score the stock forecast alone; every model, including persistence, is scored the same way), and 90%
 predictive-interval coverage for the stock-flow models; stratified by province size and by
 whether the target year is COVID-affected.
 """

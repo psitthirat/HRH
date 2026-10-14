@@ -162,7 +162,7 @@
    "evidence_type": "temporal holdout (one year ahead)",
    "comparator": "persistence (last observed rate)",
    "metric": "R² vs training mean",
-   "value_model": 0.6295217013929275,
+   "value_model": 0.6168677233797311,
    "value_comparator": 0.8831687854749084,
    "verdict": "does_not_beat_comparator",
    "limitation": "short series (2022 onwards); explanatory fit is not forecasting skill"
@@ -173,7 +173,7 @@
    "evidence_type": "temporal holdout (one year ahead)",
    "comparator": "persistence (last observed rate)",
    "metric": "R² vs training mean",
-   "value_model": 0.6948201484151642,
+   "value_model": 0.6699149908927031,
    "value_comparator": 0.9455552830594548,
    "verdict": "does_not_beat_comparator",
    "limitation": "short series (2022 onwards); explanatory fit is not forecasting skill"
@@ -349,8 +349,8 @@
    "evidence_type": "implementation check",
    "comparator": "hard constraints recomputed on the solution",
    "metric": "solved constrained plans passing every constraint check",
-   "value_model": 80,
-   "value_comparator": 80,
+   "value_model": 82,
+   "value_comparator": 82,
    "verdict": "implementation_check",
    "limitation": "establishes feasibility and balance for tested cases; near-optimal schedules are not unique"
   },

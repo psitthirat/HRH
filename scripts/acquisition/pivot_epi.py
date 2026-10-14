@@ -1,4 +1,4 @@
-"""Pivot the MOPH epidemiological surveillance tables (output/scraped/s_*.csv)
+"""Pivot the MOPH epidemiological surveillance tables (data/raw_scraped/s_*.csv)
 to year x province level and write the results to data/epi/.
 
 Source tables are scraped one row per (year, province, facility) from the
@@ -31,7 +31,7 @@ from pathlib import Path
 
 import pandas as pd
 
-SCRAPED_DIR = Path("output/scraped")
+SCRAPED_DIR = Path("data/raw_scraped")
 OUT_DIR = Path("data/epi")
 NHSO_POP_PATH = Path("data/pop/nhso/pop.csv")
 

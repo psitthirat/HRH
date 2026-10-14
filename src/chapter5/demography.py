@@ -1,6 +1,6 @@
 """Population and entitlement projections for 2026-2040.
 
-Method (documented in docs/chapter5_methods.md).  The repository has no official provincial
+Method (documented in docs/methods_and_limitations.md).  The repository has no official provincial
 projection and no provincial births, deaths or migration flows, so the projection is a
 Hamilton-Perry cohort-change-ratio model on the DOPA civil register (single year of age x sex):
 

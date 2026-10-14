@@ -9,6 +9,8 @@ Stages (each writes to outputs/chapter5/ or to a scenario folder):
 """
 from __future__ import annotations
 
+from chapter4 import config as C4
+
 import json
 import os
 import time
@@ -77,7 +79,7 @@ def _m5(overrides_json):
 
 def centroids(provs):
     import geopandas as gpd
-    g = gpd.read_file(C.ROOT / "output/map/geo_prov.geojson")
+    g = gpd.read_file(C4.geo_path())
     pts = g.to_crs(32647).representative_point().to_crs(4326)
     g = g.assign(lat=pts.y, lon=pts.x).set_index("prov_id")
     g = g.loc[provs]

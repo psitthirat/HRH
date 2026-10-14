@@ -78,6 +78,15 @@ def source_fingerprint(source_id: str) -> str:
     return file_sha256(source_path(source_id))
 
 
+def geo_path(name: str = "geo_prov.geojson") -> Path:
+    """Boundary/crosswalk file: data/map/ (since 14 Oct 2026), falling back to the former output/map/
+    so workspaces that still hold the old layout keep working."""
+    for d in (DATA_DIR / "map", ROOT / "output" / "map"):
+        if (d / name).exists():
+            return d / name
+    raise FileNotFoundError(f"{name} not found in data/map or output/map")
+
+
 def section_dirs(section: str) -> dict[str, Path]:
     """Output folders for one section, e.g. section_dirs('4_3')."""
     base = OUTPUTS / f"chapter{section}"

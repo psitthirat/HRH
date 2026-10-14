@@ -1,17 +1,17 @@
 ﻿asset_id,kind,file,caption_th,main_text,rows,note,section,status
-T5_PLAN_INDEX,table,outputs/chapter5/validation/T5_PLAN_INDEX.csv,ทะเบียนแผนทั้งหมด สถานะ ตัวแก้ปัญหา และการตรวจข้อจำกัด,False,87,,5_4,generated
+T5_PLAN_INDEX,table,outputs/chapter5/validation/T5_PLAN_INDEX.csv,ทะเบียนแผนทั้งหมด สถานะ ตัวแก้ปัญหา และการตรวจข้อจำกัด,False,89,,5_4,generated
 T5_TRAJECTORY_METRICS,table,outputs/chapter5/tables/T5_TRAJECTORY_METRICS.csv,ความเพียงพอ ความขาดแคลน และความเหลื่อมล้ำรายปีของทุกแผน ภายใต้ทุกเกณฑ์การประเมิน,False,6435,,5_4,generated
 T5_RESPONSE_EVALUATION,table,outputs/chapter5/tables/T5_RESPONSE_EVALUATION.csv,บริการที่ตอบสนองต่อทรัพยากร (กลไก M5 เดียวกันทุกแผน) และภาระงานต่อแพทย์,False,660,,5_4,generated
 T5_CROSS_EVALUATION_LONG,table,outputs/chapter5/tables/T5_CROSS_EVALUATION_LONG.csv,"การประเมินไขว้: ทุกแผนภายใต้ทุกเกณฑ์ (เป้าหมายรวมร่วม, 2583 และสะสม 15 ปี)",False,173,,5_4,generated
 T56_CROSS_EVALUATION,table,outputs/chapter5/tables/T56_CROSS_EVALUATION.csv,"การประเมินไขว้ของแผนหลัก: ความเพียงพอของจังหวัดกลุ่มล่างสุด 19 จังหวัด ปี 2583 / ส่วนเกินของ J สะสมเทียบแผนที่ดีที่สุดภายใต้เกณฑ์นั้น (เป้าหมายรวมร่วม 1:1,000)",True,9,,5_4,generated
-T5_SWITCHES,table,outputs/chapter5/tables/T5_SWITCHES.csv,จำนวนการรับใหม่ที่ต้องเปลี่ยนจังหวัดปลายทางเมื่อเปลี่ยนหลักคิด รายปี,False,555,,5_4,generated
-T5_PRACTICAL_DIFFERENCES,table,outputs/chapter5/tables/T5_PRACTICAL_DIFFERENCES.csv,เกณฑ์ความต่างเชิงปฏิบัติ (กำหนดก่อนอ่านผล) และผลตัดสินรายคู่แผน,True,37,,5_4,generated
-T5_PROVINCE_DIFFERENCES,table,outputs/chapter5/tables/T5_PROVINCE_DIFFERENCES.csv,ความต่างรายจังหวัดของจำนวนรับใหม่สะสม ปีแรก และจำนวนคงอยู่ 2583 ระหว่างคู่แผน,False,2812,,5_4,generated
+T5_SWITCHES,table,outputs/chapter5/tables/T5_SWITCHES.csv,จำนวนการรับใหม่ที่ต้องเปลี่ยนจังหวัดปลายทางเมื่อเปลี่ยนหลักคิด รายปี,False,600,,5_4,generated
+T5_PRACTICAL_DIFFERENCES,table,outputs/chapter5/tables/T5_PRACTICAL_DIFFERENCES.csv,เกณฑ์ความต่างเชิงปฏิบัติ (กำหนดก่อนอ่านผล) และผลตัดสินรายคู่แผน,True,40,,5_4,generated
+T5_PROVINCE_DIFFERENCES,table,outputs/chapter5/tables/T5_PROVINCE_DIFFERENCES.csv,ความต่างรายจังหวัดของจำนวนรับใหม่สะสม ปีแรก และจำนวนคงอยู่ 2583 ระหว่างคู่แผน,False,3040,,5_4,generated
 T5_PRIORITY_OVERLAP,table,outputs/chapter5/tables/T5_PRIORITY_OVERLAP.csv,การทับซ้อนของกลุ่ม 19 จังหวัดที่ความเพียงพอต่ำสุด (2569) ระหว่างเกณฑ์,False,3,,5_4,generated
-T5_BINDING_CONSTRAINTS,table,outputs/chapter5/tables/T5_BINDING_CONSTRAINTS.csv,ข้อจำกัดที่ตึงตัว การจัดสรรตามขั้นต่ำ จำนวนที่จัดสรรไม่ได้ และการโยกย้ายของทุกแผน,False,81,,5_4,generated
+T5_BINDING_CONSTRAINTS,table,outputs/chapter5/tables/T5_BINDING_CONSTRAINTS.csv,ข้อจำกัดที่ตึงตัว การจัดสรรตามขั้นต่ำ จำนวนที่จัดสรรไม่ได้ และการโยกย้ายของทุกแผน,False,83,,5_4,generated
 T5_INVERSE_FEASIBILITY,table,outputs/chapter5/tables/T5_INVERSE_FEASIBILITY.csv,ต้องมีแพทย์พร้อมจัดสรรเท่าใดจึงถึงเกณฑ์ภายใน 2583 (LP relaxation; มีเงื่อนไขตามเพดาน),True,8,,5_4,generated
 T5_INVERSE_PATHS,table,outputs/chapter5/tables/T5_INVERSE_PATHS.csv,เส้นทางจำนวนแพทย์พร้อมจัดสรรที่ต้องการรายปี (ถ้าถึงเกณฑ์ได้),False,120,,5_4,generated
-T5_SENSITIVITY_SUMMARY,table,outputs/chapter5/tables/T5_SENSITIVITY_SUMMARY.csv,สรุปการวิเคราะห์ความไว (เทียบแผนฐาน),True,53,,5_4,generated
+T5_SENSITIVITY_SUMMARY,table,outputs/chapter5/tables/T5_SENSITIVITY_SUMMARY.csv,สรุปการวิเคราะห์ความไว (เทียบแผนฐาน),True,55,,5_4,generated
 T5_FEEDBACK_LOG,table,outputs/chapter5/tables/T5_FEEDBACK_LOG.csv,บันทึกการป้อนกลับรายปี: ความยืดหยุ่นเฉพาะที่ และกำไรป้อนกลับต่อเป้าหมาย,False,75,,5_4,generated
 T5_FEEDBACK_CONVERGENCE,table,outputs/chapter5/tables/T5_FEEDBACK_CONVERGENCE.csv,N-FB เทียบ N-STD: ความเหลื่อมล้ำเทียบตัวหารอ้างอิงคงที่ ส่วนแบ่งการรับใหม่ของจังหวัดที่ได้เปรียบ และความเพียงพอตามเป้าของตนเอง,False,90,,5_4,generated
 T5_WORKLOAD_DEPARTURES,table,outputs/chapter5/tables/T5_WORKLOAD_DEPARTURES.csv,ความไวต่อการลาออกที่ขึ้นกับภาระงาน (สัมประสิทธิ์ความสัมพันธ์จากบทที่ 4; ไม่ใช่ผลเชิงเหตุผล),False,7,,5_4,generated

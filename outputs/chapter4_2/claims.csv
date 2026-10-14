@@ -67,7 +67,7 @@ c421_scope_gap_pharmacists_moph,4_2,-35.93859854698851,-35.9,{:.1f},%,T421_DENSI
 c421_scope_gap_dentists_public_total,4_2,-5.178970917225945,-5.2,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,
 c421_scope_gap_dentists_moph,4_2,-30.346756152125277,-30.3,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,
 c421_register_gap_civil_grand,4_2,-1.842702057929435,-1.8,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,
-c421_register_gap_nhso_rights,4_2,-3.5930154055134,-3.6,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,
+c421_register_gap_nhso_rights,4_2,-3.7530233838548366,-3.8,{:.1f},%,T421_DENSITY_SCOPE_REGISTER,,,,,,computed,
 c421_scope_gap_min_abs,4_2,5.178970917225945,5.2,{:.1f},%,,,,,,,computed,
 c421_scope_gap_max_abs,4_2,48.009230032435724,48.0,{:.1f},%,,,,,,,computed,
 c421_comb_all_start,4_2,2.591837596862609,2.59,{:.2f},"ต่อ 1,000",,,,,,,computed,

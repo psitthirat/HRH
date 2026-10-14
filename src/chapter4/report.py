@@ -29,22 +29,26 @@ SOURCE_DOCX = C.REPORTS / "source" / "รายงานวิจัยฉบั
 
 def _numbering(text: str, assets: pd.DataFrame) -> pd.DataFrame:
     ids = re.findall(r"\[\[(?:ASSET|TABLE):([A-Z0-9_]+)\]\]", text)
-    rows, nf, nt, na = [], 0, 0, 0
+    rows, nf, nt, na = [], 0, 0, {}
     appendix_at = text.find("## ภาคผนวก")
     for i in ids:
         a = assets[assets.asset_id == i]
         if a.empty:
             continue
         a = a.iloc[0]
+        pos = text.find(i)
         if a.kind == "figure":
             nf += 1
-            num = f"รูปที่ {nf}"
-        elif appendix_at >= 0 and text.find(i) > appendix_at:
-            na += 1
-            num = f"ตารางผนวกที่ ก{na}"
+            num = f"รูปที่ 4.{nf}"
+        elif appendix_at >= 0 and pos > appendix_at:
+            # lettered by the appendix the table sits in (ภาคผนวก ก, ข, ค ...)
+            letters = re.findall(r"ภาคผนวก ([ก-ฮ])", text[appendix_at:pos])
+            letter = letters[-1] if letters else "ก"
+            na[letter] = na.get(letter, 0) + 1
+            num = f"ตารางผนวกที่ {letter}{na[letter]}"
         else:
             nt += 1
-            num = f"ตารางที่ {nt}"
+            num = f"ตารางที่ 4.{nt}"
         rows.append(dict(asset_id=i, kind=a.kind, number=num, caption_th=a.caption_th, file=a.file,
                          data_file=a.get("data_file", ""), section=a.section, status="placed"))
     return pd.DataFrame(rows)

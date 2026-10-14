@@ -53,7 +53,8 @@ def inventory(S, hindcast: dict | None = None, chapter4_only: bool = False) -> p
     for o in ["op_moph", "ip_moph", "adjrw"]:
         for ty in sorted(tv.test_year.unique()):
             z = tv[(tv.outcome == o) & (tv.test_year == ty) & (tv.information == "forward")]
-            m5 = z[z.model == "M5"].sort_values("r2_pred_train_mean", ascending=False).iloc[0]
+            # the rule Chapter 4 reports (last-year effect), not the better of the two after the fact
+            m5 = z[(z.model == "M5") & (z.year_rule == "last_year_effect")].iloc[0]
             pe = z[z.model == "persistence"].iloc[0]
             add(check_id=f"C4-TEMP-{o}-{ty}", chapter="4.2.3", component=f"service model M5 ({o})",
                 evidence_type="temporal holdout (one year ahead)", forecast_origin=str(ty - 1),
@@ -102,7 +103,8 @@ def inventory(S, hindcast: dict | None = None, chapter4_only: bool = False) -> p
         add(check_id=f"C5-SVC-{o}", chapter="5.3", component=f"service-rate benchmark ({o})",
             evidence_type="rolling-origin backtest, conditional on realised population", forecast_origin=f"{int(pers.cutoffs)} cutoffs",
             information_set="rates up to each cutoff; COVID years excluded from windows",
-            model=f"best non-persistence candidate: {alt.method}", comparator="persistence (constant last rate)",
+            model=(f"best alternative, not adopted: {alt.method}" if alt.method != ch.method else f"adopted: {alt.method}"),
+            comparator="persistence (constant last rate)",
             horizon="1–3 years", metric="province MAPE (%)", value_model=alt.mape_pct, value_comparator=pers.mape_pct,
             verdict="beats_comparator" if alt.mape_pct < pers.mape_pct else "does_not_beat_comparator",
             sample=f"{int(pers.n)} province-cutoff-horizon cells; adopted: {ch.method}"
@@ -192,7 +194,7 @@ def summary_th(inv: pd.DataFrame) -> pd.DataFrame:
     """Compact Thai view for the report appendix."""
     fmt = lambda v: "" if (v == "" or (isinstance(v, float) and not np.isfinite(v))) else (f"{v:.3g}" if isinstance(v, float) else str(v))
     return pd.DataFrame({"รหัส": inv.check_id, "องค์ประกอบ": inv.component, "ชนิดหลักฐาน": inv.evidence_type,
-                         "ตัวเทียบ": inv.comparator, "ตัวชี้วัด": inv.metric,
+                         "แบบจำลองที่ทดสอบ": inv.model, "ตัวเทียบ": inv.comparator, "ตัวชี้วัด": inv.metric,
                          "แบบจำลอง": inv.value_model.map(fmt), "ตัวเทียบ (ค่า)": inv.value_comparator.map(fmt),
                          "ผล": inv.verdict.map(VERDICT_TH), "ข้อจำกัด": inv.limitation})
 

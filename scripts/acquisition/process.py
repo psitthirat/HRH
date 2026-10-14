@@ -1124,7 +1124,7 @@ class DataManipulation:
         - pd.DataFrame: Updated DataFrame with the specified column mapped to its corresponding values.
         """
         
-        map_dir = 'output/map'
+        map_dir = 'data/map'
         os.makedirs(map_dir, exist_ok=True)
         map_df_name = f'map_{parameter}'
         map_path = os.path.join(map_dir, f'{map_df_name}.csv')
@@ -1191,7 +1191,7 @@ class DataManipulation:
         - pd.DataFrame: Updated DataFrame with missing values in the `parameter` column filled based on reference mappings.
         """
         
-        map_dir = 'output/map'
+        map_dir = 'data/map'
         os.makedirs(map_dir, exist_ok=True)
         null = df[parameter].isna().sum()
 

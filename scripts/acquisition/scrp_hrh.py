@@ -1,10 +1,10 @@
 """
-Specialty Data Scraping Utility
+Health Workforce Data Scraping Utility
 
-This script contains functionality to scrape specialty-related data from the Thai Ministry of Public Health's health map website and save it as a structured CSV file. It is designed to automate the process of collecting and organizing data for analysis.
+This script contains functionality to scrape health workforce data from the Thai Ministry of Public Health's health map website and save it as a structured CSV file. It is designed to automate the process of collecting and organizing data for analysis.
 
 Key functionalities include:
-- Scraping specialty data for multiple hospitals using their unique hospital IDs and specialty links.
+- Scraping health workforce data for multiple hospitals using their unique hospital IDs and specialty links.
 - Extracting and processing table data from HTML pages.
 - Detecting and handling missing or incomplete data.
 - Saving results incrementally to avoid data loss during long scraping sessions.
@@ -19,16 +19,16 @@ Dependencies:
 - time
 
 Usage:
-1. Prepare input data as pandas DataFrames: `hosp_id` for hospital IDs and `spc_link` for specialty links.
+1. Prepare input data as pandas DataFrames: `hosp_id` for hospital IDs and `hrh_link` for health workforce links.
 2. Specify the output folder to save scraped results and log files.
 3. Call the `scrap()` function with the prepared inputs.
 
 Example:
-    from scrp_spc import scrap
+    from scrp_hrh import scrap
     
     hosp_id_example = pd.DataFrame({'hosp_id': ['001', '002']})
     spc_link_example = pd.DataFrame({'link': ['infopersonal', 'infohospital']})
-    output_dir = "./output"
+    output_dir = "./data/raw_scraped"
 
     output_file = scrap(hosp_id_example, spc_link_example, output_dir)
     print(f"Scraped data is available in: {output_file}")
@@ -40,6 +40,8 @@ License: MIT License
 
 # Standard library imports
 import os
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 # Third-party library imports
 import pandas as pd
@@ -51,35 +53,43 @@ import time
 
 def scrap(hosp_id, spc_link, output_folder):
     """
-    Scrape specialty data from a specified health map website and save it as a CSV file.
+    Scrape health workforce data from a specified health map website and save it as a CSV file.
 
     Parameters:
     - hosp_id (DataFrame): A DataFrame containing hospital IDs.
-    - spc_link (DataFrame): A DataFrame containing specialty links.
+    - hrh_link (DataFrame): A DataFrame containing health workforce links.
     - output_folder (str): The directory to save the output files.
 
     Returns:
     - str: The path to the saved CSV file.
     """
-    
-    # Create an empty DataFrame to store results
-    spc_df = pd.DataFrame()
-    N = 1
 
     # Ensure the output folder exists
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
-
-    # Initialize tqdm progress bar
-    with tqdm(total=len(hosp_id), desc="Progress") as pbar:
-        for index_hosp, row_hosp in hosp_id.iterrows():
+    
+    # Import the lastest scraped DataFrane / Create an empty DataFrame to store results
+    partial_file_path = os.path.join(output_folder, 'hrh_latest.csv')
+    if os.path.exists(partial_file_path):
+        hrh_df = pd.read_csv(partial_file_path)
+        hrh_df['hosp_id'] = hrh_df['hosp_id'].astype(str).str.zfill(5)
+        N = len(hrh_df['hosp_id'].unique())
+        hosp_id_sc = hosp_id[~hosp_id['hosp_id'].isin(hrh_df['hosp_id'])]
+        print(f'There are {N} hospitals that have been already scraped. Remaining {len(hosp_id_sc)} hospitals.')
+    else:
+        hrh_df = pd.DataFrame()
+        hosp_id_sc = hosp_id.copy()
+        N = 1
+    
+    with tqdm(total=len(hosp_id_sc), desc="Progress") as pbar:
+        for index_hosp, row_hosp in hosp_id_sc.iterrows():
             for index_link, row_link in spc_link.iterrows():
                 
                 # Extract the specialty data from URL
-                hosp_url = f"http://gishealth.moph.go.th/healthmap/{row_link['link']}.php?maincode={row_hosp['hosp_id']}"
+                hosp_url = f"http://gishealth.moph.go.th/healthmap/{row_link['link']}.php?maincode={row_hosp['hosp_id']}&id="
 
-                # Determine table structure based on specialty type
-                n_select, n_table = (3, 5) if row_link['link'] == 'infopersonal' else (2, 4)
+                # Determine table structure based on health workforce type
+                n_select, n_table = (3, 5) if row_link['link'] in (['infopersonal', 'infopersonal2']) else (2, 4)
                 
                 # Retry mechanism for GET requests
                 success = False
@@ -106,7 +116,6 @@ def scrap(hosp_id, spc_link, output_folder):
                 options = select_element.find_all('option')
                 check_data = [{'id': option.get('value'), 'check': option.text.strip()} for option in options]
 
-                        
                 # Check if "ไม่มีการบันทึกข้อมูล"
                 if check_data[0]['check'] != "ไม่มีการบันทึกข้อมูล":
                             
@@ -131,52 +140,53 @@ def scrap(hosp_id, spc_link, output_folder):
                         tables_point = soup_point.find_all('table')
 
                         # Choose specialist table
-                        spc_table = tables_point[n_table]
+                        hrh_table = tables_point[n_table]
                     
                         # Extract table data
-                        rows = spc_table.find_all('tr')
-                        spc = []
+                        rows = hrh_table.find_all('tr')
+                        hrh = []
                         for row_value in rows:
                             columns_value = row_value.find_all(['td'])[0:7]
                             row_data_value = [column_value.get_text(strip=True) for column_value in columns_value]
-                            spc.append(row_data_value)
+                            hrh.append(row_data_value)
                     
                         # Convert the scraped data into a DataFrame
-                        spc_hos_df = pd.DataFrame(spc)
+                        hrh_hos_df = pd.DataFrame(hrh, dtype=object)
 
                         # Assign the first row as the header
-                        spc_hos_df.columns = spc_hos_df.iloc[0]
-                        spc_hos_df = spc_hos_df[1:]  
-                        spc_hos_df = spc_hos_df.loc[~(spc_hos_df.iloc[:, 0].eq('') | spc_hos_df.iloc[:, 0].eq('ลำดับ'))]
-                        
+                        hrh_hos_df.columns = hrh_hos_df.iloc[0]
+                        hrh_hos_df = hrh_hos_df[1:]  
+                        hrh_hos_df = hrh_hos_df.loc[~(hrh_hos_df.iloc[:, 0].eq('') | hrh_hos_df.iloc[:, 0].eq('ลำดับ'))]
+                        display(hrh_hos_df)
+
                         # Check if the hospital is 'public' or 'private' from number of column
                         if row_link['link'] == 'infopersonal':
-                            if spc_hos_df.columns.str.contains('ข้าราชการ').any():
-                                spc_hos_df = spc_hos_df.iloc[0:1, 1:6]
-                                spc_hos_df.iloc[:, 1:5] = spc_hos_df.iloc[:, 1:5].apply(pd.to_numeric, errors='coerce')
-                                spc_hos_df['total'] = spc_hos_df.iloc[:, 1:5].apply(lambda row: row.sum() if not row.isnull().all() else None, axis=1)
-                                spc_hos_df = spc_hos_df.drop(spc_hos_df.columns[1:5], axis=1)
+                            if hrh_hos_df.columns.str.contains('ข้าราชการ').any():
+                                hrh_hos_df = hrh_hos_df.iloc[:, 1:6]
+                                hrh_hos_df.iloc[:, 1:5] = hrh_hos_df.iloc[:, 1:5].apply(pd.to_numeric, errors='coerce')
+                                hrh_hos_df['total'] = hrh_hos_df.iloc[:, 1:5].apply(lambda row: row.sum() if not row.isnull().all() else None, axis=1)
+                                hrh_hos_df = hrh_hos_df.drop(hrh_hos_df.columns[1:5], axis=1)
                             else:
-                                spc_hos_df = spc_hos_df.iloc[0:1, 1:3]
-                                spc_hos_df.rename(columns=lambda x: x.replace('FT', 'total') if x.startswith('FT') else x, inplace=True)
-                                spc_hos_df['total'] = spc_hos_df['total'].apply(
+                                hrh_hos_df_1 = hrh_hos_df.iloc[:, 1:3].copy()
+                                hrh_hos_df_1 = hrh_hos_df_1.rename(columns=lambda x: x.replace('FT', 'total') if x.startswith('FT') else x)
+                                hrh_hos_df_1['total'] = hrh_hos_df_1['total'].apply(
                                     lambda x: int(x) if pd.notnull(x) and x != '' else pd.NA)
+                                hrh_hos_df_2 = hrh_hos_df.iloc[:, 5:7].copy()
+                                hrh_hos_df_2 = hrh_hos_df_2.rename(columns=lambda x: x.replace('FT', 'total') if x.startswith('FT') else x)
+                                hrh_hos_df_2['total'] = hrh_hos_df_2['total'].apply(
+                                    lambda x: int(x) if pd.notnull(x) and x != '' else pd.NA)
+                                hrh_hos_df = pd.concat([hrh_hos_df_1, hrh_hos_df_2])
                         else:
-                            if len(spc_hos_df.columns) == 4:
-                                spc_hos_df = spc_hos_df.iloc[:, 1:3]
-                                spc_hos_df.rename(columns=lambda x: x.replace('Full Time', 'total') if x.startswith('Full Time') else x, inplace=True)
-                                spc_hos_df['total'] = spc_hos_df['total'].apply(
-                                    lambda x: int(x) if pd.notnull(x) and x != '' else pd.NA)
-                            elif len(spc_hos_df.columns) == 7:
-                                spc_hos_df = spc_hos_df.iloc[:, 1:6]
-                                spc_hos_df.iloc[:, 1:6] = spc_hos_df.iloc[:, 1:6].apply(pd.to_numeric, errors='coerce')
-                                spc_hos_df['total'] = spc_hos_df.iloc[:, 1:6].apply(lambda row: row.sum() if not row.isnull().all() else None, axis=1)
-                                spc_hos_df = spc_hos_df.drop(spc_hos_df.columns[1:5], axis=1)
+                            if len(hrh_hos_df.columns) == 7:
+                                hrh_hos_df = hrh_hos_df.iloc[:, 1:6]
+                                hrh_hos_df.iloc[:, 1:6] = hrh_hos_df.iloc[:, 1:6].apply(pd.to_numeric, errors='coerce')
+                                hrh_hos_df['total'] = hrh_hos_df.iloc[:, 1:6].apply(lambda row: row.sum() if not row.isnull().all() else None, axis=1)
+                                hrh_hos_df = hrh_hos_df.drop(hrh_hos_df.columns[1:5], axis=1)
                         
-                        spc_hos_df = spc_hos_df.rename(columns={spc_hos_df.columns[0]: 'spc'})        
-                        spc_hos_df.insert(0, 'hosp_id', row_hosp['hosp_id'])
-                        spc_hos_df['time'] = time_input
-                        spc_df = pd.concat([spc_df, spc_hos_df], ignore_index=True)
+                        hrh_hos_df = hrh_hos_df.rename(columns={hrh_hos_df.columns[0]: 'hrh'})        
+                        hrh_hos_df.insert(0, 'hosp_id', row_hosp['hosp_id'])
+                        hrh_hos_df['time'] = time_input
+                        hrh_df = pd.concat([hrh_df, hrh_hos_df], ignore_index=True)
             
         
             P = (N/len(hosp_id))*100
@@ -185,36 +195,35 @@ def scrap(hosp_id, spc_link, output_folder):
             pbar.set_description(f"Progress {N}/{len(hosp_id)} hcode = {row_hosp['hosp_id']}")
             N = N+1
             if N % 100 == 0:
-                partial_file_path = f'{output_folder}/spc_latest.csv'
+                partial_file_path = f'{output_folder}/hrh_latest.csv'
                 if os.path.exists(partial_file_path):
                     os.remove(partial_file_path)
-                spc_df.to_csv(partial_file_path, index=False)
+                hrh_df.to_csv(partial_file_path, index=False)
 
             # Update progress bar
             pbar.update(1)
 
     # Delete the partial file before saving the final CSV
-    partial_file_path = os.path.join(output_folder, 'spc_latest.csv')
     if os.path.exists(partial_file_path):
         os.remove(partial_file_path)
 
     # Save final results
-    final_file_path = os.path.join(output_folder, 'spc.csv')
-    spc_df.to_csv(final_file_path, index=False)
+    final_file_path = os.path.join(output_folder, 'hrh.csv')
+    hrh_df.to_csv(final_file_path, index=False)
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
     # Update README
-    readme_path = os.path.join(output_folder, "README.md")
+    readme_path = os.path.join(output_folder, "README_hrh.md")
     with open(readme_path, "w") as readme_file:
-        readme_file.write(f"# Specialty Data Scraping\n\n")
+        readme_file.write(f"# Health Workforce Data Scraping\n\n")
         readme_file.write(f"**Data Source:** [Thai Ministry of Public Health Health Map](http://gishealth.moph.go.th/healthmap/)\n\n")
         readme_file.write(f"**Last Updated:** {timestamp}\n\n")
-        readme_file.write(f"## Description\n")
-        readme_file.write(f"This dataset contains medical specialty data scraped from multiple hospitals.\n\n")
+        readme_file.write(f"## 1. Description\n")
+        readme_file.write(f"This dataset contains health workforce data scraped from multiple hospitals.\n\n")
         readme_file.write(f"## 2. Scraping Process\n")
         readme_file.write(f"### Input Data\n")
         readme_file.write(f"- **`hosp_id`**: List of hospital codes to scrape. Derived from the healthcare facility dataset.\n")
-        readme_file.write(f"- **`spc_link`**: URLs used for retrieving personal and specialty information.\n")
+        readme_file.write(f"- **`hrh_link`**: URLs used for retrieving personal and specialty information.\n")
         readme_file.write(f"  The scraping process constructs URLs in the following format:\n\n")
         readme_file.write(f"  ```\n")
         readme_file.write(f"  http://gishealth.moph.go.th/healthmap/<link>.php?maincode=<hosp_id>\n")
@@ -222,8 +231,8 @@ def scrap(hosp_id, spc_link, output_folder):
         readme_file.write(f"  - **`infopersonal`**: Workforce dataset (physicians, dentists, nurses, etc.).\n")
         readme_file.write(f"  - **`infospecialty`, `infospecialty2`, ..., `infospecialty5`**: Medical specialist datasets.\n\n")
         readme_file.write(f"### Output\n")
-        readme_file.write(f"- Scraped data is saved in `output/scraped/spc.csv`.\n")
-        readme_file.write(f"- A detailed log of the scraping process, including metadata and errors, is saved in `output/scraped/README.md`.\n")
+        readme_file.write(f"- Scraped data is saved in `data/raw_scraped/hrh.csv`.\n")
+        readme_file.write(f"- A detailed log of the scraping process, including metadata and errors, is saved in `data/raw_scraped/README.md`.\n")
         readme_file.write(f"## Notes\n")
         readme_file.write(f"- Partial results are saved every 100 hospitals to prevent data loss.\n")
         readme_file.write(f"- The script ensures data accuracy by validating each step.\n")
@@ -238,7 +247,7 @@ if __name__ == "__main__":
     # Example DataFrames for hosp_id and spc_link
     hosp_id_example = pd.DataFrame({'hosp_id': ['001', '002']})
     spc_link_example = pd.DataFrame({'link': ['infopersonal', 'infohospital']})
-    output_dir = "./output"
+    output_dir = "./data/raw_scraped"
     
     # Run the scraper
     output_file = scrap(hosp_id_example, spc_link_example, output_dir)

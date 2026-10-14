@@ -51,36 +51,25 @@
 
 ---
 
-## 2. สถานะล่าสุด (อัปเดต 14 ต.ค. 2569)
+## 2. สถานะล่าสุด (อัปเดต 15 ต.ค. 2569)
 
-**การรันและการทดสอบ**
-- **การรันใหม่ทั้งหมด:** `make chapter4 && make chapter5` เมื่อ 14 ต.ค. (log `outputs/chapter5/logs/full_rebuild_groupA_201634.log`)
-  - บทที่ 4: 670 claims ในรายงาน
-  - บทที่ 5: 284 claims
-  - ทุกขั้นของบทที่ 5 ใช้ code hash และ input fingerprint เดียวกัน
-- **ความต่อเนื่องจากรอบ ก.ย.:** claims ของ 4.1–4.4 ทั้ง 3,148 รายการตรงกับรอบ 27 ก.ย. ทุกค่า
-- **Tests:**
-  - root: 129 ผ่าน (`test_web_bundle.py` ล้มเพราะขาดไฟล์เก่า ดูหัวข้อ 8)
-  - authoring: Python 111 ผ่าน, Lab browser 7 + 4 ผ่าน, story browser เหลือ S29 ที่ล้มอยู่แล้ว
+**การวิเคราะห์**
+- final check ทั้งสองส่วน (Claude Code และ agent อิสระ) แก้ครบแล้ว ดู `docs/final_check.md`
+- บทที่ 5 ใช้ AdjRW 100 นาทีแล้ว และรันแผนใหม่ทั้งหมดเมื่อ 15 ต.ค. (`outputs/chapter5/logs/full_rebuild_finalfix_005649.log` และรันขั้นหลังซ้ำใน `stages_after_nvalid_*.log`)
+- รายงานบทที่ 4 และบทที่ 5 ไม่มี placeholder ค้าง และทุกขั้นของบทที่ 5 ใช้ code hash เดียวกัน
+- notebook บท 4 (4.1–4.6) และบท 5 (5.1–5.3) รันใหม่แล้วทั้งหมด
 
-**Git**
-- **ยังไม่ commit:** root มี commit ล่าสุด 17 ส.ค. 2569 งานหลังจากนั้นทั้งหมด (`src/`, `config/`, `docs/`, `notebooks/`, `outputs/`, `reports/`, `tests/`) ยังเป็น untracked
-- **authoring:** อยู่บน branch `phase0-october-research-sync` ซึ่งยังไม่มี commit ของตัวเอง
-
-**Final check (14 ต.ค.)**
-- ผล: critical 2 (regret ใต้เกณฑ์ B เทียบผิดฐาน; ค่าสูงสุดผิดปี), major ~14, minor ~25
-- ยังไม่แก้ ลำดับการแก้อยู่ใน `docs/final_check/final_check_2026-10-14.md`
+**Repo**
+- จัดระเบียบแล้ว (ดูหัวข้อ 3)
+- commit ใน local: `c78cc8a` (สภาพก่อนแก้) และ commit รอบแก้และจัดระเบียบ (ดูบันทึก 15 ต.ค.) **ยังไม่ push**
+- branch `phase0-october-research-sync` ของ authoring ยังไม่มี commit ของตัวเอง
 
 **รอเจ้าของตัดสินใจ**
-1. commit root
-2. merge branch ของ authoring
-3. เผยแพร่ฉบับร่าง
-4. จัดระเบียบ repo ตาม `docs/repo_map_and_cleanup_plan.md`
-5. migration ของ Lab controls
-6. family B ใน Lab
-7. ผู้เชี่ยวชาญทบทวนโมดูลบริการ
-
----
+1. push root ขึ้น GitHub และปิดหน้า GitHub Pages ของแดชบอร์ดเดิม (ลบ `web/` แล้ว)
+2. merge branch ของ authoring และเผยแพร่ release เดือน ต.ค.
+3. Tier 1 interface ของ Lab, family B ใน Lab และค่า AdjRW ใน Lab (ยังเป็น 90)
+4. ผู้เชี่ยวชาญทบทวนโมดูลบริการ
+5. ย้าย `../HRH_offrepo/` ไปดิสก์อื่น
 
 ## 3. แผนที่ย่อและวิธีรัน
 
@@ -88,56 +77,83 @@
 |---|---|
 | โค้ดวิเคราะห์ | `src/chapter4/`, `src/chapter5/`, `src/services/`, `src/workspace/` |
 | config | `config/analysis.toml`, `source_registry.toml` (path ข้อมูลทั้งหมด), `chapter5.toml`, `chapter5_health_gain.toml`, `validation.toml` |
+| ข้อมูล | `data/` (+ `data/map/` แผนที่, `data/processed/` cache) |
 | notebook ที่รันแล้ว | `notebooks/chapter4_1..4_6`, `chapter5_1..5_3` |
 | ผล (ตาราง รูป claims) | `outputs/chapter4_*/`, `outputs/chapter5/` |
 | แม่แบบรายงาน (`{{claim}}`, `[[ASSET:ID]]`) | `reports/templates/chapter4_th.md`, `chapter5_th.md` |
-| วิธีการ การตัดสินใจ ข้อจำกัด | `docs/analytical_decisions.md`, `docs/chapter5_methods.md`, `docs/chapter5_decisions.md`, `docs/methods_and_limitations.md` |
-| แผนระยะถัดไปและความคืบหน้า | `docs/next_phase_development_plan_2026-10-14.md`, `docs/next_phase_progress_2026-10-14.md` |
-| แผนที่ repo และของเก่า | `docs/repo_map_and_cleanup_plan.md` |
+| การตัดสินใจ | `docs/decisions.md` |
+| วิธีการและข้อจำกัด | `docs/methods_and_limitations.md` |
+| ข้อมูล คุณภาพ และข้อมูลที่ต้องขอ | `docs/data.md` |
+| แผนระยะถัดไปและสถานะ | `docs/roadmap.md` |
+| โมดูลบริการและ Lab | `docs/service_modules.md` |
+| ผลการตรวจ | `docs/final_check.md` (+ รายงาน agent) |
+| ดึงข้อมูลดิบ | `scripts/acquisition/` |
+| ของนอก repo | `../HRH_offrepo/` (`MANIFEST.csv`): archive, ข้อมูลดิบที่ดึงจากเว็บ, เว็บรุ่นเก่า |
+| เอกสารรุ่นก่อนรวม | `git show c78cc8a:docs/<ชื่อไฟล์เดิม>` |
 
-**คำสั่งหลัก** (ทุกคำสั่งรันจาก root และใช้ `.venv/bin/python`)
+**คำสั่งหลัก** (ทุกคำสั่งรันจาก root และใช้ `.venv/bin/python`; ดู `make help`)
 
 | คำสั่ง | ทำอะไร | เวลา |
 |---|---|---|
 | `make chapter4` | ข้อมูลกลาง, notebook 4.1–4.6, รายงานบทที่ 4 | ~3 นาที (ใช้ cache) |
-| `make chapter5` | inputs, plans, uncertainty, compare, report | **~70 นาที** |
-| `make chapter5-report` / `make chapter4-report` | render รายงานจาก claims ที่มีอยู่ | วินาที |
-| `make chapter5-notebooks` | รัน notebook บทที่ 5 ใหม่ | ไม่กี่นาที |
+| `make chapter5` | inputs, plans, uncertainty, compare, report | **~65 นาที** |
+| `make chapter5-compare` / `chapter5-report` / `chapter4-report` | ขั้นย่อย และ render รายงานจาก claims | วินาที–นาที |
+| `make chapter5-notebooks` | รัน notebook บทที่ 5 ใหม่ | ~1 นาที |
 | `make services-population` | ส่งออกประชากรสำหรับโมดูลบริการ | วินาที |
 | `make sync-lab-check` / `sync-lab-source` | ส่งโค้ดวิทยาศาสตร์ไป `workspaces/HRH-authoring` | วินาที |
+| `make test` | tests ของ `src/` | ~15 วินาที |
 | authoring: `make story-data PY=../../.venv/bin/python` | สร้างฉบับร่างเว็บ (ไม่เผยแพร่) | ~5 นาที |
 
 **กับดักที่เสียเวลามาแล้ว**
-- **การแก้ที่บังคับให้รันแผนใหม่ทั้งหมด (~70 นาที):** แก้ `src/chapter4/*.py`, `analysis.toml`, `source_registry.toml` หรือ `chapter5.toml` ดังนั้นควรรวมการแก้ไว้แล้วรันครั้งเดียว ส่วนการแก้แม่แบบรายงาน notebook หรือโค้ดบทที่ 5 อย่างเดียวไม่ต้องรันแผนใหม่
-- **รันนานต้อง detach:** `nohup sh -c 'make chapter4 && make chapter5' > LOG 2>&1 < /dev/null & disown` เพราะถ้า session ปิด งานจะตาย
-- **แผน RT ต้องใช้แผน R เป็น incumbent** (D20) ไม่เช่นนั้นแผนที่ติดเวลาจำกัดจะแย่กว่าแผนรับใหม่อย่างเดียว
-- **มี 4 แผนที่หาคำตอบไม่ได้ทุกรอบโดยออกแบบ:** `NFB1-R|ols` และ `*|pool2500` (3 แผน)
-- **Browser tests ของ authoring:** อย่าใช้ server ค้างที่ port 8780 (ไม่ใช่ของโครงการนี้) ให้ตั้ง `STORY_URL` เป็น port ใหม่
-- **ไฟล์ข้อมูลใหม่ใน `data/epi`:** ต้องลงทะเบียนใน `source_registry.toml` แบบระบุ `files` เพื่อไม่ให้ hash ของแหล่งอื่นเปลี่ยน
+- **ต้องรันแผนใหม่ทั้งหมด (~65 นาที)** เมื่อแก้ `src/chapter4/*.py`, `analysis.toml`, `source_registry.toml` หรือ `chapter5.toml` ควรรวมการแก้แล้วรันครั้งเดียว ส่วนการแก้แม่แบบ notebook หรือโค้ดบทที่ 5 ไม่ต้องรันแผนใหม่
+- **ห้ามแก้ `src/` ระหว่างที่บทที่ 5 รันอยู่** ไม่เช่นนั้นแต่ละขั้นจะบันทึก code hash ต่างกัน ถ้าแก้โค้ดบท 5 หลังรันเสร็จ ให้รันขั้น inputs, uncertainty, compare และ report ใหม่ให้ hash ตรงกัน
+- **รันนานต้อง detach:** `nohup sh -c 'make chapter4 && make chapter5 && make chapter5-notebooks' > LOG 2>&1 < /dev/null & disown`
+- **แผน RT:** ได้แผน R เป็น incumbent ทั้งในขั้น shortfall และ distribution (D20 + การแก้ 15 ต.ค.)
+- **มี 4 แผนที่หาคำตอบไม่ได้ทุกรอบโดยออกแบบ:** `NFB1-R|ols` และ `*|pool2500`
+- **คำตอบใกล้ optimal ไม่ unique:** จำนวนการโยกย้ายในแผนเพดานเติบโตสุทธิเปลี่ยนได้มากระหว่างรอบ (60 → 534 → 60) จึงห้ามใช้จำนวนครั้งเป็นข้อสรุป
+- **Browser tests ของ authoring:** ใช้ `STORY_URL` เป็น port ใหม่ อย่าใช้ server ค้างที่ port 8780 (ไม่ใช่ของโครงการนี้)
+- **ไฟล์ใหม่ใน `data/epi`:** ต้องลงทะเบียนแบบระบุ `files` ใน `source_registry.toml`
 
----
+## 4. ทะเบียนการตัดสินใจ
 
-## 4. ทะเบียนการตัดสินใจ (index)
+ทั้งหมดอยู่ใน `docs/decisions.md` แยกตามหัวข้อ และมีรหัสเดิม (4-D#, 5-D#) ไว้สืบย้อน การตัดสินใจของเจ้าของโครงการที่สำคัญ:
 
-- บทที่ 4: `docs/analytical_decisions.md` (D1–D35) ครอบคลุม scope, Bangkok, M0–M5, standardization, age-weight gate, distribution, flows, scope ของ catching-up และภาระโรค (D28–D35)
-- บทที่ 5: `docs/chapter5_decisions.md` (D1–D25) ครอบคลุม provisional stock, Hamilton–Perry, hazards, objective, lexicographic stages, incumbents, family B (D24 แทน D23), health gain (D25)
-- เกณฑ์การทดสอบย้อนหลัง: `config/validation.toml` **ประกาศก่อนรัน** (14 ต.ค. 2569) ห้ามแก้เพื่อให้ผ่าน ถ้าแก้ต้องบันทึกเป็น deviation
-- การตัดสินใจของเจ้าของโครงการที่สำคัญ:
-  - พยาบาลรวมพยาบาลเทคนิค (26 ก.ย.)
-  - catching-up ใช้เฉพาะ สธ. (27 ก.ย.)
-  - ไม่ใช้ feedback ของ DALY ระดับจังหวัด (บท 4 D35, 14 ต.ค.)
-  - มะเร็ง 5 ตำแหน่ง: breast, lung, colorectal, cervix, liver
-  - อนุญาตให้อัปโหลดไฟล์ใน Lab สาธารณะ โดยประมวลผลในเบราว์เซอร์เท่านั้น (14 ต.ค.)
+| วันที่ | การตัดสินใจ |
+|---|---|
+| 26 ก.ย. | พยาบาลรวมพยาบาลเทคนิค |
+| 27 ก.ย. | การตามทันใช้เฉพาะ สธ. |
+| 14 ต.ค. | ไม่ใช้ feedback ของ DALY ระดับจังหวัด |
+| 14 ต.ค. | มะเร็ง 5 ตำแหน่ง และอัปโหลดใน Lab ได้โดยประมวลผลในเบราว์เซอร์เท่านั้น |
+| 14 ต.ค. | **AdjRW 100 นาทีในบทที่ 5** ให้ตรงกับบทที่ 4 |
+| 14 ต.ค. | แก้ทุกรายการ final check, จัดระเบียบ repo, ปิดแดชบอร์ด `web/`, ย้าย archive และข้อมูลดิบออกนอก repo, เลิกใช้ `export_for_external_analysis.py` |
 
----
+เกณฑ์การทดสอบย้อนหลัง (`config/validation.toml`) **ประกาศก่อนรัน** ห้ามแก้เพื่อให้ผ่าน ถ้าแก้ต้องบันทึกเป็น deviation
 
 ## 5. บันทึกการทำงาน (ใหม่สุดอยู่บน)
+
+### 2026-10-15 (15 ต.ค. 2569) — แก้ final check, AdjRW 100, จัดระเบียบ repo และรวมเอกสาร
+- **ผู้ทำ/เครื่องมือ:** Peerasit + Claude Code (agent อิสระตรวจซ้ำ)
+- **ทำอะไร:**
+  - commit สภาพก่อนแก้เป็น `c78cc8a`
+  - แก้รายการ final check ทั้งหมด (`docs/final_check.md`): regret ใต้เกณฑ์ B, incumbent ในขั้น distribution, benchmark ความไม่ unique, ถ้อยคำ "ความจำเป็น" → "บริการคาดหมายมาตรฐาน M5", ขอบเขตข้อสรุปบท 4, รูป F43, เลข 4.x และอื่น ๆ
+  - เปลี่ยน AdjRW เป็น 100 นาที แล้วรันใหม่ทั้งหมด
+  - ย้ายของเก่าไป `../HRH_offrepo/`, ลบ `web/` และ GitHub Pages workflow, ย้าย `output/map` → `data/map`, ย้ายสคริปต์ดึงข้อมูลไป `scripts/acquisition/`, ตัด Makefile ให้เหลือคำสั่งที่ใช้, เขียน README ใหม่
+  - รวม `docs/` จาก 20 ไฟล์เหลือ 7 ไฟล์
+- **ผลที่เปลี่ยนการตีความ:**
+  - การกระจุกตัวของแพทย์เฉพาะทาง (ช่วงที่เชื่อถือได้ 2564–2567) เพิ่มขึ้นเล็กน้อย 61.6 → 63.5% ไม่ใช่ "แทบไม่เปลี่ยน"
+  - ศูนย์กับ รพ.ชุมชนแทบไม่สัมพันธ์กัน (+0.13, p 0.27)
+  - ใต้เกณฑ์ภาระโรค P-R เสียเปรียบ 0.9% (เดิมรายงาน 0.2%) แต่ N-R ยังมี regret สูงสุดต่ำที่สุด
+  - ความหนาแน่นตามทะเบียนสิทธิลดลง 3.75% ทุกที่
+  - ความต่างระหว่างหลักคิด P กับ N เกินความไม่ unique ของคำตอบเพียงเล็กน้อย
+  - ข้อค้นพบบึงกาฬมาจากเพดานที่สมมติ (การรับจริง 21 คนต่อปี เทียบเพดาน 7)
+- **ตรวจอย่างไร:** รายงานไม่มี placeholder ค้าง, hash ทุกขั้นตรงกัน, tests และ agent ตรวจซ้ำ (ผลใน `docs/final_check.md`)
+- **ค้างอยู่:** หัวข้อ 2 "รอเจ้าของตัดสินใจ"
 
 ### 2026-10-14 (14 ต.ค. 2569) — Final check, แผนจัดระเบียบ repo, เริ่ม PROJECT_LOG
 - **ผู้ทำ/เครื่องมือ:** Peerasit + Claude Code (ตรวจซ้ำโดย agent อิสระอีกตัว)
 - **ทำอะไร:**
   - สร้างไฟล์นี้
-  - สำรวจ repo และเขียน `docs/repo_map_and_cleanup_plan.md` (ข้อเสนอ ยังไม่ลบหรือย้าย)
+  - สำรวจ repo และเขียน `docs/repo_map_and_cleanup_plan.md` (เอกสารเดิม ดูได้ด้วย `git show c78cc8a:docs/repo_map_and_cleanup_plan.md`) (ข้อเสนอ ยังไม่ลบหรือย้าย)
   - ตรวจงานวิเคราะห์ทั้งหมดเป็น final check (`docs/final_check/`)
 - **ผลสำคัญ:**
   - ตัวเลขส่วนใหญ่ตรงกับข้อมูล
@@ -159,11 +175,11 @@
   - แพทย์เฉพาะทางใน 10% ของสถานพยาบาลที่มีมากสุดคงที่ราว 63%
   - ใน สธ. ส่วนของ รพ.ชุมชนเพิ่มจาก 13.2% เป็น 17.8%
   - จังหวัดที่ต่ำตามภาระโรคแต่ไม่ต่ำตามบริการ (11 จังหวัด) ส่วนใหญ่อยู่ภาคอีสาน
-- **ตรวจอย่างไร:** rebuild เต็ม, tests ตามหัวข้อ 2, รายละเอียดใน `docs/next_phase_progress_2026-10-14.md`
+- **ตรวจอย่างไร:** rebuild เต็ม และ tests (เอกสาร progress เดิม: `git show c78cc8a:docs/next_phase_progress_2026-10-14.md`)
 
 ### 2026-10-14 (14 ต.ค. 2569) — Phase 0 และโมดูลบริการรอบแรก
 - **ทำอะไร:**
-  - **Phase 0:** ปรับสองฝั่งให้ตรงกัน: research tree เป็นเจ้าของโค้ดวิทยาศาสตร์ ส่วน authoring workspace ได้สำเนาที่ hash ตรงกันผ่าน `make sync-lab-source` (`docs/phase0_reconciliation_map.md`)
+  - **Phase 0:** ปรับสองฝั่งให้ตรงกัน: research tree เป็นเจ้าของโค้ดวิทยาศาสตร์ ส่วน authoring workspace ได้สำเนาที่ hash ตรงกันผ่าน `make sync-lab-source` (`docs/phase0_reconciliation_map.md` (เอกสารเดิม ดูได้ด้วย `git show c78cc8a:docs/phase0_reconciliation_map.md`))
   - **Backlog 1–7:** validation inventory, data readiness inventory, activity/FTE ledger และแพ็กเกจผู้สูงอายุ, การจัดกลุ่ม Lab controls, ต้นแบบการแทนที่ชุดข้อมูล, กรอบคิด spatial anchoring
   - **Mock modules ใน Lab:** ผู้สูงอายุ ไตวาย และมะเร็ง ใช้ได้เมื่อผู้ใช้อัปโหลดข้อมูลเอง
 - **ผลสำคัญ:**
@@ -192,15 +208,15 @@
 ### 2026-09-27 (27 ก.ย. 2569) — บทที่ 5 แบบจำลองจัดสรรแพทย์ 15 ปี
 - **ทำอะไร:**
   - สร้าง `src/chapter5` ครบชุด: ฉายประชากร Hamilton–Perry, hazards, M5, MILP แบบ lexicographic, uncertainty, adaptive replanning
-  - รายงานฉบับแรกอยู่ที่ `docs/chapter5_completion_report.md` (ตัวเลขในไฟล์นั้นเป็นของรอบ ก.ย.)
+  - รายงานฉบับแรกอยู่ที่ `docs/chapter5_completion_report.md` (เอกสารเดิม ดูได้ด้วย `git show c78cc8a:docs/chapter5_completion_report.md`) (ตัวเลขในไฟล์นั้นเป็นของรอบ ก.ย.)
 - **บทเรียน:** แผน RT ต้องใช้แผน R เป็น incumbent (D20) และ near-optimal allocations ไม่ unique
 
 ### 2026-09-17 ถึง 09-26 (ก.ย. 2569) — รวมบทที่ 4 เป็น pipeline เดียว
 - **ทำอะไร:**
   - สร้าง `src/chapter4` และ notebook 4.1–4.4
   - ทำทะเบียน claims และแม่แบบรายงาน
-  - ย้าย notebook เก่าไป `archive/` (`docs/file_migration_manifest.csv`)
-- **ผลสำคัญ:** ดู `docs/completion_report.md` เช่น
+  - ย้าย notebook เก่าไป `archive/` (`docs/file_migration_manifest.csv` (เอกสารเดิม ดูได้ด้วย `git show c78cc8a:docs/file_migration_manifest.csv`))
+- **ผลสำคัญ:** ดู `docs/completion_report.md` (เอกสารเดิม ดูได้ด้วย `git show c78cc8a:docs/completion_report.md`) เช่น
   - แพทย์ +71.6% ในปี 2556–2568
   - Gini ระหว่างจังหวัดลดลงทุกวิชาชีพ
   - น้ำหนักอายุไม่ผ่านเกณฑ์ที่ประกาศไว้
@@ -224,31 +240,20 @@
 
 ## 6. โจทย์วิเคราะห์ถัดไป
 
-เรียงตามความพร้อม รายละเอียดอยู่ใน `docs/next_phase_progress_2026-10-14.md` หัวข้อ "Plan items not yet done"
+รายละเอียดอยู่ใน `docs/roadmap.md` หัวข้อ 4
 
 **ทำได้เลยด้วยข้อมูลที่มี**
-1. แก้รายการจาก final check (`docs/final_check/`) ก่อนปิดรายงาน
-2. รัน notebook บทที่ 5 ใหม่ให้ตรงกับผลวันที่ 14 ต.ค. (`make chapter5-notebooks`)
-3. ทำให้ช่วงความไม่แน่นอนของบทที่ 5 สอบเทียบได้ เพราะเกณฑ์ C2 ไม่ผ่าน เช่น เพิ่มความแปรผันของการรับเข้าและความไม่แน่นอนของ hazard ระดับจังหวัด
-   - ต้องประกาศเกณฑ์ใหม่ใน `config/validation.toml` **ก่อน** รัน และบันทึกเป็นรุ่นใหม่
-4. ความเสถียรของจำนวนการโยกย้ายในแผน RT (near-optimal non-uniqueness): รายงานเป็นช่วงจากหลายรอบ solve แทนค่าเดียว
-5. ในหน้า Lab การจัดสรร: แสดงประชากร บริการ ภาระโรค และความต้องการของแพ็กเกจคู่กัน, แผนที่ที่สลับมุมมองผู้ให้บริการกับผู้อยู่อาศัย (§8.2)
+1. สอบเทียบช่วงความไม่แน่นอนของบทที่ 5 (เกณฑ์ C2 ไม่ผ่าน) โดยประกาศเกณฑ์ใหม่ใน `config/validation.toml` **ก่อน**รัน
+2. รายงานความไม่ unique ของคำตอบเป็นช่วงจากหลายรอบ solve และใช้ตัวชี้วัดที่ไม่ขึ้นกับการเลือกคำตอบเป็นหลัก
+3. หน้า Lab การจัดสรร: แสดงประชากร บริการ ภาระโรค และความต้องการของแพ็กเกจคู่กัน และแผนที่ที่สลับมุมมองผู้ให้บริการกับผู้อยู่อาศัย
 
-**รอการตัดสินใจของเจ้าของ**
-- Tier 1 interface ของ Lab, family B ใน Lab, เผยแพร่ release เดือนตุลาคม
+**รอการตัดสินใจของเจ้าของ:** Tier 1 interface, family B ใน Lab, release เดือน ต.ค., AdjRW ใน Lab
 
-**รอข้อมูลหรือผู้เชี่ยวชาญ**
-- โมดูลไตวายและมะเร็งที่ปรับฐานด้วยข้อมูลจริง
-- แบบจำลองคิวเครื่องฉายรังสีและเครื่องฟอกเลือด
-- การเปลี่ยนสถานะภาวะพึ่งพิง
-- นโยบาย anchoring ที่วัดกลไกได้
-- multi-cadre และงบประมาณ
-
----
+**รอข้อมูลหรือผู้เชี่ยวชาญ:** โมดูลไตวายและมะเร็งที่ปรับฐานแล้ว, คิวเครื่องฉายรังสีและเครื่องฟอก, การเปลี่ยนสถานะภาวะพึ่งพิง, anchoring ที่วัดกลไกได้, multi-cadre และงบประมาณ
 
 ## 7. ข้อมูลที่ต้องขอเพิ่ม
 
-รายการเต็มพร้อมหน่วยงานผู้ถือข้อมูลอยู่ที่ `docs/data_requests.md` (บทที่ 4 และโมดูลถัดไป: ข้อ 1–16) และ `docs/chapter5_data_requests.md` (ข้อ 1–12)
+รายการเต็ม 18 ข้อ (รวมบทที่ 4–5 และตัดรายการซ้ำ) พร้อมหน่วยงานผู้ถือข้อมูลอยู่ที่ `docs/data.md` หัวข้อ 4
 
 | สำคัญที่สุด | ข้อมูล | ปลดล็อกอะไร |
 |---|---|---|
@@ -270,6 +275,6 @@
 - ข้อมูลรายสถานพยาบาลของแพทย์เฉพาะทาง (spc) เชื่อถือได้ในปี 2564–2567 (อัตราส่วนกับ HRR 0.94–0.99) ส่วนปี 2560–2562 คลาดมากกว่า และปี 2563 ถูกตัดออก
 - การทดสอบย้อนหลังไม่ผ่านเกณฑ์ C2 และ C3: ช่วงความไม่แน่นอนแคบเกินจริง และกลุ่ม 19 จังหวัดไม่คงที่
 - ระดับ OLS ของ M5 ติดลบสำหรับ AdjRW เมื่อประชากรสูงอายุในปี 2583 จึงใช้ positive-mean M5 แทน (D10)
-- `tests/test_web_bundle.py` ล้มเพราะต้องใช้โฟลเดอร์เก่า `output/analyse/ch4x` ที่ไม่มีอยู่ ไฟล์นี้เป็น test ของเว็บรุ่น 2 ที่รอ archive
 - Story browser test S29 (layout) ล้มอยู่แล้วตั้งแต่ฉบับเผยแพร่ ก.ย.
-- รายละเอียดผล final check รอบ 14 ต.ค.: `docs/final_check/`
+- ผล final check และสถานะการแก้: `docs/final_check.md`
+- การทดสอบย้อนหลัง: C1 ผ่าน (แต่แพ้ที่จุดตั้งต้นปี 2564), C2 และ C3 ไม่ผ่าน

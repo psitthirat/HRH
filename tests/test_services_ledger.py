@@ -1,4 +1,4 @@
-"""Activity/FTE ledger: the hand-worked example of docs/activity_fte_ledger.md and the accounting rules."""
+"""Activity/FTE ledger: the hand-worked example of docs/service_modules.md (activity → time → FTE ledger) and the accounting rules."""
 import copy
 import sys
 from pathlib import Path

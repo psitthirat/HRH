@@ -7,6 +7,8 @@ plotted data to outputs/chapter5/plot_data/.
 """
 from __future__ import annotations
 
+from chapter4 import config as C4
+
 import json
 
 import matplotlib.pyplot as plt
@@ -349,7 +351,7 @@ def make_all(S):
     # map of 2040 attainment (population criterion) for the three R plans
     try:
         import geopandas as gpd
-        g = gpd.read_file(PL.C.ROOT / "output/map/geo_prov.geojson").set_index("prov_id")
+        g = gpd.read_file(C4.geo_path()).set_index("prov_id")
         g = g.loc[ctx.provs]
         TP = PL.eval_targets(ctx, "common_total")["P"][-1]
         fig, ax = plt.subplots(1, 3, figsize=(12, 6.2))

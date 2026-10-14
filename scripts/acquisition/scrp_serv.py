@@ -28,7 +28,7 @@ Example:
     
     hosp_id_example = pd.DataFrame({'hosp_id': ['001', '002']})
     spc_link_example = pd.DataFrame({'link': ['infopersonal', 'infohospital']})
-    output_dir = "./output"
+    output_dir = "./data/raw_scraped"
 
     output_file = scrap(hosp_id_example, spc_link_example, output_dir)
     print(f"Scraped data is available in: {output_file}")
@@ -326,8 +326,8 @@ def scrap(hosp_id, output_folder, fetch_current_year=True):
         readme_file.write(f"- **`serv_visit`**: Total number of service visits (ครั้ง).\n")
         readme_file.write(f"- **`ip_n`**: Number of inpatients (ราย).\n")
         readme_file.write(f"- **`ip_los`**: Total inpatient length of stay (วัน).\n\n")
-        readme_file.write(f"- Scraped data is saved in `output/scraped/serv.csv`.\n")
-        readme_file.write(f"- A detailed log of the scraping process, including metadata and errors, is saved in `output/scraped/README_serv.md`.\n")
+        readme_file.write(f"- Scraped data is saved in `data/raw_scraped/serv.csv`.\n")
+        readme_file.write(f"- A detailed log of the scraping process, including metadata and errors, is saved in `data/raw_scraped/README_serv.md`.\n")
         readme_file.write(f"## Notes\n")
         readme_file.write(f"- Partial results are saved every 100 hospitals to prevent data loss.\n")
         readme_file.write(f"- The script ensures data accuracy by validating each step.\n")
@@ -341,7 +341,7 @@ def scrap(hosp_id, output_folder, fetch_current_year=True):
 if __name__ == "__main__":
     # Example DataFrame for hosp_id
     hosp_id_example = pd.DataFrame({'hosp_id': ['001', '002']})
-    output_dir = "./output"
+    output_dir = "./data/raw_scraped"
 
     # Run the scraper
     output_file = scrap(hosp_id_example, output_dir)

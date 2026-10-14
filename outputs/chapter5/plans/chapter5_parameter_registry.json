@@ -94,19 +94,23 @@
   },
   "services": {
    "op_minutes": 10.0,
-   "adjrw_minutes": 90.0,
+   "adjrw_minutes": 100.0,
    "weight_sensitivity": [
     [
      5.0,
-     90.0
+     100.0
     ],
     [
      15.0,
-     90.0
+     100.0
     ],
     [
      10.0,
      60.0
+    ],
+    [
+     10.0,
+     90.0
     ],
     [
      10.0,
@@ -271,8 +275,8 @@
    "inverse.ramp_fraction": "illustrative"
   }
  },
- "config_hash": "9634ed4e506743c4",
- "inputs_fingerprint": "c21bd7c5601aabe3",
+ "config_hash": "e0082b9acf0428bc",
+ "inputs_fingerprint": "6f06b949b9993b66",
  "chapter4_artifacts": [
   {
    "artifact": "data/processed/province_key.csv",
@@ -379,7 +383,7 @@
   {
    "artifact": "outputs/chapter4_2/run_manifest.json",
    "exists": true,
-   "sha256": "c11587835ce9c601127fbb01190c792f6e33d79098d38a6e282042d4dd948f06",
+   "sha256": "b374e8ceb37802304bcc47c50e8cb25145d3edd68dfe678cac11e591adc472b8",
    "bytes": 2390.0
   },
   {
@@ -403,7 +407,7 @@
   {
    "artifact": "outputs/chapter4_4/run_manifest.json",
    "exists": true,
-   "sha256": "f644ff53b46a6ca1dc8e85099e3d57d9c5eda0d81992bbdab294c84e3b07355d",
+   "sha256": "bbab7d95e65ad262ba5a1463572374e21b48af77aeee887d557c9c8c623ae056",
    "bytes": 2290.0
   },
   {
@@ -421,7 +425,7 @@
   {
    "artifact": "src/chapter4/*.py (code_hash)",
    "exists": true,
-   "sha256": "a45b9fdda50dc329",
+   "sha256": "64883781809e35e4",
    "bytes": NaN
   }
  ],
@@ -454,10 +458,10 @@
   {
    "family": "S",
    "index": "D_S",
-   "raw": "10 min x OP visits + 90 min x AdjRW (observed-service benchmark)",
+   "raw": "10 min x OP visits + 100 min x AdjRW (observed-service benchmark)",
    "raw_unit": "minutes (illustrative weights)",
    "normalization": "fixed 2025 scale",
-   "scale": 0.0253989010636924,
+   "scale": 0.0242584144288042,
    "dynamic_through": "population x benchmark service rate",
    "fixed": "2025 provincial service rates",
    "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",
@@ -469,7 +473,7 @@
    "raw": "same weights applied to M5 standardized OP and inpatient predictions",
    "raw_unit": "minutes (illustrative weights)",
    "normalization": "fixed 2025 scale",
-   "scale": 0.027351915629546,
+   "scale": 0.0261801955760372,
    "dynamic_through": "population, age composition, recorded morbidity path",
    "fixed": "economy, beds, physicians, nurses, year effect at the Chapter 4 reference (2023)",
    "scenario": "{\"demog\": \"central\", \"departures\": \"pooled\", \"weights\": null, \"inpatient\": null, \"morb\": null, \"age\": \"projected\", \"estimator\": \"ols\", \"resources\": \"fixed\", \"ent\": \"central\"}",

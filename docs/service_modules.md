@@ -41,7 +41,7 @@ Precedence is user override > calibrated value > default.
   - an activity–time study (`older_time_study`), which replaces task and travel minutes;
   - available FTE (`workforce_fte`), which enables deliverable-versus-unmet care.
   - a caregiver time-use sample (`older_caregiver_time`), which calibrates informal care hours per week.
-- **Engine:** the activity/FTE ledger, with all its accounting rules ([activity_fte_ledger.md](activity_fte_ledger.md)).
+- **Engine:** the activity/FTE ledger, with all its accounting rules (section "The activity → time → FTE ledger" below).
 - **Informal (unpaid) care** is reported in its own table: dependent older persons, caregiver hours per year and full-time-caregiver equivalents (2,080 hours, a convention). It covers every dependent person, covered by the package or not. It is **never added to or netted against health-workforce FTE** (tested): unpaid care is not unlimited replacement capacity.
 
 ### Kidney failure on treatment (ESRD)
@@ -108,6 +108,46 @@ The allocation Lab has the matching contract in `src/chapter5/lab_compare.py`, a
 - **directly comparable:** only policy, assumption or method parameters differ.
 
 The existing version guard of `compare_runs` is unchanged.
+
+## The activity → time → FTE ledger
+
+Engine `src/services/ledger.py`; illustrative package `config/services/older_person_home_care.toml`; tests `tests/test_services_ledger.py` (the worked example below is a test). Every package value is an illustrative placeholder and is reported as a warning.
+
+```text
+population by age group ──► eligible = Σ_a N_a × prevalence_a        (care state, e.g. dependency)
+                          ──► recipients = eligible × target coverage
+                          ──► activity[k,s] = recipients × per_recipient[k] × setting share[k,s]
+                          ──► hours[r] = Σ_k activity[k] × (task min[k,r] + travel min[k,r]) / 60
+                                         + recipients × support hours[r]          (counted once)
+                          ──► required FTE[r] = hours[r] / (contract hours × (1 − leave − other non-clinical))
+                          ──► deliverable activity under available FTE  →  unmet activity
+                          ──► hospital ledger: activity avoided by substitution and hospital time freed
+```
+
+| Rule | How it is enforced |
+|---|---|
+| Alternative settings or providers sum to one | `validate` raises otherwise |
+| A multidisciplinary contact consumes time from several cadres | `task_minutes` may name several cadres; cadre shares are never forced to sum to one |
+| Travel and coordination are counted once | an allowance counted in the numerator must appear in that cadre's `nonclinical_excludes`, or `validate` raises "double counting" |
+| No workload is added on top of hospital totals that already contain it | substituting activities declare `replaces_hospital`; the hospital ledger records the avoided visits and the time freed |
+| Required, deliverable and unmet care stay separate | deliverable ≤ required is tested; the scarcest cadre rations activities proportionally (declared convention) |
+
+**Worked example**
+
+| Step | Calculation | Result |
+|---|---|---|
+| Population | 60–69 = 10,000; 70–79 = 5,000; 80+ = 2,000 | — |
+| Eligible | 10,000 × 0.02 + 5,000 × 0.06 + 2,000 × 0.20 | 900 |
+| Recipients | 900 × 0.80 | 720 |
+| Available hours per FTE | 1,920 × (1 − 0.10 − 0.10) | 1,536 h |
+| Required FTE | nurse; physiotherapist; physician; care assistant | 6.91; 2.34; 0.23; 30.47 |
+| Hospital ledger | 2,880 home sessions × 0.5 | −1,440 hospital rehabilitation visits |
+
+**Before real use:**
+1. practitioner review of the package;
+2. replace the placeholders (dependency prevalence by age; task, travel and working times; current coverage from the รพ.สต. series up to 2022 and care-manager records);
+3. reconcile the community and hospital ledgers with observed activity;
+4. add outcomes only with a defensible model.
 
 ## Validation rules
 

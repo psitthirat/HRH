@@ -60,8 +60,8 @@ c51_svc_best_mape_adjrw,5_1,6.666772011263198,6.7,{:.1f},%,,,,computed
 c51_svc_cutoffs_adjrw,5_1,2.0,2,{:.0f},จุดตัด,,,,computed
 c51_D_P_growth_pct,5_1,-6.590771095868697,-6.6,{:.1f},%,,,,computed
 c51_D_Pent_growth_pct,5_1,-6.529850058698338,-6.5,{:.1f},%,,,,computed
-c51_D_S_growth_pct,5_1,-7.248294375248221,-7.2,{:.1f},%,,,,computed
-c51_D_N_growth_pct,5_1,-5.523160010351525,-5.5,{:.1f},%,,,,computed
+c51_D_S_growth_pct,5_1,-7.248672542598156,-7.2,{:.1f},%,,,,computed
+c51_D_N_growth_pct,5_1,-6.743001502376556,-6.7,{:.1f},%,,,,computed
 c51_D_B_growth_pct,5_1,16.359822412846036,16.4,{:.1f},%,,,,computed
 c51_D_Basr_growth_pct,5_1,-7.091435489358366,-7.1,{:.1f},%,,,,computed
 c51_minrate_std_op_moph,5_1,1.83758974993025,1.838,{:.3f},ต่อคน,,,,computed
@@ -79,11 +79,11 @@ c51_B_ratio_min_prov,5_1,ภูเก็ต,ภูเก็ต,text,,,,,computed
 c51_B_ratio_max_prov,5_1,ชัยนาท,ชัยนาท,text,,,,,computed
 c51_B_top_gain,5_1,"ชัยภูมิ (+196,714), ขอนแก่น (+194,930), ลำปาง (+184,278)","ชัยภูมิ (+196,714), ขอนแก่น (+194,930), ลำปาง (+184,278)",text,,,,,computed
 c51_B_top_loss,5_1,"ชลบุรี (-356,038), นนทบุรี (-312,444), สมุทรปราการ (-301,331)","ชลบุรี (-356,038), นนทบุรี (-312,444), สมุทรปราการ (-301,331)",text,,,,,computed
-c51_eta_lam1_mean,5_1,0.32512532997021354,0.33,{:.2f},,,,,computed
-c51_eta_lam1_min,5_1,0.2804877210473124,0.28,{:.2f},,,,,computed
-c51_eta_lam1_max,5_1,0.3644934532681013,0.36,{:.2f},,,,,computed
-c51_gainB_lam1_mean,5_1,0.8799437349813841,0.88,{:.2f},,,,,computed
-c51_gainB_lam1_n_ge1,5_1,12.0,12,{:.0f},จังหวัด,,,,computed
+c51_eta_lam1_mean,5_1,0.33710114326542284,0.34,{:.2f},,,,,computed
+c51_eta_lam1_min,5_1,0.29119488011646816,0.29,{:.2f},,,,,computed
+c51_eta_lam1_max,5_1,0.3768223806006664,0.38,{:.2f},,,,,computed
+c51_gainB_lam1_mean,5_1,0.9123381629828743,0.91,{:.2f},,,,,computed
+c51_gainB_lam1_n_ge1,5_1,22.0,22,{:.0f},จังหวัด,,,,computed
 c51_beta_phys_op_moph,5_1,0.3065255990788843,0.307,{:.3f},,,,,computed
 c51_beta_nurse_op_moph,5_1,0.516310697581102,0.516,{:.3f},,,,,computed
 c51_beta_s60_op_moph,5_1,3.7152358091887416,3.715,{:.3f},,,,,computed

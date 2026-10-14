@@ -7,49 +7,51 @@ plan NFB1-R|B,exploratory_policy_scenario,constraints_ok=True; gap=nan; nan
 plan NFB1-R|grow,exploratory_policy_scenario,constraints_ok=True; gap=nan; nan
 plan P-R|rolling,exploratory_policy_scenario,constraints_ok=True; gap=nan; nan
 plan P-R,exploratory_policy_scenario,constraints_ok=True; gap=1.786734350481234e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan S-R,exploratory_policy_scenario,constraints_ok=True; gap=6.1001404918797725e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R,exploratory_policy_scenario,constraints_ok=True; gap=4.760928563609656e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan S-R|B,exploratory_policy_scenario,constraints_ok=True; gap=5.813071019960348e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R|B,exploratory_policy_scenario,constraints_ok=True; gap=0.0001970382802888; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R,exploratory_policy_scenario,constraints_ok=True; gap=3.931920322874487e-05; shortfall: optimal within gap; distribution: optimal within gap
+plan N-R,exploratory_policy_scenario,constraints_ok=True; gap=3.6280190511826345e-05; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R|B,exploratory_policy_scenario,constraints_ok=True; gap=5.046550680314875e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|B,exploratory_policy_scenario,constraints_ok=True; gap=3.96494226799202e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan SQ-HIST,exploratory_policy_scenario,constraints_ok=False; gap=nan; nan
 plan SQ-C,exploratory_policy_scenario,constraints_ok=True; gap=nan; closest_to_reference: 0
 plan Pent-R,exploratory_policy_scenario,constraints_ok=True; gap=1.6634445962799553e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan B-R,exploratory_policy_scenario,constraints_ok=True; gap=0.000166847663737; shortfall: optimal within gap; distribution: optimal within gap
 plan B-R|B,exploratory_policy_scenario,constraints_ok=True; gap=2.6514512592447757e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan P-R|pool1500,exploratory_policy_scenario,constraints_ok=True; gap=0.0047152849467327; shortfall: time limit: best incumbent; distribution: optimal within gap
-plan S-R|pool1500,exploratory_policy_scenario,constraints_ok=True; gap=0.000115123193758; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained
-plan N-R|pool1500,exploratory_policy_scenario,constraints_ok=True; gap=0.0001195978795296; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained
+plan P-R|pool1500,exploratory_policy_scenario,constraints_ok=True; gap=0.0047124462335396; shortfall: time limit: best incumbent; distribution: optimal within gap
+plan S-R|pool1500,exploratory_policy_scenario,constraints_ok=True; gap=0.0001349136085911; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|pool1500,exploratory_policy_scenario,constraints_ok=True; gap=0.0001475622928081; shortfall: optimal within gap; distribution: time limit: best incumbent
 plan P-R|pool2500,infeasible_under_selected_constraints,constraints_ok=nan; gap=nan; placement: 0
 plan S-R|pool2500,infeasible_under_selected_constraints,constraints_ok=nan; gap=nan; placement: 0
 plan N-R|pool2500,infeasible_under_selected_constraints,constraints_ok=nan; gap=nan; placement: 0
 plan P-R|net,exploratory_policy_scenario,constraints_ok=True; gap=6.741624872857462e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan S-R|net,exploratory_policy_scenario,constraints_ok=True; gap=5.302920955681465e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R|net,exploratory_policy_scenario,constraints_ok=True; gap=4.968559014759896e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan S-R|net,exploratory_policy_scenario,constraints_ok=True; gap=6.26085257162773e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|net,exploratory_policy_scenario,constraints_ok=True; gap=5.836104839168307e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained
 plan P-R|depnat,exploratory_policy_scenario,constraints_ok=True; gap=1.8613881457636783e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan P-R|ref0.5,exploratory_policy_scenario,constraints_ok=True; gap=0.0001246737494711; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan S-R|depnat,exploratory_policy_scenario,constraints_ok=True; gap=0.0001491701454328; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan S-R|ref0.5,exploratory_policy_scenario,constraints_ok=True; gap=0.000145375452994; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R|depnat,exploratory_policy_scenario,constraints_ok=True; gap=2.2229816087229756e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R|ref0.5,exploratory_policy_scenario,constraints_ok=True; gap=4.821278758238329e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan S-R|depnat,exploratory_policy_scenario,constraints_ok=True; gap=1.2198442291741205e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan S-R|ref0.5,exploratory_policy_scenario,constraints_ok=True; gap=0.0001534509672549; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|depnat,exploratory_policy_scenario,constraints_ok=True; gap=1.4918068802677252e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|ref0.5,exploratory_policy_scenario,constraints_ok=True; gap=4.480607074767491e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
 plan P-R|mig_low,exploratory_policy_scenario,constraints_ok=True; gap=2.8109396059453647e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan S-R|mig_low,exploratory_policy_scenario,constraints_ok=True; gap=6.426207009850318e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R|mig_low,exploratory_policy_scenario,constraints_ok=True; gap=3.8326886259811706e-05; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R|mig_low,exploratory_policy_scenario,constraints_ok=True; gap=5.913703041787339e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|mig_low,exploratory_policy_scenario,constraints_ok=True; gap=0.0001063498984726; shortfall: optimal within gap; distribution: optimal within gap
 plan P-R|mig_high,exploratory_policy_scenario,constraints_ok=True; gap=2.5803162242986576e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan S-R|mig_high,exploratory_policy_scenario,constraints_ok=True; gap=4.776995377731809e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R|mig_high,exploratory_policy_scenario,constraints_ok=True; gap=5.5660896889681256e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan S-R|w5_90,exploratory_policy_scenario,constraints_ok=True; gap=7.93333979385281e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan N-R|w5_90,exploratory_policy_scenario,constraints_ok=True; gap=2.7863260727324415e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan S-R|w15_90,exploratory_policy_scenario,constraints_ok=True; gap=5.940333744875127e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained
-plan N-R|w15_90,exploratory_policy_scenario,constraints_ok=True; gap=3.05458013763647e-05; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R|mig_high,exploratory_policy_scenario,constraints_ok=True; gap=6.81598832266135e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|mig_high,exploratory_policy_scenario,constraints_ok=True; gap=0.0001297030520001; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R|w5_100,exploratory_policy_scenario,constraints_ok=True; gap=0.0003661345543978; shortfall: time limit: best incumbent; distribution: optimal within gap
+plan N-R|w5_100,exploratory_policy_scenario,constraints_ok=True; gap=3.676213034500091e-05; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R|w15_100,exploratory_policy_scenario,constraints_ok=True; gap=4.9274434537970943e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|w15_100,exploratory_policy_scenario,constraints_ok=True; gap=0.0001201610955423; shortfall: optimal within gap; distribution: optimal within gap
 plan S-R|w10_60,exploratory_policy_scenario,constraints_ok=True; gap=5.333694404809422e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
 plan N-R|w10_60,exploratory_policy_scenario,constraints_ok=True; gap=2.126202982185708e-05; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R|w10_90,exploratory_policy_scenario,constraints_ok=True; gap=6.1001404918797725e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|w10_90,exploratory_policy_scenario,constraints_ok=True; gap=4.760928563609656e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan S-R|w10_120,exploratory_policy_scenario,constraints_ok=True; gap=6.688136444183546e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan N-R|w10_120,exploratory_policy_scenario,constraints_ok=True; gap=3.457472196347621e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan S-R|ipdays,exploratory_policy_scenario,constraints_ok=True; gap=4.4427167301516865e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R|ipdays,exploratory_policy_scenario,constraints_ok=True; gap=3.0952415303926073e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan N-R|morb_trend,exploratory_policy_scenario,constraints_ok=True; gap=2.8622878713635138e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan N-R|age_held,exploratory_policy_scenario,constraints_ok=True; gap=2.4965057319698832e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan N-R|positive,exploratory_policy_scenario,constraints_ok=True; gap=0.0001800956021534; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R|ipdays,exploratory_policy_scenario,constraints_ok=True; gap=4.640833920875567e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|ipdays,exploratory_policy_scenario,constraints_ok=True; gap=0.0001973776344842; shortfall: optimal within gap; distribution: optimal within gap
+plan N-R|morb_trend,exploratory_policy_scenario,constraints_ok=True; gap=0.0001643773159974; shortfall: optimal within gap; distribution: optimal within gap
+plan N-R|age_held,exploratory_policy_scenario,constraints_ok=True; gap=3.276578591957736e-05; shortfall: optimal within gap; distribution: optimal within gap
+plan N-R|positive,exploratory_policy_scenario,constraints_ok=True; gap=2.2848252990923572e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan B-R|yld,exploratory_policy_scenario,constraints_ok=True; gap=2.3916356776371843e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan B-R|asr,exploratory_policy_scenario,constraints_ok=True; gap=2.8832795186951067e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan B-R|net,exploratory_policy_scenario,constraints_ok=True; gap=8.107170082253448e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained
@@ -57,8 +59,8 @@ plan P-R|maximin,exploratory_policy_scenario,constraints_ok=True; gap=2.75081193
 plan Pent-R|ent_high,exploratory_policy_scenario,constraints_ok=True; gap=1.9808689244227245e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan P-R|replacement,exploratory_policy_scenario,constraints_ok=True; gap=3.704337662029222e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
 plan P-R|nofloor,exploratory_policy_scenario,constraints_ok=True; gap=1.6844944634130215e-05; shortfall: optimal within gap; distribution: optimal within gap
-plan S-R|nofloor,exploratory_policy_scenario,constraints_ok=True; gap=7.785717270458534e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
-plan N-R|nofloor,exploratory_policy_scenario,constraints_ok=True; gap=0.000193293870544; shortfall: optimal within gap; distribution: optimal within gap
+plan S-R|nofloor,exploratory_policy_scenario,constraints_ok=True; gap=4.305696185854501e-05; shortfall: optimal within gap; distribution: time limit: best incumbent
+plan N-R|nofloor,exploratory_policy_scenario,constraints_ok=True; gap=3.9421468299041514e-05; shortfall: optimal within gap; distribution: optimal within gap
 plan P-R|ref0.5|nofloor,exploratory_policy_scenario,constraints_ok=True; gap=0.0001608107183382; shortfall: optimal within gap; distribution: time limit: best incumbent
 plan P-R|greedy,exploratory_policy_scenario,constraints_ok=True; gap=nan; nan
 plan S-R|greedy,exploratory_policy_scenario,constraints_ok=True; gap=nan; nan
@@ -66,24 +68,24 @@ plan N-R|greedy,exploratory_policy_scenario,constraints_ok=True; gap=nan; nan
 plan P-R|tangent_fine,exploratory_policy_scenario,constraints_ok=True; gap=0.0001241156215634; shortfall: optimal within gap; distribution: optimal within gap
 plan INV|gross_arrivals,solved,constraints_ok=nan; gap=nan; nan
 plan INV|net_growth,solved,constraints_ok=nan; gap=nan; nan
-plan P-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.003962305388739; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
-plan S-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.0071299726895179; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
-plan N-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.0001160464615389; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: optimal within gap
-plan S-RT|B,exploratory_policy_scenario,constraints_ok=True; gap=0.0066647270588685; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
-plan N-RT|B,exploratory_policy_scenario,constraints_ok=True; gap=7.626982970792956e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: optimal within gap
-plan Pent-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.0001940820065925; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: zero-transfer incumbent meets the earlier tolerances: exact optimum (no transfers)
+plan P-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.0039622305675483; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
+plan S-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.0138429306600025; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
+plan N-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.0001696717196734; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; distribution: recruitment-only incumbent distributes better within the shortfall tolerance and is adopted
+plan S-RT|B,exploratory_policy_scenario,constraints_ok=True; gap=0.0068305882840376; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
+plan N-RT|B,exploratory_policy_scenario,constraints_ok=True; gap=9.061044470386304e-05; shortfall: optimal within gap; distribution: time limit: best incumbent; operational: no improved incumbent within the time limit: previous solution retained
+plan Pent-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.0001940820065925; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; distribution: recruitment-only incumbent distributes better within the shortfall tolerance and is adopted
 plan B-RT,exploratory_policy_scenario,constraints_ok=True; gap=0.0070807827678293; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
 plan P-RT|net,exploratory_policy_scenario,constraints_ok=True; gap=8.320088273183014e-05; shortfall: optimal within gap; distribution: time limit: best incumbent; operational: no improved incumbent within the time limit: previous solution retained
-plan S-RT|net,exploratory_policy_scenario,constraints_ok=True; gap=6.256960528547722e-05; shortfall: optimal within gap; distribution: time limit: best incumbent; operational: no improved incumbent within the time limit: previous solution retained
-plan N-RT|net,exploratory_policy_scenario,constraints_ok=True; gap=8.432790218261687e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: no improved incumbent within the time limit: previous solution retained
+plan S-RT|net,exploratory_policy_scenario,constraints_ok=True; gap=0.0031409765736636; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: time limit: best incumbent; operational: optimal within gap
+plan N-RT|net,exploratory_policy_scenario,constraints_ok=True; gap=9.537006058539608e-05; shortfall: optimal within gap; distribution: time limit: best incumbent; operational: no improved incumbent within the time limit: previous solution retained
 plan P-RT|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=0.0001035408381067; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: optimal within gap
 plan P-RT|net|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=5.592222860615926e-05; shortfall: optimal within gap; distribution: time limit: best incumbent; operational: no improved incumbent within the time limit: previous solution retained
-plan S-RT|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=0.0028438727581618; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
-plan S-RT|net|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=6.156623682041456e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: time limit: best incumbent
-plan N-RT|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=8.547718287579038e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: optimal within gap
-plan N-RT|net|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=0.0010334966831606; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: time limit: best incumbent; operational: no improved incumbent within the time limit: previous solution retained
-plan P-RT|net|surplus,exploratory_policy_scenario,constraints_ok=True; gap=0.0046368596217008; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: time limit: best incumbent; operational: zero-transfer incumbent meets the earlier tolerances: exact optimum (no transfers)
-plan P-RT|net|region,exploratory_policy_scenario,constraints_ok=True; gap=0.0004814524198925; shortfall: time limit: best incumbent; distribution: time limit: best incumbent; operational: no improved incumbent within the time limit: previous solution retained
+plan S-RT|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=0.0183782840332317; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: no improved incumbent within the time limit: shortfall-stage solution retained
+plan S-RT|net|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=6.528670031450707e-05; shortfall: optimal within gap; distribution: time limit: best incumbent; distribution: recruitment-only incumbent distributes better within the shortfall tolerance and is adopted
+plan N-RT|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=5.7972986872943614e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: optimal within gap
+plan N-RT|net|tau0.05,exploratory_policy_scenario,constraints_ok=True; gap=6.373268065314996e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: zero-transfer incumbent meets the earlier tolerances: exact optimum (no transfers)
+plan P-RT|net|surplus,exploratory_policy_scenario,constraints_ok=True; gap=0.0046368596217008; shortfall: time limit: best incumbent; recruitment-only incumbent is better and is adopted (feasible here); distribution: time limit: best incumbent; distribution: recruitment-only incumbent distributes better within the shortfall tolerance and is adopted
+plan P-RT|net|region,exploratory_policy_scenario,constraints_ok=True; gap=6.740570401080351e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: time limit: best incumbent
 plan B-RT|net,exploratory_policy_scenario,constraints_ok=True; gap=0.0001818687843449; shortfall: optimal within gap; distribution: time limit: best incumbent; operational: time limit: best incumbent
 plan P-RT|replacement,exploratory_policy_scenario,constraints_ok=True; gap=5.1779822509484865e-05; shortfall: optimal within gap; distribution: no improved incumbent within the time limit: shortfall-stage solution retained; operational: no improved incumbent within the time limit: previous solution retained
 T5_POP_BACKTEST,see table,outputs/chapter5/validation/T5_POP_BACKTEST.csv

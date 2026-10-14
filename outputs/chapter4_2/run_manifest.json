@@ -1,9 +1,9 @@
 {
  "section": "4_2",
- "run_utc": "2026-10-14T13:17:29Z",
- "git_revision": "396fcad",
+ "run_utc": "2026-10-14T18:14:35Z",
+ "git_revision": "c78cc8a",
  "working_tree_has_uncommitted_pipeline_changes": true,
- "code_hash": "a45b9fdda50dc329",
+ "code_hash": "64883781809e35e4",
  "python": "3.14.6",
  "packages": {
   "pandas": "3.0.3",
@@ -56,7 +56,7 @@
   "seconds": 113.5
  },
  "seed": 20260925,
- "seconds": 43.1,
+ "seconds": 65.2,
  "n_tables": 54,
  "n_figures": 10,
  "n_claims": 1276,

@@ -6,7 +6,7 @@
 # review) and change its provenance class when you do.  The ledger reports every remaining
 # placeholder as a warning.
 #
-# Spec and worked example: docs/activity_fte_ledger.md   Engine: src/services/ledger.py
+# Spec and worked example: docs/service_modules.md (activity → time → FTE ledger)   Engine: src/services/ledger.py
 
 [package]
 id = "older_home_care"

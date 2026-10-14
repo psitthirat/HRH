@@ -3,7 +3,7 @@
 The research tree (this repository) owns the scientific code and configuration; the authoring
 workspace (workspaces/HRH-authoring) owns presentation, Lab interface and release assembly and
 receives a byte-identical copy of the files below.  Decision recorded in
-docs/phase0_reconciliation_map.md.
+docs/decisions.md (section 10) and PROJECT_LOG.md.
 
     .venv/bin/python scripts/sync_scientific_source.py --check   # list differences, exit 1 if any
     .venv/bin/python scripts/sync_scientific_source.py --apply   # copy + write the manifest

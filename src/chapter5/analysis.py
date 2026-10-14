@@ -32,9 +32,9 @@ from . import simulation as SIM
 from .reporting import Registry
 
 PRINCIPAL = ["P-R", "P-RT", "S-R", "S-RT", "N-R", "N-RT"]
-FAM_LABEL = {"P": "ประชากร", "S": "บริการที่เกิดขึ้น", "N": "ความจำเป็นอ้างอิง M5", "N-STD": "ความจำเป็นอ้างอิง M5",
+FAM_LABEL = {"P": "ประชากร", "S": "บริการที่เกิดขึ้น", "N": "บริการคาดหมายมาตรฐาน M5", "N-STD": "บริการคาดหมายมาตรฐาน M5",
              "P_ent": "ประชากรทะเบียนสิทธิ", "N-FB": "M5 ป้อนกลับ", "status_quo": "สัดส่วนรับเข้าในอดีต",
-             "B": "ประชากรถ่วงภาระโรค", "B-yld": "ประชากรถ่วงภาระการเจ็บป่วย (YLD)"}
+             "B": "DALY คาดหมาย", "B-yld": "YLD คาดหมาย"}
 CRIT = ["P", "Pent", "S", "N", "B"]
 CRIT_COL = {"P": "D_P", "Pent": "D_Pent", "S": "D_S", "N": "D_N", "B": "D_B"}
 
@@ -173,6 +173,9 @@ def stage_uncertainty(S, n=None, n_adapt=None, workers=None) -> dict:
     DF = pd.DataFrame(diffs)
     Rg.table("T5_PAIRED_DIFFERENCES", DF, "ความต่างแบบจับคู่ระหว่างแผน และเสถียรภาพของ Monte Carlo", folder="validation")
     Rg.claim("c53_n_paths", n, "int", "เส้นทาง")
+    for c_ in sorted(SU_.criterion.unique()):          # valid paths of the fixed schedules (all paths)
+        z_ = SU_[(SU_.criterion == c_) & (SU_["mode"] == "fixed_schedule")]
+        Rg.claim(f"c53_n_valid_{c_}", int(z_.n_valid.min()) if len(z_) else np.nan, "int", "เส้นทาง")
     Rg.claim("c53_n_adapt", n_adapt, "int", "เส้นทาง")
     Rg.claim("c53_sigma_prov", 100 * sig_p, "{:.2f}", "% ต่อปี")
     Rg.claim("c53_m5_invalid_share", 100 * float(targets["N"][1].mean()), "{:.1f}", "%")
@@ -242,6 +245,7 @@ def plan_index(res: dict) -> pd.DataFrame:
                          max_mip_gap=max([s_.get("mip_gap", 0) or 0 for s_ in st if s_["stage"] == "shortfall"], default=np.nan),
                          secondary_stage_gap=max([s_.get("mip_gap", 0) or 0 for s_ in st if s_["stage"] != "shortfall"], default=np.nan),
                          incumbent_adopted=bool((r.get("diagnostics") or {}).get("incumbent_adopted", False)),
+                         incumbent_adopted_distribution=bool((r.get("diagnostics") or {}).get("incumbent_adopted_distribution", False)),
                          stage_outcomes="; ".join(f"{s_['stage']}: {s_.get('outcome', s_.get('status'))}" for s_ in st),
                          seconds=r.get("seconds"), notes=sp["notes"],
                          cap_binding_share=(r.get("binding") or {}).get("cap"),
@@ -354,7 +358,8 @@ def stage_compare(S) -> dict:
                               gini_2040=l.gini_resp_A, workload_2040=l.national_workload_min_per_physician,
                               workload_p90_p10_2040=l.workload_p90_p10, national_attainment_2040=l.attainment_resp_B))
     XE = pd.DataFrame(X)
-    base_set = XE[XE.plan_id.isin(PRINCIPAL)]
+    # best plan per criterion: every comparable Experiment-A gross-arrival plan, including the B family
+    base_set = XE[XE.plan_id.isin(PRINCIPAL + ["B-R", "B-RT"])]
     best = base_set.groupby("criterion").cumulative_j.min()
     XE["regret_j_pct"] = 100 * (XE.cumulative_j / XE.criterion.map(best) - 1)
     bestbq = base_set.groupby("criterion").bottom_quartile_2040.max()
@@ -367,8 +372,8 @@ def stage_compare(S) -> dict:
     T56 = view.pivot(index="plan_id", columns="criterion", values="cell").reindex(
         [p for p in PRINCIPAL + ["SQ-C", "NFB1-R", "B-R"] if p in view.plan_id.values]).reset_index()
     # Pivot sorts criterion codes (N before P); label by code, never by column position.
-    col_th = {"plan_id": "แผน", "P": "ประชากรทะเบียนราษฎร", "N": "ความจำเป็นอ้างอิง M5", "Pent": "ประชากรทะเบียนสิทธิ",
-              "S": "บริการที่เกิดขึ้น", "B": "ประชากรถ่วงภาระโรค", "resp1": "บริการตอบสนองทรัพยากร λ=1"}
+    col_th = {"plan_id": "แผน", "P": "ประชากรทะเบียนราษฎร", "N": "บริการคาดหมายมาตรฐาน M5", "Pent": "ประชากรทะเบียนสิทธิ",
+              "S": "บริการที่เกิดขึ้น", "B": "DALY คาดหมาย", "resp1": "บริการตอบสนองทรัพยากร λ=1"}
     order = [c for c in ["plan_id", "N", "P", "Pent", "S", "B", "resp1"] if c in T56.columns]
     T56 = T56[order].rename(columns=col_th)
     Rg.table("T56_CROSS_EVALUATION", T56, "การประเมินไขว้ของแผนหลัก: ความเพียงพอของจังหวัดกลุ่มล่างสุด 19 จังหวัด ปี 2583 / ส่วนเกินของ J สะสมเทียบแผนที่ดีที่สุดภายใต้เกณฑ์นั้น (เป้าหมายรวมร่วม 1:1,000)", main=True)
@@ -382,7 +387,11 @@ def stage_compare(S) -> dict:
              ("S-R", "S-R|nofloor"), ("N-R", "N-R|nofloor"), ("N-R", "N-R|morb_trend"), ("N-R", "N-R|age_held"),
              ("N-R", "N-R|positive"), ("P-R", "P-R|maximin"), ("P-R", "P-R|depnat"), ("P-R", "B-R"), ("S-R", "B-R"),
              ("N-R", "B-R"), ("B-R", "B-RT"), ("B-R", "B-R|yld"), ("B-R", "B-R|asr"), ("B-R|net", "B-RT|net"), ("P-R|net", "B-R|net"),
-             ("B-R|B", "B-R")]
+             ("B-R|B", "B-R"), ("P-RT", "P-RT|tau0.05"), ("S-RT", "S-RT|tau0.05"), ("N-RT", "N-RT|tau0.05")]
+    # near-optimal alternatives of the same problem: the solver-indeterminacy benchmark (plan M-6, final check)
+    noise_candidates = [("P-R", "P-R|greedy"), ("P-R", "P-R|rolling"), ("P-R", "P-R|tangent_fine"), ("P-R", "P-RT"),
+                        ("S-R", "S-RT"), ("N-R", "N-RT"), ("P-RT", "P-RT|tau0.05"), ("S-RT", "S-RT|tau0.05"),
+                        ("N-RT", "N-RT|tau0.05")]
     for m_, n_ in pairs:
         if m_ not in res or n_ not in res or res[m_].get("x") is None or res[n_].get("x") is None:
             continue
@@ -424,6 +433,17 @@ def stage_compare(S) -> dict:
                               max_annual_abs_diff=int(np.abs(xn[:, i] - xm[:, i]).max()),
                               stock2040_a=Hm[i], stock2040_b=Hn[i]))
     SWT = pd.DataFrame(SW); PDT = pd.DataFrame(PD); PRD = pd.DataFrame(PROVD)
+    tol = 100 * float(S.cfg["allocation"]["lexicographic_rel_tol"])
+    dJ = lambda a_, b_: 100 * abs(res[b_]["objective_exact"] / res[a_]["objective_exact"] - 1) \
+        if res.get(a_, {}).get("objective_exact") and res.get(b_, {}).get("objective_exact") else np.nan
+    PDT["objective_diff_pct"] = [dJ(a_, b_) for a_, b_ in zip(PDT.plan_a, PDT.plan_b)]
+    PDT["near_optimal_alternative"] = [(a_, b_) in noise_candidates and d_ == d_ and d_ <= tol and sw_ > 0
+                                       for a_, b_, d_, sw_ in zip(PDT.plan_a, PDT.plan_b, PDT.objective_diff_pct, PDT.mean_annual_switched)]
+    noise = PDT[PDT.near_optimal_alternative]
+    noise_pct = float(noise.mean_annual_switched_pct.max()) if len(noise) else np.nan
+    noise_cum = float(noise.max_cum_receipts_diff.max()) if len(noise) else np.nan
+    PDT["exceeds_indeterminacy_annual"] = PDT.mean_annual_switched_pct > noise_pct
+    PDT["exceeds_indeterminacy_cumulative"] = PDT.max_cum_receipts_diff > noise_cum
     Rg.table("T5_SWITCHES", SWT, "จำนวนการรับใหม่ที่ต้องเปลี่ยนจังหวัดปลายทางเมื่อเปลี่ยนหลักคิด รายปี")
     Rg.table("T5_PRACTICAL_DIFFERENCES", PDT, "เกณฑ์ความต่างเชิงปฏิบัติ (กำหนดก่อนอ่านผล) และผลตัดสินรายคู่แผน", main=True)
     Rg.table("T5_PROVINCE_DIFFERENCES", PRD, "ความต่างรายจังหวัดของจำนวนรับใหม่สะสม ปีแรก และจำนวนคงอยู่ 2583 ระหว่างคู่แผน")
@@ -614,7 +634,7 @@ def stage_compare(S) -> dict:
         ("ขั้นต่ำรายจังหวัด", f"{a['universal_new_appointment_floor']} คนต่อปีทุกจังหวัด", "ผู้เขียน", "ทางเลือกนโยบาย"),
         ("เพดาน", f"ผู้มาใหม่รวม ≤ ร้อยละ {100 * a['cap_fraction_of_opening_stock']:.0f} ของจำนวนตั้งต้น (ทางเลือก: เติบโตสุทธิ)", "ตัวอย่างของผู้เขียน; การตีความเป็นทางเลือก", "ตัวอย่าง"),
         ("การโยกย้าย (แผน RT)", f"≤ ร้อยละ {100 * a['main_transfer_fraction']:.0f} ต่อจังหวัด; งบประเทศร้อยละ {100 * a['national_transfer_budget_fraction']:.0f}; ต้นทางเหลือ ≥ ร้อยละ {100 * a['protected_survivor_fraction']:.0f}", "ตัวอย่าง", "ตัวอย่าง"),
-        ("น้ำหนักบริการ", f"{S.cfg['services']['op_minutes']:g} นาที/ครั้ง OP, {S.cfg['services']['adjrw_minutes']:g} นาที/AdjRW", "ตัวอย่างในบทที่ 4", "ตัวอย่าง (ไม่ใช่ WISN)"),
+        ("น้ำหนักบริการ", f"{S.cfg['services']['op_minutes']:g} นาที/ครั้ง OP, {S.cfg['services']['adjrw_minutes']:g} นาที/AdjRW", "ค่าหลักของบทที่ 4 (4.2.2)", "ตัวอย่าง (ไม่ใช่ WISN)"),
         ("M5", "สัมประสิทธิ์บทที่ 4; อ้างอิงปี 2566; ความชุกคงที่ปี 2568", "บทที่ 4 (T423)", "ประมาณ + ข้อตกลง"),
     ], columns=["รายการ", "ค่า", "แหล่ง", "สถานะ"])
     Rg.table("T52_BASELINE_AND_ASSUMPTIONS", T52, "ค่าเริ่มต้น พ.ศ. 2568 แหล่งข้อมูล ขอบเขต และข้อสมมติที่ผู้กำหนดนโยบายปรับได้", main=True)
@@ -638,6 +658,19 @@ def stage_compare(S) -> dict:
                 Rg.claim(f"c5a_hc_jac_{tag}_h{hh}", pm.loc[(m_, hh), "jaccard_lowest19"], "{:.2f}", "")
         if m_.startswith("stock_flow"):
             Rg.claim(f"c5a_hc_cov_{tag}_h3", pm.loc[(m_, 3), "interval_coverage"], "{:.0%}", "")
+    # horizon-3 MAE by origin: shows where the pooled verdict comes from (final check M-7)
+    po = HCR["metrics"][(HCR["metrics"].origin != "pooled") & (HCR["metrics"].stratum == "all") & (HCR["metrics"].horizon == 3)]
+    wins = 0
+    for o_ in sorted(po.origin.unique()):
+        z = po[po.origin == o_].set_index("model").mae
+        Rg.claim(f"c5a_hc_mae_sfu_o{o_}_h3", z["stock_flow_unconditional"], "{:.1f}", "คน")
+        Rg.claim(f"c5a_hc_mae_pers_o{o_}_h3", z["persistence"], "{:.1f}", "คน")
+        wins += int(z["stock_flow_unconditional"] < min(z["persistence"], z["population_only"]))
+    Rg.claim("c5a_hc_n_origins_h3", po.origin.nunique(), "{:.0f}", "จุดตั้งต้น")
+    Rg.claim("c5a_hc_n_wins_h3", wins, "{:.0f}", "จุดตั้งต้น")
+    lost = [o_ for o_ in sorted(po.origin.unique()) if po[(po.origin == o_) & (po.model == "stock_flow_unconditional")].mae.iloc[0]
+            >= po[(po.origin == o_) & (po.model == "persistence")].mae.iloc[0]]
+    Rg.text("c5a_hc_lost_origins_be", ", ".join(str(int(o_) + 543) for o_ in lost) or "ไม่มี")
     for r_ in acc.itertuples():
         key = r_.criterion.split()[0].lower()
         Rg.text(f"c5a_hc_{key}_verdict", "ผ่าน" if r_.passed else "ไม่ผ่าน")
@@ -763,8 +796,17 @@ def _claims_compare(Rg, S, ctx, res, TR, XE, PDT, PRD, BC, INV, SENS, FBL, FBC, 
         Rg.text(f"c54_maxcumprov_{tag}", r.province_max_cum_diff)
         Rg.claim(f"c54_bqloss_{tag}", r.worst_bottom_quartile_loss_pct, "{:.1f}", "%")
         Rg.text(f"c54_similar_{tag}", "ใกล้เคียงกันเชิงปฏิบัติ" if r.practically_similar else "ต่างกันเชิงปฏิบัติ")
+        Rg.text(f"c54_beyond_noise_{tag}", "เกินระดับความไม่เป็นเอกลักษณ์ของคำตอบ" if r.exceeds_indeterminacy_cumulative
+                else "ไม่เกินระดับความไม่เป็นเอกลักษณ์ของคำตอบ")
         if r.max_cumulative_shortfall_diff_pct == r.max_cumulative_shortfall_diff_pct:
             Rg.claim(f"c54_shortdiff_{tag}", r.max_cumulative_shortfall_diff_pct, "{:.1f}", "%")
+    nz = PDT[PDT.near_optimal_alternative]
+    Rg.claim("c54_noise_n_pairs", len(nz), "{:.0f}", "คู่")
+    if len(nz):
+        Rg.claim("c54_noise_pct_min", nz.mean_annual_switched_pct.min(), "{:.1f}", "%")
+        Rg.claim("c54_noise_pct_max", nz.mean_annual_switched_pct.max(), "{:.1f}", "%")
+        Rg.claim("c54_noise_cum_max", nz.max_cum_receipts_diff.max(), "int", "คน")
+        Rg.claim("c54_noise_dj_max", nz.objective_diff_pct.max(), "{:.3f}", "%")
     # the provinces with the largest cumulative differences between families
     for a_, b_ in [("P-R", "S-R"), ("P-R", "N-R"), ("S-R", "N-R"), ("P-R", "B-R"), ("N-R", "B-R"), ("S-R", "B-R")]:
         z = PRD[(PRD.plan_a == a_) & (PRD.plan_b == b_)].sort_values("diff")
@@ -808,7 +850,8 @@ def _claims_compare(Rg, S, ctx, res, TR, XE, PDT, PRD, BC, INV, SENS, FBL, FBC, 
                 Rg.claim(f"c55_eta_last_{t}", z.eta_mean.iloc[-1], "{:.2f}", "")
                 Rg.claim(f"c55_gainB_first_{t}", z.gain_B_mean.iloc[0], "{:.2f}", "")
                 Rg.claim(f"c55_gainB_last_{t}", z.gain_B_mean.iloc[-1], "{:.2f}", "")
-                Rg.claim(f"c55_gainBmax_{t}", z.gain_B_max.max(), "{:.2f}", "")
+                Rg.claim(f"c55_gainBmax_{t}", z.gain_B_max.max(), "{:.2f}", "")              # over all 15 years
+                Rg.claim(f"c55_gainBmax_first_{t}", z.gain_B_max.iloc[0], "{:.2f}", "")       # first decision year
                 Rg.claim(f"c55_ngain1_first_{t}", z.provinces_gain_B_ge_1.iloc[0], "{:.0f}", "จังหวัด")
                 Rg.claim(f"c55_ngain1_last_{t}", z.provinces_gain_B_ge_1.iloc[-1], "{:.0f}", "จังหวัด")
     for pid in FBC.plan_id.unique():
@@ -835,6 +878,9 @@ def _claims_compare(Rg, S, ctx, res, TR, XE, PDT, PRD, BC, INV, SENS, FBL, FBC, 
     Rg.claim("c54_n_checked", float(opt.all_constraints_ok.notna().sum()), "{:.0f}", "แผน")
     Rg.claim("c54_n_checks_failed", float((opt.all_constraints_ok == False).sum()), "{:.0f}", "แผน")  # noqa: E712
     Rg.claim("c54_n_incumbent_adopted", float(PI.incumbent_adopted.sum()), "{:.0f}", "แผน")
+    adopted = PI[PI.incumbent_adopted.astype(bool)]
+    Rg.claim("c54_n_incumbent_zero_transfers", float((adopted.transfer_events == 0).sum()), "{:.0f}", "แผน")
+    Rg.claim("c54_n_incumbent_with_transfers", float((adopted.transfer_events > 0).sum()), "{:.0f}", "แผน")
     Rg.claim("c54_max_gap_non_incumbent", 100 * PI[~PI.incumbent_adopted.astype(bool)].max_mip_gap.max(), "{:.3f}", "%")
     for g in ["P-R|greedy", "S-R|greedy", "N-R|greedy"]:
         if g in res and res[g].get("objective_exact"):
@@ -874,6 +920,13 @@ def _claims_compare(Rg, S, ctx, res, TR, XE, PDT, PRD, BC, INV, SENS, FBL, FBC, 
     Rg.claim("c54_worst_province_cap", 100 * S.cfg["allocation"]["cap_fraction_of_opening_stock"], "{:.0f}", "%")
     Rg.claim("c54_worst_province_attain_net", res["P-R|net"]["H"][-1][iw] / TP[-1][iw] if "P-R|net" in res else np.nan, "{:.3f}", "")
     Rg.claim("c54_worst_province_attain_2025", ctx.H0[iw] / TP[0][iw], "{:.3f}", "")
+    Rg.claim("c54_worst_province_cap_n", S.cfg["allocation"]["cap_fraction_of_opening_stock"] * ctx.H0[iw], "{:.0f}", "คนต่อปี")
+    from . import inputs as I_
+    ev = I_.flow_events_province()
+    rec = ev[(ev.direction == "entry") & (ev.category == "recruitment_hiring") & (ev.prov_code == int(ctx.provs[iw]))
+             & ev.fiscal_year.between(2021, 2025)].groupby("fiscal_year").events.sum()
+    Rg.claim("c54_worst_province_rec_hist", rec.mean() if len(rec) else np.nan, "{:.0f}", "คนต่อปี")
+    Rg.claim("c54_worst_province_rec_hist_pct", 100 * rec.mean() / ctx.H0[iw] if len(rec) else np.nan, "{:.0f}", "%")
     for pid in ["P-R", "S-R", "N-R", "B-R"]:
         x0 = res[pid]["x"][0]
         tag = pid.replace("-", "")
@@ -888,5 +941,6 @@ def _claims_compare(Rg, S, ctx, res, TR, XE, PDT, PRD, BC, INV, SENS, FBL, FBC, 
     sq = res.get("SQ-C", {})
     if sq.get("diagnostics"):
         Rg.claim("c54_sq_l1", sq["diagnostics"].get("l1_distance_to_historical_rule", np.nan), "int", "คน")
+        Rg.claim("c54_sq_moved", sq["diagnostics"].get("l1_distance_to_historical_rule", np.nan) / 2, "int", "ตำแหน่ง")
     h = res.get("SQ-HIST", {}).get("check") or {}
     Rg.text("c54_sqhist_violations", ", ".join(k_ for k_, v in h.items() if v is False and k_ != "all_ok") or "ไม่มี")
