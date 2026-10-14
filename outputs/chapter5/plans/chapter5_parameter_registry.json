@@ -276,7 +276,7 @@
   }
  },
  "config_hash": "e0082b9acf0428bc",
- "inputs_fingerprint": "6f06b949b9993b66",
+ "inputs_fingerprint": "e391b83693928af9",
  "chapter4_artifacts": [
   {
    "artifact": "data/processed/province_key.csv",
@@ -383,7 +383,7 @@
   {
    "artifact": "outputs/chapter4_2/run_manifest.json",
    "exists": true,
-   "sha256": "b374e8ceb37802304bcc47c50e8cb25145d3edd68dfe678cac11e591adc472b8",
+   "sha256": "e4d171d9eeade20e11eb7f94b4cd8b81f46869e7bb875b75527225f3b6b28786",
    "bytes": 2390.0
   },
   {
@@ -407,7 +407,7 @@
   {
    "artifact": "outputs/chapter4_4/run_manifest.json",
    "exists": true,
-   "sha256": "bbab7d95e65ad262ba5a1463572374e21b48af77aeee887d557c9c8c623ae056",
+   "sha256": "f07ddc2413793335b900dbdaaeb3d2e842d8ae36f7960738e4c4ccc47cf9cb79",
    "bytes": 2290.0
   },
   {

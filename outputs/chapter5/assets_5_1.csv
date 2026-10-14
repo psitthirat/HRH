@@ -18,4 +18,4 @@ T5_M5_SUPPORT_BY_YEAR,table,outputs/chapter5/validation/T5_M5_SUPPORT_BY_YEAR.cs
 T5_INDICES,table,outputs/chapter5/tables/T5_INDICES.csv,ดัชนีความรับผิดชอบรายจังหวัด-ปีของทุกตระกูล (หน่วยเทียบเท่าประชากร ด้วยสเกลคงที่ปี 2568),False,1216,,5_1,generated
 T5_DENOMINATOR_REGISTRY,table,outputs/chapter5/tables/T5_DENOMINATOR_REGISTRY.csv,ทะเบียนตัวหาร: ที่มา หน่วย การปรับสเกล และการตีความ,True,7,,5_1,generated
 T5_POOL_PATHS,table,outputs/chapter5/tables/T5_POOL_PATHS.csv,เส้นทางแพทย์ที่พร้อมจัดสรร ตามสามรูปแบบการป้อนข้อมูล (ค่าพารามิเตอร์เป็นตัวอย่าง),False,45,,5_1,generated
-T5_FEEDBACK_ELASTICITY_2026,table,outputs/chapter5/tables/T5_FEEDBACK_ELASTICITY_2026.csv,ความยืดหยุ่นเฉพาะที่ของตัวหาร N-FB ต่อจำนวนแพทย์ และกำไรป้อนกลับต่อเป้าหมาย (การตัดสินใจปี 2569),False,228,,5_1,generated
+T5_FEEDBACK_ELASTICITY_2026,table,outputs/chapter5/tables/T5_FEEDBACK_ELASTICITY_2026.csv,ความยืดหยุ่นเฉพาะที่ของตัวหาร N-FB ต่อจำนวนแพทย์ และกำไรป้อนกลับต่อเป้าหมาย (การตัดสินใจปี 2569; การทดลอง B ค่าเฉลี่ยไม่ถ่วงน้ำหนัก จึงต่างจากตัวเลขในรายงานที่ใช้การทดลอง A ถ่วงด้วยจำนวนแพทย์ตาม T5_FEEDBACK_LOG),False,228,,5_1,generated

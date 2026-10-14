@@ -1,7 +1,7 @@
 {
  "section": "4_3",
- "run_utc": "2026-10-14T18:14:52Z",
- "git_revision": "c78cc8a",
+ "run_utc": "2026-10-14T19:47:15Z",
+ "git_revision": "7bf9b8d",
  "working_tree_has_uncommitted_pipeline_changes": true,
  "code_hash": "64883781809e35e4",
  "python": "3.14.6",
@@ -56,8 +56,8 @@
   "seconds": 113.5
  },
  "seed": 20260925,
- "seconds": 11.7,
+ "seconds": 7.7,
  "n_tables": 15,
  "n_figures": 5,
- "n_claims": 1015
+ "n_claims": 1023
 }

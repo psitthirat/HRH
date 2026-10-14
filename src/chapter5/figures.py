@@ -21,7 +21,7 @@ from . import pipeline as PL
 from .reporting import Registry, setup_style
 
 COL = {"P": "#2a78d6", "S": "#eb6834", "N": "#1baf7a", "SQ": "#7a7a7a", "NFB": "#4a3aa7", "Pent": "#2a78d6", "B": "#b8337a"}
-TH = {"P": "ประชากร (P)", "S": "บริการที่เกิดขึ้น (S)", "N": "ความจำเป็นอ้างอิง M5 (N-STD)"}
+TH = {"P": "ประชากร (P)", "S": "บริการที่เกิดขึ้น (S)", "N": "บริการคาดหมายมาตรฐาน M5 (N-STD)"}
 GRID = dict(axis="y", color="#e3e3e3", linewidth=0.6, zorder=0)
 INK2 = "#52514e"
 
@@ -245,7 +245,11 @@ def make_all(S):
         ax[0].plot(z.year_ce, z.switched_pct, color=c, lw=2)
         _end_label(ax[0], z.year_ce.iloc[-1], z.switched_pct.iloc[-1], f"{a_} ↔ {b_}", c)
     ax[0].axhline(S.cfg["evaluation"]["switch_threshold_pct"], color="#b03a2e", lw=1, ls="--")
-    ax[0].set_title("ก. ร้อยละของการรับใหม่ที่ต้องเปลี่ยนปลายทาง (เส้นแดง = เกณฑ์ 5%)")
+    pdt = tab("T5_PRACTICAL_DIFFERENCES")
+    noise = pdt[pdt.near_optimal_alternative.astype(bool)].mean_annual_switched_pct.max() if "near_optimal_alternative" in pdt else float("nan")
+    if noise == noise:
+        ax[0].axhline(noise, color="#52514e", lw=1, ls=":")
+    ax[0].set_title("ก. ร้อยละของการรับใหม่ที่ต้องเปลี่ยนปลายทาง\n(เส้นประแดง = เกณฑ์ 5%; เส้นจุดเทา = ระดับความไม่เป็นเอกลักษณ์ของคำตอบ)", fontsize=10)
     ax[0].grid(**GRID); _be_axis(ax[0], years, 3); ax[0].set_xlim(years[0] - .5, years[-1] + 3.5)
     prd = tab("T5_PROVINCE_DIFFERENCES")
     z = prd[(prd.plan_a == "P-R") & prd.plan_b.isin(["S-R", "N-R"])]
@@ -317,7 +321,7 @@ def make_all(S):
             z = fx[(fx.plan_id == f"{f}-R") & (fx.criterion == f)]
             data.append(z.bottom_quartile_2040.to_numpy()); labs.append("แผนตายตัว")
             if len(ad):
-                for mode, lb in [("adaptive_replanning", "ปรับแผนรายปี"), ("perfect_foresight_bound", "รู้อนาคต (ขอบเขต)")]:
+                for mode, lb in [("adaptive_replanning", "ปรับแผนรายปี"), ("perfect_foresight_bound", "รู้อนาคต (อ้างอิง)")]:
                     q = ad[(ad.plan_id == f"{f}-R") & (ad["mode"] == mode) & (ad.status == "solved")]
                     if len(q):
                         data.append(q.bottom_quartile_2040.to_numpy()); labs.append(lb)

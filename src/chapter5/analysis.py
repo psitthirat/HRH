@@ -359,7 +359,7 @@ def stage_compare(S) -> dict:
                               workload_p90_p10_2040=l.workload_p90_p10, national_attainment_2040=l.attainment_resp_B))
     XE = pd.DataFrame(X)
     # best plan per criterion: every comparable Experiment-A gross-arrival plan, including the B family
-    base_set = XE[XE.plan_id.isin(PRINCIPAL + ["B-R", "B-RT"])]
+    base_set = XE[XE.plan_id.isin(PRINCIPAL + ["B-R", "B-RT", "Pent-R", "Pent-RT"])]
     best = base_set.groupby("criterion").cumulative_j.min()
     XE["regret_j_pct"] = 100 * (XE.cumulative_j / XE.criterion.map(best) - 1)
     bestbq = base_set.groupby("criterion").bottom_quartile_2040.max()
@@ -433,7 +433,7 @@ def stage_compare(S) -> dict:
                               max_annual_abs_diff=int(np.abs(xn[:, i] - xm[:, i]).max()),
                               stock2040_a=Hm[i], stock2040_b=Hn[i]))
     SWT = pd.DataFrame(SW); PDT = pd.DataFrame(PD); PRD = pd.DataFrame(PROVD)
-    tol = 100 * float(S.cfg["allocation"]["lexicographic_rel_tol"])
+    tol = 0.1      # near-optimal: exact J within 0.1% (the threshold the report states for the re-solves)
     dJ = lambda a_, b_: 100 * abs(res[b_]["objective_exact"] / res[a_]["objective_exact"] - 1) \
         if res.get(a_, {}).get("objective_exact") and res.get(b_, {}).get("objective_exact") else np.nan
     PDT["objective_diff_pct"] = [dJ(a_, b_) for a_, b_ in zip(PDT.plan_a, PDT.plan_b)]
@@ -629,10 +629,10 @@ def stage_compare(S) -> dict:
         ("สัดส่วนอายุ 60+", f"ร้อยละ {s60(by):.1f} → {s60(years[-1]):.1f}", "DOPA; Hamilton–Perry", "สังเกต → ฉาย"),
         ("ความน่าจะเป็นที่แพทย์ออกต่อปี", f"ร้อยละ {100 * (ctx.dep['d'] * ctx.H0).sum() / ctx.H0.sum():.2f} (รายจังหวัดรวมกำลังแบบ EB)", "HROPS ปีงบ 2564–2568", "ประมาณ"),
         ("อัตรากลับเข้าต่อปี", f"ร้อยละ {100 * (ctx.dep['r'] * ctx.H0).sum() / ctx.H0.sum():.2f}", "HROPS ปีงบ 2564–2568", "ประมาณ"),
-        ("แพทย์พร้อมจัดสรร", f"{ctx.pool[0]:,.0f} คนต่อปี (ผู้เริ่มงานที่ตอบรับแล้ว)", "ตัวอย่างของผู้เขียน", "ตัวอย่าง"),
-        ("ค่าอ้างอิงความเพียงพอ", f"{S.cfg['targets']['reference_per_1000']:g} แพทย์ต่อประชากร 1,000", "ตัวอย่างของผู้เขียน (ไม่ใช่ WHO 4.45)", "ตัวอย่าง"),
-        ("ขั้นต่ำรายจังหวัด", f"{a['universal_new_appointment_floor']} คนต่อปีทุกจังหวัด", "ผู้เขียน", "ทางเลือกนโยบาย"),
-        ("เพดาน", f"ผู้มาใหม่รวม ≤ ร้อยละ {100 * a['cap_fraction_of_opening_stock']:.0f} ของจำนวนตั้งต้น (ทางเลือก: เติบโตสุทธิ)", "ตัวอย่างของผู้เขียน; การตีความเป็นทางเลือก", "ตัวอย่าง"),
+        ("แพทย์พร้อมจัดสรร", f"{ctx.pool[0]:,.0f} คนต่อปี (ผู้เริ่มงานที่ตอบรับแล้ว)", "ค่าตัวอย่างที่กำหนดในการศึกษานี้", "ตัวอย่าง"),
+        ("ค่าอ้างอิงความเพียงพอ", f"{S.cfg['targets']['reference_per_1000']:g} แพทย์ต่อประชากร 1,000", "ค่าตัวอย่างที่กำหนดในการศึกษานี้ (ไม่ใช่ WHO 4.45)", "ตัวอย่าง"),
+        ("ขั้นต่ำรายจังหวัด", f"{a['universal_new_appointment_floor']} คนต่อปีทุกจังหวัด", "กำหนดในการศึกษานี้", "ทางเลือกนโยบาย"),
+        ("เพดาน", f"ผู้มาใหม่รวม ≤ ร้อยละ {100 * a['cap_fraction_of_opening_stock']:.0f} ของจำนวนตั้งต้น (ทางเลือก: เติบโตสุทธิ)", "ค่าตัวอย่างที่กำหนดในการศึกษานี้; การตีความเป็นทางเลือก", "ตัวอย่าง"),
         ("การโยกย้าย (แผน RT)", f"≤ ร้อยละ {100 * a['main_transfer_fraction']:.0f} ต่อจังหวัด; งบประเทศร้อยละ {100 * a['national_transfer_budget_fraction']:.0f}; ต้นทางเหลือ ≥ ร้อยละ {100 * a['protected_survivor_fraction']:.0f}", "ตัวอย่าง", "ตัวอย่าง"),
         ("น้ำหนักบริการ", f"{S.cfg['services']['op_minutes']:g} นาที/ครั้ง OP, {S.cfg['services']['adjrw_minutes']:g} นาที/AdjRW", "ค่าหลักของบทที่ 4 (4.2.2)", "ตัวอย่าง (ไม่ใช่ WISN)"),
         ("M5", "สัมประสิทธิ์บทที่ 4; อ้างอิงปี 2566; ความชุกคงที่ปี 2568", "บทที่ 4 (T423)", "ประมาณ + ข้อตกลง"),
@@ -841,6 +841,11 @@ def _claims_compare(Rg, S, ctx, res, TR, XE, PDT, PRD, BC, INV, SENS, FBL, FBC, 
             if r.mean_annual_switch_pct_vs_base == r.mean_annual_switch_pct_vs_base:
                 Rg.claim(f"c55_sens_sw_{tag}", r.mean_annual_switch_pct_vs_base, "{:.1f}", "%")
         Rg.text(f"c55_sens_status_{tag}", str(r.status))
+    small = SENS[SENS.plan_id.str.contains(r"\|(mig_low|mig_high|w\d|ipdays|morb_trend|age_held|positive)$", regex=True)] \
+        .mean_annual_switch_pct_vs_base.dropna()
+    if len(small):
+        Rg.claim("c55_sens_small_min", small.min(), "{:.1f}", "%")
+        Rg.claim("c55_sens_small_max", small.max(), "{:.1f}", "%")
     if len(FBL):
         for lam in sorted(FBL.lam.unique()):
             z = FBL[(FBL.lam == lam) & (FBL.plan_id == f"NFB{lam:g}-R")]
@@ -921,6 +926,11 @@ def _claims_compare(Rg, S, ctx, res, TR, XE, PDT, PRD, BC, INV, SENS, FBL, FBC, 
     Rg.claim("c54_worst_province_attain_net", res["P-R|net"]["H"][-1][iw] / TP[-1][iw] if "P-R|net" in res else np.nan, "{:.3f}", "")
     Rg.claim("c54_worst_province_attain_2025", ctx.H0[iw] / TP[0][iw], "{:.3f}", "")
     Rg.claim("c54_worst_province_cap_n", S.cfg["allocation"]["cap_fraction_of_opening_stock"] * ctx.H0[iw], "{:.0f}", "คนต่อปี")
+    led_ = res["P-R"].get("ledger")
+    if led_ is not None and "cap_value" in led_:
+        zc = led_[led_.prov_code == int(ctx.provs[iw])].sort_values("year_ce")
+        Rg.claim("c54_worst_province_cap_first", zc.cap_value.iloc[0], "{:.0f}", "คน")
+        Rg.claim("c54_worst_province_cap_last", zc.cap_value.iloc[-1], "{:.0f}", "คน")
     from . import inputs as I_
     ev = I_.flow_events_province()
     rec = ev[(ev.direction == "entry") & (ev.category == "recruitment_hiring") & (ev.prov_code == int(ctx.provs[iw]))

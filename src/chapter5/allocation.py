@@ -545,7 +545,7 @@ def solve(pb: Problem, objective: str = "lexicographic", incumbent=None) -> Solu
             else:
                 stages.append(dict(stage="distribution", status=int(r2.status), objective=np.nan, seconds=s2,
                                    outcome="no improved incumbent within the time limit: shortfall-stage solution retained"))
-            if incumbent is not None:
+            if incumbent is not None and not (pb.stages and pb.stages[0] == "maximin"):
                 # The recruitment-only incumbent is feasible in every stage of a transfer plan. When it meets the
                 # shortfall tolerance and distributes better than a time-limited distribution stage, it is the better
                 # lexicographic answer: keep it (a transfer plan is then never worse than its recruitment-only plan).
@@ -586,6 +586,18 @@ def solve(pb: Problem, objective: str = "lexicographic", incumbent=None) -> Solu
                 else:
                     stages.append(dict(stage="operational", status=int(r3.status), objective=float(zo_.sum()), seconds=s3,
                                        outcome="no improved incumbent within the time limit: previous solution retained"))
+    if incumbent is not None and pb.transfers and not (pb.stages and pb.stages[0] == "maximin"):
+        # A transfer plan that ends without transfers is a recruitment-only allocation; any difference from
+        # the recruitment-only plan with the same targets and constraints is solver indeterminacy, not an
+        # effect of permitting transfers. Report that plan (declared convention, final check N-2).
+        _, _, zo_f, _ = _extract(pb, M, xv)
+        vi = full_vector(pb, M, *incumbent)
+        if zo_f.sum() == 0 and not np.array_equal(np.round(vi), np.round(xv)):
+            xv = vi
+            diag["zero_transfer_reported_as_recruitment_only"] = True
+            stages.append(dict(stage="report", status=0, objective=np.nan, seconds=0.0,
+                               outcome="no transfers used: the recruitment-only plan with the same targets and "
+                                       "constraints is reported"))
     x, zi, zo, u = _extract(pb, M, xv)
     zi, zo, netted = net_churn(zi, zo)
     diag["churn_netted_events"] = netted

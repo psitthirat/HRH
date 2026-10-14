@@ -85,7 +85,7 @@ c53_perfect_foresight_bound_j_P,5_3,4.3269154295963,4.327,{:.3f},,,,,computed,re
 c53_perfect_foresight_bound_bq_P,5_3,0.3805916174919811,0.381,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_fixed_schedule_same_paths_j_P,5_3,4.330301219132591,4.330,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_fixed_schedule_same_paths_bq_P,5_3,0.3800957420068192,0.380,{:.3f},,,,,computed,reports/chapter5_complete_th.md
-c53_adaptive_replanning_bq_S,5_3,0.4061110862578741,0.406,{:.3f},,,,,computed,reports/chapter5_complete_th.md
+c53_adaptive_replanning_bq_S,5_3,0.4061060402206449,0.406,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_fixed_schedule_same_paths_bq_S,5_3,0.4121917094186612,0.412,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_adaptive_replanning_bq_N,5_3,0.3835401722377977,0.384,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_fixed_schedule_same_paths_bq_N,5_3,0.3870529347693723,0.387,{:.3f},,,,,computed,reports/chapter5_complete_th.md
@@ -217,9 +217,9 @@ c54_similar_PR_vs_BR,5_4,ต่างกันเชิงปฏิบัติ,
 c54_beyond_noise_PR_vs_BR,5_4,เกินระดับความไม่เป็นเอกลักษณ์ของคำตอบ,เกินระดับความไม่เป็นเอกลักษณ์ของคำตอบ,text,,,,,computed,reports/chapter5_complete_th.md
 c54_swpct_SR_vs_BR,5_4,11.44,11.4,{:.1f},%,,,,computed,reports/chapter5_complete_th.md
 c54_swpct_NR_vs_BR,5_4,6.573333333333333,6.6,{:.1f},%,,,,computed,reports/chapter5_complete_th.md
-c54_noise_n_pairs,5_4,4.0,4,{:.0f},คู่,,,,computed,reports/chapter5_complete_th.md
-c54_noise_pct_max,5_4,9.863333333333333,9.9,{:.1f},%,,,,computed,reports/chapter5_complete_th.md
-c54_noise_cum_max,5_4,70.0,70,int,คน,,,,computed,reports/chapter5_complete_th.md
+c54_noise_n_pairs,5_4,3.0,3,{:.0f},คู่,,,,computed,reports/chapter5_complete_th.md
+c54_noise_pct_max,5_4,5.713333333333334,5.7,{:.1f},%,,,,computed,reports/chapter5_complete_th.md
+c54_noise_cum_max,5_4,75.0,75,int,คน,,,,computed,reports/chapter5_complete_th.md
 c54_gain_PR_vs_SR,5_4,"ลำปาง (+275), สุราษฎร์ธานี (+198), จันทบุรี (+177)","ลำปาง (+275), สุราษฎร์ธานี (+198), จันทบุรี (+177)",text,,,,,computed,reports/chapter5_complete_th.md
 c54_lose_PR_vs_SR,5_4,"นนทบุรี (-425), นราธิวาส (-230), ปทุมธานี (-227)","นนทบุรี (-425), นราธิวาส (-230), ปทุมธานี (-227)",text,,,,,computed,reports/chapter5_complete_th.md
 c54_gain_PR_vs_NR,5_4,"ขอนแก่น (+85), เชียงใหม่ (+75), ลำปาง (+49)","ขอนแก่น (+85), เชียงใหม่ (+75), ลำปาง (+49)",text,,,,,computed,reports/chapter5_complete_th.md
@@ -254,6 +254,8 @@ c55_sens_sw_BR_asr,5_4,7.5666666666666655,7.6,{:.1f},%,,,,computed,reports/chapt
 c55_sens_tr_PRT_tau005,5_4,0.0,0,int,ครั้ง,,,,computed,reports/chapter5_complete_th.md
 c55_sens_tr_PRT_net_surplus,5_4,0.0,0,int,ครั้ง,,,,computed,reports/chapter5_complete_th.md
 c55_sens_tr_PRT_net_region,5_4,60.0,60,int,ครั้ง,,,,computed,reports/chapter5_complete_th.md
+c55_sens_small_min,5_4,0.9733333333333332,1.0,{:.1f},%,,,,computed,reports/chapter5_complete_th.md
+c55_sens_small_max,5_4,6.756666666666667,6.8,{:.1f},%,,,,computed,reports/chapter5_complete_th.md
 c55_eta_first_1,5_4,0.3371011432654228,0.34,{:.2f},,,,,computed,reports/chapter5_complete_th.md
 c55_gainB_first_1,5_4,0.8796808555069803,0.88,{:.2f},,,,,computed,reports/chapter5_complete_th.md
 c55_gainBmax_1,5_4,1.475733163359378,1.48,{:.2f},,,,,computed,reports/chapter5_complete_th.md
@@ -289,7 +291,7 @@ c54_tangent_diff,5_4,0.0049135002179401255,0.005,{:.3f},%,,,,computed,reports/ch
 c54_tangent_err_bound,5_4,0.00015625000000000003,0.00016,{:.5f},,,,,computed,reports/chapter5_complete_th.md
 c54_rolling_diff,5_4,0.06915355195487027,0.069,{:.3f},%,,,,computed,reports/chapter5_complete_th.md
 c54_dJ_PRT_net,5_4,-0.014348986522416673,-0.014,{:.3f},%,,,,computed,reports/chapter5_complete_th.md
-c54_dJ_SRT_net,5_4,0.06156061262747592,0.062,{:.3f},%,,,,computed,reports/chapter5_complete_th.md
+c54_dJ_SRT_net,5_4,0.0,0.000,{:.3f},%,,,,computed,reports/chapter5_complete_th.md
 c54_dJ_NRT_net,5_4,0.024994770783859366,0.025,{:.3f},%,,,,computed,reports/chapter5_complete_th.md
 c54_dJ_PRT_net_region,5_4,-0.038618789573585666,-0.039,{:.3f},%,,,,computed,reports/chapter5_complete_th.md
 c54_unplaced2026_PR_pool2500,5_4,373.0,373,int,คน,,,,computed,reports/chapter5_complete_th.md
@@ -301,7 +303,8 @@ c54_worst_province_H2040,5_4,37.11744683340741,37,int,คน,,,,computed,reports
 c54_worst_province_exit,5_4,13.360266139086152,13.4,{:.1f},% ต่อปี,,,,computed,reports/chapter5_complete_th.md
 c54_worst_province_cap,5_4,10.0,10,{:.0f},%,,,,computed,reports/chapter5_complete_th.md
 c54_worst_province_attain_net,5_4,0.5373300583917262,0.537,{:.3f},,,,,computed,reports/chapter5_complete_th.md
-c54_worst_province_cap_n,5_4,7.2,7,{:.0f},คนต่อปี,,,,computed,reports/chapter5_complete_th.md
+c54_worst_province_cap_first,5_4,6.0,6,{:.0f},คน,,,,computed,reports/chapter5_complete_th.md
+c54_worst_province_cap_last,5_4,3.0,3,{:.0f},คน,,,,computed,reports/chapter5_complete_th.md
 c54_worst_province_rec_hist,5_4,21.2,21,{:.0f},คนต่อปี,,,,computed,reports/chapter5_complete_th.md
 c54_worst_province_rec_hist_pct,5_4,29.444444444444443,29,{:.0f},%,,,,computed,reports/chapter5_complete_th.md
 c54_floorprov2026_PR,5_4,3.0,3,{:.0f},จังหวัด,,,,computed,reports/chapter5_complete_th.md

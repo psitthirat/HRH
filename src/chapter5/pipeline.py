@@ -586,7 +586,7 @@ def stage_inputs(S) -> dict:
                                       gain_B=eta * Tb / ctx.H0,
                                       gain_A=eta * Tb / ctx.H0 * (1 - Tb / Tb.sum()))))
     fbd = pd.concat(rows, ignore_index=True)
-    Rg.table("T5_FEEDBACK_ELASTICITY_2026", fbd, "ความยืดหยุ่นเฉพาะที่ของตัวหาร N-FB ต่อจำนวนแพทย์ และกำไรป้อนกลับต่อเป้าหมาย (การตัดสินใจปี 2569)")
+    Rg.table("T5_FEEDBACK_ELASTICITY_2026", fbd, "ความยืดหยุ่นเฉพาะที่ของตัวหาร N-FB ต่อจำนวนแพทย์ และกำไรป้อนกลับต่อเป้าหมาย (การตัดสินใจปี 2569; การทดลอง B ค่าเฉลี่ยไม่ถ่วงน้ำหนัก จึงต่างจากตัวเลขในรายงานที่ใช้การทดลอง A ถ่วงด้วยจำนวนแพทย์ตาม T5_FEEDBACK_LOG)")
     # claims
     k = ctx.key
     Rg.claim("c51_H0_total", ctx.H0.sum(), "int", "คน", "T5_BASELINE_PROVINCES")
