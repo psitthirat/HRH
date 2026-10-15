@@ -1,13 +1,13 @@
 {
  "stage": "5_5",
- "run_utc": "2026-10-14T20:08:27Z",
+ "run_utc": "2026-10-15T02:45:50Z",
  "scenario": "canonical",
  "overrides": {},
  "config_hash": "e0082b9acf0428bc",
  "inputs_fingerprint": "e391b83693928af9",
  "chapter4_code_hash": "64883781809e35e4",
- "chapter5_code_hash": "7c9940a75a2ab36d",
- "git_revision": "7bf9b8d",
+ "chapter5_code_hash": "ed35dd2077e410e6",
+ "git_revision": "d84b634",
  "working_tree_has_uncommitted_pipeline_changes": true,
  "python": "3.14.6",
  "packages": {
@@ -22,7 +22,7 @@
  },
  "solver": "HiGHS via scipy.optimize.milp (scipy 1.18.0)",
  "seed": 20260927,
- "seconds": 6.7,
+ "seconds": 6.9,
  "n_assets": 11,
  "n_claims": 0
 }

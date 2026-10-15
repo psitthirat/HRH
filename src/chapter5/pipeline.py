@@ -571,6 +571,14 @@ def stage_inputs(S) -> dict:
     Rg.table("T5_INDICES", ctx.idx.drop(columns=[c for c in ctx.idx.columns if c.startswith("conv")]),
              "ดัชนีความรับผิดชอบรายจังหวัด-ปีของทุกตระกูล (หน่วยเทียบเท่าประชากร ด้วยสเกลคงที่ปี 2568)", parquet=True)
     Rg.table("T5_DENOMINATOR_REGISTRY", ctx.registry, "ทะเบียนตัวหาร: ที่มา หน่วย การปรับสเกล และการตีความ", main=True)
+    if "D_B" in ctx.idx:
+        # Aggregate family B inputs, also read by the Workforce Lab package (no personal data).
+        bi = R.burden_inputs()
+        bod = pd.concat([bi["rate_daly"].stack().rename("rate_daly"), bi["rate_yld"].stack().rename("rate_yld")],
+                        axis=1).reset_index()
+        bod["asr_daly_per100k"] = bod.prov_code.map(bi["asr_daly"])
+        Rg.table("T5_BOD_RATES", bod, "อัตรา DALY และ YLD ต่อคน-ปี รายจังหวัด × 8 กลุ่มอายุ (BOD 2565 ไม่รวม COVID-19) "
+                 "และอัตรา DALY ปรับมาตรฐานอายุต่อแสนคน ที่ใช้สร้าง family B")
     # supply modes (the direct mode is used; the other two are shown with their illustrative parameters)
     pools = []
     for mode in ["available_appointments", "national_graduates", "student_intake"]:

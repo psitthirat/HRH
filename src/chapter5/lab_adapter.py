@@ -21,7 +21,15 @@ from . import allocation as AL, evaluation as EV, lab_compare as LC, responsibil
 
 SCHEMA = 'workforce-lab.run/1'
 YEARS = list(range(2026, 2041))
-FAMILIES = {'P':('P','D_P'),'S':('S','D_S'),'N-STD':('N-STD','D_N'),'N-FB':('N-FB','D_N'),'SQ-C':('status_quo','D_P')}
+FAMILIES = {'P':('P','D_P'),'S':('S','D_S'),'N-STD':('N-STD','D_N'),'N-FB':('N-FB','D_N'),'SQ-C':('status_quo','D_P'),'B':('B','D_B')}
+
+def burden(inputs):
+    """Family B inputs (T5_BOD_RATES records) in the structure of responsibilities.burden_inputs; False if absent."""
+    rows=inputs.get('burden')
+    if not rows: return False
+    b=pd.DataFrame(rows)
+    wide=lambda c:b.pivot(index='prov_code',columns='age_group',values=c).sort_index(axis=1)
+    return {'rate_daly':wide('rate_daly'),'rate_yld':wide('rate_yld'),'asr_daly':b.groupby('prov_code').asr_daly_per100k.first()}
 
 def clean(value):
     if isinstance(value, pd.DataFrame): return clean(value.to_dict('records'))
@@ -126,7 +134,7 @@ def validate(config, inputs, versions=None):
             if p.get('allocation.population_reserved_share',0):
                 errors.append({'parameter':'allocation.population_reserved_share','message':'Population protection is supported in deterministic planning and fixed-schedule uncertainty. Adaptive uncertainty requires a separately validated update of population quotas after observed demographic shocks; it cannot ignore the protected share.'})
             if p['allocation.family'] not in ['P','S','N-STD'] or p['mobility.enabled'] or p['allocation.objective']!='shortfall':
-                errors.append({'parameter':'planning.mode','message':'Stochastic annual replanning supports recruitment-only P/S/N-STD with the canonical shortfall learning rule; N-FB, SQ-C, transfers and maximin require a separately validated adaptive rule.'})
+                errors.append({'parameter':'planning.mode','message':'Stochastic annual replanning supports recruitment-only P/S/N-STD with the canonical shortfall learning rule; B, N-FB, SQ-C, transfers and maximin require a separately validated adaptive rule (Chapter 5 evaluates B with fixed-schedule uncertainty only).'})
             unchanged=(p['departures.rate_source']=='pooled' and
                        np.all(spatial_path(p,'departures.hazard_multiplier',base.prov_code,base.health_region)==1) and
                        np.all(spatial_path(p,'departures.reentry_multiplier',base.prov_code,base.health_region)==1) and
@@ -138,6 +146,7 @@ def validate(config, inputs, versions=None):
         if p['supply.input_mode']=='available_appointments' and (trajectory(p['supply.available_appointments'])<76*p['allocation.floor']).any():
             warnings.append({'code':'floor_exceeds_pool','message':'the annual pool is below the total provincial floor in at least one year; the optimizer may report infeasibility'})
         if p['supply.input_mode']!='available_appointments': warnings.append({'code':'illustrative_supply_conversion','message':'graduate, training and participation assumptions are illustrative participant settings, not verified production estimates'})
+        if p['allocation.family']=='B' and not inputs.get('burden'): errors.append({'parameter':'allocation.family','message':'family B needs the aggregate BOD 2022 rates, which this release does not contain'})
         if p['allocation.family']=='SQ-C' and p['allocation.objective']!='shortfall': errors.append({'parameter':'allocation.objective','message':'SQ-C uses its historical-share L1 objective; maximin is not applicable'})
         if p['allocation.family']!='N-FB' and any(p[k]!=0 for k in ['resources.beds_growth','resources.nurses_growth','resources.gpp_growth']):
             warnings.append({'code':'fixed_reference_resources','message':'actual capacity changes affect resource-responsive service evaluation, while the M5 reference used by N-STD allocation remains fixed'})
@@ -179,8 +188,8 @@ def context(parameters, inputs):
     else:svc=R.service_projection(S,panel,pop,method)
     rat=canonical_idx[canonical_idx.year==2025].set_index('prov_code');rat=rat.pop_entitlement_central/rat.population
     ent=pop[['year','prov_code','population']].copy();ent['pop_entitlement_central']=ent.population*ent.prov_code.map(rat)
-    # Family B (BOD 2022) is not part of the September Lab inputs; omit it unless supplied.
-    idx,registry,support=R.build_indices(S,base,pop,ent,svc,pkg,w=w,panel=panel,burden=inputs.get('burden',False))
+    # Family B (BOD 2022) is available only when the release carries its aggregate rates.
+    idx,registry,support=R.build_indices(S,base,pop,ent,svc,pkg,w=w,panel=panel,burden=burden(inputs))
     cov=idx.attrs['cov'].copy()
     changed_morb=False
     for c in MD.DISEASE:
@@ -223,7 +232,8 @@ def specification(p):
     return SIM.PlanSpec(pid,family,col,'recruitment_and_transfers' if p['mobility.enabled'] else 'recruitment_only',p['targets.experiment'],feedback=f"lagged_lambda_{p['feedback.lambda']:g}" if family=='N-FB' else 'none',lam=p['feedback.lambda'] if family=='N-FB' else 0.)
 
 def target_matrices(ctx,experiment):
-    return {f:SIM.targets_matrix(ctx.idx,c,experiment,ctx.k,2025,YEARS) for f,c in [('P','D_P'),('S','D_S'),('N','D_N'),('Pent','D_Pent')]}
+    pairs=[('P','D_P'),('S','D_S'),('N','D_N'),('Pent','D_Pent')]+([('B','D_B')] if 'D_B' in ctx.idx else [])
+    return {f:SIM.targets_matrix(ctx.idx,c,experiment,ctx.k,2025,YEARS) for f,c in pairs}
 
 def _status(sol):
     if sol.status=='solved':
@@ -335,7 +345,7 @@ def cached_result(plan_id,inputs,versions=None):
     p=defaults(inputs);c=inputs['cached_plans'][plan_id]
     if plan_id.startswith('NFB'):p.update({'allocation.family':'N-FB','feedback.lambda':float(plan_id.split('-')[0][3:])})
     elif plan_id=='SQ-C':p['allocation.family']='SQ-C'
-    else:p['allocation.family']={'P':'P','S':'S','N':'N-STD'}[plan_id[0]]
+    else:p['allocation.family']={'P':'P','S':'S','N':'N-STD','B':'B'}[plan_id[0]]
     p['mobility.enabled']='-RT' in plan_id
     if '|net' in plan_id:p['allocation.cap_mode']='net_growth'
     if '|pool' in plan_id:p['supply.available_appointments']=int(plan_id.split('|pool')[1])
@@ -451,7 +461,7 @@ def compare_runs(runs):
         for run_ in runs:
             rr=pd.DataFrame(run_['ledger']).sort_values(['year_ce','prov_code']).reset_index(drop=True)
             H=rr.expected_closing_stock.to_numpy().reshape(len(years),n)
-            for crit in ['P','S','N']:
+            for crit in ['P','S','N']+(['B'] if 'D_B' in idx else []):
                 T=R.targets(idx,'D_'+crit,'common_total',k,2025).to_numpy().reshape(len(years),n)
                 mm=EV.trajectory_metrics(run_['plan_id'],crit+'|common_total',H,T,years,region,pop)
                 mm['run_id']=run_['run_id'];mm['reference_run_id']=reference['run_id'];mm['common_reference']=True
@@ -502,7 +512,7 @@ def stochastic_evaluation(ctx,p,pb,sol,inputs,progress=None):
         complete=np.ones(n,bool)
     completed=int(complete.sum())
     H=simulated['H'].astype(float);rows=[];summary=[];bands=[];province=[]
-    for crit in ['P','S','N']:
+    for crit in ['P','S','N']+(['B'] if 'D_B' in ctx.idx else []):
         if crit=='N' and components!='flow_demography_m5':
             boot=ctx.pkg['boot'];ctx.pkg['boot']={o:np.repeat(ctx.pkg['beta'][o][None],len(boot[o]),axis=0) for o in boot}
             T,invalid=U.path_targets(ctx,draws,crit);ctx.pkg['boot']=boot

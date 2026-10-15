@@ -23,7 +23,7 @@ def unsupported_reasons(ctx, p, pb):
     if pb.population_reserved_share or p.get("allocation.population_reserved_share", 0):
         reasons.append("Adaptive uncertainty requires a validated demographic update of protected population quotas; the protected share cannot be silently ignored.")
     if p.get("allocation.family", "P") not in {"P", "S", "N-STD"}:
-        reasons.append("Adaptive uncertainty currently supports P, S and N-STD; N-FB and SQ-C need separately validated learning rules.")
+        reasons.append("Adaptive uncertainty currently supports P, S and N-STD; B, N-FB and SQ-C need separately validated learning rules.")
     if pb.transfers or p.get("mobility.enabled", False):
         reasons.append("Adaptive uncertainty currently supports recruitment-only plans; adaptive transfer cancellation and routing are not implemented.")
     if p.get("allocation.objective", "shortfall") != "shortfall":

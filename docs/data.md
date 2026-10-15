@@ -3,7 +3,7 @@
 เอกสารนี้รวมสามเรื่อง ได้แก่ catalog ข้อมูล, การประเมินความพร้อมของข้อมูล และคำขอข้อมูลของบทที่ 4–5
 - path ของแหล่งข้อมูลทั้งหมดลงทะเบียนใน `config/source_registry.toml`
 - hash และขนาดไฟล์ถูกเขียนลง `outputs/shared/source_inventory.csv` ทุกครั้งที่ build
-- ข้อมูลดิบที่ดึงจากเว็บ (`raw_scraped`) และ archive รอบ ก.ย. อยู่นอก repo ที่ `../HRH_offrepo/` (ดู `MANIFEST.csv`)
+- ข้อมูลดิบที่ดึงจากเว็บ (`raw_scraped`) และ archive รอบ ก.ย. อยู่นอก repo บนดิสก์อื่นที่เจ้าของเก็บไว้ (เดิม `../HRH_offrepo/`, รายการไฟล์ใน `MANIFEST.csv`)
 
 ## 1. แหล่งข้อมูลที่ใช้อยู่
 

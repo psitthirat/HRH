@@ -93,8 +93,8 @@ c53_perfect_foresight_bound_j_P,5_3,4.3269154295963,4.327,{:.3f},,,,,computed
 c53_perfect_foresight_bound_bq_P,5_3,0.38059161749198117,0.381,{:.3f},,,,,computed
 c53_fixed_schedule_same_paths_j_P,5_3,4.330301219132591,4.330,{:.3f},,,,,computed
 c53_fixed_schedule_same_paths_bq_P,5_3,0.3800957420068192,0.380,{:.3f},,,,,computed
-c53_adaptive_replanning_j_S,5_3,4.270611124691728,4.271,{:.3f},,,,,computed
-c53_adaptive_replanning_bq_S,5_3,0.40610604022064495,0.406,{:.3f},,,,,computed
+c53_adaptive_replanning_j_S,5_3,4.270614761251118,4.271,{:.3f},,,,,computed
+c53_adaptive_replanning_bq_S,5_3,0.4061110862578741,0.406,{:.3f},,,,,computed
 c53_perfect_foresight_bound_j_S,5_3,4.269891280692364,4.270,{:.3f},,,,,computed
 c53_perfect_foresight_bound_bq_S,5_3,0.41093889481111795,0.411,{:.3f},,,,,computed
 c53_fixed_schedule_same_paths_j_S,5_3,4.273164346297857,4.273,{:.3f},,,,,computed

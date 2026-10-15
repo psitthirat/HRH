@@ -2,6 +2,8 @@
 
 Date: 14 October 2026. Status: **draft structures**, built ahead of data (next-phase plan §4, §8.3). Expert review is pending.
 
+On 15 October 2026 the owner allowed the modules to stay in the public Lab before expert review, with a warning at the top of the modules view: the ESRD and cancer structures have not yet been reviewed by experts, and a line in red says that real data are still needed before a run gives usable results.
+
 The model structures exist now. A user brings the data a module needs, the module validates the data and calibrates the parameters it can estimate, and the user reviews and runs it. A new dataset or assumption re-runs the same function, so results stay comparable and traceable. **No module produces an estimate until real data are supplied.** Synthetic demonstration datasets show the file layout, and every run that uses them is labelled as synthetic.
 
 ## Where it lives

@@ -85,7 +85,7 @@ c53_perfect_foresight_bound_j_P,5_3,4.3269154295963,4.327,{:.3f},,,,,computed,re
 c53_perfect_foresight_bound_bq_P,5_3,0.3805916174919811,0.381,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_fixed_schedule_same_paths_j_P,5_3,4.330301219132591,4.330,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_fixed_schedule_same_paths_bq_P,5_3,0.3800957420068192,0.380,{:.3f},,,,,computed,reports/chapter5_complete_th.md
-c53_adaptive_replanning_bq_S,5_3,0.4061060402206449,0.406,{:.3f},,,,,computed,reports/chapter5_complete_th.md
+c53_adaptive_replanning_bq_S,5_3,0.4061110862578741,0.406,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_fixed_schedule_same_paths_bq_S,5_3,0.4121917094186612,0.412,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_adaptive_replanning_bq_N,5_3,0.3835401722377977,0.384,{:.3f},,,,,computed,reports/chapter5_complete_th.md
 c53_fixed_schedule_same_paths_bq_N,5_3,0.3870529347693723,0.387,{:.3f},,,,,computed,reports/chapter5_complete_th.md

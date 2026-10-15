@@ -19,7 +19,7 @@
 | `tests/` | tests ของ `src/` |
 | `workspaces/` | repo แยก (git-ignored): `HRH-authoring` (เว็บและ Workforce Lab, private) และ `HRH-model` (เว็บสาธารณะ) |
 
-**ของที่อยู่นอก repo** (`../HRH_offrepo/`, รายการไฟล์ใน `MANIFEST.csv`)
+**ของที่อยู่นอก repo** (เจ้าของย้ายไปดิสก์อื่นแล้ว เดิมอยู่ที่ `../HRH_offrepo/` รายการไฟล์อยู่ใน `MANIFEST.csv` ที่ย้ายไปด้วย)
 - ข้อมูลดิบที่ดึงจากเว็บ
 - archive รอบ ก.ย. 2569
 - เว็บรุ่นเก่า (dashboard `web/`, `site/`, สำเนา `story/`) และเอกสารของเว็บรุ่นนั้น
