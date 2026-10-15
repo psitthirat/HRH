@@ -59,17 +59,15 @@
 - รายงานบทที่ 4 และบทที่ 5 ไม่มี placeholder ค้าง และทุกขั้นของบทที่ 5 ใช้ code hash เดียวกัน
 - notebook บท 4 (4.1–4.6) และบท 5 (5.1–5.3) รันใหม่แล้วทั้งหมด
 
-**Repo**
-- จัดระเบียบแล้ว (ดูหัวข้อ 3)
-- commit ใน local: `c78cc8a` (สภาพก่อนแก้) และ commit รอบแก้และจัดระเบียบ (ดูบันทึก 15 ต.ค.) **ยังไม่ push**
-- branch `phase0-october-research-sync` ของ authoring ยังไม่มี commit ของตัวเอง
+**Repo และเว็บ (15 ต.ค. 2569)**
+- **research tree (`psitthirat/HRH`):** push แล้วถึง commit ล่าสุด ส่วนหน้า GitHub Pages ของแดชบอร์ดเดิมปิดแล้ว (`psitthirat.github.io/HRH/` ตอบ 404)
+- **authoring (`psitthirat/HRH-authoring`, private):** branch `phase0-october-research-sync` merge เข้า `main` และ push แล้ว (`a6c9c78`)
+- **เว็บสาธารณะ (`psitthirat/HRH-model` → https://psitthirat.github.io/HRH-model/):** เผยแพร่ release `20261015T014824Z-0c31d614f740` แล้ว ประกอบด้วยผลบทที่ 4–5 รอบ ต.ค., Lab ที่ใช้ AdjRW 100 นาที, โมดูลบริการ และแผงความน่าเชื่อถือ
 
 **รอเจ้าของตัดสินใจ**
-1. push root ขึ้น GitHub และปิดหน้า GitHub Pages ของแดชบอร์ดเดิม (ลบ `web/` แล้ว)
-2. merge branch ของ authoring และเผยแพร่ release เดือน ต.ค.
-3. Tier 1 interface ของ Lab, family B ใน Lab และค่า AdjRW ใน Lab (ยังเป็น 90)
-4. ผู้เชี่ยวชาญทบทวนโมดูลบริการ
-5. ย้าย `../HRH_offrepo/` ไปดิสก์อื่น
+1. Tier 1 interface ของ Lab และ family B ใน Lab
+2. ผู้เชี่ยวชาญทบทวนโมดูลบริการ
+3. ย้าย `../HRH_offrepo/` ไปดิสก์อื่น
 
 ## 3. แผนที่ย่อและวิธีรัน
 
@@ -131,6 +129,20 @@
 เกณฑ์การทดสอบย้อนหลัง (`config/validation.toml`) **ประกาศก่อนรัน** ห้ามแก้เพื่อให้ผ่าน ถ้าแก้ต้องบันทึกเป็น deviation
 
 ## 5. บันทึกการทำงาน (ใหม่สุดอยู่บน)
+
+### 2026-10-15 (15 ต.ค. 2569) — push, ปิดแดชบอร์ดเดิม, เผยแพร่เว็บ และ AdjRW 100 ใน Lab
+- **ผู้ทำ/เครื่องมือ:** Peerasit (อนุมัติ) + Claude Code
+- **ทำอะไร:**
+  - push research tree ขึ้น GitHub และปิด GitHub Pages ของ `psitthirat/HRH` (แดชบอร์ด `web/` เดิม) ผ่าน API
+  - **Lab:** สร้างข้อมูลนำเข้าใหม่จากผลรอบ ต.ค. (`scripts/webstory/lab_inputs.py --source-root ../..`) และเปลี่ยนค่าตั้งต้น AdjRW เป็น 100 นาที presets จึงตรงกับรายงาน
+  - **ผลวิเคราะห์ที่เว็บใช้:** คัดลอก 32 ไฟล์ที่เปลี่ยนจาก research tree เข้า authoring ตาม allowlist `scripts/webstory/authoring_inputs.json` เพราะสำเนาเดิมเป็นของ ก.ย. ที่ใช้ AdjRW 90
+  - **Release ใหม่:** ฉบับ `20261015T014824Z-0c31d614f740` แทน `…ad3669cfab16` ที่อนุมัติไว้ เพราะต้องรวม AdjRW 100 และผลรอบล่าสุด มี review 52 รายการ ทั้งหมดเป็นตัวเลขที่อัปเดตตาม และไม่มีข้อความที่ทิศทางเปลี่ยน
+  - **Promote และเผยแพร่:** promote โดยบันทึกผู้ทบทวนตามจริง แล้ว merge authoring เข้า `main` และเผยแพร่ชุดสาธารณะ (`make story-public-repo`) ขึ้น `HRH-model`
+- **ตรวจอย่างไร:**
+  - authoring: 143 ผ่าน (เหลือ S29 ที่ไม่ผ่านอยู่แล้ว)
+  - publication: 22 + 4 ผ่าน
+  - GitHub Actions ของ `HRH-model` สำเร็จ และเว็บจริงเสิร์ฟ release ใหม่ (AdjRW 100, มีโมดูลบริการและแผงความน่าเชื่อถือ)
+- **แก้ระหว่างทาง:** `lab_inputs.py` อ่านแผนที่จาก `data/map` (fallback `output/map`) และ test ตารางประเมินไขว้ของ authoring ปรับให้ตรงกับนิยามใหม่ (9 แถว, รวม B-R/Pent ในชุดเทียบ, คอลัมน์ DALY คาดหมาย)
 
 ### 2026-10-15 (15 ต.ค. 2569) — แก้ final check, AdjRW 100, จัดระเบียบ repo และรวมเอกสาร
 - **ผู้ทำ/เครื่องมือ:** Peerasit + Claude Code (agent อิสระตรวจซ้ำ)
@@ -257,7 +269,7 @@
 2. รายงานความไม่ unique ของคำตอบเป็นช่วงจากหลายรอบ solve และใช้ตัวชี้วัดที่ไม่ขึ้นกับการเลือกคำตอบเป็นหลัก
 3. หน้า Lab การจัดสรร: แสดงประชากร บริการ ภาระโรค และความต้องการของแพ็กเกจคู่กัน และแผนที่ที่สลับมุมมองผู้ให้บริการกับผู้อยู่อาศัย
 
-**รอการตัดสินใจของเจ้าของ:** Tier 1 interface, family B ใน Lab, release เดือน ต.ค., AdjRW ใน Lab
+**รอการตัดสินใจของเจ้าของ:** Tier 1 interface และ family B ใน Lab
 
 **รอข้อมูลหรือผู้เชี่ยวชาญ:** โมดูลไตวายและมะเร็งที่ปรับฐานแล้ว, คิวเครื่องฉายรังสีและเครื่องฟอก, การเปลี่ยนสถานะภาวะพึ่งพิง, anchoring ที่วัดกลไกได้, multi-cadre และงบประมาณ
 
